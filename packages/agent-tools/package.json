@@ -1,0 +1,32 @@
+{
+  "name": "@scenity/agent-tools",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The agent tools of Scenity: the scene, command, UI and job tools that an agent calls, over a port to an editor window. The studio host and the workbench host run them.",
+  "type": "module",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/agent-tools"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "test": "bun test ./tests"
+  },
+  "dependencies": {
+    "@scenity/bridge": "workspace:*",
+    "zod": "4.6.5"
+  }
+}

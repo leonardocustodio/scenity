@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M51C68QJY6S5M2F21R5BMPJJ",
+  "importer": "wav",
+  "kind": "audio",
+  "rights": "../../../rights/scenity-own-sound.yaml",
+  "settings": {},
+  "source": "chirp.wav",
+  "tags": [
+    "robot",
+    "sound"
+  ]
+}

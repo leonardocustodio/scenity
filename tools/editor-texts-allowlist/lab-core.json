@@ -1,0 +1,43 @@
+{
+  "apps/editor/src/core/bridge/sheetCompose.ts": {
+    "11px ui-monospace, Menlo, monospace": "canvas font of the contact sheet (CSS font value)",
+    "14px ui-monospace, Menlo, monospace": "canvas font of the contact sheet (CSS font value)"
+  },
+  "apps/editor/src/core/bridge/workbenchConsole.ts": {
+    "vite error overlay: {}": "console line that the bridge sends to the workbench host (bridge API)",
+    "unhandled rejection: {}": "console line that the bridge sends to the workbench host (bridge API)"
+  },
+  "apps/editor/src/core/bridge/workbenchEvents.ts": {
+    "vite error: {}{}": "console event that the bridge sends to the workbench host (bridge API)"
+  },
+  "apps/editor/src/core/bridge/workbenchSheet.ts": {
+    "free view": "camera label in a contact sheet for the host tools (bridge API, a data value)"
+  },
+  "apps/editor/src/core/cameraNames.ts": {
+    "The view {}, saved in the lab (labs camera-save).": "default doc comment that the CLI writes into cameras.ts (source code)",
+    "bun run labs camera-save {} --view={}{}{}": "command line for a terminal (code)"
+  },
+  "apps/editor/src/core/clip/choose.ts": {
+    "WebCodecs encodes no VP9, AV1 or VP8 here.": "reason of a thrown error of the script API lab.clip (developer text)",
+    "An MP4 comes only from MediaRecorder (no H.264 in WebCodecs).": "reason of a thrown error of the script API lab.clip (developer text)",
+    "This browser records no video/mp4 (MediaRecorder); use WebM.": "reason of a thrown error of the script API lab.clip (developer text)",
+    "This browser has no WebCodecs encoder and no MediaRecorder of a canvas stream.": "reason of a thrown error of the script API lab.clip (developer text)"
+  },
+  "apps/editor/src/core/graph/series.ts": {
+    "{}{}, known gap: {}": "label of a limit line in the graph data: the page does not show it (a unit test reads it)"
+  },
+  "apps/editor/src/core/index/reader.ts": {
+    "The workbench page did not answer.": "error of an index read answer (host protocol); the page does not show it"
+  },
+  "apps/editor/src/core/index/renderJob.ts": {
+    "The page has no view track {}.": "render job refusal that goes back to the host tools (API)",
+    "The page has no labs renderer (runtime=1 or no view).": "render job refusal that goes back to the host tools (API)",
+    "The scene of the page is not ready.": "render job refusal that goes back to the host tools (API)",
+    "The job has other scene options than the page.": "render job refusal that goes back to the host tools (API)",
+    "The adaptive quality of the page draws another tier now.": "render job refusal that goes back to the host tools (API)",
+    "The job has an unknown view.": "render job refusal that goes back to the host tools (API)"
+  },
+  "apps/editor/src/core/index/selfFill.ts": {
+    "The picture type {} is not for the index.": "refusal of an index fill job (developer text, not shown)"
+  }
+}

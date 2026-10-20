@@ -1,0 +1,189 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The scene page: one canvas over the whole page. Developer page: no design tokens. */
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #000000;
+  overflow: hidden;
+}
+
+#scene {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#status {
+  position: fixed;
+  left: 8px;
+  bottom: 8px;
+  margin: 0;
+  font:
+    12px system-ui,
+    sans-serif;
+  color: #ffffff;
+}
+
+/* The file bar of the edit mode (`edit=1`). It is in the toolbar of the editor window. The notices are dialogs of the
+   editor window. */
+#scene-bar {
+  box-sizing: border-box;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 0 4px;
+  font:
+    12px system-ui,
+    sans-serif;
+  /* The file bar is a part of the toolbar of the editor window: the tokens of the theme. */
+  color: var(--sc-color-text-primary);
+  background: transparent;
+}
+
+#scene-bar :is(button, select) {
+  padding: 2px 8px;
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: var(--sc-radius-4);
+  font: inherit;
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-surface-raised);
+  cursor: pointer;
+}
+
+#scene-bar :is(button, select):focus-visible {
+  outline: 2px solid var(--sc-color-focus-ring);
+  outline-offset: 1px;
+}
+
+/* The file bar is at the start of the top row. A long path gets an ellipsis; the state and Save stay. */
+#scene-bar {
+  min-width: 0;
+  max-width: 640px;
+  height: 32px;
+  overflow: hidden;
+}
+
+#scene-bar > * {
+  flex: none;
+  white-space: nowrap;
+}
+
+/* The grid column gives the path a min-content width of 0: the toolbar cuts the path before the tools scroll
+   (studio-bar in shell.css). The inner span holds the ellipsis. */
+#scene-bar > [data-testid="scene-file"] {
+  display: grid;
+  flex: 0 1 auto;
+  grid-template-columns: minmax(0, max-content);
+  min-width: 0;
+}
+
+#scene-bar > [data-testid="scene-file"] > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#scene-bar[data-dirty="1"] [data-testid="scene-state"] {
+  color: var(--sc-color-status-caution);
+}
+
+/* The inspect panel (`inspect=1` or the I key) over the right side of the canvas. */
+#scene-inspect {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
+  width: min(560px, calc(100% - 32px));
+  overflow: auto;
+  padding: 8px;
+  border-radius: 4px;
+  font:
+    11px system-ui,
+    sans-serif;
+  color: #ffffff;
+  background: rgb(0 0 0 / 75%);
+}
+
+#scene-inspect[hidden] {
+  display: none;
+}
+
+#scene-inspect header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#scene-inspect h2 {
+  margin: 0;
+  font-size: 13px;
+}
+
+#scene-inspect fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin: 8px 0;
+  border: 1px solid rgb(255 255 255 / 25%);
+}
+
+#scene-inspect table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#scene-inspect th,
+#scene-inspect td {
+  padding: 2px 4px;
+  text-align: left;
+  border-bottom: 1px solid rgb(255 255 255 / 12%);
+}
+
+#scene-inspect tbody tr {
+  cursor: pointer;
+}
+
+#scene-inspect tbody tr:hover,
+#scene-inspect tbody tr:focus {
+  background: rgb(255 255 255 / 12%);
+}
+
+#scene-inspect pre {
+  white-space: pre-wrap;
+}
+
+/* The proposal card: the edits of Claude that wait for the owner, at the bottom right of the free area. */
+#scene-proposals {
+  position: absolute;
+  z-index: var(--scene-z-notice, 2);
+  right: var(--scene-free-right, 8px);
+  bottom: calc(var(--scene-panel-bottom, 8px) + 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 420px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  font:
+    12px system-ui,
+    sans-serif;
+  color: #ffffff;
+  background: rgb(20 40 90 / 88%);
+}
+
+#scene-proposals[hidden] {
+  display: none;
+}
+
+#scene-proposals > div {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* The breadcrumb of the prefab mode: the scene (a press returns to it) and the prefab. */
+#scene-bar .scene-breadcrumb {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}

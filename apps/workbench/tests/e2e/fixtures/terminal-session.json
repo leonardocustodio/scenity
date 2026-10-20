@@ -1,0 +1,20 @@
+{
+  "about": "A recorded terminal session of Claude Code in the workbench: the hook calls and the tool calls of one turn, in their order. The fake agent (fakeAgent.ts) plays them against the host routes. ${checkout} is the checkout and ${scratch} the scratch file of the run.",
+  "session": "e2e-terminal-session",
+  "steps": [
+    { "hook": "SessionStart", "payload": { "source": "startup" } },
+    {
+      "hook": "UserPromptSubmit",
+      "payload": { "prompt": "The hat lifts off the head at 6 s. Look at the top view and fix it." }
+    },
+    { "tool": "lab_frame", "input": { "t": 6000, "camera": "top", "width": 640 } },
+    {
+      "edit": "${scratch}",
+      "tool_name": "Write",
+      "content": "A scratch file of the workbench end-to-end test. The undo of the turn deletes it.\n"
+    },
+    { "hmr": "${scratch}" },
+    { "tool": "workbench_after", "input": { "width": 640 } },
+    { "hook": "Stop", "payload": { "stop_hook_active": false } }
+  ]
+}

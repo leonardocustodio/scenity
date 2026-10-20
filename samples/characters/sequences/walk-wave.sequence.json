@@ -1,0 +1,96 @@
+{
+  "duration": 9000,
+  "format": "scenity.sequence/1",
+  "id": "walk-wave",
+  "markers": {
+    "idle": 500,
+    "rest": 8000,
+    "stop": 4300,
+    "turn": 4700,
+    "walk": 2500,
+    "wave": 5900
+  },
+  "name": "Walk, stop and wave",
+  "scene": "main",
+  "tracks": [
+    {
+      "entity": "robot",
+      "keys": [
+        {
+          "t": 0,
+          "value": 0
+        },
+        {
+          "ease": "step",
+          "t": 1000,
+          "value": 1
+        },
+        {
+          "ease": "step",
+          "t": 4000,
+          "value": 0
+        }
+      ],
+      "kind": "property",
+      "name": "Speed",
+      "path": "animator/parameters/speed"
+    },
+    {
+      "entity": "robot",
+      "keys": [
+        {
+          "t": 0,
+          "value": false
+        },
+        {
+          "t": 5000,
+          "value": true
+        },
+        {
+          "t": 5500,
+          "value": false
+        }
+      ],
+      "kind": "property",
+      "name": "Wave",
+      "path": "animator/parameters/wave"
+    },
+    {
+      "entity": "robot",
+      "keys": [
+        {
+          "position": [-1.5, 0, 0],
+          "rotation": [0, 0.707107, 0, 0.707107],
+          "t": 0
+        },
+        {
+          "position": [-1.5, 0, 0],
+          "t": 1000
+        },
+        {
+          "position": [1.5, 0, 0],
+          "rotation": [0, 0.707107, 0, 0.707107],
+          "t": 4000
+        },
+        {
+          "ease": "inOut",
+          "rotation": [0, 0, 0, 1],
+          "t": 4600
+        }
+      ],
+      "kind": "transform",
+      "name": "Place"
+    },
+    {
+      "entity": "robot",
+      "keys": [
+        {
+          "play": true,
+          "t": 5200
+        }
+      ],
+      "kind": "audio",
+      "name": "Chirp"
+    }
+  ]
+}

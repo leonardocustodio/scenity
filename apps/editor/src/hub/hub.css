@@ -1,0 +1,11 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The styles of the Hub (hub.html): Tailwind and the token styles of the ui package. */
+@import "tailwindcss";
+@import "@scenity/ui/styles.css";
+
+html,
+body {
+  margin: 0;
+  background: var(--sc-color-surface-base);
+  color: var(--sc-color-text-primary);
+}

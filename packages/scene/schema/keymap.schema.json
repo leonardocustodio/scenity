@@ -1,0 +1,32 @@
+{
+  "$id": "https://scenity.dev/schema/keymap.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "format": {
+      "const": "scenity.keymap/1",
+      "type": "string"
+    },
+    "keys": {
+      "additionalProperties": {
+        "items": {
+          "pattern": "^(Mod\\+)?(Alt\\+)?(Shift\\+)?([A-Z0-9]|[,./;'[\\]\\\\`=-]|Space|Enter|Escape|Tab|Delete|Backspace|Insert|Home|End|PageUp|PageDown|ArrowUp|ArrowDown|ArrowLeft|ArrowRight|F[1-9]|F1[0-2])$",
+          "type": "string"
+        },
+        "maxItems": 8,
+        "type": "array"
+      },
+      "propertyNames": {
+        "pattern": "^[a-z][A-Za-z0-9]*(\\.[a-z][A-Za-z0-9]*)*$",
+        "type": "string"
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "format",
+    "keys"
+  ],
+  "title": "scenity.keymap/1",
+  "type": "object"
+}

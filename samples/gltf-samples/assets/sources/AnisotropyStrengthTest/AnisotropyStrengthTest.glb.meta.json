@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M519A7QT6KZTVRVQSZBBRQ7F",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/khronos-cc0.yaml",
+  "settings": {},
+  "source": "AnisotropyStrengthTest.glb",
+  "tags": [
+    "gltf-sample",
+    "khr_materials_anisotropy"
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "duration": 8000,
+  "format": "scenity.sequence/1",
+  "id": "pickup",
+  "markers": {
+    "arrive": 3800,
+    "carry": 6500,
+    "lift": 5500,
+    "pickup": 5000,
+    "reach": 4500
+  },
+  "name": "Walk to the table and pick up the cup",
+  "rules": [
+    {
+      "args": {
+        "entity": "robot",
+        "goal": "rightHand"
+      },
+      "id": "pickup.gripAtPickup",
+      "level": "block",
+      "max": 0.02,
+      "metric": "ikError",
+      "note": "The right hand is on the grip of the cup when the robot picks it up.",
+      "provisional": true,
+      "scope": {
+        "kind": "marker",
+        "marker": "pickup"
+      },
+      "unit": "m"
+    },
+    {
+      "args": {
+        "arm": 0.75,
+        "entity": "robot",
+        "target": "entity:cup#grip"
+      },
+      "id": "pickup.cupInReach",
+      "level": "warn",
+      "metric": "reach",
+      "min": 0,
+      "note": "The cup is in the reach of the arm when the robot arrives at the table.",
+      "scope": {
+        "kind": "marker",
+        "marker": "arrive"
+      },
+      "unit": "m"
+    }
+  ],
+  "scene": "pickup",
+  "tracks": [
+    {
+      "entity": "robot",
+      "keys": [
+        {
+          "t": 4100,
+          "value": 0
+        },
+        {
+          "ease": "inOut",
+          "t": 4900,
+          "value": 1
+        },
+        {
+          "t": 7000,
+          "value": 1
+        },
+        {
+          "ease": "inOut",
+          "t": 7800,
+          "value": 0
+        }
+      ],
+      "kind": "property",
+      "name": "Reach",
+      "path": "character/ik/rightHand/weight"
+    },
+    {
+      "entity": "robot",
+      "keys": [
+        {
+          "t": 0,
+          "value": "entity:cup#grip"
+        },
+        {
+          "ease": "step",
+          "t": 5000,
+          "value": "entity:carry"
+        }
+      ],
+      "kind": "property",
+      "name": "Reach target",
+      "path": "character/ik/rightHand/target"
+    },
+    {
+      "entity": "carry",
+      "keys": [
+        {
+          "position": [-0.2, 0.55, -0.25],
+          "t": 5100
+        },
+        {
+          "ease": "inOut",
+          "position": [-0.22, 0.68, -0.4],
+          "t": 6000
+        }
+      ],
+      "kind": "transform",
+      "name": "Lift"
+    },
+    {
+      "entity": "robot",
+      "keys": [
+        {
+          "t": 3900,
+          "value": 0
+        },
+        {
+          "ease": "inOut",
+          "t": 4400,
+          "value": 0.8
+        },
+        {
+          "t": 5200,
+          "value": 0.8
+        },
+        {
+          "ease": "inOut",
+          "t": 6200,
+          "value": 0
+        }
+      ],
+      "kind": "property",
+      "name": "Look",
+      "path": "character/ik/look/weight"
+    },
+    {
+      "entity": "cup",
+      "keys": [
+        {
+          "t": 5000,
+          "to": "entity:robot#rightHand"
+        }
+      ],
+      "kind": "attach",
+      "name": "Pick up"
+    }
+  ]
+}

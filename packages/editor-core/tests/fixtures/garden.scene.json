@@ -1,0 +1,80 @@
+{
+  "entities": {
+    "bench": {
+      "components": {
+        "shape": {
+          "colour": "#8a6a4a",
+          "kind": "box",
+          "size": [1.6, 0.45, 0.4]
+        },
+        "socket": {
+          "points": {
+            "left": [-0.6, 0.45, 0],
+            "right": [0.6, 0.45, 0]
+          }
+        },
+        "transform": {
+          "position": [1.5, 0, -1]
+        }
+      },
+      "index": 1,
+      "name": "Bench",
+      "parent": null,
+      "tags": ["furniture"]
+    },
+    "lamp": {
+      "components": {
+        "light": {
+          "intensity": 2,
+          "target": "entity:table#top",
+          "type": "spot"
+        },
+        "transform": {
+          "position": [0, 1.2, 0]
+        }
+      },
+      "index": 0,
+      "name": "Lamp",
+      "parent": "table"
+    },
+    "sun": {
+      "components": {
+        "light": {
+          "intensity": 1.5,
+          "target": "entity:bench",
+          "type": "directional"
+        },
+        "transform": {
+          "position": [3, 6, 2]
+        }
+      },
+      "index": 2,
+      "name": "Sun",
+      "parent": null
+    },
+    "table": {
+      "components": {
+        "shape": {
+          "colour": "#c8b89a",
+          "kind": "box",
+          "size": [1.2, 0.75, 0.8]
+        },
+        "socket": {
+          "points": {
+            "top": [0, 0.75, 0]
+          }
+        },
+        "transform": {
+          "position": [0, 0, 0]
+        }
+      },
+      "index": 0,
+      "name": "Table",
+      "parent": null,
+      "tags": ["furniture"]
+    }
+  },
+  "format": "scenity.scene/1",
+  "id": "garden",
+  "name": "Garden"
+}

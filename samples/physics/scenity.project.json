@@ -1,0 +1,56 @@
+{
+  "assets": [],
+  "build": {
+    "budgets": {
+      "element": {
+        "gzipKB": 68,
+        "note": "64.2 KB on 2026-10-16, plus 5 %"
+      },
+      "lazy": {
+        "gzipKB": 2352,
+        "note": "2239.4 KB on 2026-10-16, plus 5 %. The worker build has its own chunk of the physics plugin (1.6 MB with the Rapier WASM as base64), and it counts here"
+      },
+      "player": {
+        "gzipKB": 66,
+        "note": "62.8 KB on 2026-10-16, plus 5 %"
+      },
+      "plugins": {
+        "gzipKB": 1717,
+        "note": "1634.6 KB on 2026-10-16, plus 5 %: the chunk of the physics plugin (Rapier, the deterministic compat build with its WASM as base64), the probe plugin and the shared queries chunk"
+      },
+      "worker": {
+        "gzipKB": 280,
+        "note": "265.9 KB on 2026-10-16, plus 5 %"
+      }
+    }
+  },
+  "format": "scenity.project/1",
+  "id": "physics",
+  "name": "Physics",
+  "plugins": [
+    "@scenity/physics-runtime",
+    "./plugins/probe"
+  ],
+  "release": {
+    "licences": {
+      "allow": [
+        "CC0-1.0"
+      ]
+    }
+  },
+  "scenes": [
+    "scenes/physics.scene.json"
+  ],
+  "sequences": [
+    "sequences/physics.sequence.json"
+  ],
+  "workbench": {
+    "surfaces": [
+      {
+        "id": "editor",
+        "kind": "scene",
+        "label": "Editor"
+      }
+    ]
+  }
+}

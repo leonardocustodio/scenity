@@ -1,0 +1,36 @@
+{
+  "name": "@scenity/i18n",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "UI text of Scenity (from CodeBlue): Fluent runtime, locale negotiation, pseudo-locale and formatting. The registry of the contract enums is in the plugin.",
+  "type": "module",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/i18n"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests"
+  },
+  "dependencies": {
+    "@fluent/bundle": "0.19.1",
+    "@fluent/langneg": "0.7.0",
+    "fluent-vue": "3.8.2",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@fluent/syntax": "0.19.0",
+    "@types/bun": "catalog:"
+  }
+}

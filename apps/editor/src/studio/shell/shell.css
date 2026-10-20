@@ -1,0 +1,661 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The editor window: the top row, the dock and the status row, in the tokens of the design system. The file uses
+   Tailwind 4 with no preflight, so the plain DOM parts of the page keep their own styles. It also uses the tokens and
+   the classes of the ui package, and the base styles of dockview. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "@scenity/ui/styles.css";
+@import "dockview-vue/dist/styles/dockview.css";
+@source "./";
+
+#studio {
+  position: fixed;
+  inset: 0;
+}
+
+.studio-shell {
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+  height: 100%;
+  font:
+    12px/1.4 system-ui,
+    sans-serif;
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-surface-base);
+}
+
+.studio-shell button {
+  font: inherit;
+}
+
+/* A plain DOM element in a place of the shell: the element itself takes part in the layout of the place. */
+.studio-adopt {
+  display: contents;
+}
+
+/* The title bar: the menus and the workspace tabs. */
+.studio-titlebar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-width: 0;
+  min-height: 34px;
+  padding: 2px 8px;
+  border-bottom: 1px solid var(--sc-color-border-subtle);
+  background: var(--sc-color-surface-base);
+}
+
+/* The menu bar in the title bar. */
+.studio-menubar {
+  display: flex;
+  flex: none;
+  gap: 2px;
+  align-items: center;
+}
+
+/* The toolbar: the file bar, the gizmo bar and the Layout menu. */
+.studio-top {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-width: 0;
+  min-height: 40px;
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--sc-color-border-subtle);
+  background: var(--sc-color-surface-sunken);
+}
+
+/* The History group of the toolbar (Undo, Redo). */
+.studio-history {
+  display: flex;
+  gap: 2px;
+  flex: none;
+}
+
+.studio-tool {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--sc-radius-4);
+  color: var(--sc-color-text-primary);
+  background: none;
+  cursor: pointer;
+}
+
+.studio-tool:hover:not(:disabled) {
+  background: var(--sc-color-surface-raised);
+}
+
+.studio-tool:focus-visible {
+  outline: 2px solid var(--sc-color-focus-ring);
+  outline-offset: 1px;
+}
+
+.studio-tool:disabled {
+  color: var(--sc-color-text-disabled);
+  cursor: default;
+}
+
+.studio-tool svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* The workspace tabs. */
+.studio-workspaces {
+  display: flex;
+  gap: 2px;
+  flex: none;
+}
+
+.studio-workspace {
+  height: 28px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: var(--sc-radius-4);
+  color: var(--sc-color-text-secondary);
+  background: transparent;
+  cursor: pointer;
+}
+
+.studio-workspace:hover {
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-surface-overlay);
+}
+
+.studio-workspace[aria-selected="true"] {
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-surface-raised);
+  box-shadow: inset 0 -2px 0 var(--sc-color-accent-brand);
+}
+
+.studio-region {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-width: 0;
+}
+
+/* The file bar gets smaller before the tools, and its path gets an ellipsis first. Its min-content width keeps the
+   scene tabs, the state and Save. */
+.studio-bar {
+  flex: 0 1000 auto;
+  min-width: min-content;
+  max-width: 60%;
+}
+
+.studio-tools {
+  flex: 0 1 auto;
+  overflow: hidden;
+}
+
+/* The clock group in the middle of the free room of the toolbar. */
+.studio-clock {
+  flex: none;
+  margin-inline: auto;
+}
+
+/* The status row: the status bar and the status region of the page. */
+.studio-statusrow {
+  display: flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 4px;
+  border-top: 1px solid var(--sc-color-border-subtle);
+  color: var(--sc-color-text-secondary);
+  background: var(--sc-color-surface-sunken);
+}
+
+.studio-statusbar {
+  display: flex;
+  flex: 1;
+  gap: 2px;
+  align-items: center;
+  min-width: 0;
+}
+
+.studio-status-gap {
+  flex: 1;
+}
+
+.studio-status-item {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  height: 22px;
+  padding: 0 6px;
+  border: 0;
+  border-radius: var(--sc-radius-4);
+  color: inherit;
+  background: transparent;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.studio-status-item:disabled {
+  cursor: default;
+}
+
+.studio-status-item:not(:disabled):hover,
+.studio-status-item:focus-visible {
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-surface-overlay);
+}
+
+.studio-status-item svg {
+  width: 12px;
+  height: 12px;
+}
+
+.studio-status-item[data-state="unsaved"],
+.studio-status-item[data-state="warn"] {
+  color: var(--sc-color-status-caution);
+}
+
+.studio-status-item[data-state="error"],
+.studio-status-item[data-state="fail"] {
+  color: var(--sc-color-status-negative);
+}
+
+/* The dock between the two rails of a small window. */
+.studio-body {
+  display: flex;
+  min-height: 0;
+}
+
+.studio-dock {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+/* The rail of a folded side: the tabs of its panels, from top to bottom, with the text on its side. */
+.studio-rail {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 2px;
+  width: 28px;
+  padding: 4px 2px;
+  overflow: hidden auto;
+  background: var(--sc-color-surface-sunken);
+}
+
+.studio-rail[data-side="left"] {
+  border-right: 1px solid var(--sc-color-border-subtle);
+}
+
+.studio-rail[data-side="right"] {
+  border-left: 1px solid var(--sc-color-border-subtle);
+}
+
+.studio-rail-tab {
+  display: flex;
+  flex: none;
+  gap: 6px;
+  align-items: center;
+  padding: 8px 0;
+  border: 0;
+  border-radius: var(--sc-radius-4);
+  color: var(--sc-color-text-secondary);
+  background: transparent;
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.studio-rail-tab:hover,
+.studio-rail-tab[aria-pressed="true"] {
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-surface-overlay);
+}
+
+.studio-rail-tab:focus-visible {
+  outline: 2px solid var(--sc-color-focus-ring);
+  outline-offset: -2px;
+}
+
+.studio-panel {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* A view that the dock hides (the other groups of a maximized group) shows nothing, also not the padding of a panel. */
+.studio-dock .dv-view:not(.visible) {
+  visibility: hidden;
+}
+
+/* A panel scrolls its own parts: the host does not scroll. */
+.studio-panel-host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* The base styles of the Vue panels (no preflight): each panel styles its parts with the classes of the ui package. */
+@layer base {
+  .studio-panel-host:not([data-plain]),
+  .studio-panel-host:not([data-plain]) *,
+  .studio-panel-host:not([data-plain]) ::before,
+  .studio-panel-host:not([data-plain]) ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+
+  .studio-panel-host:not([data-plain]) :is(button, input, select, textarea) {
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+  }
+
+  .studio-panel-host:not([data-plain]) button {
+    cursor: pointer;
+  }
+
+  .studio-panel-host:not([data-plain]) :is(ul, ol) {
+    list-style: none;
+  }
+}
+
+.studio-panel-note {
+  margin: 0;
+  padding: 12px;
+  color: var(--sc-color-text-secondary);
+}
+
+/* The Scene view: the canvas fills it. The parts over the canvas take their places in it
+   (../../scene/editLayout.css). */
+.studio-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--sc-color-surface-device);
+}
+
+.studio-view > #status,
+.studio-view > #scene-inspect {
+  position: absolute;
+}
+
+/* The tab of a panel. */
+.studio-tab {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  height: 100%;
+  padding: 0 4px 0 8px;
+  white-space: nowrap;
+}
+
+.studio-tab-icon {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
+.studio-tab-close {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--sc-radius-4);
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.studio-tab-close svg {
+  width: 12px;
+  height: 12px;
+}
+
+.studio-tab-close:hover {
+  background: var(--sc-color-surface-overlay);
+}
+
+/*
+ * A panel that stays drawn (the Scene view, the Game view) is in an overlay of the dock. The overlay of dockview
+ * has a transform and a paint containment, so it becomes the box of each fixed part of the view (the icons,
+ * the gizmo, the panes of the split view). The parts of the view use the window as their box, so the overlay has
+ * neither. Dockview places the overlay with left and top, not with the transform.
+ */
+.studio-dock .dv-render-overlay {
+  contain: none;
+  transform: none;
+  will-change: auto;
+}
+
+/* The group of the panel that has the focus shows a ring: the keys of its context act there. Dockview puts
+   "outline: none" on each group in its style attribute, thus a frame over the group draws the ring. */
+.studio-dock .dv-groupview {
+  position: relative;
+}
+
+.studio-dock .dv-groupview:focus-within::after {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  border: 2px solid var(--sc-color-focus-ring);
+  pointer-events: none;
+  content: "";
+}
+
+/* The theme of the dock: the dockview variables over the tokens. */
+.studio-dock-theme {
+  color-scheme: dark;
+  --dv-paneview-active-outline-color: var(--sc-color-focus-ring);
+  --dv-tabs-and-actions-container-font-size: 12px;
+  --dv-tabs-and-actions-container-height: 30px;
+  --dv-tabs-container-scrollbar-color: var(--sc-color-border-strong);
+  --dv-drag-over-background-color: color-mix(in oklab, var(--sc-color-accent-brand) 25%, transparent);
+  --dv-drag-over-border-color: var(--sc-color-accent-brand);
+  --dv-edge-dock-indicator-color: var(--sc-color-accent-brand);
+  --dv-icon-hover-background-color: var(--sc-color-surface-overlay);
+  --dv-floating-box-shadow: var(--sc-shadow-overlay);
+  --dv-floating-border: 1px solid var(--sc-color-border-strong);
+  --dv-overlay-z-index: 999;
+  --dv-tab-font-size: inherit;
+  --dv-border-radius: 0px;
+  --dv-tab-margin: 0;
+  --dv-sash-color: transparent;
+  --dv-active-sash-color: var(--sc-color-accent-brand);
+  --dv-active-sash-transition-duration: 0.1s;
+  --dv-active-sash-transition-delay: 0.3s;
+  --dv-spacing-padding: 0px;
+  --dv-tab-border-radius: 0px;
+  --dv-sash-border-radius: 0px;
+  --dv-dropdown-border-radius: 0px;
+  --dv-tab-close-icon-size: inherit;
+  --dv-floating-group-border: 1px solid var(--sc-color-border-strong);
+  --dv-drag-over-border: none;
+  --dv-floating-group-dragging-opacity: 0.5;
+  --dv-floating-titlebar-height: 22px;
+  --dv-floating-titlebar-background-color: var(--sc-color-surface-raised);
+  --dv-floating-titlebar-border-bottom: 1px solid var(--sc-color-border-subtle);
+  --dv-group-view-background-color: var(--sc-color-surface-base);
+  --dv-tabs-and-actions-container-background-color: var(--sc-color-surface-sunken);
+  --dv-activegroup-visiblepanel-tab-background-color: var(--sc-color-surface-base);
+  --dv-activegroup-hiddenpanel-tab-background-color: var(--sc-color-surface-sunken);
+  --dv-inactivegroup-visiblepanel-tab-background-color: var(--sc-color-surface-base);
+  --dv-inactivegroup-hiddenpanel-tab-background-color: var(--sc-color-surface-sunken);
+  --dv-tab-divider-color: var(--sc-color-border-subtle);
+  --dv-activegroup-visiblepanel-tab-color: var(--sc-color-text-primary);
+  --dv-activegroup-hiddenpanel-tab-color: var(--sc-color-text-secondary);
+  --dv-inactivegroup-visiblepanel-tab-color: var(--sc-color-text-secondary);
+  --dv-inactivegroup-hiddenpanel-tab-color: var(--sc-color-text-secondary);
+  --dv-separator-border: var(--sc-color-border-subtle);
+  --dv-paneview-header-border-color: var(--sc-color-border-subtle);
+  --dv-scrollbar-background-color: var(--sc-color-border-strong);
+  --dv-context-menu-background-color: var(--sc-color-surface-overlay);
+  --dv-context-menu-color: var(--sc-color-text-primary);
+}
+
+/* The line under the tabs of the active group. */
+.studio-dock-theme .dv-groupview.dv-active-group > .dv-tabs-and-actions-container {
+  box-shadow: inset 0 -2px 0 var(--sc-color-accent-brand);
+}
+
+/* The banners across the top of the dock. */
+.studio-banners {
+  display: flex;
+  flex-direction: column;
+}
+
+.studio-banner {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 32px;
+  padding: 2px 12px;
+  border-bottom: 1px solid var(--sc-color-border-subtle);
+  background: var(--sc-color-status-info-subtle);
+}
+
+.studio-banner[data-tone="caution"] {
+  background: var(--sc-color-status-caution-subtle);
+}
+
+.studio-banner[data-tone="play"] {
+  background: var(--sc-color-status-attention-subtle);
+}
+
+/* The toasts: bottom right, over the dock; they never take the focus. */
+.studio-toasts {
+  position: fixed;
+  right: 16px;
+  bottom: 40px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(360px, calc(100vw - 32px));
+  pointer-events: none;
+}
+
+.studio-toast {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: var(--sc-radius-8);
+  background: var(--sc-color-surface-overlay);
+  box-shadow: var(--sc-shadow-overlay);
+  pointer-events: auto;
+}
+
+.studio-toast[data-tone="alert"] {
+  border-color: var(--sc-color-status-negative);
+}
+
+.studio-toast-close {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.studio-toast-close svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* The search box at the top of the window. */
+.studio-search-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  padding-top: 64px;
+}
+
+.studio-search {
+  display: flex;
+  flex-direction: column;
+  width: min(720px, calc(100vw - 32px));
+  max-height: min(520px, calc(100vh - 96px));
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: var(--sc-radius-8);
+  background: var(--sc-color-surface-overlay);
+  box-shadow: var(--sc-shadow-overlay);
+}
+
+.studio-search-field {
+  min-height: 40px;
+  padding: 0 12px;
+  border: 0;
+  border-bottom: 1px solid var(--sc-color-border-subtle);
+  font: inherit;
+  font-size: 14px;
+  color: var(--sc-color-text-primary);
+  background: transparent;
+}
+
+.studio-search-field:focus-visible {
+  outline: 2px solid var(--sc-color-focus-ring);
+  outline-offset: -2px;
+}
+
+.studio-search-list {
+  margin: 0;
+  padding: 4px;
+  overflow: auto;
+  list-style: none;
+}
+
+.studio-search-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 28px;
+  padding: 2px 8px;
+  border-radius: var(--sc-radius-4);
+  cursor: pointer;
+}
+
+.studio-search-row[aria-selected="true"] {
+  background: var(--sc-color-surface-sunken);
+}
+
+.studio-search-row[aria-disabled="true"] {
+  color: var(--sc-color-text-secondary);
+  cursor: default;
+}
+
+.studio-search-kind {
+  flex: none;
+  width: 84px;
+  font-size: 11px;
+  color: var(--sc-color-text-secondary);
+  text-transform: uppercase;
+}
+
+.studio-search-label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.studio-search-detail {
+  flex: none;
+  max-width: 40%;
+  overflow: hidden;
+  color: var(--sc-color-text-secondary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.studio-search-empty {
+  padding: 8px;
+  color: var(--sc-color-text-secondary);
+}
+
+/* The callout of an agent on a part of the window: a ring around it and the text under it. */
+.studio-callout {
+  position: fixed;
+  z-index: 70;
+  border: 2px solid var(--sc-color-accent-brand);
+  border-radius: var(--sc-radius-4);
+  box-shadow: 0 0 0 4px var(--sc-color-studio-selection-subtle);
+  pointer-events: none;
+}
+
+.studio-callout-text {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  max-width: 320px;
+  margin: 0;
+  padding: 6px 8px;
+  border-radius: var(--sc-radius-4);
+  font-size: 12px;
+  color: var(--sc-color-text-on-accent);
+  background: var(--sc-color-accent-brand);
+}
+
+/* The part of the window that a step of the tour shows. */
+[data-tour-target] {
+  outline: 2px solid var(--sc-color-accent-brand);
+  outline-offset: -2px;
+}

@@ -1,0 +1,33 @@
+{
+  "name": "@scenity/physics-runtime",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "private": true,
+  "version": "0.1.0",
+  "description": "The runtime face of the physics plugin: the components physics.collider, physics.rigidBody and physics.character, and a system that steps a Rapier world (the deterministic build) at the fixed step of the systems and writes the transforms. It also holds the save and restore of the world for seeks, ray casts for other systems, and a character controller.",
+  "type": "module",
+  "sideEffects": [
+    "./src/rapier.ts"
+  ],
+  "exports": {
+    ".": "./src/runtime.ts",
+    "./components": "./src/components.ts",
+    "./queries": "./src/queries.ts",
+    "./sim": "./src/sim/simulation.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests"
+  },
+  "scenity": {
+    "runtime": "src/runtime.ts"
+  },
+  "dependencies": {
+    "@dimforge/rapier3d-deterministic-compat": "0.21.0",
+    "@scenity/runtime": "workspace:*",
+    "@scenity/scene": "workspace:*",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:"
+  }
+}

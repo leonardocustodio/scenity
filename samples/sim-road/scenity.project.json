@@ -1,0 +1,85 @@
+{
+  "assets": [
+    "assets"
+  ],
+  "build": {
+    "assets": {
+      "output": "build"
+    },
+    "budgets": {
+      "element": {
+        "gzipKB": 64,
+        "note": "60.8 KB on 2026-10-16, plus 5 %"
+      },
+      "lazy": {
+        "gzipKB": 641,
+        "note": "610.0 KB on 2026-10-16, plus 5 %"
+      },
+      "player": {
+        "gzipKB": 63,
+        "note": "59.4 KB on 2026-10-16, plus 5 %"
+      },
+      "plugins": {
+        "gzipKB": 4,
+        "note": "3.6 KB on 2026-10-16, plus 5 %: plugins.js and the chunk of the traffic plugin (the zod chunk that the main-thread cores share counts in lazy)"
+      },
+      "worker": {
+        "gzipKB": 277,
+        "note": "263.0 KB on 2026-10-16, plus 5 %"
+      }
+    }
+  },
+  "format": "scenity.project/1",
+  "id": "sim-road",
+  "name": "Road crossing",
+  "plugins": [
+    "@scenity/traffic-runtime"
+  ],
+  "quality": {
+    "budgets": {
+      "scene": {
+        "high": {
+          "drawCalls": 120,
+          "gpuP95Ms": 10,
+          "triangles": 40000,
+          "workP95Ms": 6
+        }
+      }
+    }
+  },
+  "release": {
+    "licences": {
+      "allow": [
+        "CC0-1.0"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "id": "road.carGap",
+      "level": "block",
+      "metric": "traffic.vehicleGap",
+      "min": 4,
+      "note": "A metric of the traffic plugin. The cars of the queue keep at least 4 m between their centres.",
+      "unit": "m"
+    }
+  ],
+  "scenes": [
+    "scenes/road.scene.json"
+  ],
+  "sequences": [
+    "sequences/rush.sequence.json"
+  ],
+  "workbench": {
+    "runs": {
+      "check": "scenity check"
+    },
+    "surfaces": [
+      {
+        "id": "editor",
+        "kind": "scene",
+        "label": "Editor"
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "clearcoat": 1,
+  "clearcoatRoughness": 0.08,
+  "colour": "#2a6fdb",
+  "format": "scenity.material/1",
+  "ior": 1.5,
+  "metalness": 0,
+  "name": "Blue clear coat",
+  "roughness": 0.55,
+  "sheen": 0.6,
+  "sheenColour": "#ffd2a8",
+  "sheenRoughness": 0.4,
+  "type": "physical"
+}

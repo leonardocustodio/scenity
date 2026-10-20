@@ -1,0 +1,681 @@
+{
+  "$id": "https://scenity.dev/schema/model-import.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "add": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "at": {
+            "items": false,
+            "maxItems": 3,
+            "minItems": 3,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "drop": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "model": {
+            "minLength": 1,
+            "pattern": "^(?![/\\\\])(?![A-Za-z]:)[^\\\\]*$",
+            "type": "string"
+          },
+          "roll": {
+            "type": "number"
+          },
+          "tilt": {
+            "type": "number"
+          },
+          "turn": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "model"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "bake": {
+      "additionalProperties": false,
+      "properties": {
+        "keep": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "roughness": {
+          "maximum": 1,
+          "minimum": 0,
+          "type": "number"
+        },
+        "size": {
+          "maximum": 16384,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "size"
+      ],
+      "type": "object"
+    },
+    "colors": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "color": {
+            "items": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "maxItems": 4,
+            "minItems": 3,
+            "type": "array"
+          },
+          "roughness": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "color"
+        ],
+        "type": "object"
+      },
+      "propertyNames": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "decimate": {
+      "anyOf": [
+        {
+          "exclusiveMinimum": 0,
+          "maximum": 1,
+          "type": "number"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "above": {
+              "default": 0,
+              "maximum": 9007199254740991,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "objects": {
+              "items": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "ratio": {
+              "exclusiveMinimum": 0,
+              "maximum": 1,
+              "type": "number"
+            },
+            "smooth": {
+              "type": "boolean"
+            },
+            "unsubdivide": {
+              "maximum": 9007199254740991,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        },
+        {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "above": {
+                "default": 0,
+                "maximum": 9007199254740991,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "objects": {
+                "items": {
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "ratio": {
+                "exclusiveMinimum": 0,
+                "maximum": 1,
+                "type": "number"
+              },
+              "smooth": {
+                "type": "boolean"
+              },
+              "unsubdivide": {
+                "maximum": 9007199254740991,
+                "minimum": 1,
+                "type": "integer"
+              }
+            },
+            "type": "object"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      ]
+    },
+    "drop": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "dropParts": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "max": {
+            "items": false,
+            "maxItems": 3,
+            "minItems": 3,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "min": {
+            "items": false,
+            "maxItems": 3,
+            "minItems": 3,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          }
+        },
+        "required": [
+          "min",
+          "max"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "fills": {
+      "additionalProperties": {
+        "items": {
+          "additionalProperties": false,
+          "properties": {
+            "color": {
+              "items": {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "maxItems": 4,
+              "minItems": 3,
+              "type": "array"
+            },
+            "rect": {
+              "items": {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "maxItems": 4,
+              "minItems": 4,
+              "type": "array"
+            }
+          },
+          "required": [
+            "rect",
+            "color"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "propertyNames": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "keep": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "lift": {
+      "additionalProperties": false,
+      "properties": {
+        "by": {
+          "type": "number"
+        },
+        "from": {
+          "type": "number"
+        },
+        "to": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "from",
+        "to",
+        "by"
+      ],
+      "type": "object"
+    },
+    "materials": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "clear": {
+            "additionalProperties": false,
+            "properties": {
+              "map": {
+                "minLength": 1,
+                "pattern": "^(?![/\\\\])(?![A-Za-z]:)[^\\\\]*$",
+                "type": "string"
+              },
+              "opacity": {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              "threshold": {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "required": [
+              "map"
+            ],
+            "type": "object"
+          },
+          "color": {
+            "minLength": 1,
+            "pattern": "^(?![/\\\\])(?![A-Za-z]:)[^\\\\]*$",
+            "type": "string"
+          },
+          "emissive": {
+            "minLength": 1,
+            "pattern": "^(?![/\\\\])(?![A-Za-z]:)[^\\\\]*$",
+            "type": "string"
+          },
+          "glossiness": {
+            "minLength": 1,
+            "pattern": "^(?![/\\\\])(?![A-Za-z]:)[^\\\\]*$",
+            "type": "string"
+          },
+          "metallic": {
+            "minLength": 1,
+            "pattern": "^(?![/\\\\])(?![A-Za-z]:)[^\\\\]*$",
+            "type": "string"
+          },
+          "metalness": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "normal": {
+            "minLength": 1,
+            "pattern": "^(?![/\\\\])(?![A-Za-z]:)[^\\\\]*$",
+            "type": "string"
+          },
+          "normalConvention": {
+            "enum": [
+              "opengl",
+              "directx"
+            ],
+            "type": "string"
+          },
+          "orm": {
+            "minLength": 1,
+            "pattern": "^(?![/\\\\])(?![A-Za-z]:)[^\\\\]*$",
+            "type": "string"
+          },
+          "recolor": {
+            "items": false,
+            "maxItems": 3,
+            "minItems": 3,
+            "prefixItems": [
+              {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "maximum": 1,
+                "minimum": 0,
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "rma": {
+            "minLength": 1,
+            "pattern": "^(?![/\\\\])(?![A-Za-z]:)[^\\\\]*$",
+            "type": "string"
+          },
+          "roughness": {
+            "minLength": 1,
+            "pattern": "^(?![/\\\\])(?![A-Za-z]:)[^\\\\]*$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "color",
+          "normal"
+        ],
+        "type": "object"
+      },
+      "propertyNames": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "maxTextureSize": {
+      "default": 2048,
+      "maximum": 16384,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "merge": {
+      "default": false,
+      "type": "boolean"
+    },
+    "origin": {
+      "anyOf": [
+        {
+          "enum": [
+            "source",
+            "base-centre",
+            "centre"
+          ],
+          "type": "string"
+        },
+        {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "type": "array"
+        }
+      ],
+      "default": "source"
+    },
+    "parts": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "objects": {
+            "items": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          "pivot": {
+            "items": false,
+            "maxItems": 3,
+            "minItems": 3,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "triangles": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "objects"
+        ],
+        "type": "object"
+      },
+      "propertyNames": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "scale": {
+      "anyOf": [
+        {
+          "const": "auto",
+          "type": "string"
+        },
+        {
+          "exclusiveMinimum": 0,
+          "type": "number"
+        }
+      ],
+      "default": "auto"
+    },
+    "sockets": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "at": {
+            "items": false,
+            "maxItems": 3,
+            "minItems": 3,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "size": {
+            "items": false,
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "tilt": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "at"
+        ],
+        "type": "object"
+      },
+      "propertyNames": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "splitParts": {
+      "additionalProperties": {
+        "items": {
+          "additionalProperties": false,
+          "properties": {
+            "max": {
+              "items": false,
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            "min": {
+              "items": false,
+              "maxItems": 3,
+              "minItems": 3,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            "minVertices": {
+              "maximum": 9007199254740991,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "min",
+            "max"
+          ],
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "propertyNames": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "surfaces": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "metallic": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          },
+          "roughness": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "propertyNames": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "textureSize": {
+      "additionalProperties": {
+        "maximum": 16384,
+        "minimum": 1,
+        "type": "integer"
+      },
+      "propertyNames": {
+        "enum": [
+          "color",
+          "normal",
+          "orm",
+          "emissive"
+        ],
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "up": {
+      "default": "y",
+      "enum": [
+        "y",
+        "z"
+      ],
+      "type": "string"
+    }
+  },
+  "title": "The settings of a model importer (gltf, glb, fbx, obj, blend)",
+  "type": "object"
+}

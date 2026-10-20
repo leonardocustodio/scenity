@@ -1,0 +1,42 @@
+# SPDX-License-Identifier: Apache-2.0
+# The Project settings window.
+
+project-sections = Sections
+project-settings-search = Search the fields
+project-settings-search-none = No field has these words.
+project-section-general = General
+project-section-assets = Assets
+project-section-plugins = Plugins
+project-section-rules = Rules
+project-section-quality = Quality
+project-section-build = Build
+project-section-release = Release
+project-section-workbench = Agents and runs
+project-section-editor = Editor
+project-section-other = Other
+project-editor-intro = The project values of the editor settings. A change goes into { $file } at once.
+project-required = Required
+project-add = Add
+project-add-item = Add an item
+project-remove-item = Remove the item
+project-remove-field = Remove { $name }
+project-key = The name
+project-new-key = A new name
+project-option = The kind of value
+project-json-error = This is not JSON. The value did not change.
+project-save = Save
+project-revert = Revert
+project-check-required = The field is required.
+project-check-type = The value is not of the correct kind.
+project-check-integer = The value must be a whole number.
+project-check-min-length = At least { $min } characters.
+project-check-max-length = At most { $max } characters.
+project-check-pattern = The value does not match { $pattern }.
+project-check-minimum = At least { $min }.
+project-check-above = More than { $min }.
+project-check-maximum = At most { $max }.
+project-check-choice = The value is not one of the choices.
+project-check-min-items = At least { $min } items.
+project-check-max-items = At most { $max } items.
+project-check-key = The name does not match { $pattern }.
+project-check-missing = { $path } is not in the project folder.

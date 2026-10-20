@@ -1,0 +1,124 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The inspector panel of the scene page: Tailwind 4 with no preflight (the page keeps its own styles), the
+   tokens and the classes of the ui package. The panel has its own small base rules instead of the preflight. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "@scenity/ui/styles.css";
+@source "./";
+
+@layer base {
+  :is(#scene-inspector, #scene-lighting),
+  :is(#scene-inspector, #scene-lighting) *,
+  :is(#scene-inspector, #scene-lighting) ::before,
+  :is(#scene-inspector, #scene-lighting) ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+
+  :is(#scene-inspector, #scene-lighting) button,
+  :is(#scene-inspector, #scene-lighting) input,
+  :is(#scene-inspector, #scene-lighting) select,
+  :is(#scene-inspector, #scene-lighting) textarea {
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+  }
+
+  :is(#scene-inspector, #scene-lighting) button {
+    cursor: pointer;
+  }
+}
+
+/* The Inspector panel of the dock of the studio shell; the panel fills it. */
+#scene-inspector,
+#scene-lighting {
+  height: 100%;
+  overflow: auto;
+  padding: 8px;
+  font-family: system-ui, sans-serif;
+}
+
+/* The live previews of the environment hints (EnvironmentPreview.vue). The values of the field come in as
+   custom properties; the colours of the user come from the values, the others are tokens. */
+.sc-env-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sc-env-preview[data-off] > div {
+  opacity: 0.4;
+}
+
+.sc-env-fog,
+.sc-env-bloom,
+.sc-env-ao,
+.sc-env-outline-stage {
+  height: 28px;
+  border: 1px solid var(--sc-color-border-subtle);
+  border-radius: var(--sc-radius-4);
+}
+
+.sc-env-fog {
+  display: flex;
+  overflow: hidden;
+}
+
+.sc-env-fog > span {
+  flex: 1;
+  background: color-mix(in srgb, var(--fog) calc(var(--share) * 100%), var(--background));
+}
+
+.sc-env-bloom {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--sc-color-surface-sunken);
+}
+
+.sc-env-bloom-sample {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: color-mix(
+    in srgb,
+    var(--sc-color-text-primary) calc(var(--brightness) * 100%),
+    var(--sc-color-surface-sunken)
+  );
+  box-shadow: 0 0 calc(2px + var(--spread) * 14px) calc(var(--glow) * 5px)
+    color-mix(in srgb, var(--sc-color-text-primary) calc(var(--glow) * 80%), transparent);
+}
+
+/* Two light walls meet in the middle; the shade darkens the corner and fades over the width of the radius. */
+.sc-env-ao {
+  background:
+    linear-gradient(
+      to right,
+      transparent calc(50% - var(--width) * 50%),
+      color-mix(in srgb, black calc(var(--dark) * 75%), transparent) 50%,
+      transparent calc(50% + var(--width) * 50%)
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in srgb, var(--sc-color-text-primary) 80%, transparent) 50%,
+      color-mix(in srgb, var(--sc-color-text-primary) 62%, transparent) 50%
+    );
+}
+
+.sc-env-outline-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--sc-color-surface-sunken);
+}
+
+.sc-env-outline {
+  width: 40px;
+  height: 14px;
+  background: var(--sc-color-surface-raised);
+  outline: calc(var(--thickness) * 1px) solid var(--colour);
+  opacity: calc(0.4 + var(--opacity) * 0.6);
+}

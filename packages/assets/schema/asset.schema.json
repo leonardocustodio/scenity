@@ -1,0 +1,157 @@
+{
+  "$defs": {
+    "__schema0": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "items": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "type": "array"
+        },
+        {
+          "additionalProperties": {
+            "$ref": "#/$defs/__schema0"
+          },
+          "propertyNames": {
+            "type": "string"
+          },
+          "type": "object"
+        }
+      ]
+    }
+  },
+  "$id": "https://scenity.dev/schema/asset.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "approvals": {
+      "items": {
+        "minLength": 1,
+        "pattern": "^(?![/\\\\])(?![A-Za-z]:)[^\\\\]*$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "build": {
+      "additionalProperties": false,
+      "properties": {
+        "codecs": {
+          "additionalProperties": false,
+          "properties": {
+            "color": {
+              "enum": [
+                "etc1s",
+                "uastc"
+              ],
+              "type": "string"
+            },
+            "data": {
+              "enum": [
+                "etc1s",
+                "uastc"
+              ],
+              "type": "string"
+            },
+            "environment": {
+              "enum": [
+                "rgbe"
+              ],
+              "type": "string"
+            },
+            "normal": {
+              "enum": [
+                "etc1s",
+                "uastc"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "lods": {
+          "maximum": 8,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "dependencies": {
+      "items": {
+        "pattern": "^asset:[A-Za-z0-9_.-]{1,128}$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "format": {
+      "const": "scenity.asset/1",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^[0-9A-Za-z_-]{10,26}$",
+      "type": "string"
+    },
+    "importer": {
+      "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)*$",
+      "type": "string"
+    },
+    "kind": {
+      "pattern": "^(model|skinned-model|animation|texture|material|environment|scene|prefab|audio|[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)+)$",
+      "type": "string"
+    },
+    "rig": {
+      "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)*$",
+      "type": "string"
+    },
+    "rights": {
+      "minLength": 1,
+      "pattern": "^(?![/\\\\])(?![A-Za-z]:)[^\\\\]*$",
+      "type": "string"
+    },
+    "settings": {
+      "additionalProperties": {
+        "$ref": "#/$defs/__schema0"
+      },
+      "propertyNames": {
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "source": {
+      "minLength": 1,
+      "pattern": "^(?![/\\\\])(?![A-Za-z]:)[^\\\\]*$",
+      "type": "string"
+    },
+    "tags": {
+      "items": {
+        "pattern": "^[A-Za-z0-9_.:-]{1,64}$",
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "format",
+    "id",
+    "kind",
+    "source",
+    "importer",
+    "settings",
+    "rights",
+    "tags"
+  ],
+  "title": "scenity.asset/1",
+  "type": "object"
+}

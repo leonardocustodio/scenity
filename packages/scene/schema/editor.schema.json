@@ -1,0 +1,199 @@
+{
+  "$id": "https://scenity.dev/schema/editor.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "autosave": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "seconds": {
+          "maximum": 600,
+          "minimum": 5,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "camera": {
+      "additionalProperties": false,
+      "properties": {
+        "flyFastSpeed": {
+          "exclusiveMinimum": 0,
+          "maximum": 100,
+          "type": "number"
+        },
+        "flySpeed": {
+          "exclusiveMinimum": 0,
+          "maximum": 100,
+          "type": "number"
+        },
+        "lookFastSpeed": {
+          "exclusiveMinimum": 0,
+          "maximum": 20,
+          "type": "number"
+        },
+        "lookSpeed": {
+          "exclusiveMinimum": 0,
+          "maximum": 20,
+          "type": "number"
+        },
+        "orbitSpeed": {
+          "maximum": 10,
+          "minimum": 0.1,
+          "type": "number"
+        },
+        "zoomSpeed": {
+          "maximum": 10,
+          "minimum": 0.1,
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "dock": {
+      "additionalProperties": false,
+      "properties": {
+        "height": {
+          "maximum": 60,
+          "minimum": 8,
+          "type": "number"
+        },
+        "tab": {
+          "pattern": "^[a-z][a-z0-9-]{0,31}$",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "format": {
+      "const": "scenity.editor/1",
+      "type": "string"
+    },
+    "layout": {
+      "additionalProperties": false,
+      "properties": {
+        "workspace": {
+          "pattern": "^[a-z][a-z0-9-]{0,31}$",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "notes": {
+      "additionalProperties": false,
+      "properties": {
+        "author": {
+          "maxLength": 80,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "recent": {
+      "additionalProperties": false,
+      "properties": {
+        "count": {
+          "maximum": 50,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "render": {
+      "additionalProperties": false,
+      "properties": {
+        "assets": {
+          "enum": [
+            "auto",
+            "build",
+            "source"
+          ],
+          "type": "string"
+        },
+        "audio": {
+          "type": "boolean"
+        },
+        "backend": {
+          "enum": [
+            "webgl",
+            "webgpu"
+          ],
+          "type": "string"
+        },
+        "gpuTimer": {
+          "type": "boolean"
+        },
+        "tier": {
+          "enum": [
+            "ultra",
+            "high",
+            "medium",
+            "low"
+          ],
+          "type": "string"
+        },
+        "worker": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "snaps": {
+      "additionalProperties": false,
+      "properties": {
+        "angleDegrees": {
+          "exclusiveMinimum": 0,
+          "maximum": 180,
+          "type": "number"
+        },
+        "grid": {
+          "exclusiveMinimum": 0,
+          "maximum": 100,
+          "type": "number"
+        },
+        "scale": {
+          "exclusiveMinimum": 0,
+          "maximum": 10,
+          "type": "number"
+        }
+      },
+      "type": "object"
+    },
+    "usage": {
+      "additionalProperties": false,
+      "properties": {
+        "log": {
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "view": {
+      "additionalProperties": false,
+      "properties": {
+        "grid": {
+          "type": "boolean"
+        },
+        "mode": {
+          "enum": [
+            "lit",
+            "unlit",
+            "wireframe",
+            "normals"
+          ],
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "format"
+  ],
+  "title": "scenity.editor/1",
+  "type": "object"
+}

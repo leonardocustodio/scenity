@@ -1,0 +1,347 @@
+{
+  "$id": "https://scenity.dev/schema/material.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "alphaTest": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "clearcoat": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "clearcoatRoughness": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "colour": {
+      "anyOf": [
+        {
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "type": "string"
+        },
+        {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            }
+          ],
+          "type": "array"
+        }
+      ]
+    },
+    "emissive": {
+      "anyOf": [
+        {
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "type": "string"
+        },
+        {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            }
+          ],
+          "type": "array"
+        }
+      ]
+    },
+    "emissiveIntensity": {
+      "minimum": 0,
+      "type": "number"
+    },
+    "flatShading": {
+      "type": "boolean"
+    },
+    "format": {
+      "const": "scenity.material/1",
+      "type": "string"
+    },
+    "ior": {
+      "maximum": 2.333,
+      "minimum": 1,
+      "type": "number"
+    },
+    "iridescence": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "maps": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "colorSpace": {
+            "enum": [
+              "srgb",
+              "linear"
+            ],
+            "type": "string"
+          },
+          "offset": {
+            "items": false,
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "repeat": {
+            "items": false,
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "texture": {
+            "pattern": "^asset:[A-Za-z0-9_.-]{1,128}$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "texture"
+        ],
+        "type": "object"
+      },
+      "propertyNames": {
+        "enum": [
+          "colour",
+          "normal",
+          "roughness",
+          "metalness",
+          "emissive",
+          "occlusion",
+          "alpha"
+        ],
+        "type": "string"
+      },
+      "type": "object"
+    },
+    "metalness": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "name": {
+      "maxLength": 200,
+      "minLength": 1,
+      "type": "string"
+    },
+    "normalScale": {
+      "items": false,
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "type": "array"
+    },
+    "opacity": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "roughness": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "sheen": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "sheenColour": {
+      "anyOf": [
+        {
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "type": "string"
+        },
+        {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            }
+          ],
+          "type": "array"
+        }
+      ]
+    },
+    "sheenRoughness": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "shininess": {
+      "minimum": 0,
+      "type": "number"
+    },
+    "side": {
+      "enum": [
+        "front",
+        "back",
+        "double"
+      ],
+      "type": "string"
+    },
+    "specular": {
+      "anyOf": [
+        {
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "type": "string"
+        },
+        {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            }
+          ],
+          "type": "array"
+        }
+      ]
+    },
+    "specularColour": {
+      "anyOf": [
+        {
+          "pattern": "^#[0-9a-fA-F]{6}$",
+          "type": "string"
+        },
+        {
+          "items": false,
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "maximum": 255,
+              "minimum": 0,
+              "type": "number"
+            }
+          ],
+          "type": "array"
+        }
+      ]
+    },
+    "specularIntensity": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "thickness": {
+      "minimum": 0,
+      "type": "number"
+    },
+    "transmission": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "type": {
+      "enum": [
+        "standard",
+        "physical",
+        "lambert",
+        "phong",
+        "unlit"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "format",
+    "type"
+  ],
+  "title": "scenity.material/1",
+  "type": "object"
+}

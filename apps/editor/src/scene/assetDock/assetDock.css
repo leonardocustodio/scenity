@@ -1,0 +1,46 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The asset dock of the scene page: Tailwind 4 with no preflight (the page keeps its own styles), and the tokens and
+   the classes of the ui package, as in the inspector panel. The dock has its own small base rules in place of the
+   preflight. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "@scenity/ui/styles.css";
+@source "./";
+@source "../../assetBrowser/";
+
+@layer base {
+  #scene-assets,
+  #scene-assets *,
+  #scene-assets ::before,
+  #scene-assets ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+
+  #scene-assets button,
+  #scene-assets input {
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+  }
+
+  #scene-assets button {
+    cursor: pointer;
+  }
+
+  #scene-assets ul {
+    list-style: none;
+  }
+}
+
+/* The Project panel of the dock of the studio shell (the asset browser). The panel fills the dock area. */
+#scene-assets {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  font-family: system-ui, sans-serif;
+}

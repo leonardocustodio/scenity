@@ -1,0 +1,255 @@
+{
+  "format": "scenity.manifest/2",
+  "tiers": [
+    "high",
+    "low"
+  ],
+  "records": [
+    {
+      "id": "01M4ZPXYG09E9YQGV2TVA22WQ4",
+      "kind": "model",
+      "lods": [
+        {
+          "tier": "high",
+          "file": "01M4ZPXYG09E9YQGV2TVA22WQ4.high.glb",
+          "triangles": 5626,
+          "meshes": 1,
+          "maxTextureSize": 1024
+        },
+        {
+          "tier": "low",
+          "file": "01M4ZPXYG09E9YQGV2TVA22WQ4.low.glb",
+          "triangles": 2813,
+          "meshes": 1,
+          "maxTextureSize": 512
+        }
+      ],
+      "files": [
+        {
+          "file": "01M4ZPXYG09E9YQGV2TVA22WQ4.high.glb",
+          "bytes": 700532,
+          "sha256": "a19ea21d27fcf287dbdce96dfa15f40f68033de9ea3e4797d681c83e8f30b4b3"
+        },
+        {
+          "file": "01M4ZPXYG09E9YQGV2TVA22WQ4.low.glb",
+          "bytes": 217460,
+          "sha256": "74c39793b22f690d25a4afd6e87df681cafacc67e06ebd72c2844197d6ba96a3"
+        }
+      ],
+      "bytes": 917992,
+      "sha256": "fa9113b1489158247a32561769a5086d6b1e27db0d65a160404d09c313deacae",
+      "stats": {},
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "01M4ZPXYG1X7ZZHAP928NPNNM6",
+      "kind": "model",
+      "lods": [
+        {
+          "tier": "high",
+          "file": "01M4ZPXYG1X7ZZHAP928NPNNM6.high.glb",
+          "triangles": 10404,
+          "meshes": 1,
+          "maxTextureSize": 1024
+        },
+        {
+          "tier": "low",
+          "file": "01M4ZPXYG1X7ZZHAP928NPNNM6.low.glb",
+          "triangles": 5202,
+          "meshes": 1,
+          "maxTextureSize": 512
+        }
+      ],
+      "files": [
+        {
+          "file": "01M4ZPXYG1X7ZZHAP928NPNNM6.high.glb",
+          "bytes": 648900,
+          "sha256": "af4643472663e88a4ea07cde7378fa13e009ea5f01be656aaf167287da8f9f22"
+        },
+        {
+          "file": "01M4ZPXYG1X7ZZHAP928NPNNM6.low.glb",
+          "bytes": 218560,
+          "sha256": "e3e1fbfb2049e68d5536d72e0403e973a27cd1ff60893660af1486b4b8075c50"
+        }
+      ],
+      "bytes": 867460,
+      "sha256": "9f62a73f09521d1629d6dc39a0683aa2803cf3c84077b6c0903f540176146863",
+      "stats": {},
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "01M4ZPXYG26FPR940EDPJM9FCD",
+      "kind": "model",
+      "lods": [
+        {
+          "tier": "high",
+          "file": "01M4ZPXYG26FPR940EDPJM9FCD.high.glb",
+          "triangles": 33902,
+          "meshes": 2,
+          "maxTextureSize": 1024
+        },
+        {
+          "tier": "low",
+          "file": "01M4ZPXYG26FPR940EDPJM9FCD.low.glb",
+          "triangles": 16950,
+          "meshes": 2,
+          "maxTextureSize": 512
+        }
+      ],
+      "files": [
+        {
+          "file": "01M4ZPXYG26FPR940EDPJM9FCD.high.glb",
+          "bytes": 995916,
+          "sha256": "a7d9035d364e232fd8cf94a840a61d311f33cc328352f13a37936fb7d15d9850"
+        },
+        {
+          "file": "01M4ZPXYG26FPR940EDPJM9FCD.low.glb",
+          "bytes": 373520,
+          "sha256": "0ca569098e4e0fe5b0101ed69981feb45e8d53ea0c8e497ab2f7f12c8458dbc0"
+        }
+      ],
+      "bytes": 1369436,
+      "sha256": "d6ac6a888476a5802dbc62d040a02c7cc794c7169e9ed22a82586efca6bd4c3f",
+      "stats": {},
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "01M4ZPXYG3Y8BZ2M38RFM5YFTB",
+      "kind": "model",
+      "lods": [
+        {
+          "tier": "high",
+          "file": "01M4ZPXYG3Y8BZ2M38RFM5YFTB.high.glb",
+          "triangles": 4240,
+          "meshes": 1,
+          "maxTextureSize": 1024
+        },
+        {
+          "tier": "low",
+          "file": "01M4ZPXYG3Y8BZ2M38RFM5YFTB.low.glb",
+          "triangles": 2120,
+          "meshes": 1,
+          "maxTextureSize": 512
+        }
+      ],
+      "files": [
+        {
+          "file": "01M4ZPXYG3Y8BZ2M38RFM5YFTB.high.glb",
+          "bytes": 619076,
+          "sha256": "22f4ccff846836d5b083cb08b3f27f0c4abf6eb90b5cb5bcacef14ca33bcd3b0"
+        },
+        {
+          "file": "01M4ZPXYG3Y8BZ2M38RFM5YFTB.low.glb",
+          "bytes": 186860,
+          "sha256": "e776b7d31363726e91864a7dfbccacb32163afa384e603f48449f369379d55ce"
+        }
+      ],
+      "bytes": 805936,
+      "sha256": "3f3fbf4a99ca4a719d9462206b827a9f4cfffc71dfef68764a327630ac2e4b39",
+      "stats": {},
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "01M4ZPXYG4RJ5N3H08MAHE8762",
+      "kind": "model",
+      "lods": [
+        {
+          "tier": "high",
+          "file": "01M4ZPXYG4RJ5N3H08MAHE8762.high.glb",
+          "triangles": 182,
+          "meshes": 1,
+          "maxTextureSize": 1024
+        },
+        {
+          "tier": "low",
+          "file": "01M4ZPXYG4RJ5N3H08MAHE8762.low.glb",
+          "triangles": 182,
+          "meshes": 1,
+          "maxTextureSize": 512
+        }
+      ],
+      "files": [
+        {
+          "file": "01M4ZPXYG4RJ5N3H08MAHE8762.high.glb",
+          "bytes": 627148,
+          "sha256": "a8e5c21b1ac0215f4db945a68792f597eba7022659f6c7d4323b832d3356951c"
+        },
+        {
+          "file": "01M4ZPXYG4RJ5N3H08MAHE8762.low.glb",
+          "bytes": 180216,
+          "sha256": "0ffbc426a14d1b92740250ae6af86eef69e3e2dc4936e559229b6e34b43e0548"
+        }
+      ],
+      "bytes": 807364,
+      "sha256": "bcf14889d80fa3bd65a11c833e4f5ffa3132679576a091578420e086d9db0ca2",
+      "stats": {},
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "01M4ZPXYG50NAV41FPDE38QB7E",
+      "kind": "model",
+      "lods": [
+        {
+          "tier": "high",
+          "file": "01M4ZPXYG50NAV41FPDE38QB7E.high.glb",
+          "triangles": 952,
+          "meshes": 1,
+          "maxTextureSize": 1024
+        },
+        {
+          "tier": "low",
+          "file": "01M4ZPXYG50NAV41FPDE38QB7E.low.glb",
+          "triangles": 476,
+          "meshes": 1,
+          "maxTextureSize": 512
+        }
+      ],
+      "files": [
+        {
+          "file": "01M4ZPXYG50NAV41FPDE38QB7E.high.glb",
+          "bytes": 554560,
+          "sha256": "8ceee6a5909b1d5d1ce3b37b5b8e525e0c2d5baa405cbff066b637cc09a1ae25"
+        },
+        {
+          "file": "01M4ZPXYG50NAV41FPDE38QB7E.low.glb",
+          "bytes": 171748,
+          "sha256": "2a8f2226ec673ec3b0a3105b9534b8c16468701c3c41b35784a322d903da66d7"
+        }
+      ],
+      "bytes": 726308,
+      "sha256": "a205edecb3d2037588145f5acd817006be78d3e14b1f07350fb1ecbdc26c4c08",
+      "stats": {},
+      "tags": [
+        "furniture"
+      ]
+    },
+    {
+      "id": "01M4ZPXYG6S1R09H3MDXC5VXKQ",
+      "kind": "environment",
+      "lods": [],
+      "files": [
+        {
+          "file": "01M4ZPXYG6S1R09H3MDXC5VXKQ.hdr",
+          "bytes": 1615248,
+          "sha256": "e7cfda5f4e98e623db12b8bfd0184e048488e4855d9c83e2751fb44a32e80c45"
+        }
+      ],
+      "bytes": 1615248,
+      "sha256": "bd1bafa274e34b2a7cf194a8864a0d9efa50101a96c39c5bc1e6b9e82c0ee1cf",
+      "stats": {},
+      "tags": [
+        "studio"
+      ]
+    }
+  ]
+}

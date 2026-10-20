@@ -1,0 +1,114 @@
+{
+  "format": "scenity.manifest/2",
+  "tiers": [
+    "high",
+    "low"
+  ],
+  "records": [
+    {
+      "id": "01M53P23WWNS14QZKG5J43RZZD",
+      "kind": "material",
+      "lods": [],
+      "files": [
+        {
+          "file": "01M53P23WWNS14QZKG5J43RZZD.material.json",
+          "bytes": 101,
+          "sha256": "545ebf6c5ded7fce3db5c21e335fe95d266af79d9b0c7e8db0ec0120c55f9395"
+        }
+      ],
+      "bytes": 101,
+      "sha256": "fe32a58a2d9210cd48e356e5b483c06a66eb15442afc4e144eccaa2f656d811b",
+      "stats": {
+        "type": "unlit"
+      },
+      "tags": [
+        "lamp",
+        "lamp:red"
+      ]
+    },
+    {
+      "id": "01M53P23Z85MGCQ7JBWBSN6NS3",
+      "kind": "material",
+      "lods": [],
+      "files": [
+        {
+          "file": "01M53P23Z85MGCQ7JBWBSN6NS3.material.json",
+          "bytes": 103,
+          "sha256": "1ca6e370e89ec18ed05b68563e481bcd8ed7f419d426e9615bae92d42644f364"
+        }
+      ],
+      "bytes": 103,
+      "sha256": "9a80989468d91ead8c3d122e5934bb4f5e89987c02debc5007c3a70fe9603dd0",
+      "stats": {
+        "type": "unlit"
+      },
+      "tags": [
+        "lamp",
+        "lamp:amber"
+      ]
+    },
+    {
+      "id": "01M53P241NQ1ANQ41JG3XMB2EZ",
+      "kind": "material",
+      "lods": [],
+      "files": [
+        {
+          "file": "01M53P241NQ1ANQ41JG3XMB2EZ.material.json",
+          "bytes": 103,
+          "sha256": "0438d1bf09200fb7e496f083b3cc6d5a5a4f57ab59714aed81596eaa3b8ee44e"
+        }
+      ],
+      "bytes": 103,
+      "sha256": "4b0d0c23e884941c716b49367e3e9aca4f667af43b853adf5907e9fd73f6cdb7",
+      "stats": {
+        "type": "unlit"
+      },
+      "tags": [
+        "lamp",
+        "lamp:green"
+      ]
+    },
+    {
+      "id": "01M53P24442E2ZTC3GC3F7E0RX",
+      "kind": "material",
+      "lods": [],
+      "files": [
+        {
+          "file": "01M53P24442E2ZTC3GC3F7E0RX.material.json",
+          "bytes": 102,
+          "sha256": "e486d2da1c816a831a3887f414a8ed36a227824bf64a0373f25516f6e1d2813b"
+        }
+      ],
+      "bytes": 102,
+      "sha256": "08d7e883e4fd28f3e8b7fabb98c406e2442c90a9a9366eb4299ca3b1853135e6",
+      "stats": {
+        "type": "unlit"
+      },
+      "tags": [
+        "lamp",
+        "lamp:walk"
+      ]
+    },
+    {
+      "id": "01M53P246F7816WAZMP2WERR8Q",
+      "kind": "material",
+      "lods": [],
+      "files": [
+        {
+          "file": "01M53P246F7816WAZMP2WERR8Q.material.json",
+          "bytes": 102,
+          "sha256": "0ebb5871fa422e49405f53816eec395aa10a3afd8607b652ae2c8046a7fffc62"
+        }
+      ],
+      "bytes": 102,
+      "sha256": "749998d0d6bfdd02e9bed685bf11e1d461c466a4b67cc9a4426cc8291e5ade42",
+      "stats": {
+        "type": "unlit"
+      },
+      "tags": [
+        "lamp",
+        "lamp:wait"
+      ]
+    }
+  ]
+}

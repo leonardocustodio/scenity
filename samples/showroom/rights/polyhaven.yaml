@@ -1,0 +1,42 @@
+# Rights record of the art of the showroom sample. All files come from Poly Haven (https://polyhaven.com) under CC0 1.0.
+# CC0 asks for no attribution, but the sample names the authors anyway.
+name: polyhaven
+source: "Poly Haven, https://polyhaven.com (downloaded 2026-10-15 through api.polyhaven.com, glTF at 1k and an HDRI at 1k)"
+author: "The Poly Haven artists of each asset (see assets)"
+licence: "CC0 1.0 Universal (public domain dedication)"
+spdx: CC0-1.0 # the release gate checks it against release.licences.allow of scenity.project.json
+licenceUrl: https://creativecommons.org/publicdomain/zero/1.0/
+licenceDate: 2026-10-15
+allowedUse: [web, unreal, public]
+webDelivery: true
+attribution: null
+assets:
+  - id: WoodenTable_01
+    name: "Wooden Table 01"
+    authors: ["Ethan Place"]
+    page: https://polyhaven.com/a/WoodenTable_01
+  - id: ArmChair_01
+    name: "Arm Chair 01"
+    authors: ["Kirill Sannikov"]
+    page: https://polyhaven.com/a/ArmChair_01
+  - id: CoffeeTable_01
+    name: "Coffee Table 01"
+    authors: ["Fernando Quinn"]
+    page: https://polyhaven.com/a/CoffeeTable_01
+  - id: Shelf_01
+    name: "Shelf 01"
+    authors: ["Gabriel Radić"]
+    page: https://polyhaven.com/a/Shelf_01
+  - id: Lantern_01
+    name: "Lantern 01"
+    authors: ["Rajil Jose Macatangay"]
+    page: https://polyhaven.com/a/Lantern_01
+  - id: Ottoman_01
+    name: "Ottoman 01"
+    authors: ["Caspian Fortune"]
+    page: https://polyhaven.com/a/Ottoman_01
+  - id: studio_small_09
+    name: "Studio Small 09"
+    authors: ["Sergej Majboroda"]
+    page: https://polyhaven.com/a/studio_small_09
+changes: "None. The build of the sample makes the optimized outputs."

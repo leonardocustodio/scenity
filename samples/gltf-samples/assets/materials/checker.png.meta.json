@@ -1,0 +1,16 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M51H7Y1XMRMVK5YYEV7E6Z79",
+  "importer": "png",
+  "kind": "texture",
+  "rights": "../../rights/scenity-cc0.yaml",
+  "settings": {
+    "colorSpace": "srgb",
+    "maxSize": 256,
+    "role": "color"
+  },
+  "source": "checker.png",
+  "tags": [
+    "material-sample"
+  ]
+}

@@ -1,0 +1,14 @@
+# Bun settings of the workspace at the repo root.
+
+[install]
+# Each package sees only its own dependencies (no phantom dependencies).
+linker = "isolated"
+# CI installs with --frozen-lockfile; local installs keep the text lockfile bun.lock up to date.
+exact = true
+
+[test]
+# After the last test file, remove the temporary folders that the host tests left. Fail when a host process of the run
+# is still alive. The preload does nothing for a run without host tests.
+preload = ["./packages/workbench-host/tests/hygiene.preload.ts"]
+# The Playwright specs of the editor face of a plugin (*.spec.ts) run with its Playwright configs, not with Bun.
+pathIgnorePatterns = ["plugins/*/editor/tests/e2e/**", "plugins/*/editor/tests/gallery/**"]

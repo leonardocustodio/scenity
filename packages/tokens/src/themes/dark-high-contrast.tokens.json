@@ -1,0 +1,119 @@
+{
+  "$description": "High-contrast overrides of the dark theme.",
+  "color": {
+    "surface": {
+      "device": {
+        "$type": "color",
+        "$value": "{color.black}"
+      },
+      "base": {
+        "$type": "color",
+        "$value": "{color.graphite.990}"
+      },
+      "raised": {
+        "$type": "color",
+        "$value": "{color.graphite.950}"
+      },
+      "sunken": {
+        "$type": "color",
+        "$value": "{color.black}"
+      },
+      "overlay": {
+        "$type": "color",
+        "$value": "{color.graphite.920}"
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{color.sand.200}"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{color.graphite.500}"
+      },
+      "on-accent": {
+        "$type": "color",
+        "$value": "{color.black}"
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{color.blue.250}"
+      }
+    },
+    "border": {
+      "subtle": {
+        "$type": "color",
+        "$value": "{color.graphite.600}"
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "{color.graphite.300}"
+      }
+    },
+    "accent": {
+      "brand": {
+        "$type": "color",
+        "$value": "{color.blue.250}"
+      },
+      "brand-hover": {
+        "$type": "color",
+        "$value": "{color.blue.100}"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "{color.blue.250}"
+      }
+    },
+    "focus": {
+      "ring": {
+        "$type": "color",
+        "$value": "{color.blue.250}"
+      },
+      "ring-inner": {
+        "$type": "color",
+        "$value": "{color.black}"
+      }
+    },
+    "status": {
+      "info": {
+        "$type": "color",
+        "$value": "{color.blue.250}"
+      },
+      "positive": {
+        "$type": "color",
+        "$value": "{color.emerald.200}"
+      },
+      "caution": {
+        "$type": "color",
+        "$value": "{color.amber.300}"
+      },
+      "attention": {
+        "$type": "color",
+        "$value": "{color.orange.300}"
+      },
+      "negative": {
+        "$type": "color",
+        "$value": "{color.rose.200}"
+      },
+      "neutral": {
+        "$type": "color",
+        "$value": "{color.sand.200}"
+      }
+    }
+  },
+  "focus": {
+    "width": {
+      "$type": "dimension",
+      "$value": {
+        "value": 3,
+        "unit": "px"
+      },
+      "$description": "Wider focus ring in high contrast."
+    }
+  }
+}

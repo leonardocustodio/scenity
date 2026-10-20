@@ -1,0 +1,93 @@
+Scenity
+Copyright 2026 Leonardo Amoroso Custodio
+
+Licensed under the Apache License, Version 2.0 (see LICENSE). You may not use the files of this repository
+except in compliance with the License. Unless required by applicable law or agreed to in writing, the software is
+distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations under the License.
+
+Scenity includes and uses third-party software. Each part keeps its own licence. `bun tools/licences.ts` checks the
+licence of each installed package. It also checks that this file names each runtime dependency of the workspace
+packages.
+
+Code that a built page holds (vendored files)
+---------------------------------------------
+
+- packages/render/src/vendor/GLTFLoader.js: a trimmed copy of three/examples/jsm/loaders/GLTFLoader.js from
+  three.js. MIT licence, copyright 2010-2026 three.js authors.
+- packages/render/src/vendor/basis_transcoder.js: the Basis Universal transcoder with its Emscripten glue, from
+  three/examples/jsm/libs/basis. Apache License 2.0, copyright 2019-2026 Binomial LLC.
+- packages/render/src/vendor/GLTFLoaderGeneric.js: the generic trimmed copy of three/examples/jsm/loaders/GLTFLoader.js
+  from three.js. MIT licence, copyright 2010-2026 three.js authors.
+- packages/render/src/vendor/draco_wasm_wrapper.js: the Draco decoder with its Emscripten glue, from
+  three/examples/jsm/libs/draco/gltf, as an ES module. The scene pages also serve its draco_decoder.wasm.
+  Apache License 2.0, copyright 2017 The Draco Authors (Google LLC).
+- packages/render/src/dracoDecoder.ts: the geometry code of three/examples/jsm/loaders/DRACOLoader.js, in TypeScript.
+  MIT licence, copyright 2010-2026 three.js authors.
+- packages/render/src/smaaPassGl.ts: the SMAAPass of three/examples/jsm/postprocessing/SMAAPass.js with one change
+  (the area and search textures through createImageBitmap). MIT licence, copyright 2010-2026 three.js authors.
+- packages/render/src/aoDenoise.ts: the PoissonDenoiseShader of three/examples/jsm/shaders/PoissonDenoiseShader.js as
+  a node. MIT licence, copyright 2010-2026 three.js authors.
+
+Runtime dependencies (the "dependencies" of the workspace packages)
+-------------------------------------------------------------------
+
+| Package                                 | Licence    | Copyright                                                                       |
+| --------------------------------------- | ---------- | ------------------------------------------------------------------------------- |
+| three                                   | MIT        | three.js authors                                                                |
+| vue                                     | MIT        | Yuxi (Evan) You and Vue contributors                                            |
+| pinia                                   | MIT        | Eduardo San Martin Morote                                                       |
+| @pinia/colada                           | MIT        | Eduardo San Martin Morote                                                       |
+| @vueuse/core                            | MIT        | Anthony Fu                                                                      |
+| reka-ui                                 | MIT        | the Reka UI authors                                                             |
+| class-variance-authority                | Apache-2.0 | Joe Bell                                                                        |
+| clsx                                    | MIT        | Luke Edwards                                                                    |
+| tailwind-merge                          | MIT        | Dany Castillo                                                                   |
+| tw-animate-css                          | MIT        | Luca Bockmann                                                                   |
+| lucide-vue-next                         | ISC        | Lucide contributors                                                             |
+| dockview-vue, dockview, dockview-core   | MIT        | mathuo (the dockview authors)                                                   |
+| @fluent/bundle                          | Apache-2.0 | Mozilla Foundation                                                              |
+| @fluent/langneg                         | Apache-2.0 | Mozilla Foundation                                                              |
+| fluent-vue                              | MIT        | Ivan Demchuk                                                                    |
+| @xterm/xterm                            | MIT        | the xterm.js authors                                                            |
+| @xterm/addon-fit                        | MIT        | the xterm.js authors                                                            |
+| zod                                     | MIT        | Colin McDonnell                                                                 |
+| @modelcontextprotocol/sdk               | MIT        | Anthropic, PBC                                                                  |
+| @anthropic-ai/claude-agent-sdk          | Commercial | Anthropic, PBC (the workbench host only)                                        |
+| @dimforge/rapier3d-deterministic-compat | Apache-2.0 | Sébastien Crozet, Dimforge EURL (the physics plugin; the WASM of Rapier inside) |
+
+Build tools (not in a built page)
+---------------------------------
+
+The asset tools (@scenity/assets) list the glTF, mesh, texture and validator packages as their
+dependencies. The asset tools run in Bun and Blender, so no built page holds them. The editor (@scenity/editor)
+lists Vite and its plugins as its dependencies for the dev server of `scenity dev`.
+
+| Package                    | Licence      | Copyright                                         |
+| -------------------------- | ------------ | ------------------------------------------------- |
+| meshoptimizer              | MIT          | Arseny Kapoulkine                                 |
+| @gltf-transform/core       | MIT          | Don McCurdy                                       |
+| @gltf-transform/extensions | MIT          | Don McCurdy                                       |
+| @gltf-transform/functions  | MIT          | Don McCurdy                                       |
+| jpeg-js                    | BSD-3-Clause | Eugene Ware                                       |
+| @jsquash/webp              | Apache-2.0   | Jamie Sinclair; the codecs of Squoosh, Google LLC |
+| @jsquash/avif              | Apache-2.0   | Jamie Sinclair; the codecs of Squoosh, Google LLC |
+| ktx2-encoder               | MIT          | the ktx2-encoder team                             |
+| gltf-validator             | Apache-2.0   | The Khronos Group                                 |
+| fast-png                   | MIT          | the image-js team                                 |
+| tailwindcss                | MIT          | Tailwind Labs                                     |
+| @tailwindcss/vite          | MIT          | Tailwind Labs                                     |
+| vite                       | MIT          | VoidZero and Vite                                 |
+| @vitejs/plugin-vue         | MIT          | Yuxi (Evan) You and Vite contributors             |
+
+Art
+---
+
+This repository holds only free art. The bought art of the resus room (the Reallusion, ActorCore and other packs) and
+its rights records are in the CodeBlue repository with the resus plugin. `bun run check:restricted-art`
+(tools/restricted-art.ts) fails on a rights record of a restricted licence. The samples under samples/ use free art
+(CC0 or CC BY). Each sample lists its sources in its rights records. samples/gltf-samples holds models of the Khronos
+glTF-Sample-Assets under CC0 1.0 and CC BY 4.0. samples/gltf-samples/rights/khronos-cc-by.yaml has the attribution
+text of the CC BY models. The showroom template of the CLI (packages/cli/templates/showroom) holds the documents of
+samples/showroom with its CC0 rights record. `scenity create --template showroom` downloads the CC0 source files from
+Poly Haven.

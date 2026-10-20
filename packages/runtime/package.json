@@ -1,0 +1,79 @@
+{
+  "name": "@scenity/runtime",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The runtime of Scenity: the host client, the worker, the protocol, SceneCore, the scene builder, the systems, the plugin host and the clock.",
+  "type": "module",
+  "files": [
+    "src",
+    "schema",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/runtime"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "./src/worker/entries/*.ts"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./clock": "./src/clock.ts",
+    "./scheduler": "./src/scheduler.ts",
+    "./systems": "./src/systems/index.ts",
+    "./plugins": "./src/plugins/index.ts",
+    "./pluginSystems": "./src/plugins/systems.ts",
+    "./definePlugin": "./src/plugins/define.ts",
+    "./inputMap": "./src/plugins/inputMap.ts",
+    "./tuning": "./src/tuning.ts",
+    "./protocol": "./src/protocol.ts",
+    "./worker": "./src/worker/handler.ts",
+    "./client": "./src/client.ts",
+    "./backend": "./src/host/backend.ts",
+    "./backendRules": "./src/host/backendRules.ts",
+    "./probe": "./src/host/probe.ts",
+    "./adapt": "./src/adapt.ts",
+    "./camera": "./src/camera.ts",
+    "./framing": "./src/framing.ts",
+    "./lights": "./src/scene/lights.ts",
+    "./hostMath": "./src/hostMath.ts",
+    "./gpuProbe": "./src/worker/gpuProbe.ts",
+    "./gpuProbeWorker": "./src/worker/entries/gpuProbe.ts",
+    "./sceneCore": "./src/core/sceneCore.ts",
+    "./anchors": "./src/core/anchors.ts",
+    "./documentCore": "./src/core/documentCore.ts",
+    "./documentPlugins": "./src/core/documentPlugins.ts",
+    "./systemSteps": "./src/core/systemSteps.ts",
+    "./documentClient": "./src/documentClient.ts",
+    "./pageInput": "./src/pageInput.ts",
+    "./documentCoreGl": "./src/core/documentCoreGl.ts",
+    "./documentCoreGpu": "./src/core/documentCoreGpu.ts",
+    "./documentMessages": "./src/worker/documentMessages.ts",
+    "./sceneWorker": "./src/worker/sceneWorker.ts",
+    "./documentWorker": "./src/worker/documentWorker.ts",
+    "./manifest": "./src/manifest.ts",
+    "./manifestAssets": "./src/scene/manifestAssets.ts",
+    "./materials": "./src/scene/materials.ts",
+    "./subTargets": "./src/scene/subTargets.ts",
+    "./instancing": "./src/scene/instancing.ts",
+    "./audio": "./src/audio/player.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests"
+  },
+  "dependencies": {
+    "@scenity/character": "workspace:*",
+    "@scenity/render": "workspace:*",
+    "@scenity/scene": "workspace:*",
+    "three": "catalog:"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:",
+    "@types/three": "catalog:"
+  }
+}

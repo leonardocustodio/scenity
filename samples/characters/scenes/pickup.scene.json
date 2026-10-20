@@ -1,0 +1,389 @@
+{
+  "entities": {
+    "carry": {
+      "components": {
+        "transform": {
+          "position": [-0.2, 0.55, -0.25]
+        }
+      },
+      "index": 10,
+      "name": "Carry point",
+      "parent": null
+    },
+    "cup": {
+      "components": {
+        "shape": {
+          "colour": "#c8402e",
+          "kind": "cylinder",
+          "roughness": 0.5,
+          "size": [0.08, 0.1, 0.08]
+        },
+        "socket": {
+          "points": {
+            "grip": [0, 0, -0.05]
+          }
+        },
+        "transform": {
+          "position": [-0.2, 0.55, -0.2]
+        }
+      },
+      "index": 8,
+      "name": "Cup",
+      "parent": null,
+      "tags": [
+        "prop"
+      ]
+    },
+    "fill": {
+      "components": {
+        "light": {
+          "colour": "#dfe8ff",
+          "groundColour": "#6a6460",
+          "intensity": 0.8,
+          "type": "hemisphere"
+        },
+        "transform": {
+          "position": [0, 3, 0]
+        }
+      },
+      "index": 3,
+      "name": "Fill light",
+      "parent": null
+    },
+    "floor": {
+      "components": {
+        "shape": {
+          "colour": "#9aa3ad",
+          "kind": "plane",
+          "roughness": 0.9,
+          "size": [8, 0, 5]
+        },
+        "transform": {
+          "position": [0, 0, 0]
+        }
+      },
+      "index": 0,
+      "name": "Floor",
+      "parent": null
+    },
+    "front": {
+      "components": {
+        "camera": {
+          "fov": 45,
+          "target": [-0.7, 0.3, 0]
+        },
+        "transform": {
+          "position": [-0.5, 3.4, 4.8]
+        }
+      },
+      "index": 6,
+      "name": "Front",
+      "parent": null
+    },
+    "robot": {
+      "components": {
+        "animator": {
+          "controller": {
+            "layers": [
+              {
+                "name": "base",
+                "start": "idle",
+                "states": {
+                  "idle": {
+                    "motion": {
+                      "clip": "Idle",
+                      "kind": "clip"
+                    }
+                  },
+                  "walk": {
+                    "events": [
+                      {
+                        "at": 0.05,
+                        "name": "step.l"
+                      },
+                      {
+                        "at": 0.55,
+                        "name": "step.r"
+                      }
+                    ],
+                    "motion": {
+                      "kind": "blend1d",
+                      "parameter": "speed",
+                      "points": [
+                        {
+                          "at": 1,
+                          "clip": "Walking"
+                        },
+                        {
+                          "at": 2,
+                          "clip": "Running"
+                        }
+                      ]
+                    }
+                  },
+                  "wave": {
+                    "events": [
+                      {
+                        "at": 0.5,
+                        "name": "wave"
+                      }
+                    ],
+                    "loop": false,
+                    "motion": {
+                      "clip": "Wave",
+                      "kind": "clip"
+                    }
+                  }
+                },
+                "transitions": [
+                  {
+                    "duration": 250,
+                    "from": "idle",
+                    "to": "walk",
+                    "when": [
+                      {
+                        "op": "gt",
+                        "parameter": "speed",
+                        "value": 0.1
+                      }
+                    ]
+                  },
+                  {
+                    "duration": 250,
+                    "from": "walk",
+                    "to": "idle",
+                    "when": [
+                      {
+                        "op": "le",
+                        "parameter": "speed",
+                        "value": 0.1
+                      }
+                    ]
+                  },
+                  {
+                    "duration": 200,
+                    "from": "idle",
+                    "to": "wave",
+                    "when": [
+                      {
+                        "op": "eq",
+                        "parameter": "wave",
+                        "value": true
+                      }
+                    ]
+                  },
+                  {
+                    "duration": 300,
+                    "exitTime": 1,
+                    "from": "wave",
+                    "to": "idle"
+                  }
+                ]
+              }
+            ],
+            "parameters": {
+              "speed": {
+                "default": 0,
+                "type": "number"
+              },
+              "wave": {
+                "default": false,
+                "type": "bool"
+              }
+            }
+          },
+          "footLock": {
+            "legs": [
+              {
+                "end": "LowerLegL_end",
+                "follow": "FootL",
+                "lower": "LowerLegL",
+                "upper": "UpperLegL"
+              },
+              {
+                "end": "LowerLegR_end",
+                "follow": "FootR",
+                "lower": "LowerLegR",
+                "upper": "UpperLegR"
+              }
+            ]
+          }
+        },
+        "character": {
+          "bones": {
+            "chest": "Torso",
+            "head": "Head",
+            "hips": "Hips",
+            "leftHand": "Palm2.L",
+            "leftLowerArm": "LowerArm.L",
+            "leftUpperArm": "UpperArm.L",
+            "neck": "Neck",
+            "rightHand": "Palm2.R",
+            "rightLowerArm": "LowerArm.R",
+            "rightUpperArm": "UpperArm.R",
+            "spine": "Abdomen"
+          },
+          "ik": {
+            "look": {
+              "target": "entity:cup",
+              "weight": 0
+            },
+            "rightHand": {
+              "target": "entity:cup#grip",
+              "weight": 0
+            }
+          },
+          "rig": "none"
+        },
+        "locomotion": {
+          "walks": [
+            {
+              "t": 500,
+              "to": "entity:spot"
+            }
+          ]
+        },
+        "model": {
+          "asset": "asset:01M516A3N0NZMAT1HRKD41JEZ4"
+        },
+        "transform": {
+          "position": [-2, 0, 1],
+          "rotation": [0, 0.707107, 0, 0.707107],
+          "scale": [0.32, 0.32, 0.32]
+        }
+      },
+      "index": 1,
+      "name": "Robot",
+      "parent": null,
+      "tags": [
+        "character"
+      ]
+    },
+    "side": {
+      "components": {
+        "camera": {
+          "fov": 40,
+          "target": [-0.1, 0.6, -0.5]
+        },
+        "transform": {
+          "position": [-2.1, 1.7, 0.9]
+        }
+      },
+      "index": 9,
+      "name": "Side",
+      "parent": null
+    },
+    "spot": {
+      "components": {
+        "standPoint": {
+          "facing": 3.141593
+        },
+        "transform": {
+          "position": [0, 0, -0.75]
+        }
+      },
+      "index": 5,
+      "name": "Spot behind the table",
+      "parent": null
+    },
+    "spot-mark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#e0b84a",
+          "kind": "cylinder",
+          "size": [0.5, 0.01, 0.5]
+        },
+        "transform": {
+          "position": [0, 0.005, 0]
+        }
+      },
+      "index": 0,
+      "name": "Spot mark",
+      "parent": "spot"
+    },
+    "sun": {
+      "components": {
+        "light": {
+          "colour": "#fff4e5",
+          "intensity": 2.2,
+          "shadow": true,
+          "shadowCamera": {
+            "bottom": -8,
+            "far": 40,
+            "left": -8,
+            "near": 0.1,
+            "right": 8,
+            "top": 8
+          },
+          "type": "directional"
+        },
+        "transform": {
+          "position": [3, 5, 4],
+          "rotation": [-0.403058, 0.272532, -0.127084, 0.864361]
+        }
+      },
+      "index": 2,
+      "name": "Key light",
+      "parent": null
+    },
+    "table": {
+      "components": {
+        "obstacle": {},
+        "shape": {
+          "colour": "#8a6a4a",
+          "kind": "box",
+          "roughness": 0.7,
+          "size": [1, 0.5, 0.6]
+        },
+        "transform": {
+          "position": [0, 0.25, 0]
+        }
+      },
+      "index": 4,
+      "name": "Table",
+      "parent": null,
+      "tags": [
+        "furniture"
+      ]
+    },
+    "top": {
+      "components": {
+        "camera": {
+          "fov": 45,
+          "target": [-0.8, 0, 0.1]
+        },
+        "transform": {
+          "position": [-0.8, 6.5, 0.7]
+        }
+      },
+      "index": 7,
+      "name": "Top",
+      "parent": null
+    }
+  },
+  "environment": {
+    "background": "#202833",
+    "exposure": 1,
+    "toneMapping": "aces"
+  },
+  "format": "scenity.scene/1",
+  "id": "pickup",
+  "rules": [
+    {
+      "args": {
+        "entity": "robot",
+        "joints": [
+          "FootL",
+          "FootR"
+        ]
+      },
+      "id": "pickup.feetOnFloor",
+      "level": "block",
+      "max": 0.01,
+      "metric": "belowFloor",
+      "note": "The feet of the robot stay on the floor (node names: the rig profile maps only the arms).",
+      "unit": "m"
+    }
+  ]
+}

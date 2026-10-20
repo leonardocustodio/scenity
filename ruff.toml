@@ -1,0 +1,5 @@
+# The ruff settings of the Blender scripts (packages/assets/blender, samples/characters/tools; `bun run lint:py`).
+# Blender 5.2 has Python 3.13. The line length is the print width of .prettierrc.json.
+# The rule set is the default set of the ruff version that package.json pins (ruff 0.16.10).
+target-version = "py313"
+line-length = 120

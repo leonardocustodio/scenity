@@ -1,0 +1,40 @@
+<!doctype html>
+<!--
+  A plain HTML page that plays the walkthrough sample with the web component of @scenity/player. Two robots walk their
+  routes around the furniture of a plaza. One robot lifts a parcel. They meet, wave and nod, and a mannequin looks at
+  them (the sequence `meet`). The project has no plugins. The scene dev server serves it at
+  /player/walkthrough.html.
+-->
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Walkthrough player</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #000000;
+        overflow: hidden;
+      }
+      scenity-player {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <scenity-player
+      data-testid="player"
+      src="/projects/walkthrough/scenity.project.json"
+      scene="scenes/plaza.scene.json"
+      sequence="sequences/meet.sequence.json"
+      camera="front"
+      autoplay
+      loop
+    ></scenity-player>
+    <script type="module" src="/src/player/element.ts"></script>
+  </body>
+</html>

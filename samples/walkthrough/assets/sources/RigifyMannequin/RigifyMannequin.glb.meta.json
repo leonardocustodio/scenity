@@ -1,0 +1,15 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M518N6P8VF0Z4WYHJHSRFZHB",
+  "importer": "gltf",
+  "kind": "skinned-model",
+  "rig": "rigify",
+  "rights": "../../../rights/scenity-own-work.yaml",
+  "settings": {},
+  "source": "RigifyMannequin.glb",
+  "tags": [
+    "character",
+    "humanoid",
+    "rigged"
+  ]
+}

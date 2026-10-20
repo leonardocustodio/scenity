@@ -1,0 +1,21 @@
+{
+  "limits": {
+    "max-lines": 500,
+    "max-lines-per-function": 80
+  },
+  "files": ["apps/editor/src/**/*.{ts,vue}"],
+  "exceptions": [
+    {
+      "path": "apps/editor/src/core/useLabApi.ts",
+      "rule": "max-lines-per-function"
+    },
+    {
+      "path": "apps/editor/src/core/useLabCamera.ts",
+      "rule": "max-lines-per-function"
+    },
+    {
+      "path": "apps/editor/src/core/useLabTake.ts",
+      "rule": "max-lines-per-function"
+    }
+  ]
+}

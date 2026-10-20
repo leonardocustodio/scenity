@@ -1,0 +1,320 @@
+{
+  "entities": {
+    "armchair": {
+      "components": {
+        "model": {
+          "asset": "asset:01M4ZPXYG09E9YQGV2TVA22WQ4"
+        },
+        "obstacle": {
+          "footprint": "bounds"
+        },
+        "transform": {
+          "position": [-2.5, 0, 0.3],
+          "rotation": [0, 0.707107, 0, 0.707107]
+        }
+      },
+      "index": 5,
+      "name": "Armchair",
+      "parent": null,
+      "tags": [
+        "furniture",
+        "seat"
+      ]
+    },
+    "coffee-table": {
+      "components": {
+        "model": {
+          "asset": "asset:01M4ZPXYG1X7ZZHAP928NPNNM6"
+        },
+        "obstacle": {
+          "footprint": "bounds"
+        },
+        "transform": {
+          "position": [-1.2, 0, 0.3],
+          "rotation": [0, 0.707107, 0, 0.707107]
+        }
+      },
+      "index": 7,
+      "name": "Coffee table",
+      "parent": null,
+      "tags": [
+        "furniture"
+      ]
+    },
+    "fill": {
+      "components": {
+        "light": {
+          "colour": "#dfe8ff",
+          "groundColour": "#8a7a66",
+          "intensity": 0.6,
+          "type": "hemisphere"
+        },
+        "transform": {
+          "position": [0, 3, 0]
+        }
+      },
+      "index": 9,
+      "name": "Fill light",
+      "parent": null
+    },
+    "floor": {
+      "components": {
+        "shape": {
+          "colour": "#b9a98f",
+          "kind": "plane",
+          "roughness": 0.9,
+          "size": [8, 0, 6]
+        },
+        "transform": {
+          "position": [0, 0, 0]
+        }
+      },
+      "index": 0,
+      "name": "Floor",
+      "parent": null
+    },
+    "front": {
+      "components": {
+        "camera": {
+          "fov": 45,
+          "target": [-0.2, 0.6, -0.4]
+        },
+        "transform": {
+          "position": [0.4, 1.7, 4.6]
+        }
+      },
+      "index": 10,
+      "name": "Front camera",
+      "parent": null
+    },
+    "lantern": {
+      "components": {
+        "model": {
+          "asset": "asset:01M4ZPXYG26FPR940EDPJM9FCD"
+        },
+        "transform": {
+          "position": [0.35, 0.549, 0.05]
+        }
+      },
+      "index": 0,
+      "name": "Lantern",
+      "parent": "table",
+      "tags": [
+        "decor"
+      ]
+    },
+    "lantern-light": {
+      "components": {
+        "light": {
+          "colour": [255, 214, 160],
+          "intensity": 1.5,
+          "range": 4,
+          "shadow": false,
+          "type": "point"
+        },
+        "transform": {
+          "position": [0, 0.15, 0]
+        }
+      },
+      "index": 0,
+      "name": "Lantern light",
+      "parent": "lantern"
+    },
+    "ottoman": {
+      "components": {
+        "model": {
+          "asset": "asset:01M4ZPXYG3Y8BZ2M38RFM5YFTB"
+        },
+        "transform": {
+          "position": [-1.1, 0, 1.75],
+          "rotation": [0, 0.087156, 0, 0.996195]
+        }
+      },
+      "index": 6,
+      "name": "Ottoman",
+      "parent": null,
+      "tags": [
+        "furniture",
+        "seat"
+      ]
+    },
+    "shelf": {
+      "components": {
+        "model": {
+          "asset": "asset:01M4ZPXYG4RJ5N3H08MAHE8762"
+        },
+        "obstacle": {
+          "footprint": "bounds"
+        },
+        "transform": {
+          "position": [-2.2, 0, -2.85]
+        }
+      },
+      "index": 4,
+      "name": "Shelf",
+      "parent": null,
+      "tags": [
+        "furniture"
+      ]
+    },
+    "sun": {
+      "components": {
+        "light": {
+          "colour": "#fff4e5",
+          "intensity": 2.2,
+          "shadow": true,
+          "shadowCamera": {
+            "bottom": -8,
+            "far": 40,
+            "left": -8,
+            "near": 0.1,
+            "right": 8,
+            "top": 8
+          },
+          "type": "directional"
+        },
+        "transform": {
+          "position": [3, 5, 4],
+          "rotation": [-0.403058, 0.272532, -0.127084, 0.864361]
+        }
+      },
+      "index": 8,
+      "name": "Key light",
+      "parent": null
+    },
+    "table": {
+      "components": {
+        "model": {
+          "asset": "asset:01M4ZPXYG50NAV41FPDE38QB7E"
+        },
+        "obstacle": {
+          "footprint": "bounds"
+        },
+        "socket": {
+          "points": {
+            "top": [0, 0.549, 0]
+          }
+        },
+        "transform": {
+          "position": [1.6, 0, -0.9]
+        }
+      },
+      "index": 3,
+      "name": "Dining table",
+      "parent": null,
+      "tags": [
+        "furniture"
+      ]
+    },
+    "top": {
+      "components": {
+        "camera": {
+          "fov": 50,
+          "target": [0, 0, 0]
+        },
+        "transform": {
+          "position": [0, 7.5, 0.01]
+        }
+      },
+      "index": 11,
+      "name": "Top camera",
+      "parent": null
+    },
+    "wall-back": {
+      "components": {
+        "shape": {
+          "colour": "#e8e4dc",
+          "kind": "box",
+          "roughness": 0.95,
+          "size": [8, 3, 0.1]
+        },
+        "transform": {
+          "position": [0, 1.5, -3]
+        }
+      },
+      "index": 1,
+      "name": "Back wall",
+      "parent": null
+    },
+    "wall-left": {
+      "components": {
+        "shape": {
+          "colour": "#dcd6cb",
+          "kind": "box",
+          "roughness": 0.95,
+          "size": [6, 3, 0.1]
+        },
+        "transform": {
+          "position": [-4, 1.5, 0],
+          "rotation": [0, 0.707107, 0, 0.707107]
+        }
+      },
+      "index": 2,
+      "name": "Left wall",
+      "parent": null
+    }
+  },
+  "environment": {
+    "background": "#1a2433",
+    "exposure": 1,
+    "map": "asset:01M4ZPXYG6S1R09H3MDXC5VXKQ",
+    "mapIntensity": 0.5,
+    "toneMapping": "aces"
+  },
+  "format": "scenity.scene/1",
+  "id": "main",
+  "name": "Showroom",
+  "poster": "../posters/main.webp",
+  "rules": [
+    {
+      "args": {
+        "from": "entity:table#top",
+        "to": "entity:lantern"
+      },
+      "id": "showroom.lanternOnTable",
+      "level": "block",
+      "max": 0.45,
+      "metric": "distance",
+      "note": "The lantern stands on the table top.",
+      "unit": "m"
+    },
+    {
+      "args": {
+        "tier": "high"
+      },
+      "id": "showroom.triangles",
+      "level": "block",
+      "metric": "triangleBudget",
+      "note": "The scene budget of the high tier in the project.",
+      "unit": "triangles"
+    },
+    {
+      "args": {
+        "a": [
+          "armchair",
+          "coffee-table",
+          "ottoman",
+          "shelf",
+          "table"
+        ]
+      },
+      "id": "showroom.ottomanClear",
+      "level": "warn",
+      "max": 0.01,
+      "metric": "overlap",
+      "note": "The ottoman does not go into the other furniture.",
+      "scope": {
+        "entity": "ottoman",
+        "kind": "entity"
+      },
+      "unit": "m"
+    },
+    {
+      "id": "showroom.assetRights",
+      "level": "warn",
+      "metric": "assetRights",
+      "note": "Each asset of the scene can go into a release. The scene page has no release state (n/a there).",
+      "unit": "count"
+    }
+  ]
+}

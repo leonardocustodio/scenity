@@ -1,0 +1,43 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The places of the parts over the canvas in the edit mode (`edit=1`). The canvas fills the
+   Scene view panel of the studio shell (`.studio-view`); the parts over it take a place in that panel. A page without
+   `edit=1` has no shell and does not use these rules, so its frames do not change.
+
+     +--------------------------------------------------+
+     | viewport bar                                     |
+     | layout tools                                     |
+     | layout readout                                   |
+     |                       the canvas                 |
+     | status line                 proposals, preview   |
+     +--------------------------------------------------+
+
+   Each part reads its place from a variable of the panel: an `inset` value (top, right, bottom, left). */
+.studio-view {
+  --scene-gap: 8px;
+  --scene-bar-height: 32px;
+  /* The height of the top overlays of the Scene view (a head and one row of controls). */
+  --scene-overlay-height: 56px;
+  --scene-panel-top: var(--scene-gap);
+  --scene-panel-bottom: var(--scene-gap);
+  --scene-free-left: var(--scene-gap);
+  --scene-free-right: var(--scene-gap);
+  --scene-layout-top: calc(var(--scene-panel-top) + var(--scene-overlay-height) + var(--scene-gap));
+  --scene-area-layout: var(--scene-layout-top) auto auto var(--scene-free-left);
+  --scene-area-layout-readout: calc(var(--scene-layout-top) + var(--scene-bar-height) + var(--scene-gap)) auto auto
+    var(--scene-free-left);
+  /* The parts go over the overlay canvases of the gizmo and the layout tools; the notices go over all. */
+  --scene-z-panel: 1;
+  --scene-z-notice: 2;
+}
+
+/* The status line and the inspect panel of the page go into the Scene view. */
+.studio-view > #status {
+  left: var(--scene-free-left);
+  bottom: var(--scene-panel-bottom);
+}
+
+.studio-view > #scene-inspect {
+  z-index: var(--scene-z-panel);
+  inset: var(--scene-panel-top) var(--scene-free-right) var(--scene-panel-bottom) auto;
+  width: min(560px, calc(100% - var(--scene-free-left) - var(--scene-free-right)));
+}

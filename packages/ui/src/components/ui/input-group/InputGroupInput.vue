@@ -1,0 +1,17 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<script setup lang="ts">
+import type { HTMLAttributes } from "vue";
+import { cn } from "../../../lib/utils";
+import { Input } from "../input";
+
+const props = defineProps<{
+  class?: HTMLAttributes["class"];
+}>();
+</script>
+
+<template>
+  <Input
+    data-slot="input-group-control"
+    :class="cn('flex-1 rounded-none border-0 bg-transparent shadow-none ', props.class)"
+  />
+</template>

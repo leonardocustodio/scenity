@@ -1,0 +1,70 @@
+{
+  "entities": {
+    "cart": {
+      "components": {
+        "model": {
+          "asset": "asset:01J9Z6Q3R9"
+        },
+        "obstacle": {
+          "footprint": "bounds"
+        },
+        "socket": {
+          "points": {
+            "top": [0, 0.92, 0]
+          }
+        },
+        "transform": {
+          "position": [0.85, 0, -1.45],
+          "rotation": [0, -0.115, 0, 0.993],
+          "scale": [1, 1, 1]
+        }
+      },
+      "index": 0,
+      "name": "Cart",
+      "parent": null,
+      "tags": [
+        "movable"
+      ]
+    },
+    "front": {
+      "components": {
+        "camera": {
+          "fov": 45,
+          "target": [0, 1, 0]
+        },
+        "transform": {
+          "position": [0, 1.6, 3]
+        }
+      },
+      "index": 1,
+      "parent": null
+    },
+    "lamp": {
+      "components": {
+        "light": {
+          "colour": [255, 236, 210],
+          "intensity": 2,
+          "range": 4,
+          "shadow": false,
+          "type": "point"
+        },
+        "transform": {
+          "position": [0, 0.92, 0]
+        }
+      },
+      "index": 0,
+      "parent": "cart"
+    }
+  },
+  "environment": {
+    "background": "#1a2433",
+    "exposure": 1,
+    "map": "asset:01J9Z6Q3R8",
+    "toneMapping": "aces"
+  },
+  "format": "scenity.scene/1",
+  "id": "main",
+  "variants": {
+    "wide": "variants/wide.overrides.json"
+  }
+}

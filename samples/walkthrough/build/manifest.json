@@ -1,0 +1,88 @@
+{
+  "format": "scenity.manifest/2",
+  "tiers": [
+    "high",
+    "low"
+  ],
+  "records": [
+    {
+      "id": "01M516A3N0NZMAT1HRKD41JEZ4",
+      "kind": "model",
+      "lods": [
+        {
+          "tier": "high",
+          "file": "01M516A3N0NZMAT1HRKD41JEZ4.high.glb",
+          "triangles": 3237,
+          "meshes": 14,
+          "maxTextureSize": 0
+        },
+        {
+          "tier": "low",
+          "file": "01M516A3N0NZMAT1HRKD41JEZ4.low.glb",
+          "triangles": 3231,
+          "meshes": 14,
+          "maxTextureSize": 0
+        }
+      ],
+      "files": [
+        {
+          "file": "01M516A3N0NZMAT1HRKD41JEZ4.high.glb",
+          "bytes": 175504,
+          "sha256": "723a7037e922d654f15d84e64d157524d9bb8dd07acab9da68f4bb5017fddcdb"
+        },
+        {
+          "file": "01M516A3N0NZMAT1HRKD41JEZ4.low.glb",
+          "bytes": 175476,
+          "sha256": "8bcc136ad17826d113cdd4acb2c0883b934b784fe5a3f375085ff1cbf0481e47"
+        }
+      ],
+      "bytes": 350980,
+      "sha256": "6f6e266cdfca9a4f71a97b8a315d6959ac25d064f7cdb64fb451420a7ddf333e",
+      "stats": {},
+      "tags": [
+        "character",
+        "rigged"
+      ]
+    },
+    {
+      "id": "01M518N6P8VF0Z4WYHJHSRFZHB",
+      "kind": "skinned-model",
+      "lods": [
+        {
+          "tier": "high",
+          "file": "01M518N6P8VF0Z4WYHJHSRFZHB.high.glb",
+          "triangles": 2928,
+          "meshes": 1,
+          "maxTextureSize": 0
+        },
+        {
+          "tier": "low",
+          "file": "01M518N6P8VF0Z4WYHJHSRFZHB.low.glb",
+          "triangles": 1464,
+          "meshes": 1,
+          "maxTextureSize": 0
+        }
+      ],
+      "files": [
+        {
+          "file": "01M518N6P8VF0Z4WYHJHSRFZHB.high.glb",
+          "bytes": 50104,
+          "sha256": "376dc8da612d579e1418627f87b8812c0f6a66ad1c7176036c8dfb2f9847fa6e"
+        },
+        {
+          "file": "01M518N6P8VF0Z4WYHJHSRFZHB.low.glb",
+          "bytes": 43732,
+          "sha256": "e53fd8837e08b81a02075073090512f69c4c01dbd8eef20d325e3d3785f7dd7d"
+        }
+      ],
+      "bytes": 93836,
+      "sha256": "54bd7481e0909ced51432c7cb6b2f316eea76d5c790e1d731412fd751890754c",
+      "stats": {},
+      "tags": [
+        "character",
+        "humanoid",
+        "rigged"
+      ]
+    }
+  ]
+}

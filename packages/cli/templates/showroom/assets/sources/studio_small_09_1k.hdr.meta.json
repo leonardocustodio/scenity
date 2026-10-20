@@ -1,0 +1,12 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M4ZPXYG6S1R09H3MDXC5VXKQ",
+  "importer": "hdr",
+  "kind": "environment",
+  "rights": "../../rights/polyhaven.yaml",
+  "settings": {},
+  "source": "studio_small_09_1k.hdr",
+  "tags": [
+    "studio"
+  ]
+}

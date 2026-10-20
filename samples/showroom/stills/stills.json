@@ -1,0 +1,41 @@
+{
+  "$comment": "Written by the stills of @scenity/assets. Do not edit.",
+  "format": "scenity.stills/1",
+  "stills": {
+    "01M4ZPXYG09E9YQGV2TVA22WQ4": {
+      "inputs": "c1232f88b108d088475afff8b163d5512d3a12b9229db4e530f0bd46265cea09",
+      "renderer": "dad5972e592b7b76",
+      "made": "2026-10-16"
+    },
+    "01M4ZPXYG1X7ZZHAP928NPNNM6": {
+      "inputs": "fba052776564ce685c70f0338c33f7ea3be18c6a0a6e787a53dbad219246126c",
+      "renderer": "dad5972e592b7b76",
+      "made": "2026-10-16"
+    },
+    "01M4ZPXYG26FPR940EDPJM9FCD": {
+      "inputs": "9d9c1e35b97ac7016f41b1ef9b2266c2ac91019aadbf98351579ba6f9774a883",
+      "renderer": "dad5972e592b7b76",
+      "made": "2026-10-16"
+    },
+    "01M4ZPXYG3Y8BZ2M38RFM5YFTB": {
+      "inputs": "134f33b9716a3b8ab359172d3cfff87ac517fa5f30cabd3213a015effe0ff253",
+      "renderer": "dad5972e592b7b76",
+      "made": "2026-10-16"
+    },
+    "01M4ZPXYG4RJ5N3H08MAHE8762": {
+      "inputs": "22cd1f48bc5a2d428c4f9e64028af1d468610c9b10ba17fe7963db8561c7f875",
+      "renderer": "dad5972e592b7b76",
+      "made": "2026-10-16"
+    },
+    "01M4ZPXYG50NAV41FPDE38QB7E": {
+      "inputs": "7271bec06a7b3a64613fbc803d09044d4c3464127a38c9a1ef5cb2e4b26620b9",
+      "renderer": "dad5972e592b7b76",
+      "made": "2026-10-16"
+    },
+    "01M4ZPXYG6S1R09H3MDXC5VXKQ": {
+      "inputs": "4913ffd28778ab1d6252cf4d902f70be36516212f5c80ebd6694587a42ff4b25",
+      "renderer": "dad5972e592b7b76",
+      "made": "2026-10-16"
+    }
+  }
+}

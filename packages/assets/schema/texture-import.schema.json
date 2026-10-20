@@ -1,0 +1,39 @@
+{
+  "$id": "https://scenity.dev/schema/texture-import.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "colorSpace": {
+      "default": "srgb",
+      "enum": [
+        "srgb",
+        "linear"
+      ],
+      "type": "string"
+    },
+    "maxSize": {
+      "default": 2048,
+      "maximum": 16384,
+      "minimum": 1,
+      "type": "integer"
+    },
+    "mipmaps": {
+      "default": true,
+      "type": "boolean"
+    },
+    "role": {
+      "default": "color",
+      "enum": [
+        "color",
+        "normal",
+        "orm",
+        "emissive",
+        "mask",
+        "data"
+      ],
+      "type": "string"
+    }
+  },
+  "title": "The settings of a texture importer (png, jpeg, webp, avif)",
+  "type": "object"
+}

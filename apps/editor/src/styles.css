@@ -1,0 +1,8 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The styles of the editor app: Tailwind 4, and the design tokens and the classes of the ui package (its @source).
+   The generated style list adds the styles of the plugins of the project, for example the plugin tokens and the
+   Tailwind sources of a scene view. Tailwind finds the editor files automatically. The Vite config writes the style
+   list (src/generated/editorStyles.css) from the project document. */
+@import "tailwindcss";
+@import "@scenity/ui/styles.css";
+@import "./generated/editorStyles.css";

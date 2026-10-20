@@ -1,0 +1,146 @@
+{
+  "about": "The budgets of `bun run labs verify --perf`: rows of `labs bench --quick` on Chromium, one set per backend. WebGPU is the default backend of the labs. Only rows that were stable over 3 quick runs on the dev Mac have a budget (Apple M5 Pro; WebGL 2026-10-13, both backends again 2026-10-14 at load 1.7-2.1; spread under 10 %). A budget is the worst of the 3 runs with a margin, or the performance target where it holds. The start steps, the CPU shares and the capture rows have no budget yet.",
+  "engine": "chromium",
+  "backends": {
+    "webgl": {
+      "start.httpCold.navigation": {
+        "max": 250,
+        "basis": "176-178 ms"
+      },
+      "start.httpCold.firstFrame": {
+        "max": 400,
+        "basis": "302-305 ms"
+      },
+      "start.httpWarm.navigation": {
+        "max": 200,
+        "basis": "133-137 ms"
+      },
+      "start.httpWarm.firstFrame": {
+        "max": 350,
+        "basis": "251-255 ms"
+      },
+      "frame.afterSeek": {
+        "max": 40,
+        "basis": "16.1-33.1 ms: one worker frame and one paint, so 16 or 33 ms by the time of the paint relative to the vsync; the performance target is 30 ms"
+      },
+      "seek.toFrame": {
+        "max": 30,
+        "basis": "16.4-16.8 ms"
+      },
+      "scrub.rate": {
+        "min": 50,
+        "basis": "60 Hz in 3 runs; the performance target is 60 Hz"
+      },
+      "measureAt.total10": {
+        "max": 50,
+        "basis": "14-19 ms"
+      },
+      "sweep.perSample": {
+        "max": 3,
+        "basis": "1.2-1.5 ms; the performance target"
+      },
+      "strip.cold16": {
+        "max": 700,
+        "basis": "566-567 ms"
+      },
+      "strip.idb16": {
+        "max": 50,
+        "basis": "23-29 ms (2026-10-14): the first real read from IndexedDB, 16 read-write transactions (stripCache.ts); the performance target of 20 ms needs one batched read"
+      },
+      "play.fps": {
+        "min": 55,
+        "basis": "60.5-60.7 fps"
+      },
+      "play.workP95": {
+        "max": 6,
+        "basis": "3.2-4.1 ms; the performance limit"
+      },
+      "heap.page": {
+        "max": 100,
+        "basis": "88-89 MB (2026-10-14; 49 MB on 2026-10-13): the dev-server modules of the larger pose model (59 → 126 modules) and of the new lab parts; a fresh page holds 65 MB"
+      },
+      "panes.4": {
+        "max": 6,
+        "basis": "3.5-3.7 ms; the performance target"
+      },
+      "gpu.p95": {
+        "max": 10,
+        "basis": "2.2-3.7 ms; the performance limit"
+      },
+      "start.httpWarm.frameReady": {
+        "max": 1500,
+        "basis": "933-949 ms; the performance limit of the first warm frame"
+      }
+    },
+    "webgpu": {
+      "start.httpCold.navigation": {
+        "max": 250,
+        "basis": "194-199 ms"
+      },
+      "start.httpCold.firstFrame": {
+        "max": 520,
+        "basis": "432-434 ms: WebGPU needs 70-80 ms more than WebGL to start its renderer"
+      },
+      "start.httpWarm.navigation": {
+        "max": 200,
+        "basis": "151-157 ms"
+      },
+      "start.httpWarm.firstFrame": {
+        "max": 450,
+        "basis": "375-377 ms"
+      },
+      "frame.afterSeek": {
+        "max": 40,
+        "basis": "32.6-33 ms: one worker frame and one paint; the performance target is 30 ms"
+      },
+      "seek.toFrame": {
+        "max": 30,
+        "basis": "16.2-16.4 ms"
+      },
+      "scrub.rate": {
+        "min": 50,
+        "basis": "59 Hz in 3 runs; the performance target is 60 Hz"
+      },
+      "measureAt.total10": {
+        "max": 50,
+        "basis": "15 ms"
+      },
+      "sweep.perSample": {
+        "max": 3,
+        "basis": "1.1 ms; the performance target"
+      },
+      "strip.cold16": {
+        "max": 700,
+        "basis": "556-558 ms"
+      },
+      "strip.idb16": {
+        "max": 50,
+        "basis": "24-31 ms; see the WebGL row"
+      },
+      "play.fps": {
+        "min": 55,
+        "basis": "60-60.5 fps"
+      },
+      "play.workP95": {
+        "max": 6,
+        "basis": "4.0-4.4 ms; the performance limit"
+      },
+      "heap.page": {
+        "max": 100,
+        "basis": "68-89 MB; see the WebGL row"
+      },
+      "panes.4": {
+        "max": 6,
+        "basis": "4.8 ms; the performance target"
+      },
+      "gpu.p95": {
+        "max": 10,
+        "basis": "1.97-2.03 ms; the performance limit"
+      },
+      "start.httpWarm.frameReady": {
+        "max": 1500,
+        "basis": "1,050-1,063 ms; the performance limit of the first warm frame"
+      }
+    }
+  }
+}

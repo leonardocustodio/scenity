@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M53P24442E2ZTC3GC3F7E0RX",
+  "importer": "material",
+  "kind": "material",
+  "rights": "../../rights/scenity-own-work.yaml",
+  "settings": {},
+  "source": "walk.material.json",
+  "tags": [
+    "lamp",
+    "lamp:walk"
+  ]
+}

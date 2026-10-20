@@ -1,0 +1,18 @@
+[
+  {
+    "name": "@anthropic-ai/claude-agent-sdk",
+    "reason": "The Anthropic commercial terms. Only the workbench host (a developer tool on the machine of the owner) uses it; no built page holds it."
+  },
+  {
+    "name": "@anthropic-ai/claude-agent-sdk-darwin-arm64",
+    "reason": "The native part of @anthropic-ai/claude-agent-sdk. The same reason."
+  },
+  {
+    "name": "@img/sharp-libvips-darwin-arm64",
+    "reason": "LGPL-3.0-or-later. A native image library of the build tools; it stays a separate dynamic library, and no built page holds it."
+  },
+  {
+    "name": "@img/sharp-libvips-linux-x64",
+    "reason": "LGPL-3.0-or-later. The Linux build of the same library (CI)."
+  }
+]

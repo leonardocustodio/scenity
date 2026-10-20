@@ -1,0 +1,26 @@
+{
+  "name": "@scenity/sample-spin-demo",
+  "private": true,
+  "version": "0.1.0",
+  "description": "The demo plugin of the spin sample: a component demo.spin, a system that turns each entity with it, and a presenter that draws a hub ring. It proves that a project plugin runs in the scene worker, on the main thread and in the player. Its studio face adds the panel \"Spinners\" and a command to the editor window.",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/runtime.ts"
+  },
+  "scenity": {
+    "runtime": "src/runtime.ts",
+    "studio": "src/studio.ts"
+  },
+  "dependencies": {
+    "@scenity/runtime": "workspace:*",
+    "@scenity/scene": "workspace:*",
+    "three": "catalog:",
+    "zod": "4.6.5",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@types/three": "catalog:",
+    "@scenity/editor": "workspace:*"
+  }
+}

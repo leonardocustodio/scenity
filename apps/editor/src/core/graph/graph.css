@@ -1,0 +1,44 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/*
+ * The colors of the graph. The series slots come from the dataviz palette (four members, then all other lines). The
+ * adjacent pairs have a validated contrast in the two modes. The bands are light tints of the status colors. The
+ * palette is not in the design tokens, because the learner app has no chart. The canvas reads these properties
+ * (draw.ts).
+ */
+.lab-metrics-graph {
+  --graph-series-1: #2a78d6;
+  --graph-series-2: #eb6834;
+  --graph-series-3: #1baf7a;
+  --graph-series-4: #eda100;
+  --graph-series-5: #6250d6;
+  --graph-band-pass: rgb(23 121 74 / 8%);
+  --graph-band-known: rgb(138 90 0 / 14%);
+  --graph-band-fail: rgb(179 36 92 / 14%);
+}
+
+:root[data-theme="navy"] .lab-metrics-graph,
+:root[data-theme="dark"] .lab-metrics-graph {
+  --graph-series-1: #3987e5;
+  --graph-series-2: #d95926;
+  --graph-series-3: #199e70;
+  --graph-series-4: #c98500;
+  --graph-series-5: #9085e9;
+  --graph-band-pass: rgb(52 211 153 / 9%);
+  --graph-band-known: rgb(251 191 36 / 16%);
+  --graph-band-fail: rgb(255 116 116 / 18%);
+}
+
+.lab-metrics-graph__band[data-kind="pass"] {
+  background: var(--graph-band-pass);
+  outline: 1px solid var(--sc-color-status-positive);
+}
+
+.lab-metrics-graph__band[data-kind="known"] {
+  background: var(--graph-band-known);
+  outline: 1px solid var(--sc-color-status-caution);
+}
+
+.lab-metrics-graph__band[data-kind="fail"] {
+  background: var(--graph-band-fail);
+  outline: 1px solid var(--sc-color-status-negative);
+}

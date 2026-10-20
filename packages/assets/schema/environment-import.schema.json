@@ -1,0 +1,20 @@
+{
+  "$id": "https://scenity.dev/schema/environment-import.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "intensity": {
+      "default": 1,
+      "exclusiveMinimum": 0,
+      "type": "number"
+    },
+    "maxSize": {
+      "default": 2048,
+      "maximum": 16384,
+      "minimum": 1,
+      "type": "integer"
+    }
+  },
+  "title": "The settings of an environment importer (hdr)",
+  "type": "object"
+}

@@ -1,0 +1,4 @@
+{
+  "about": "Approved exceptions to the bundle budgets of tools/size-budget.ts. An entry gives one budget a higher allowance in KB (gzip level 9) until a fix lands. The check fails above the allowance. It also fails on a stale entry (a measure at or below its budget limit). Each entry names the reason and the record of the exception.",
+  "entries": []
+}

@@ -1,0 +1,24 @@
+# Rights record of the material sample of the glTF samples. A script of the Scenity authors made the two textures (a
+# checker and a normal map of sine bumps). The material documents are data of this repository. The authors give them to
+# the public domain.
+name: scenity-cc0
+source: "Scenity (this repository): the textures come from a script of the authors (2026-10-16)"
+author: "The Scenity authors"
+licence: "CC0 1.0 Universal (public domain dedication)"
+spdx: CC0-1.0 # the release gate checks it against release.licences.allow of scenity.project.json
+licenceUrl: https://creativecommons.org/publicdomain/zero/1.0/
+licenceDate: 2026-10-16
+allowedUse: [web, unreal, public]
+webDelivery: true
+attribution: null
+assets:
+  - id: checker
+    name: "Checker texture (8 x 8 tiles, the top left tile orange)"
+    authors: ["The Scenity authors"]
+  - id: bumps-normal
+    name: "Normal map of sine bumps (tileable)"
+    authors: ["The Scenity authors"]
+  - id: materials
+    name: "The material documents standard, physical, lambert, phong and unlit"
+    authors: ["The Scenity authors"]
+changes: "None."

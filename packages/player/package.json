@@ -1,0 +1,48 @@
+{
+  "name": "@scenity/player",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The player of Scenity: the runtime with the documents, with no editor and no dev code. A JavaScript API, a Vue component and the web component <scenity-player>.",
+  "type": "module",
+  "files": [
+    "src",
+    "scripts",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/player"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "./src/element.ts"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./element": "./src/element.ts",
+    "./light": "./src/light.ts",
+    "./vue": "./src/vue.ts",
+    "./ScenityPlayer.vue": "./src/ScenityPlayer.vue"
+  },
+  "scripts": {
+    "build": "bun scripts/build.ts",
+    "test": "bun test ./tests"
+  },
+  "dependencies": {
+    "@scenity/runtime": "workspace:*",
+    "@scenity/scene": "workspace:*",
+    "three": "catalog:",
+    "vue": "catalog:"
+  },
+  "peerDependencies": {
+    "vite": "^8.0.0"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:",
+    "vite": "catalog:"
+  }
+}

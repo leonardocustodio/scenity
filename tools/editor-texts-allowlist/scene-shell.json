@@ -1,0 +1,42 @@
+{
+  "apps/editor/src/hub/AgentsView.vue": {
+    "claude mcp add scenity -- scenity mcp --name 'Claude Code'": "a command line or a config value to copy into the app of an external agent (not a text of the interface)",
+    "codex mcp add scenity -- scenity mcp --name Codex": "a command line or a config value to copy into the app of an external agent (not a text of the interface)",
+    "Cursor": "the name of the client in its MCP config (a value of the command line, not a text of the interface)",
+    "Claude Desktop": "the name of the client in its MCP config (a value of the command line, not a text of the interface)"
+  },
+  "apps/editor/src/scene/agent/agentContext.ts": {
+    " at {} looking at {}": "a line of the context packet for the agent (data for the model, not a text of the interface)",
+    "the person looks at the {} panel": "a line of the context packet for the agent (data for the model, not a text of the interface)"
+  },
+  "apps/editor/src/scene/agent/agentWindow.ts": {
+    "editor camera": "a line of the context packet for the agent (data for the model, not a text of the interface)"
+  },
+  "apps/editor/src/scene/agent/inlinePrompt.ts": {
+    "entity:{} \"{}\" component {}{} = {}": "a line of the context packet for the agent (data for the model, not a text of the interface)",
+    "world point ({})": "a line of the context packet for the agent (data for the model, not a text of the interface)"
+  },
+  "apps/editor/src/scene/agent/startFromPrompt.ts": {
+    "Build the first scene of this new project for these words of the person: {}": "the prompt of the first turn of the agent (data for the model, not a text of the interface)"
+  },
+  "apps/editor/src/scene/entityKeys.ts": {
+    "No command \"{}\".": "key block reason: the key map only checks it for null, the page never shows it"
+  },
+  "apps/editor/src/scene/history/historyRows.ts": {
+    "Go to a step of the undo history in one action; one redo (or undo) takes the action back.": "the description of a command and its argument for an agent (the JSON schema of the tool, data for the model, not a text of the interface)",
+    "The index of the step (0: the start of the history).": "the description of a command and its argument for an agent (the JSON schema of the tool, data for the model, not a text of the interface)"
+  },
+  "apps/editor/src/scene/sceneBridgeCalls.ts": {
+    "Scene file: {} ({}); {} entities.": "bridge API: a context line for the workbench host and Claude",
+    "changed, not saved": "bridge API: a context line for the workbench host and Claude",
+    "Selection: {}.": "bridge API: a context line for the workbench host and Claude",
+    "Proposals that wait for the owner: {}.": "bridge API: a context line for the workbench host and Claude",
+    "Tools: scene_query, scene_commands, scene_command, scene_check.": "bridge API: a context line for the workbench host and Claude"
+  },
+  "apps/editor/src/scene/sceneSheet.ts": {
+    "page camera": "bridge API: the cell label and the camera name of a contact sheet for the workbench host"
+  },
+  "apps/editor/src/scene/selectionCommands.ts": {
+    "The {} of the entities to select.": "the description of an argument of a command for an agent (the JSON schema of the tool, data for the model, not a text of the interface)"
+  }
+}

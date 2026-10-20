@@ -1,0 +1,41 @@
+<!doctype html>
+<!--
+  The play window of the scene page ("play in a window"). The scene page writes its current documents into a handoff
+  of the local storage and opens this page with `?handoff=<key>`. The page plays them with @scenity/player from 0 ms. The edit view of the scene page does not change. The scene dev server serves it at /player/play.html.
+-->
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Play</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #000000;
+        overflow: hidden;
+      }
+      #stage {
+        width: 100vw;
+        height: 100vh;
+      }
+      #status {
+        position: fixed;
+        left: 8px;
+        bottom: 8px;
+        margin: 0;
+        font:
+          12px system-ui,
+          sans-serif;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="stage" data-testid="play-stage"></div>
+    <p id="status" data-testid="play-status"></p>
+    <script type="module" src="/src/player/playWindow.ts"></script>
+  </body>
+</html>

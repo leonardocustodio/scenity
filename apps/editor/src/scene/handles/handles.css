@@ -1,0 +1,6 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The overlay of the handles of the components over the main view; the press goes to the canvas. */
+#scene-handles {
+  position: fixed;
+  pointer-events: none;
+}

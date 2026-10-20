@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M53P241NQ1ANQ41JG3XMB2EZ",
+  "importer": "material",
+  "kind": "material",
+  "rights": "../../rights/scenity-own-work.yaml",
+  "settings": {},
+  "source": "green.material.json",
+  "tags": [
+    "lamp",
+    "lamp:green"
+  ]
+}

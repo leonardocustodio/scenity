@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tokens</title>
+    <style>
+      body {
+        margin: 0;
+        padding: var(--sc-space-4);
+        background: var(--sc-color-surface-base);
+        color: var(--sc-color-text-primary);
+        font:
+          var(--sc-studio-font-dense-body) / 1.4 system-ui,
+          sans-serif;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: var(--sc-space-1) var(--sc-space-2);
+        border-bottom: 1px solid var(--sc-color-border-subtle);
+        text-align: left;
+        vertical-align: top;
+      }
+      .token-sample {
+        display: flex;
+        gap: var(--sc-space-2);
+        align-items: center;
+        padding: var(--sc-space-1);
+        background: var(--sc-color-surface-raised);
+        color: var(--sc-color-text-primary);
+      }
+      .token-swatch {
+        width: var(--sc-space-6);
+        height: var(--sc-space-6);
+        border: 1px solid var(--sc-color-border-subtle);
+      }
+      .token-bar {
+        height: var(--sc-space-2);
+        background: var(--sc-color-accent-brand);
+      }
+    </style>
+  </head>
+  <body>
+    <main id="tokens"></main>
+    <script type="module" src="./src/tokens/main.ts"></script>
+  </body>
+</html>

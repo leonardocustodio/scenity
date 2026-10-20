@@ -1,0 +1,213 @@
+{
+  "duration": 26000,
+  "format": "scenity.sequence/1",
+  "id": "rush",
+  "initial": {
+    "traffic": {
+      "timing": {
+        "minGreen": 6000
+      }
+    }
+  },
+  "markers": {
+    "amber": 6000,
+    "approach": 3000,
+    "clearance": 13500,
+    "go": 20500,
+    "green": 18500,
+    "queue": 12000,
+    "red": 8000,
+    "walk": 9500
+  },
+  "name": "Rush hour at the crossing",
+  "rules": [
+    {
+      "args": {
+        "a": "tag:car",
+        "b": "tag:walker",
+        "mode": "floor"
+      },
+      "id": "traffic.carsClearOfWalkers",
+      "level": "block",
+      "max": 0,
+      "metric": "overlap",
+      "note": "No car touches a walker over the floor, at any time of the sequence.",
+      "scope": {
+        "from": 0,
+        "kind": "range",
+        "step": 100,
+        "to": 26000
+      },
+      "unit": "m"
+    },
+    {
+      "args": {
+        "a": "tag:car",
+        "b": "crossing",
+        "mode": "floor"
+      },
+      "id": "traffic.crossingClearOnWalk",
+      "level": "block",
+      "max": 0,
+      "metric": "overlap",
+      "note": "No car is on the crossing from the start of the walk phase to the next green: no car enters on red.",
+      "scope": {
+        "from": "walk",
+        "kind": "range",
+        "step": 100,
+        "to": "green"
+      },
+      "unit": "m"
+    },
+    {
+      "args": {
+        "a": "tag:car",
+        "mode": "floor"
+      },
+      "id": "traffic.queueKeepsGap",
+      "level": "block",
+      "max": 0,
+      "metric": "overlap",
+      "note": "The cars of a queue do not run into each other.",
+      "scope": {
+        "from": 0,
+        "kind": "range",
+        "step": 100,
+        "to": 26000
+      },
+      "unit": "m"
+    },
+    {
+      "args": {
+        "from": "entity:car-4",
+        "plane": "floor",
+        "to": "entity:stop-line-east"
+      },
+      "id": "traffic.carsWaitAtLine",
+      "level": "warn",
+      "metric": "distance",
+      "min": 2,
+      "note": "The first car of the east queue waits behind the stop line (its centre is half a car length and half a line width back).",
+      "scope": {
+        "kind": "marker",
+        "marker": "queue"
+      },
+      "unit": "m"
+    }
+  ],
+  "scene": "road",
+  "tracks": [
+    {
+      "entity": "car-1",
+      "keys": [
+        {
+          "action": "traffic.car",
+          "args": {
+            "lane": "east"
+          },
+          "t": 500
+        }
+      ],
+      "kind": "action",
+      "name": "Drive"
+    },
+    {
+      "entity": "car-2",
+      "keys": [
+        {
+          "action": "traffic.car",
+          "args": {
+            "lane": "west"
+          },
+          "t": 1500
+        }
+      ],
+      "kind": "action",
+      "name": "Drive"
+    },
+    {
+      "entity": "car-3",
+      "keys": [
+        {
+          "action": "traffic.car",
+          "args": {
+            "lane": "east"
+          },
+          "t": 3500
+        }
+      ],
+      "kind": "action",
+      "name": "Drive"
+    },
+    {
+      "entity": "car-4",
+      "keys": [
+        {
+          "action": "traffic.car",
+          "args": {
+            "lane": "east"
+          },
+          "t": 6500
+        }
+      ],
+      "kind": "action",
+      "name": "Drive"
+    },
+    {
+      "entity": "car-5",
+      "keys": [
+        {
+          "action": "traffic.car",
+          "args": {
+            "lane": "west"
+          },
+          "t": 8000
+        }
+      ],
+      "kind": "action",
+      "name": "Drive"
+    },
+    {
+      "entity": "car-6",
+      "keys": [
+        {
+          "action": "traffic.car",
+          "args": {
+            "lane": "east"
+          },
+          "t": 9500
+        }
+      ],
+      "kind": "action",
+      "name": "Drive"
+    },
+    {
+      "entity": "walker-1",
+      "keys": [
+        {
+          "action": "traffic.walker",
+          "args": {
+            "side": "south"
+          },
+          "t": 1000
+        }
+      ],
+      "kind": "action",
+      "name": "Walk"
+    },
+    {
+      "entity": "walker-2",
+      "keys": [
+        {
+          "action": "traffic.walker",
+          "args": {
+            "side": "north"
+          },
+          "t": 5000
+        }
+      ],
+      "kind": "action",
+      "name": "Walk"
+    }
+  ]
+}

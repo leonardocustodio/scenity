@@ -1,0 +1,39 @@
+<!doctype html>
+<!--
+  A plain HTML page that plays the characters sample with the web component of @scenity/player. The robot walks,
+  stops and waves on the time line of its sequence `walk-wave`, and plays its chirp at 5,200 ms. A browser starts the
+  sounds only after a user gesture: click the scene. The scene dev server serves it at /player/characters.html.
+-->
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Characters player</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #000000;
+        overflow: hidden;
+      }
+      scenity-player {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <scenity-player
+      data-testid="player"
+      src="/projects/characters/scenity.project.json"
+      scene="scenes/main.scene.json"
+      sequence="sequences/walk-wave.sequence.json"
+      camera="front"
+      autoplay
+      loop
+    ></scenity-player>
+    <script type="module" src="/src/player/element.ts"></script>
+  </body>
+</html>

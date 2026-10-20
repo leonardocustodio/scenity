@@ -1,0 +1,223 @@
+{
+  "duration": 60000,
+  "format": "scenity.sequence/1",
+  "id": "walkthrough",
+  "initial": {
+    "doors": {
+      "closeAfter": 3000
+    },
+    "shop": {
+      "power": true
+    }
+  },
+  "loop": true,
+  "markers": {
+    "door-open": 12000,
+    "drill-on": 30000,
+    "end": 60000,
+    "start": 0
+  },
+  "name": "Workshop walkthrough",
+  "scene": "workshop",
+  "tracks": [
+    {
+      "keys": [
+        {
+          "camera": "entity:front",
+          "t": 0
+        },
+        {
+          "camera": "entity:top",
+          "t": 20000
+        },
+        {
+          "camera": "entity:front",
+          "t": 45000
+        }
+      ],
+      "kind": "camera",
+      "name": "Camera cuts"
+    },
+    {
+      "entity": "cart",
+      "keys": [
+        {
+          "position": [0.85, 0, -1.45],
+          "rotation": [0, 0, 0, 1],
+          "t": 0
+        },
+        {
+          "ease": "out",
+          "position": [1.5, 0, -1],
+          "t": 10000
+        },
+        {
+          "ease": {
+            "bezier": [0.25, 0.1, 0.25, 1]
+          },
+          "position": [2, 0, 0.5],
+          "rotation": [0, 0.707107, 0, 0.707107],
+          "t": 20000
+        },
+        {
+          "scale": [1, 1, 1],
+          "t": 40000
+        },
+        {
+          "ease": "inOut",
+          "rotation": [0, 1, 0, 0],
+          "scale": [1.2, 1.2, 1.2],
+          "t": 50000
+        }
+      ],
+      "kind": "transform"
+    },
+    {
+      "entity": "key",
+      "keys": [
+        {
+          "t": 0,
+          "value": 1
+        },
+        {
+          "ease": "in",
+          "t": 15000,
+          "value": 3
+        },
+        {
+          "ease": "step",
+          "t": 30000,
+          "value": 0.5
+        }
+      ],
+      "kind": "property",
+      "path": "light/intensity"
+    },
+    {
+      "entity": "key",
+      "keys": [
+        {
+          "t": 0,
+          "value": [255, 255, 255]
+        },
+        {
+          "t": 30000,
+          "value": [255, 200, 150]
+        }
+      ],
+      "kind": "property",
+      "path": "light/colour"
+    },
+    {
+      "entity": "note",
+      "keys": [
+        {
+          "t": 0,
+          "visible": false
+        },
+        {
+          "t": 12000,
+          "visible": true
+        },
+        {
+          "t": 18000,
+          "visible": false
+        }
+      ],
+      "kind": "visibility"
+    },
+    {
+      "keys": [
+        {
+          "name": "door-chime",
+          "t": 12000
+        },
+        {
+          "args": {
+            "volume": 0.8
+          },
+          "name": "drill-start",
+          "t": 30000
+        },
+        {
+          "args": {
+            "text": "The drill starts."
+          },
+          "name": "caption",
+          "t": 30000
+        }
+      ],
+      "kind": "event",
+      "name": "Sound cues"
+    },
+    {
+      "entity": "door",
+      "keys": [
+        {
+          "action": "doors.open",
+          "args": {
+            "door": "door"
+          },
+          "t": 12000
+        },
+        {
+          "action": "doors.open",
+          "args": {
+            "door": "door-2"
+          },
+          "t": 40000
+        }
+      ],
+      "kind": "action"
+    },
+    {
+      "entity": "drill",
+      "keys": [
+        {
+          "action": "shop.drill-on",
+          "t": 30000
+        },
+        {
+          "action": "shop.drill-off",
+          "t": 36000
+        }
+      ],
+      "kind": "action"
+    },
+    {
+      "entity": "drill",
+      "keys": [
+        {
+          "clip": "asset:clip_drill_spin",
+          "loop": true,
+          "speed": 1.5,
+          "t": 30000
+        },
+        {
+          "blend": 500,
+          "clip": null,
+          "t": 36000
+        }
+      ],
+      "kind": "animation"
+    },
+    {
+      "entity": "screen",
+      "keys": [
+        {
+          "t": 0,
+          "to": "entity:cart#top"
+        },
+        {
+          "t": 25000,
+          "to": "entity:bench"
+        },
+        {
+          "t": 50000,
+          "to": null
+        }
+      ],
+      "kind": "attach"
+    }
+  ]
+}

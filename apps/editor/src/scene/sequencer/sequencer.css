@@ -1,0 +1,15 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The sequencer tab of the bottom dock: Tailwind 4 with no preflight, as for the asset dock. The panel is in the
+   dock, so it uses the base rules of the dock (assetDock.css). */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "@scenity/ui/styles.css";
+@source "./";
+
+@layer base {
+  .studio-panel-host select {
+    font: inherit;
+    color: inherit;
+  }
+}

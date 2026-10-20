@@ -1,0 +1,36 @@
+{
+  "duration": 7000,
+  "format": "scenity.sequence/1",
+  "id": "table-walk",
+  "markers": {
+    "arrive": 4400,
+    "side": 2600,
+    "stand": 5000,
+    "start": 500,
+    "wave": 5900
+  },
+  "name": "Walk around the table to a stand point",
+  "scene": "table",
+  "tracks": [
+    {
+      "entity": "robot",
+      "keys": [
+        {
+          "t": 0,
+          "value": false
+        },
+        {
+          "t": 5300,
+          "value": true
+        },
+        {
+          "t": 5800,
+          "value": false
+        }
+      ],
+      "kind": "property",
+      "name": "Wave",
+      "path": "animator/parameters/wave"
+    }
+  ]
+}

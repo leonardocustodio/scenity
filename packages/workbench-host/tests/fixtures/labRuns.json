@@ -1,0 +1,1975 @@
+{
+  "commands": [
+    "motion",
+    "verify",
+    "review",
+    "sheet",
+    "shot",
+    "clip",
+    "stills",
+    "scenes",
+    "asset",
+    "perf",
+    "tune-apply",
+    "camera-save",
+    "layout-save",
+    "promote"
+  ],
+  "agent": ["motion", "verify", "review", "sheet", "shot", "clip", "stills", "scenes", "asset", "promote"],
+  "lines": {
+    "motion": "bun run labs motion",
+    "verify": "bun run labs verify",
+    "review": "bun run labs review",
+    "sheet": "bun run labs sheet",
+    "shot": "bun run labs shot",
+    "clip": "bun run labs clip",
+    "stills": "bun run labs stills",
+    "scenes": "bun run labs scenes",
+    "asset": "bun run labs asset",
+    "perf": "bun run labs perf",
+    "tune-apply": "bun run labs tune-apply",
+    "camera-save": "bun run labs camera-save",
+    "layout-save": "bun run labs layout-save",
+    "promote": "bun run labs promote"
+  },
+  "gate": "bun run labs motion",
+  "plans": [
+    {
+      "command": "motion",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "motion", "--out", "/repo/apps/editor/test-results/room3d/workbench/motion-R"],
+        "args": ["--out", "/repo/apps/editor/test-results/room3d/workbench/motion-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/motion-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "motion",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "motion",
+          "greet",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/motion-R"
+        ],
+        "args": ["greet", "--out", "/repo/apps/editor/test-results/room3d/workbench/motion-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/motion-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "motion",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "motion",
+          "greet",
+          "--check",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/motion-R"
+        ],
+        "args": ["greet", "--check", "--out", "/repo/apps/editor/test-results/room3d/workbench/motion-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/motion-R",
+        "gpu": false
+      }
+    },
+    {
+      "command": "motion",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "motion",
+          "greet",
+          "--dry",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/motion-R"
+        ],
+        "args": ["greet", "--dry", "--out", "/repo/apps/editor/test-results/room3d/workbench/motion-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/motion-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "motion",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "motion",
+          "x",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/motion-R"
+        ],
+        "args": ["x", "--out", "/repo/apps/editor/test-results/room3d/workbench/motion-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/motion-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "motion",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "motion",
+          "x",
+          "--dry",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/motion-R"
+        ],
+        "args": ["x", "--dry", "--out", "/repo/apps/editor/test-results/room3d/workbench/motion-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/motion-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "motion",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "motion",
+          "greet",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/motion-R"
+        ],
+        "args": ["greet", "--out", "/repo/apps/editor/test-results/room3d/workbench/motion-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/motion-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "motion",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "motion",
+          "greet",
+          "--ref",
+          "def456",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/motion-R"
+        ],
+        "args": ["greet", "--ref", "def456", "--out", "/repo/apps/editor/test-results/room3d/workbench/motion-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/motion-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "motion",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "motion", "--out", "out/here", "greet"],
+        "args": ["--out", "out/here", "greet"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": true
+      }
+    },
+    {
+      "command": "verify",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "verify"],
+        "args": [],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "verify",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "verify", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "verify",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "verify", "greet", "--check"],
+        "args": ["greet", "--check"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "verify",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "verify", "greet", "--dry"],
+        "args": ["greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "verify",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "verify", "x"],
+        "args": ["x"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "verify",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "verify", "x", "--dry"],
+        "args": ["x", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "verify",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "verify", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "verify",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "verify", "greet", "--ref", "def456"],
+        "args": ["greet", "--ref", "def456"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "verify",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "verify", "--out", "out/here", "greet"],
+        "args": ["--out", "out/here", "greet"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": true
+      }
+    },
+    {
+      "command": "review",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "review", "--out", "/repo/apps/editor/test-results/room3d/workbench/review-R"],
+        "args": ["--out", "/repo/apps/editor/test-results/room3d/workbench/review-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/review-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "review",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "review",
+          "greet",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/review-R"
+        ],
+        "args": ["greet", "--out", "/repo/apps/editor/test-results/room3d/workbench/review-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/review-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "review",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "review",
+          "greet",
+          "--check",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/review-R"
+        ],
+        "args": ["greet", "--check", "--out", "/repo/apps/editor/test-results/room3d/workbench/review-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/review-R",
+        "gpu": false
+      }
+    },
+    {
+      "command": "review",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "review",
+          "greet",
+          "--dry",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/review-R"
+        ],
+        "args": ["greet", "--dry", "--out", "/repo/apps/editor/test-results/room3d/workbench/review-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/review-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "review",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "review",
+          "x",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/review-R"
+        ],
+        "args": ["x", "--out", "/repo/apps/editor/test-results/room3d/workbench/review-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/review-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "review",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "review",
+          "x",
+          "--dry",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/review-R"
+        ],
+        "args": ["x", "--dry", "--out", "/repo/apps/editor/test-results/room3d/workbench/review-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/review-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "review",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "review",
+          "greet",
+          "--ref",
+          "abc123",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/review-R"
+        ],
+        "args": ["greet", "--ref", "abc123", "--out", "/repo/apps/editor/test-results/room3d/workbench/review-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/review-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "review",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "review",
+          "greet",
+          "--ref",
+          "def456",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/review-R"
+        ],
+        "args": ["greet", "--ref", "def456", "--out", "/repo/apps/editor/test-results/room3d/workbench/review-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/review-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "review",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "review", "--out", "out/here", "greet"],
+        "args": ["--out", "out/here", "greet"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": true
+      }
+    },
+    {
+      "command": "sheet",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "sheet", "--out", "/repo/apps/editor/test-results/room3d/workbench/sheet-R"],
+        "args": ["--out", "/repo/apps/editor/test-results/room3d/workbench/sheet-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/sheet-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "sheet",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "sheet",
+          "greet",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/sheet-R"
+        ],
+        "args": ["greet", "--out", "/repo/apps/editor/test-results/room3d/workbench/sheet-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/sheet-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "sheet",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "sheet",
+          "greet",
+          "--check",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/sheet-R"
+        ],
+        "args": ["greet", "--check", "--out", "/repo/apps/editor/test-results/room3d/workbench/sheet-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/sheet-R",
+        "gpu": false
+      }
+    },
+    {
+      "command": "sheet",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "sheet",
+          "greet",
+          "--dry",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/sheet-R"
+        ],
+        "args": ["greet", "--dry", "--out", "/repo/apps/editor/test-results/room3d/workbench/sheet-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/sheet-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "sheet",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "sheet",
+          "x",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/sheet-R"
+        ],
+        "args": ["x", "--out", "/repo/apps/editor/test-results/room3d/workbench/sheet-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/sheet-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "sheet",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "sheet",
+          "x",
+          "--dry",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/sheet-R"
+        ],
+        "args": ["x", "--dry", "--out", "/repo/apps/editor/test-results/room3d/workbench/sheet-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/sheet-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "sheet",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "sheet",
+          "greet",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/sheet-R"
+        ],
+        "args": ["greet", "--out", "/repo/apps/editor/test-results/room3d/workbench/sheet-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/sheet-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "sheet",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "sheet",
+          "greet",
+          "--ref",
+          "def456",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/sheet-R"
+        ],
+        "args": ["greet", "--ref", "def456", "--out", "/repo/apps/editor/test-results/room3d/workbench/sheet-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/sheet-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "sheet",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "sheet", "--out", "out/here", "greet"],
+        "args": ["--out", "out/here", "greet"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": true
+      }
+    },
+    {
+      "command": "shot",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "shot", "--out", "/repo/apps/editor/test-results/room3d/workbench/shot-R"],
+        "args": ["--out", "/repo/apps/editor/test-results/room3d/workbench/shot-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/shot-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "shot",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "shot",
+          "greet",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/shot-R"
+        ],
+        "args": ["greet", "--out", "/repo/apps/editor/test-results/room3d/workbench/shot-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/shot-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "shot",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "shot",
+          "greet",
+          "--check",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/shot-R"
+        ],
+        "args": ["greet", "--check", "--out", "/repo/apps/editor/test-results/room3d/workbench/shot-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/shot-R",
+        "gpu": false
+      }
+    },
+    {
+      "command": "shot",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "shot",
+          "greet",
+          "--dry",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/shot-R"
+        ],
+        "args": ["greet", "--dry", "--out", "/repo/apps/editor/test-results/room3d/workbench/shot-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/shot-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "shot",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "shot", "x", "--out", "/repo/apps/editor/test-results/room3d/workbench/shot-R"],
+        "args": ["x", "--out", "/repo/apps/editor/test-results/room3d/workbench/shot-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/shot-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "shot",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "shot",
+          "x",
+          "--dry",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/shot-R"
+        ],
+        "args": ["x", "--dry", "--out", "/repo/apps/editor/test-results/room3d/workbench/shot-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/shot-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "shot",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "shot",
+          "greet",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/shot-R"
+        ],
+        "args": ["greet", "--out", "/repo/apps/editor/test-results/room3d/workbench/shot-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/shot-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "shot",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "shot",
+          "greet",
+          "--ref",
+          "def456",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/shot-R"
+        ],
+        "args": ["greet", "--ref", "def456", "--out", "/repo/apps/editor/test-results/room3d/workbench/shot-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/shot-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "shot",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "shot", "--out", "out/here", "greet"],
+        "args": ["--out", "out/here", "greet"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": true
+      }
+    },
+    {
+      "command": "clip",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "clip", "--out", "/repo/apps/editor/test-results/room3d/workbench/clip-R"],
+        "args": ["--out", "/repo/apps/editor/test-results/room3d/workbench/clip-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/clip-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "clip",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "clip",
+          "greet",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/clip-R"
+        ],
+        "args": ["greet", "--out", "/repo/apps/editor/test-results/room3d/workbench/clip-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/clip-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "clip",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "clip",
+          "greet",
+          "--check",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/clip-R"
+        ],
+        "args": ["greet", "--check", "--out", "/repo/apps/editor/test-results/room3d/workbench/clip-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/clip-R",
+        "gpu": false
+      }
+    },
+    {
+      "command": "clip",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "clip",
+          "greet",
+          "--dry",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/clip-R"
+        ],
+        "args": ["greet", "--dry", "--out", "/repo/apps/editor/test-results/room3d/workbench/clip-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/clip-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "clip",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "clip", "x", "--out", "/repo/apps/editor/test-results/room3d/workbench/clip-R"],
+        "args": ["x", "--out", "/repo/apps/editor/test-results/room3d/workbench/clip-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/clip-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "clip",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "clip",
+          "x",
+          "--dry",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/clip-R"
+        ],
+        "args": ["x", "--dry", "--out", "/repo/apps/editor/test-results/room3d/workbench/clip-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/clip-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "clip",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "clip",
+          "greet",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/clip-R"
+        ],
+        "args": ["greet", "--out", "/repo/apps/editor/test-results/room3d/workbench/clip-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/clip-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "clip",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "clip",
+          "greet",
+          "--ref",
+          "def456",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/clip-R"
+        ],
+        "args": ["greet", "--ref", "def456", "--out", "/repo/apps/editor/test-results/room3d/workbench/clip-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/clip-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "clip",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "clip", "--out", "out/here", "greet"],
+        "args": ["--out", "out/here", "greet"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": true
+      }
+    },
+    {
+      "command": "stills",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "stills"],
+        "args": [],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "stills",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "stills", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "stills",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "stills", "greet", "--check"],
+        "args": ["greet", "--check"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "stills",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "stills", "greet", "--dry"],
+        "args": ["greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "stills",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "stills", "x"],
+        "args": ["x"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "stills",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "stills", "x", "--dry"],
+        "args": ["x", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "stills",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "stills", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "stills",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "stills", "greet", "--ref", "def456"],
+        "args": ["greet", "--ref", "def456"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "stills",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "stills", "--out", "out/here", "greet"],
+        "args": ["--out", "out/here", "greet"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": true
+      }
+    },
+    {
+      "command": "scenes",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "scenes"],
+        "args": [],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "scenes",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "scenes", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "scenes",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "scenes", "greet", "--check"],
+        "args": ["greet", "--check"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "scenes",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "scenes", "greet", "--dry"],
+        "args": ["greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "scenes",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "scenes", "x"],
+        "args": ["x"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "scenes",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "scenes", "x", "--dry"],
+        "args": ["x", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "scenes",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "scenes", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "scenes",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "scenes", "greet", "--ref", "def456"],
+        "args": ["greet", "--ref", "def456"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "scenes",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "scenes", "--out", "out/here", "greet"],
+        "args": ["--out", "out/here", "greet"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": true
+      }
+    },
+    {
+      "command": "asset",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "asset", "--dry"],
+        "args": ["--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "asset",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "asset", "greet", "--dry"],
+        "args": ["greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "asset",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "asset", "greet", "--check", "--dry"],
+        "args": ["greet", "--check", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "asset",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "asset", "greet", "--dry"],
+        "args": ["greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "asset",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": [
+          "bun",
+          "run",
+          "labs",
+          "asset",
+          "x",
+          "--out",
+          "/repo/apps/editor/test-results/room3d/workbench/asset-R"
+        ],
+        "args": ["x", "--out", "/repo/apps/editor/test-results/room3d/workbench/asset-R"],
+        "cwd": "/repo",
+        "outDir": "/repo/apps/editor/test-results/room3d/workbench/asset-R",
+        "gpu": true
+      }
+    },
+    {
+      "command": "asset",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "asset", "x", "--dry"],
+        "args": ["x", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "asset",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "asset", "greet", "--dry"],
+        "args": ["greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "asset",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "asset", "greet", "--ref", "def456", "--dry"],
+        "args": ["greet", "--ref", "def456", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "asset",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "asset", "--out", "out/here", "greet", "--dry"],
+        "args": ["--out", "out/here", "greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": false
+      }
+    },
+    {
+      "command": "perf",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "perf"],
+        "args": [],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "perf",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "perf", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "perf",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "perf", "greet", "--check"],
+        "args": ["greet", "--check"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "perf",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "perf", "greet", "--dry"],
+        "args": ["greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "perf",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "perf", "x"],
+        "args": ["x"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "perf",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "perf", "x", "--dry"],
+        "args": ["x", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "perf",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "perf", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "perf",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "perf", "greet", "--ref", "def456"],
+        "args": ["greet", "--ref", "def456"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "perf",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "perf", "--out", "out/here", "greet"],
+        "args": ["--out", "out/here", "greet"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": true
+      }
+    },
+    {
+      "command": "tune-apply",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "tune-apply"],
+        "args": [],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "tune-apply",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "tune-apply", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "tune-apply",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "tune-apply", "greet", "--check"],
+        "args": ["greet", "--check"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "tune-apply",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "tune-apply", "greet", "--dry"],
+        "args": ["greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "tune-apply",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "tune-apply", "x"],
+        "args": ["x"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "tune-apply",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "tune-apply", "x", "--dry"],
+        "args": ["x", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "tune-apply",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "tune-apply", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "tune-apply",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "tune-apply", "greet", "--ref", "def456"],
+        "args": ["greet", "--ref", "def456"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "tune-apply",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "tune-apply", "--out", "out/here", "greet"],
+        "args": ["--out", "out/here", "greet"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": false
+      }
+    },
+    {
+      "command": "camera-save",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "camera-save"],
+        "args": [],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "camera-save",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "camera-save", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "camera-save",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "camera-save", "greet", "--check"],
+        "args": ["greet", "--check"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "camera-save",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "camera-save", "greet", "--dry"],
+        "args": ["greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "camera-save",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "camera-save", "x"],
+        "args": ["x"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "camera-save",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "camera-save", "x", "--dry"],
+        "args": ["x", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "camera-save",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "camera-save", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "camera-save",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "camera-save", "greet", "--ref", "def456"],
+        "args": ["greet", "--ref", "def456"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "camera-save",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "camera-save", "--out", "out/here", "greet"],
+        "args": ["--out", "out/here", "greet"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": false
+      }
+    },
+    {
+      "command": "layout-save",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "layout-save"],
+        "args": [],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "layout-save",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "layout-save", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "layout-save",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "layout-save", "greet", "--check"],
+        "args": ["greet", "--check"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "layout-save",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "layout-save", "greet", "--dry"],
+        "args": ["greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "layout-save",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "layout-save", "x"],
+        "args": ["x"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "layout-save",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "layout-save", "x", "--dry"],
+        "args": ["x", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "layout-save",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "layout-save", "greet"],
+        "args": ["greet"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "layout-save",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "layout-save", "greet", "--ref", "def456"],
+        "args": ["greet", "--ref", "def456"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "layout-save",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "layout-save", "--out", "out/here", "greet"],
+        "args": ["--out", "out/here", "greet"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": false
+      }
+    },
+    {
+      "command": "promote",
+      "args": [],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "promote", "--dry"],
+        "args": ["--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "promote",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "promote", "greet", "--dry"],
+        "args": ["greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "promote",
+      "args": ["greet", "--check"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "promote", "greet", "--check", "--dry"],
+        "args": ["greet", "--check", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": false
+      }
+    },
+    {
+      "command": "promote",
+      "args": ["greet", "--dry"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "promote", "greet", "--dry"],
+        "args": ["greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "promote",
+      "args": ["x"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "promote", "x"],
+        "args": ["x"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "promote",
+      "args": ["x", "--dry"],
+      "confirm": true,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "promote", "x", "--dry"],
+        "args": ["x", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "promote",
+      "args": ["greet"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "promote", "greet", "--dry"],
+        "args": ["greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "promote",
+      "args": ["greet", "--ref", "def456"],
+      "confirm": false,
+      "ref": "abc123",
+      "plan": {
+        "argv": ["bun", "run", "labs", "promote", "greet", "--ref", "def456", "--dry"],
+        "args": ["greet", "--ref", "def456", "--dry"],
+        "cwd": "/repo",
+        "outDir": null,
+        "gpu": true
+      }
+    },
+    {
+      "command": "promote",
+      "args": ["--out", "out/here", "greet"],
+      "confirm": false,
+      "ref": null,
+      "plan": {
+        "argv": ["bun", "run", "labs", "promote", "--out", "out/here", "greet", "--dry"],
+        "args": ["--out", "out/here", "greet", "--dry"],
+        "cwd": "/repo",
+        "outDir": "/repo/out/here",
+        "gpu": true
+      }
+    }
+  ]
+}

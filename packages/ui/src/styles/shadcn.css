@@ -1,0 +1,120 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/*
+ * The theme of the shadcn-vue components (src/components/ui, components.json). The components use the
+ * shadcn color names: background, card, primary, muted, sidebar and others. This file maps each name to a
+ * semantic token of @scenity/tokens. Thus the components follow the theme, the contrast setting and forced
+ * colors of the app. The radii, shadows and easings of the components come from token values too.
+ *
+ * Do not add colors here. Add a semantic token, then map the shadcn name to it.
+ */
+@import "tw-animate-css";
+
+@theme inline {
+  --color-background: var(--sc-color-surface-base);
+  --color-foreground: var(--sc-color-text-primary);
+  --color-card: var(--sc-color-surface-raised);
+  --color-card-foreground: var(--sc-color-text-primary);
+  --color-popover: var(--sc-color-surface-overlay);
+  --color-popover-foreground: var(--sc-color-text-primary);
+  --color-primary: var(--sc-color-accent-brand);
+  --color-primary-foreground: var(--sc-color-text-on-accent);
+  --color-secondary: var(--sc-color-surface-sunken);
+  --color-secondary-foreground: var(--sc-color-text-primary);
+  --color-muted: var(--sc-color-surface-sunken);
+  --color-muted-foreground: var(--sc-color-text-secondary);
+  --color-accent: var(--sc-color-surface-sunken);
+  --color-accent-foreground: var(--sc-color-text-primary);
+  --color-destructive: var(--sc-color-status-negative);
+  --color-border: var(--sc-color-border-subtle);
+  --color-input: var(--sc-color-border-strong);
+  --color-ring: var(--sc-color-focus-ring);
+
+  --color-sidebar: var(--sc-color-surface-base);
+  --color-sidebar-foreground: var(--sc-color-text-primary);
+  --color-sidebar-primary: var(--sc-color-accent-brand);
+  --color-sidebar-primary-foreground: var(--sc-color-text-on-accent);
+  --color-sidebar-accent: var(--sc-color-surface-sunken);
+  --color-sidebar-accent-foreground: var(--sc-color-text-primary);
+  --color-sidebar-border: var(--sc-color-border-subtle);
+  --color-sidebar-ring: var(--sc-color-focus-ring);
+
+  --radius-xs: var(--sc-radius-2);
+  --radius-sm: var(--sc-radius-4);
+  --radius-md: var(--sc-radius-6);
+  --radius-lg: var(--sc-radius-8);
+  --radius-xl: var(--sc-radius-12);
+
+  --shadow-xs: var(--sc-shadow-raised);
+  --shadow-sm: var(--sc-shadow-raised);
+  --shadow-md: var(--sc-shadow-overlay);
+  --shadow-lg: var(--sc-shadow-overlay);
+
+  --ease-in-out: var(--sc-ease-standard);
+}
+
+@layer base {
+  /*
+   * The components draw a border with the class "border" and no color. The preflight of Tailwind gives such a
+   * border the text color. Each component root has a data-slot attribute: there the border has the subtle
+   * border color, as in shadcn-vue.
+   */
+  [data-slot] {
+    border-color: var(--sc-color-border-subtle);
+  }
+}
+
+/*
+ * Reduced motion: from the operating system or from the in-app setting. The open and close
+ * animations of the components (tw-animate-css) and their transitions become instant.
+ */
+@media (prefers-reduced-motion: reduce) {
+  [data-slot],
+  [data-slot] * {
+    --tw-animation-duration: 0s;
+    transition-duration: 0s;
+  }
+}
+
+[data-motion="reduced"] {
+  & [data-slot],
+  & [data-slot] * {
+    --tw-animation-duration: 0s;
+    transition-duration: 0s;
+  }
+}
+
+/*
+ * Forced colors: the browser replaces the background colors, so a switch does not show its state without
+ * a change. The switch draws its track and thumb in system colors; "on" uses Highlight. The dot of a checked
+ * radio item and the box of a checked checkbox get Highlight too.
+ */
+@media (forced-colors: active) {
+  [data-slot="switch"] {
+    forced-color-adjust: none;
+    border-color: CanvasText;
+    background-color: Canvas;
+  }
+
+  [data-slot="switch"][data-state="checked"] {
+    border-color: Highlight;
+    background-color: Highlight;
+  }
+
+  [data-slot="switch-thumb"] {
+    forced-color-adjust: none;
+    background-color: CanvasText;
+  }
+
+  [data-slot="switch"][data-state="checked"] [data-slot="switch-thumb"] {
+    background-color: HighlightText;
+  }
+
+  [data-slot="radio-group-item"][data-state="checked"],
+  [data-slot="checkbox"][data-state="checked"] {
+    border-color: Highlight;
+  }
+
+  [data-slot="radio-group-indicator"] svg {
+    fill: Highlight;
+  }
+}

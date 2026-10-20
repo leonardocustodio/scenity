@@ -1,0 +1,94 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The region of the Scene view for the agent (viewRegion.ts): a layer over the view with a crosshair, the box of the
+   drag and a hint. */
+.agent-region-layer {
+  position: fixed;
+  z-index: 60;
+  cursor: crosshair;
+  outline: 2px solid var(--sc-color-focus-ring);
+  outline-offset: -2px;
+  background: color-mix(in oklab, var(--sc-color-surface-base) 20%, transparent);
+}
+
+.agent-region-box {
+  position: absolute;
+  border: 2px dashed var(--sc-color-studio-selection);
+  background: var(--sc-color-studio-selection-subtle);
+  opacity: 0.6;
+}
+
+.agent-region-hint {
+  position: absolute;
+  inset: 8px auto auto 8px;
+  margin: 0;
+  padding: 4px 8px;
+  border-radius: var(--sc-radius-4);
+  font: var(--sc-type-caption, 12px system-ui);
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-surface-overlay);
+  pointer-events: none;
+}
+
+/* "Follow the agent": the last frame of the agent at the corner of the Scene view. */
+#scene-agent-follow {
+  position: absolute;
+  z-index: var(--scene-z-panel, 3);
+  inset: auto auto var(--scene-panel-bottom, 8px) var(--scene-free-left, 8px);
+  width: 240px;
+  margin: 0;
+  padding: 4px;
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: var(--sc-radius-4);
+  background: var(--sc-color-surface-overlay);
+}
+
+/* In the Agent overlay, the follow view moves with the overlay. */
+.scene-overlay #scene-agent-follow {
+  position: static;
+  width: 200px;
+}
+
+#scene-agent-follow[hidden] {
+  display: none;
+}
+
+#scene-agent-follow img {
+  display: block;
+  width: 100%;
+}
+
+#scene-agent-follow figcaption {
+  font: var(--sc-type-caption, 12px system-ui);
+  color: var(--sc-color-text-secondary);
+}
+
+/* The inline prompt at the position of the focus. */
+#agent-inline {
+  position: fixed;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 320px;
+  padding: 8px;
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: var(--sc-radius-4);
+  background: var(--sc-color-surface-overlay);
+  box-shadow: var(--sc-shadow-overlay, 0 4px 16px rgb(0 0 0 / 30%));
+}
+
+#agent-inline p {
+  margin: 0;
+  font: var(--sc-type-caption, 12px system-ui);
+  color: var(--sc-color-text-secondary);
+}
+
+#agent-inline input {
+  min-height: 28px;
+  padding: 0 8px;
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: var(--sc-radius-4);
+  font: inherit;
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-surface-raised);
+}

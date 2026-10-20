@@ -1,0 +1,36 @@
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<script setup lang="ts">
+import type { HTMLAttributes } from "vue";
+import { useVModel } from "@vueuse/core";
+import { cn } from "../../../lib/utils";
+
+const props = defineProps<{
+  defaultValue?: string | number;
+  modelValue?: string | number;
+  class?: HTMLAttributes["class"];
+}>();
+
+const emits = defineEmits<{
+  "update:modelValue": [payload: string | number];
+}>();
+
+const modelValue = useVModel(props, "modelValue", emits, {
+  passive: true,
+  ...(props.defaultValue === undefined ? {} : { defaultValue: props.defaultValue }),
+});
+</script>
+
+<template>
+  <input
+    v-model="modelValue"
+    data-slot="input"
+    :class="
+      cn(
+        'file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground border-input h-9 w-full min-w-0 pointer-coarse:min-h-target-touch rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
+        '',
+        'aria-invalid:ring-destructive/20 aria-invalid:border-destructive',
+        props.class,
+      )
+    "
+  />
+</template>

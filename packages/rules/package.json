@@ -1,0 +1,35 @@
+{
+  "name": "@scenity/rules",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The metric library of Scenity: the built-in metrics (distance, overlap, belowFloor, ikError, jointAngle, reach, visible, walkway, routeClear, triangleBudget, assetRights), the registry of plugin metrics and the metric context over the facts of a scene at a time. It also holds the seeded layout search over op paths (searchLayout). Pure TypeScript: no three.js, no DOM, no Vue. The editor, the CLI and the tools of Claude read it.",
+  "type": "module",
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/rules"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests"
+  },
+  "dependencies": {
+    "@scenity/character": "workspace:*",
+    "@scenity/scene": "workspace:*",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "clearcoat": 0.2,
+  "colour": "#c0c4c8",
+  "format": "scenity.material/1",
+  "ior": 1.5,
+  "maps": {
+    "colour": {
+      "repeat": [4, 4],
+      "texture": "asset:01J9Z6Q3R8TEX0000000001"
+    },
+    "roughness": {
+      "colorSpace": "linear",
+      "offset": [0.5, 0],
+      "texture": "asset:01J9Z6Q3R8TEX0000000002"
+    }
+  },
+  "metalness": 1,
+  "name": "Brushed steel",
+  "normalScale": [1, -1],
+  "roughness": 0.35,
+  "type": "physical"
+}

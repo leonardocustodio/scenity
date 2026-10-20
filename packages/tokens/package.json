@@ -1,0 +1,45 @@
+{
+  "name": "@scenity/tokens",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "Design tokens of Scenity (from CodeBlue): DTCG sources, the neutral themes navy, light and dark with their high-contrast forms, and the Style Dictionary build. A plugin builds its own token set over these tokens with /build.",
+  "type": "module",
+  "files": [
+    "src",
+    "dist",
+    "config",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/tokens"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./css": "./dist/tokens.css",
+    "./tailwind.css": "./dist/tailwind.css",
+    "./reference.json": "./dist/reference.json",
+    "./build": "./config/build.ts"
+  },
+  "scripts": {
+    "build": "bun config/build.ts",
+    "test": "bun test ./tests"
+  },
+  "peerDependencies": {
+    "style-dictionary": "^5.5.5"
+  },
+  "peerDependenciesMeta": {
+    "style-dictionary": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "style-dictionary": "5.5.5",
+    "@types/bun": "catalog:"
+  }
+}

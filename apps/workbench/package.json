@@ -1,0 +1,43 @@
+{
+  "name": "@scenity/workbench",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "private": true,
+  "version": "0.1.0",
+  "description": "The workbench page of Scenity: the surface frames, the Claude panel, the changes and the runs, on a host of @scenity/workbench-host. Developers only. The learner release never builds it.",
+  "type": "module",
+  "exports": {
+    "./playwright.config": "./playwright.config.ts",
+    "./tests/e2e/*": "./tests/e2e/*.ts"
+  },
+  "scripts": {
+    "dev": "bunx --bun vite",
+    "build": "vue-tsc --noEmit -p tsconfig.json && bunx --bun vite build",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json",
+    "test:components": "bunx --bun vitest run",
+    "e2e": "bunx --bun playwright test"
+  },
+  "dependencies": {
+    "@scenity/bridge": "workspace:*",
+    "@scenity/labs-platform": "workspace:*",
+    "@scenity/ui": "workspace:*",
+    "@scenity/workbench-host": "workspace:*",
+    "@xterm/addon-fit": "0.11.0",
+    "@xterm/xterm": "6.0.0",
+    "lucide-vue-next": "1.0.0",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@playwright/test": "catalog:",
+    "@tailwindcss/vite": "catalog:",
+    "@types/bun": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/test-utils": "catalog:",
+    "happy-dom": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:",
+    "vue-tsc": "catalog:"
+  }
+}

@@ -1,0 +1,18 @@
+# Rights record of the environment map of the glTF samples: the same CC0 HDRI as the showroom sample, from Poly Haven
+# (https://polyhaven.com). CC0 asks for no attribution, but the sample names the author anyway.
+name: polyhaven
+source: "Poly Haven, https://polyhaven.com (downloaded 2026-10-15 through api.polyhaven.com, an HDRI at 1k; a copy of samples/showroom)"
+author: "Sergej Majboroda"
+licence: "CC0 1.0 Universal (public domain dedication)"
+spdx: CC0-1.0 # the release gate checks it against release.licences.allow of scenity.project.json
+licenceUrl: https://creativecommons.org/publicdomain/zero/1.0/
+licenceDate: 2026-10-15
+allowedUse: [web, unreal, public]
+webDelivery: true
+attribution: null
+assets:
+  - id: studio_small_09
+    name: "Studio Small 09"
+    authors: ["Sergej Majboroda"]
+    page: https://polyhaven.com/a/studio_small_09
+changes: "None."

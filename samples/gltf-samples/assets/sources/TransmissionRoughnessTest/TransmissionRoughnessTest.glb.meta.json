@@ -1,0 +1,15 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M519A6XXE2MD6W36Y87NVVCQ",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/khronos-cc-by.yaml",
+  "settings": {},
+  "source": "TransmissionRoughnessTest.glb",
+  "tags": [
+    "gltf-sample",
+    "khr_materials_transmission",
+    "khr_materials_ior",
+    "khr_materials_volume"
+  ]
+}

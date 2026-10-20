@@ -1,0 +1,12 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M4ZPXYG3Y8BZ2M38RFM5YFTB",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/polyhaven.yaml",
+  "settings": {},
+  "source": "Ottoman_01_1k.gltf",
+  "tags": [
+    "furniture"
+  ]
+}

@@ -1,0 +1,2056 @@
+{
+  "entities": {
+    "building-1": {
+      "components": {
+        "shape": {
+          "colour": "#b9a48a",
+          "kind": "box",
+          "roughness": 0.9,
+          "size": [7, 5, 4]
+        },
+        "transform": {
+          "position": [-14, 2.5, -10.5]
+        }
+      },
+      "index": 32,
+      "name": "Building 1",
+      "parent": null
+    },
+    "building-2": {
+      "components": {
+        "shape": {
+          "colour": "#8d9bb0",
+          "kind": "box",
+          "roughness": 0.9,
+          "size": [6, 7.5, 4]
+        },
+        "transform": {
+          "position": [-6.5, 3.75, -10.5]
+        }
+      },
+      "index": 33,
+      "name": "Building 2",
+      "parent": null
+    },
+    "building-3": {
+      "components": {
+        "shape": {
+          "colour": "#c4b7a6",
+          "kind": "box",
+          "roughness": 0.9,
+          "size": [7, 4.5, 4]
+        },
+        "transform": {
+          "position": [1, 2.25, -10.5]
+        }
+      },
+      "index": 34,
+      "name": "Building 3",
+      "parent": null
+    },
+    "building-4": {
+      "components": {
+        "shape": {
+          "colour": "#9aa88f",
+          "kind": "box",
+          "roughness": 0.9,
+          "size": [6, 6.5, 4]
+        },
+        "transform": {
+          "position": [8.5, 3.25, -10.5]
+        }
+      },
+      "index": 35,
+      "name": "Building 4",
+      "parent": null
+    },
+    "building-5": {
+      "components": {
+        "shape": {
+          "colour": "#b59c9c",
+          "kind": "box",
+          "roughness": 0.9,
+          "size": [7, 5.5, 4]
+        },
+        "transform": {
+          "position": [16, 2.75, -10.5]
+        }
+      },
+      "index": 36,
+      "name": "Building 5",
+      "parent": null
+    },
+    "car-1": {
+      "components": {
+        "traffic.vehicle": {},
+        "transform": {
+          "position": [-60, 0, 30]
+        }
+      },
+      "index": 24,
+      "name": "Car 1",
+      "parent": null,
+      "tags": [
+        "car"
+      ]
+    },
+    "car-1-body": {
+      "components": {
+        "shape": {
+          "colour": "#c8402e",
+          "kind": "box",
+          "metalness": 0.3,
+          "roughness": 0.35,
+          "size": [3.8, 0.66, 1.7]
+        },
+        "transform": {
+          "position": [0, 0.62, 0]
+        }
+      },
+      "index": 0,
+      "name": "Body",
+      "parent": "car-1"
+    },
+    "car-1-cabin": {
+      "components": {
+        "shape": {
+          "colour": "#2a3440",
+          "kind": "box",
+          "metalness": 0.4,
+          "roughness": 0.2,
+          "size": [2.1, 0.52, 1.5]
+        },
+        "transform": {
+          "position": [-0.25, 1.21, 0]
+        }
+      },
+      "index": 1,
+      "name": "Cabin",
+      "parent": "car-1"
+    },
+    "car-1-wheel-fl": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [1.25, 0.31, 0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 2,
+      "name": "Wheel",
+      "parent": "car-1"
+    },
+    "car-1-wheel-fr": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [1.25, 0.31, -0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 3,
+      "name": "Wheel",
+      "parent": "car-1"
+    },
+    "car-1-wheel-rl": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [-1.25, 0.31, 0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 4,
+      "name": "Wheel",
+      "parent": "car-1"
+    },
+    "car-1-wheel-rr": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [-1.25, 0.31, -0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 5,
+      "name": "Wheel",
+      "parent": "car-1"
+    },
+    "car-2": {
+      "components": {
+        "traffic.vehicle": {},
+        "transform": {
+          "position": [-68, 0, 30]
+        }
+      },
+      "index": 25,
+      "name": "Car 2",
+      "parent": null,
+      "tags": [
+        "car"
+      ]
+    },
+    "car-2-body": {
+      "components": {
+        "shape": {
+          "colour": "#2e6fb8",
+          "kind": "box",
+          "metalness": 0.3,
+          "roughness": 0.35,
+          "size": [3.8, 0.66, 1.7]
+        },
+        "transform": {
+          "position": [0, 0.62, 0]
+        }
+      },
+      "index": 0,
+      "name": "Body",
+      "parent": "car-2"
+    },
+    "car-2-cabin": {
+      "components": {
+        "shape": {
+          "colour": "#2a3440",
+          "kind": "box",
+          "metalness": 0.4,
+          "roughness": 0.2,
+          "size": [2.1, 0.52, 1.5]
+        },
+        "transform": {
+          "position": [-0.25, 1.21, 0]
+        }
+      },
+      "index": 1,
+      "name": "Cabin",
+      "parent": "car-2"
+    },
+    "car-2-wheel-fl": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [1.25, 0.31, 0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 2,
+      "name": "Wheel",
+      "parent": "car-2"
+    },
+    "car-2-wheel-fr": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [1.25, 0.31, -0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 3,
+      "name": "Wheel",
+      "parent": "car-2"
+    },
+    "car-2-wheel-rl": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [-1.25, 0.31, 0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 4,
+      "name": "Wheel",
+      "parent": "car-2"
+    },
+    "car-2-wheel-rr": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [-1.25, 0.31, -0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 5,
+      "name": "Wheel",
+      "parent": "car-2"
+    },
+    "car-3": {
+      "components": {
+        "traffic.vehicle": {},
+        "transform": {
+          "position": [-76, 0, 30]
+        }
+      },
+      "index": 26,
+      "name": "Car 3",
+      "parent": null,
+      "tags": [
+        "car"
+      ]
+    },
+    "car-3-body": {
+      "components": {
+        "shape": {
+          "colour": "#e0b84a",
+          "kind": "box",
+          "metalness": 0.3,
+          "roughness": 0.35,
+          "size": [3.8, 0.66, 1.7]
+        },
+        "transform": {
+          "position": [0, 0.62, 0]
+        }
+      },
+      "index": 0,
+      "name": "Body",
+      "parent": "car-3"
+    },
+    "car-3-cabin": {
+      "components": {
+        "shape": {
+          "colour": "#2a3440",
+          "kind": "box",
+          "metalness": 0.4,
+          "roughness": 0.2,
+          "size": [2.1, 0.52, 1.5]
+        },
+        "transform": {
+          "position": [-0.25, 1.21, 0]
+        }
+      },
+      "index": 1,
+      "name": "Cabin",
+      "parent": "car-3"
+    },
+    "car-3-wheel-fl": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [1.25, 0.31, 0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 2,
+      "name": "Wheel",
+      "parent": "car-3"
+    },
+    "car-3-wheel-fr": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [1.25, 0.31, -0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 3,
+      "name": "Wheel",
+      "parent": "car-3"
+    },
+    "car-3-wheel-rl": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [-1.25, 0.31, 0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 4,
+      "name": "Wheel",
+      "parent": "car-3"
+    },
+    "car-3-wheel-rr": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [-1.25, 0.31, -0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 5,
+      "name": "Wheel",
+      "parent": "car-3"
+    },
+    "car-4": {
+      "components": {
+        "traffic.vehicle": {},
+        "transform": {
+          "position": [-84, 0, 30]
+        }
+      },
+      "index": 27,
+      "name": "Car 4",
+      "parent": null,
+      "tags": [
+        "car"
+      ]
+    },
+    "car-4-body": {
+      "components": {
+        "shape": {
+          "colour": "#3a8f5a",
+          "kind": "box",
+          "metalness": 0.3,
+          "roughness": 0.35,
+          "size": [3.8, 0.66, 1.7]
+        },
+        "transform": {
+          "position": [0, 0.62, 0]
+        }
+      },
+      "index": 0,
+      "name": "Body",
+      "parent": "car-4"
+    },
+    "car-4-cabin": {
+      "components": {
+        "shape": {
+          "colour": "#2a3440",
+          "kind": "box",
+          "metalness": 0.4,
+          "roughness": 0.2,
+          "size": [2.1, 0.52, 1.5]
+        },
+        "transform": {
+          "position": [-0.25, 1.21, 0]
+        }
+      },
+      "index": 1,
+      "name": "Cabin",
+      "parent": "car-4"
+    },
+    "car-4-wheel-fl": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [1.25, 0.31, 0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 2,
+      "name": "Wheel",
+      "parent": "car-4"
+    },
+    "car-4-wheel-fr": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [1.25, 0.31, -0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 3,
+      "name": "Wheel",
+      "parent": "car-4"
+    },
+    "car-4-wheel-rl": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [-1.25, 0.31, 0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 4,
+      "name": "Wheel",
+      "parent": "car-4"
+    },
+    "car-4-wheel-rr": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [-1.25, 0.31, -0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 5,
+      "name": "Wheel",
+      "parent": "car-4"
+    },
+    "car-5": {
+      "components": {
+        "traffic.vehicle": {},
+        "transform": {
+          "position": [-92, 0, 30]
+        }
+      },
+      "index": 28,
+      "name": "Car 5",
+      "parent": null,
+      "tags": [
+        "car"
+      ]
+    },
+    "car-5-body": {
+      "components": {
+        "shape": {
+          "colour": "#ededed",
+          "kind": "box",
+          "metalness": 0.3,
+          "roughness": 0.35,
+          "size": [3.8, 0.66, 1.7]
+        },
+        "transform": {
+          "position": [0, 0.62, 0]
+        }
+      },
+      "index": 0,
+      "name": "Body",
+      "parent": "car-5"
+    },
+    "car-5-cabin": {
+      "components": {
+        "shape": {
+          "colour": "#2a3440",
+          "kind": "box",
+          "metalness": 0.4,
+          "roughness": 0.2,
+          "size": [2.1, 0.52, 1.5]
+        },
+        "transform": {
+          "position": [-0.25, 1.21, 0]
+        }
+      },
+      "index": 1,
+      "name": "Cabin",
+      "parent": "car-5"
+    },
+    "car-5-wheel-fl": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [1.25, 0.31, 0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 2,
+      "name": "Wheel",
+      "parent": "car-5"
+    },
+    "car-5-wheel-fr": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [1.25, 0.31, -0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 3,
+      "name": "Wheel",
+      "parent": "car-5"
+    },
+    "car-5-wheel-rl": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [-1.25, 0.31, 0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 4,
+      "name": "Wheel",
+      "parent": "car-5"
+    },
+    "car-5-wheel-rr": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [-1.25, 0.31, -0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 5,
+      "name": "Wheel",
+      "parent": "car-5"
+    },
+    "car-6": {
+      "components": {
+        "traffic.vehicle": {},
+        "transform": {
+          "position": [-100, 0, 30]
+        }
+      },
+      "index": 29,
+      "name": "Car 6",
+      "parent": null,
+      "tags": [
+        "car"
+      ]
+    },
+    "car-6-body": {
+      "components": {
+        "shape": {
+          "colour": "#7a4fb0",
+          "kind": "box",
+          "metalness": 0.3,
+          "roughness": 0.35,
+          "size": [3.8, 0.66, 1.7]
+        },
+        "transform": {
+          "position": [0, 0.62, 0]
+        }
+      },
+      "index": 0,
+      "name": "Body",
+      "parent": "car-6"
+    },
+    "car-6-cabin": {
+      "components": {
+        "shape": {
+          "colour": "#2a3440",
+          "kind": "box",
+          "metalness": 0.4,
+          "roughness": 0.2,
+          "size": [2.1, 0.52, 1.5]
+        },
+        "transform": {
+          "position": [-0.25, 1.21, 0]
+        }
+      },
+      "index": 1,
+      "name": "Cabin",
+      "parent": "car-6"
+    },
+    "car-6-wheel-fl": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [1.25, 0.31, 0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 2,
+      "name": "Wheel",
+      "parent": "car-6"
+    },
+    "car-6-wheel-fr": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [1.25, 0.31, -0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 3,
+      "name": "Wheel",
+      "parent": "car-6"
+    },
+    "car-6-wheel-rl": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [-1.25, 0.31, 0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 4,
+      "name": "Wheel",
+      "parent": "car-6"
+    },
+    "car-6-wheel-rr": {
+      "components": {
+        "shape": {
+          "colour": "#1a1a1c",
+          "kind": "cylinder",
+          "roughness": 0.8,
+          "size": [0.62, 0.24, 0.62]
+        },
+        "transform": {
+          "position": [-1.25, 0.31, -0.78],
+          "rotation": [0.707107, 0, 0, 0.707107]
+        }
+      },
+      "index": 5,
+      "name": "Wheel",
+      "parent": "car-6"
+    },
+    "crossing": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#44474d",
+          "kind": "box",
+          "roughness": 0.9,
+          "size": [3, 0.004, 6]
+        },
+        "transform": {
+          "position": [0, 0.005, 0]
+        }
+      },
+      "index": 4,
+      "name": "Crossing",
+      "parent": null,
+      "tags": [
+        "crossing"
+      ]
+    },
+    "crossing-stripe-1": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#f2f2ee",
+          "kind": "box",
+          "roughness": 0.6,
+          "size": [3, 0.004, 0.5]
+        },
+        "transform": {
+          "position": [0, 0.003, -2.5]
+        }
+      },
+      "index": 0,
+      "name": "Stripe 1",
+      "parent": "crossing"
+    },
+    "crossing-stripe-2": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#f2f2ee",
+          "kind": "box",
+          "roughness": 0.6,
+          "size": [3, 0.004, 0.5]
+        },
+        "transform": {
+          "position": [0, 0.003, -1.5]
+        }
+      },
+      "index": 1,
+      "name": "Stripe 2",
+      "parent": "crossing"
+    },
+    "crossing-stripe-3": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#f2f2ee",
+          "kind": "box",
+          "roughness": 0.6,
+          "size": [3, 0.004, 0.5]
+        },
+        "transform": {
+          "position": [0, 0.003, -0.5]
+        }
+      },
+      "index": 2,
+      "name": "Stripe 3",
+      "parent": "crossing"
+    },
+    "crossing-stripe-4": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#f2f2ee",
+          "kind": "box",
+          "roughness": 0.6,
+          "size": [3, 0.004, 0.5]
+        },
+        "transform": {
+          "position": [0, 0.003, 0.5]
+        }
+      },
+      "index": 3,
+      "name": "Stripe 4",
+      "parent": "crossing"
+    },
+    "crossing-stripe-5": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#f2f2ee",
+          "kind": "box",
+          "roughness": 0.6,
+          "size": [3, 0.004, 0.5]
+        },
+        "transform": {
+          "position": [0, 0.003, 1.5]
+        }
+      },
+      "index": 4,
+      "name": "Stripe 5",
+      "parent": "crossing"
+    },
+    "crossing-stripe-6": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#f2f2ee",
+          "kind": "box",
+          "roughness": 0.6,
+          "size": [3, 0.004, 0.5]
+        },
+        "transform": {
+          "position": [0, 0.003, 2.5]
+        }
+      },
+      "index": 5,
+      "name": "Stripe 6",
+      "parent": "crossing"
+    },
+    "fill": {
+      "components": {
+        "light": {
+          "colour": "#dfe8ff",
+          "groundColour": "#5e6b4a",
+          "intensity": 0.9,
+          "type": "hemisphere"
+        },
+        "transform": {
+          "position": [0, 6, 0]
+        }
+      },
+      "index": 40,
+      "name": "Sky light",
+      "parent": null
+    },
+    "front": {
+      "components": {
+        "camera": {
+          "fov": 45,
+          "target": [0, 0.6, -0.6]
+        },
+        "transform": {
+          "position": [0, 5.6, 12.5]
+        }
+      },
+      "index": 41,
+      "name": "Front",
+      "parent": null
+    },
+    "ground": {
+      "components": {
+        "shape": {
+          "colour": "#6f8a4e",
+          "kind": "plane",
+          "roughness": 0.95,
+          "size": [70, 0, 44]
+        },
+        "transform": {
+          "position": [0, 0, 0]
+        }
+      },
+      "index": 0,
+      "name": "Ground",
+      "parent": null
+    },
+    "kerb": {
+      "components": {
+        "camera": {
+          "fov": 50,
+          "target": [0, 1, 0]
+        },
+        "transform": {
+          "position": [4.2, 1.6, 7.2]
+        }
+      },
+      "index": 43,
+      "name": "Kerb",
+      "parent": null
+    },
+    "lane-mark-1": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#e8e4d0",
+          "kind": "box",
+          "size": [2.2, 0.004, 0.14]
+        },
+        "transform": {
+          "position": [-21, 0.006, 0]
+        }
+      },
+      "index": 7,
+      "name": "Lane mark 1",
+      "parent": null
+    },
+    "lane-mark-2": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#e8e4d0",
+          "kind": "box",
+          "size": [2.2, 0.004, 0.14]
+        },
+        "transform": {
+          "position": [-16.5, 0.006, 0]
+        }
+      },
+      "index": 8,
+      "name": "Lane mark 2",
+      "parent": null
+    },
+    "lane-mark-3": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#e8e4d0",
+          "kind": "box",
+          "size": [2.2, 0.004, 0.14]
+        },
+        "transform": {
+          "position": [-12, 0.006, 0]
+        }
+      },
+      "index": 9,
+      "name": "Lane mark 3",
+      "parent": null
+    },
+    "lane-mark-4": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#e8e4d0",
+          "kind": "box",
+          "size": [2.2, 0.004, 0.14]
+        },
+        "transform": {
+          "position": [-7.5, 0.006, 0]
+        }
+      },
+      "index": 10,
+      "name": "Lane mark 4",
+      "parent": null
+    },
+    "lane-mark-5": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#e8e4d0",
+          "kind": "box",
+          "size": [2.2, 0.004, 0.14]
+        },
+        "transform": {
+          "position": [7.5, 0.006, 0]
+        }
+      },
+      "index": 11,
+      "name": "Lane mark 5",
+      "parent": null
+    },
+    "lane-mark-6": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#e8e4d0",
+          "kind": "box",
+          "size": [2.2, 0.004, 0.14]
+        },
+        "transform": {
+          "position": [12, 0.006, 0]
+        }
+      },
+      "index": 12,
+      "name": "Lane mark 6",
+      "parent": null
+    },
+    "lane-mark-7": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#e8e4d0",
+          "kind": "box",
+          "size": [2.2, 0.004, 0.14]
+        },
+        "transform": {
+          "position": [16.5, 0.006, 0]
+        }
+      },
+      "index": 13,
+      "name": "Lane mark 7",
+      "parent": null
+    },
+    "lane-mark-8": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#e8e4d0",
+          "kind": "box",
+          "size": [2.2, 0.004, 0.14]
+        },
+        "transform": {
+          "position": [21, 0.006, 0]
+        }
+      },
+      "index": 14,
+      "name": "Lane mark 8",
+      "parent": null
+    },
+    "pavement-north": {
+      "components": {
+        "shape": {
+          "colour": "#b4b0a8",
+          "kind": "box",
+          "roughness": 0.85,
+          "size": [70, 0.04, 3.4]
+        },
+        "transform": {
+          "position": [0, 0.02, -4.7]
+        }
+      },
+      "index": 3,
+      "name": "North pavement",
+      "parent": null
+    },
+    "pavement-south": {
+      "components": {
+        "shape": {
+          "colour": "#b4b0a8",
+          "kind": "box",
+          "roughness": 0.85,
+          "size": [70, 0.04, 3.4]
+        },
+        "transform": {
+          "position": [0, 0.02, 4.7]
+        }
+      },
+      "index": 2,
+      "name": "South pavement",
+      "parent": null
+    },
+    "road": {
+      "components": {
+        "shape": {
+          "colour": "#3b3e44",
+          "kind": "box",
+          "roughness": 0.9,
+          "size": [70, 0.004, 6]
+        },
+        "transform": {
+          "position": [0, 0.002, 0]
+        }
+      },
+      "index": 1,
+      "name": "Road",
+      "parent": null
+    },
+    "signal-east": {
+      "components": {
+        "shape": {
+          "colour": "#1d2024",
+          "kind": "box",
+          "roughness": 0.6,
+          "size": [0.34, 0.98, 0.26]
+        },
+        "transform": {
+          "position": [3.6, 3.1, 3.25],
+          "rotation": [0, -0.707107, 0, 0.707107]
+        }
+      },
+      "index": 16,
+      "name": "East lane signal",
+      "parent": null,
+      "tags": [
+        "signal"
+      ]
+    },
+    "signal-east-amber": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "sphere",
+          "material": "asset:01M53P23Z85MGCQ7JBWBSN6NS3",
+          "size": [0.24, 0.24, 0.24]
+        },
+        "traffic.signal": {
+          "head": "car",
+          "lamp": "amber",
+          "lit": true
+        },
+        "transform": {
+          "position": [0, 0, 0.15]
+        }
+      },
+      "index": 2,
+      "name": "Amber lamp",
+      "parent": "signal-east"
+    },
+    "signal-east-amber-dark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#3a2c0c",
+          "kind": "sphere",
+          "roughness": 0.4,
+          "size": [0.24, 0.24, 0.24]
+        },
+        "traffic.signal": {
+          "head": "car",
+          "lamp": "amber",
+          "lit": false
+        },
+        "transform": {
+          "position": [0, 0, 0.15]
+        }
+      },
+      "index": 3,
+      "name": "Amber lamp (dark)",
+      "parent": "signal-east"
+    },
+    "signal-east-green": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "sphere",
+          "material": "asset:01M53P241NQ1ANQ41JG3XMB2EZ",
+          "size": [0.24, 0.24, 0.24]
+        },
+        "traffic.signal": {
+          "head": "car",
+          "lamp": "green",
+          "lit": true
+        },
+        "transform": {
+          "position": [0, -0.3, 0.15]
+        }
+      },
+      "index": 4,
+      "name": "Green lamp",
+      "parent": "signal-east"
+    },
+    "signal-east-green-dark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#0f2b18",
+          "kind": "sphere",
+          "roughness": 0.4,
+          "size": [0.24, 0.24, 0.24]
+        },
+        "traffic.signal": {
+          "head": "car",
+          "lamp": "green",
+          "lit": false
+        },
+        "transform": {
+          "position": [0, -0.3, 0.15]
+        }
+      },
+      "index": 5,
+      "name": "Green lamp (dark)",
+      "parent": "signal-east"
+    },
+    "signal-east-pole": {
+      "components": {
+        "shape": {
+          "colour": "#30343a",
+          "kind": "cylinder",
+          "metalness": 0.4,
+          "roughness": 0.5,
+          "size": [0.12, 3, 0.12]
+        },
+        "transform": {
+          "position": [3.6, 1.5, 3.25]
+        }
+      },
+      "index": 15,
+      "name": "East lane signal pole",
+      "parent": null
+    },
+    "signal-east-red": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "sphere",
+          "material": "asset:01M53P23WWNS14QZKG5J43RZZD",
+          "size": [0.24, 0.24, 0.24]
+        },
+        "traffic.signal": {
+          "head": "car",
+          "lamp": "red",
+          "lit": true
+        },
+        "transform": {
+          "position": [0, 0.3, 0.15]
+        }
+      },
+      "index": 0,
+      "name": "Red lamp",
+      "parent": "signal-east"
+    },
+    "signal-east-red-dark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#3a1512",
+          "kind": "sphere",
+          "roughness": 0.4,
+          "size": [0.24, 0.24, 0.24]
+        },
+        "traffic.signal": {
+          "head": "car",
+          "lamp": "red",
+          "lit": false
+        },
+        "transform": {
+          "position": [0, 0.3, 0.15]
+        }
+      },
+      "index": 1,
+      "name": "Red lamp (dark)",
+      "parent": "signal-east"
+    },
+    "signal-west": {
+      "components": {
+        "shape": {
+          "colour": "#1d2024",
+          "kind": "box",
+          "roughness": 0.6,
+          "size": [0.34, 0.98, 0.26]
+        },
+        "transform": {
+          "position": [-3.6, 3.1, -3.25],
+          "rotation": [0, 0.707107, 0, 0.707107]
+        }
+      },
+      "index": 18,
+      "name": "West lane signal",
+      "parent": null,
+      "tags": [
+        "signal"
+      ]
+    },
+    "signal-west-amber": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "sphere",
+          "material": "asset:01M53P23Z85MGCQ7JBWBSN6NS3",
+          "size": [0.24, 0.24, 0.24]
+        },
+        "traffic.signal": {
+          "head": "car",
+          "lamp": "amber",
+          "lit": true
+        },
+        "transform": {
+          "position": [0, 0, 0.15]
+        }
+      },
+      "index": 2,
+      "name": "Amber lamp",
+      "parent": "signal-west"
+    },
+    "signal-west-amber-dark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#3a2c0c",
+          "kind": "sphere",
+          "roughness": 0.4,
+          "size": [0.24, 0.24, 0.24]
+        },
+        "traffic.signal": {
+          "head": "car",
+          "lamp": "amber",
+          "lit": false
+        },
+        "transform": {
+          "position": [0, 0, 0.15]
+        }
+      },
+      "index": 3,
+      "name": "Amber lamp (dark)",
+      "parent": "signal-west"
+    },
+    "signal-west-green": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "sphere",
+          "material": "asset:01M53P241NQ1ANQ41JG3XMB2EZ",
+          "size": [0.24, 0.24, 0.24]
+        },
+        "traffic.signal": {
+          "head": "car",
+          "lamp": "green",
+          "lit": true
+        },
+        "transform": {
+          "position": [0, -0.3, 0.15]
+        }
+      },
+      "index": 4,
+      "name": "Green lamp",
+      "parent": "signal-west"
+    },
+    "signal-west-green-dark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#0f2b18",
+          "kind": "sphere",
+          "roughness": 0.4,
+          "size": [0.24, 0.24, 0.24]
+        },
+        "traffic.signal": {
+          "head": "car",
+          "lamp": "green",
+          "lit": false
+        },
+        "transform": {
+          "position": [0, -0.3, 0.15]
+        }
+      },
+      "index": 5,
+      "name": "Green lamp (dark)",
+      "parent": "signal-west"
+    },
+    "signal-west-pole": {
+      "components": {
+        "shape": {
+          "colour": "#30343a",
+          "kind": "cylinder",
+          "metalness": 0.4,
+          "roughness": 0.5,
+          "size": [0.12, 3, 0.12]
+        },
+        "transform": {
+          "position": [-3.6, 1.5, -3.25]
+        }
+      },
+      "index": 17,
+      "name": "West lane signal pole",
+      "parent": null
+    },
+    "signal-west-red": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "sphere",
+          "material": "asset:01M53P23WWNS14QZKG5J43RZZD",
+          "size": [0.24, 0.24, 0.24]
+        },
+        "traffic.signal": {
+          "head": "car",
+          "lamp": "red",
+          "lit": true
+        },
+        "transform": {
+          "position": [0, 0.3, 0.15]
+        }
+      },
+      "index": 0,
+      "name": "Red lamp",
+      "parent": "signal-west"
+    },
+    "signal-west-red-dark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#3a1512",
+          "kind": "sphere",
+          "roughness": 0.4,
+          "size": [0.24, 0.24, 0.24]
+        },
+        "traffic.signal": {
+          "head": "car",
+          "lamp": "red",
+          "lit": false
+        },
+        "transform": {
+          "position": [0, 0.3, 0.15]
+        }
+      },
+      "index": 1,
+      "name": "Red lamp (dark)",
+      "parent": "signal-west"
+    },
+    "stop-line-east": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#f2f2ee",
+          "kind": "box",
+          "size": [0.3, 0.004, 3]
+        },
+        "transform": {
+          "position": [-3.15, 0.006, 1.5]
+        }
+      },
+      "index": 5,
+      "name": "Stop line (east lane)",
+      "parent": null
+    },
+    "stop-line-west": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#f2f2ee",
+          "kind": "box",
+          "size": [0.3, 0.004, 3]
+        },
+        "transform": {
+          "position": [3.15, 0.006, -1.5]
+        }
+      },
+      "index": 6,
+      "name": "Stop line (west lane)",
+      "parent": null
+    },
+    "sun": {
+      "components": {
+        "light": {
+          "colour": "#fff4e5",
+          "intensity": 2.4,
+          "shadow": true,
+          "shadowCamera": {
+            "bottom": -16,
+            "far": 60,
+            "left": -22,
+            "near": 0.1,
+            "right": 22,
+            "top": 16
+          },
+          "target": [0, 0, 0],
+          "type": "directional"
+        },
+        "transform": {
+          "position": [8, 14, 10]
+        }
+      },
+      "index": 39,
+      "name": "Sun",
+      "parent": null
+    },
+    "top": {
+      "components": {
+        "camera": {
+          "fov": 45,
+          "target": [0, 0, 0]
+        },
+        "transform": {
+          "position": [0, 26, 0.5]
+        }
+      },
+      "index": 42,
+      "name": "Top",
+      "parent": null
+    },
+    "tree-1": {
+      "components": {
+        "transform": {
+          "position": [-9, 0, 5.7]
+        }
+      },
+      "index": 37,
+      "name": "Tree 1",
+      "parent": null
+    },
+    "tree-1-crown": {
+      "components": {
+        "shape": {
+          "colour": "#4f7a3a",
+          "kind": "sphere",
+          "roughness": 0.9,
+          "size": [1.6, 1.6, 1.6]
+        },
+        "transform": {
+          "position": [0, 2.4, 0]
+        }
+      },
+      "index": 1,
+      "name": "Crown",
+      "parent": "tree-1"
+    },
+    "tree-1-trunk": {
+      "components": {
+        "shape": {
+          "colour": "#6b4a2e",
+          "kind": "cylinder",
+          "roughness": 0.9,
+          "size": [0.22, 1.8, 0.22]
+        },
+        "transform": {
+          "position": [0, 0.9, 0]
+        }
+      },
+      "index": 0,
+      "name": "Trunk",
+      "parent": "tree-1"
+    },
+    "tree-2": {
+      "components": {
+        "transform": {
+          "position": [9, 0, 5.7]
+        }
+      },
+      "index": 38,
+      "name": "Tree 2",
+      "parent": null
+    },
+    "tree-2-crown": {
+      "components": {
+        "shape": {
+          "colour": "#4f7a3a",
+          "kind": "sphere",
+          "roughness": 0.9,
+          "size": [1.6, 1.6, 1.6]
+        },
+        "transform": {
+          "position": [0, 2.4, 0]
+        }
+      },
+      "index": 1,
+      "name": "Crown",
+      "parent": "tree-2"
+    },
+    "tree-2-trunk": {
+      "components": {
+        "shape": {
+          "colour": "#6b4a2e",
+          "kind": "cylinder",
+          "roughness": 0.9,
+          "size": [0.22, 1.8, 0.22]
+        },
+        "transform": {
+          "position": [0, 0.9, 0]
+        }
+      },
+      "index": 0,
+      "name": "Trunk",
+      "parent": "tree-2"
+    },
+    "walk-north": {
+      "components": {
+        "shape": {
+          "colour": "#1d2024",
+          "kind": "box",
+          "roughness": 0.6,
+          "size": [0.4, 0.72, 0.22]
+        },
+        "transform": {
+          "position": [-1.9, 2.3, -3.4],
+          "rotation": [0, 0, 0, 1]
+        }
+      },
+      "index": 20,
+      "name": "North walk signal",
+      "parent": null,
+      "tags": [
+        "signal"
+      ]
+    },
+    "walk-north-pole": {
+      "components": {
+        "shape": {
+          "colour": "#30343a",
+          "kind": "cylinder",
+          "metalness": 0.4,
+          "roughness": 0.5,
+          "size": [0.1, 2.5, 0.1]
+        },
+        "transform": {
+          "position": [-1.9, 1.25, -3.4]
+        }
+      },
+      "index": 19,
+      "name": "North walk signal pole",
+      "parent": null
+    },
+    "walk-north-wait": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "box",
+          "material": "asset:01M53P246F7816WAZMP2WERR8Q",
+          "size": [0.26, 0.26, 0.03]
+        },
+        "traffic.signal": {
+          "head": "walk",
+          "lamp": "wait",
+          "lit": true
+        },
+        "transform": {
+          "position": [0, -0.17, 0.115]
+        }
+      },
+      "index": 2,
+      "name": "Wait lamp",
+      "parent": "walk-north"
+    },
+    "walk-north-wait-dark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#3a1a10",
+          "kind": "box",
+          "roughness": 0.4,
+          "size": [0.26, 0.26, 0.03]
+        },
+        "traffic.signal": {
+          "head": "walk",
+          "lamp": "wait",
+          "lit": false
+        },
+        "transform": {
+          "position": [0, -0.17, 0.115]
+        }
+      },
+      "index": 3,
+      "name": "Wait lamp (dark)",
+      "parent": "walk-north"
+    },
+    "walk-north-walk": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "box",
+          "material": "asset:01M53P24442E2ZTC3GC3F7E0RX",
+          "size": [0.26, 0.26, 0.03]
+        },
+        "traffic.signal": {
+          "head": "walk",
+          "lamp": "walk",
+          "lit": true
+        },
+        "transform": {
+          "position": [0, 0.17, 0.115]
+        }
+      },
+      "index": 0,
+      "name": "Walk lamp",
+      "parent": "walk-north"
+    },
+    "walk-north-walk-dark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#26302c",
+          "kind": "box",
+          "roughness": 0.4,
+          "size": [0.26, 0.26, 0.03]
+        },
+        "traffic.signal": {
+          "head": "walk",
+          "lamp": "walk",
+          "lit": false
+        },
+        "transform": {
+          "position": [0, 0.17, 0.115]
+        }
+      },
+      "index": 1,
+      "name": "Walk lamp (dark)",
+      "parent": "walk-north"
+    },
+    "walk-south": {
+      "components": {
+        "shape": {
+          "colour": "#1d2024",
+          "kind": "box",
+          "roughness": 0.6,
+          "size": [0.4, 0.72, 0.22]
+        },
+        "transform": {
+          "position": [1.9, 2.3, 3.4],
+          "rotation": [0, 1, 0, 0]
+        }
+      },
+      "index": 22,
+      "name": "South walk signal",
+      "parent": null,
+      "tags": [
+        "signal"
+      ]
+    },
+    "walk-south-button": {
+      "components": {
+        "shape": {
+          "colour": "#f2c230",
+          "kind": "box",
+          "roughness": 0.5,
+          "size": [0.14, 0.2, 0.1]
+        },
+        "traffic.button": {},
+        "transform": {
+          "position": [1.9, 1.1, 3.32],
+          "rotation": [0, 1, 0, 0]
+        }
+      },
+      "index": 23,
+      "name": "Crossing button",
+      "parent": null,
+      "tags": [
+        "button"
+      ]
+    },
+    "walk-south-pole": {
+      "components": {
+        "shape": {
+          "colour": "#30343a",
+          "kind": "cylinder",
+          "metalness": 0.4,
+          "roughness": 0.5,
+          "size": [0.1, 2.5, 0.1]
+        },
+        "transform": {
+          "position": [1.9, 1.25, 3.4]
+        }
+      },
+      "index": 21,
+      "name": "South walk signal pole",
+      "parent": null
+    },
+    "walk-south-wait": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "box",
+          "material": "asset:01M53P246F7816WAZMP2WERR8Q",
+          "size": [0.26, 0.26, 0.03]
+        },
+        "traffic.signal": {
+          "head": "walk",
+          "lamp": "wait",
+          "lit": true
+        },
+        "transform": {
+          "position": [0, -0.17, 0.115]
+        }
+      },
+      "index": 2,
+      "name": "Wait lamp",
+      "parent": "walk-south"
+    },
+    "walk-south-wait-dark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#3a1a10",
+          "kind": "box",
+          "roughness": 0.4,
+          "size": [0.26, 0.26, 0.03]
+        },
+        "traffic.signal": {
+          "head": "walk",
+          "lamp": "wait",
+          "lit": false
+        },
+        "transform": {
+          "position": [0, -0.17, 0.115]
+        }
+      },
+      "index": 3,
+      "name": "Wait lamp (dark)",
+      "parent": "walk-south"
+    },
+    "walk-south-walk": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "box",
+          "material": "asset:01M53P24442E2ZTC3GC3F7E0RX",
+          "size": [0.26, 0.26, 0.03]
+        },
+        "traffic.signal": {
+          "head": "walk",
+          "lamp": "walk",
+          "lit": true
+        },
+        "transform": {
+          "position": [0, 0.17, 0.115]
+        }
+      },
+      "index": 0,
+      "name": "Walk lamp",
+      "parent": "walk-south"
+    },
+    "walk-south-walk-dark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#26302c",
+          "kind": "box",
+          "roughness": 0.4,
+          "size": [0.26, 0.26, 0.03]
+        },
+        "traffic.signal": {
+          "head": "walk",
+          "lamp": "walk",
+          "lit": false
+        },
+        "transform": {
+          "position": [0, 0.17, 0.115]
+        }
+      },
+      "index": 1,
+      "name": "Walk lamp (dark)",
+      "parent": "walk-south"
+    },
+    "walker-1": {
+      "components": {
+        "traffic.pedestrian": {},
+        "transform": {
+          "position": [-40, 0, 30]
+        }
+      },
+      "index": 30,
+      "name": "Walker 1",
+      "parent": null,
+      "tags": [
+        "walker"
+      ]
+    },
+    "walker-1-bag": {
+      "components": {
+        "shape": {
+          "colour": "#3d4a3a",
+          "kind": "box",
+          "roughness": 0.8,
+          "size": [0.3, 0.38, 0.14]
+        },
+        "transform": {
+          "position": [0, 0.95, -0.27]
+        }
+      },
+      "index": 3,
+      "name": "Bag",
+      "parent": "walker-1"
+    },
+    "walker-1-body": {
+      "components": {
+        "shape": {
+          "colour": "#d06a3a",
+          "kind": "cylinder",
+          "roughness": 0.7,
+          "size": [0.44, 1.16, 0.44]
+        },
+        "transform": {
+          "position": [0, 0.62, 0]
+        }
+      },
+      "index": 0,
+      "name": "Body",
+      "parent": "walker-1"
+    },
+    "walker-1-hair": {
+      "components": {
+        "shape": {
+          "colour": "#4a3a30",
+          "kind": "sphere",
+          "roughness": 0.8,
+          "size": [0.31, 0.2, 0.31]
+        },
+        "transform": {
+          "position": [0, 1.47, -0.03]
+        }
+      },
+      "index": 2,
+      "name": "Hair",
+      "parent": "walker-1"
+    },
+    "walker-1-head": {
+      "components": {
+        "shape": {
+          "colour": "#e2b48c",
+          "kind": "sphere",
+          "roughness": 0.6,
+          "size": [0.3, 0.3, 0.3]
+        },
+        "transform": {
+          "position": [0, 1.4, 0]
+        }
+      },
+      "index": 1,
+      "name": "Head",
+      "parent": "walker-1"
+    },
+    "walker-2": {
+      "components": {
+        "traffic.pedestrian": {},
+        "transform": {
+          "position": [-43, 0, 30]
+        }
+      },
+      "index": 31,
+      "name": "Walker 2",
+      "parent": null,
+      "tags": [
+        "walker"
+      ]
+    },
+    "walker-2-bag": {
+      "components": {
+        "shape": {
+          "colour": "#3d4a3a",
+          "kind": "box",
+          "roughness": 0.8,
+          "size": [0.3, 0.38, 0.14]
+        },
+        "transform": {
+          "position": [0, 0.95, -0.27]
+        }
+      },
+      "index": 3,
+      "name": "Bag",
+      "parent": "walker-2"
+    },
+    "walker-2-body": {
+      "components": {
+        "shape": {
+          "colour": "#4a7ac0",
+          "kind": "cylinder",
+          "roughness": 0.7,
+          "size": [0.44, 1.16, 0.44]
+        },
+        "transform": {
+          "position": [0, 0.62, 0]
+        }
+      },
+      "index": 0,
+      "name": "Body",
+      "parent": "walker-2"
+    },
+    "walker-2-hair": {
+      "components": {
+        "shape": {
+          "colour": "#2e2a26",
+          "kind": "sphere",
+          "roughness": 0.8,
+          "size": [0.31, 0.2, 0.31]
+        },
+        "transform": {
+          "position": [0, 1.47, -0.03]
+        }
+      },
+      "index": 2,
+      "name": "Hair",
+      "parent": "walker-2"
+    },
+    "walker-2-head": {
+      "components": {
+        "shape": {
+          "colour": "#e2b48c",
+          "kind": "sphere",
+          "roughness": 0.6,
+          "size": [0.3, 0.3, 0.3]
+        },
+        "transform": {
+          "position": [0, 1.4, 0]
+        }
+      },
+      "index": 1,
+      "name": "Head",
+      "parent": "walker-2"
+    }
+  },
+  "environment": {
+    "background": "#9fb7cf",
+    "exposure": 1,
+    "toneMapping": "aces"
+  },
+  "format": "scenity.scene/1",
+  "id": "road",
+  "poster": "../posters/road.webp"
+}

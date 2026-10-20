@@ -1,0 +1,42 @@
+# SPDX-License-Identifier: Apache-2.0
+# A janela Configurações do projeto.
+
+project-sections = Seções
+project-settings-search = Buscar nos campos
+project-settings-search-none = Nenhum campo tem estas palavras.
+project-section-general = Geral
+project-section-assets = Assets
+project-section-plugins = Plugins
+project-section-rules = Regras
+project-section-quality = Qualidade
+project-section-build = Build
+project-section-release = Release
+project-section-workbench = Agentes e execuções
+project-section-editor = Editor
+project-section-other = Outros
+project-editor-intro = Os valores de projeto das configurações do editor. Uma alteração vai para { $file } imediatamente.
+project-required = Obrigatório
+project-add = Adicionar
+project-add-item = Adicionar um item
+project-remove-item = Remover o item
+project-remove-field = Remover { $name }
+project-key = O nome
+project-new-key = Um novo nome
+project-option = O tipo de valor
+project-json-error = Isto não é JSON. O valor não mudou.
+project-save = Salvar
+project-revert = Reverter
+project-check-required = O campo é obrigatório.
+project-check-type = O valor não é do tipo correto.
+project-check-integer = O valor deve ser um número inteiro.
+project-check-min-length = No mínimo { $min } caracteres.
+project-check-max-length = No máximo { $max } caracteres.
+project-check-pattern = O valor não corresponde a { $pattern }.
+project-check-minimum = No mínimo { $min }.
+project-check-above = Mais que { $min }.
+project-check-maximum = No máximo { $max }.
+project-check-choice = O valor não é uma das opções.
+project-check-min-items = No mínimo { $min } itens.
+project-check-max-items = No máximo { $max } itens.
+project-check-key = O nome não corresponde a { $pattern }.
+project-check-missing = { $path } não está na pasta do projeto.

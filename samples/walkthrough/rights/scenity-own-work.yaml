@@ -1,0 +1,20 @@
+# Rights record of the mannequin of the walkthrough sample: a copy of the record of the characters sample, with the same
+# file. A script made the mannequin from nothing with Blender 5.2 and the Rigify add-on that ships with Blender (the
+# "Basic Human" metarig): samples/characters/tools/make_rigify_mannequin.py. No third-party art is in the file.
+name: scenity-own-work
+source: "Own work: samples/characters/tools/make_rigify_mannequin.py run with Blender 5.2.2 LTS (2026-10-15)"
+author: "Scenity contributors"
+licence: "CC0 1.0 Universal (public domain dedication)"
+spdx: CC0-1.0 # the release gate checks it against release.licences.allow of scenity.project.json
+licenceUrl: https://creativecommons.org/publicdomain/zero/1.0/
+licenceDate: 2026-10-15
+allowedUse: [web, unreal, public]
+webDelivery: true
+attribution: null
+assets:
+  - id: RigifyMannequin
+    name: "Rigify mannequin"
+    authors: ["Scenity contributors"]
+    page: samples/characters/tools/make_rigify_mannequin.py
+    clips: [Idle]
+changes: "None. The file is the output of the script (143,836 bytes; SHA-256 be652b64f793c6c80be581318dbeff672de46b134061ccfd5050d77c2c929e5a). Blender writes small float changes on each run, so a new run gives other bytes."

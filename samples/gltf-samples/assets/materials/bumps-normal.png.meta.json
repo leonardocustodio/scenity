@@ -1,0 +1,16 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M51H7Y5WR34JDGZ6BAJ9SRFM",
+  "importer": "png",
+  "kind": "texture",
+  "rights": "../../rights/scenity-cc0.yaml",
+  "settings": {
+    "colorSpace": "linear",
+    "maxSize": 256,
+    "role": "normal"
+  },
+  "source": "bumps-normal.png",
+  "tags": [
+    "material-sample"
+  ]
+}

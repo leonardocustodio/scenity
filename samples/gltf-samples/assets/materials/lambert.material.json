@@ -1,0 +1,14 @@
+{
+  "colour": "#5fae5f",
+  "emissive": "#0b1a0b",
+  "format": "scenity.material/1",
+  "maps": {
+    "normal": {
+      "colorSpace": "linear",
+      "repeat": [2, 1],
+      "texture": "asset:01M51H7Y5WR34JDGZ6BAJ9SRFM"
+    }
+  },
+  "name": "Green Lambert",
+  "type": "lambert"
+}

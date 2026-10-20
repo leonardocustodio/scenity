@@ -1,0 +1,14 @@
+{
+  "apps/editor/src/scene/shortcuts/keyboard.ts": {
+    "Insert": "data: the key of a chord (KEY_CHORD of @scenity/scene)",
+    "Home": "data: the key of a chord (KEY_CHORD of @scenity/scene)",
+    "Delete": "data: the key of a chord (KEY_CHORD of @scenity/scene)",
+    "End": "data: the key of a chord (KEY_CHORD of @scenity/scene)",
+    "Esc": "data: the sign on a key of the keyboard picture (as on the key of a keyboard)",
+    "Del": "data: the sign on a key of the keyboard picture (as on the key of a keyboard)",
+    "Ins": "data: the sign on a key of the keyboard picture (as on the key of a keyboard)",
+    "Mod+": "data: a modifier of a chord (KEY_CHORD of @scenity/scene)",
+    "Alt+": "data: a modifier of a chord (KEY_CHORD of @scenity/scene)",
+    "Shift+": "data: a modifier of a chord (KEY_CHORD of @scenity/scene)"
+  }
+}

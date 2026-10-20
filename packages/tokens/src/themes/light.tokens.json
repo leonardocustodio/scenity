@@ -1,0 +1,320 @@
+{
+  "$description": "Light theme: a pale canvas.",
+  "color": {
+    "surface": {
+      "device": {
+        "$type": "color",
+        "$value": "{color.ink.980}"
+      },
+      "base": {
+        "$type": "color",
+        "$value": "{color.brand.canvas}"
+      },
+      "raised": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "sunken": {
+        "$type": "color",
+        "$value": "{color.brand.paper-inset}"
+      },
+      "overlay": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "scrim": {
+        "$type": "color",
+        "$value": "{color.slate-a45}"
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": "{color.brand.ink}"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{color.brand.muted-light}"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{color.slate.400}"
+      },
+      "on-accent": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{color.brand.royal-hover}"
+      }
+    },
+    "border": {
+      "subtle": {
+        "$type": "color",
+        "$value": "{color.brand.line-light}"
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "{color.paper.500}"
+      }
+    },
+    "accent": {
+      "brand": {
+        "$type": "color",
+        "$value": "{color.brand.royal}"
+      },
+      "brand-hover": {
+        "$type": "color",
+        "$value": "{color.brand.royal-hover}"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "{color.brand.royal-hover}"
+      }
+    },
+    "focus": {
+      "ring": {
+        "$type": "color",
+        "$value": "{color.brand.royal}"
+      },
+      "ring-inner": {
+        "$type": "color",
+        "$value": "{color.white}"
+      }
+    },
+    "status": {
+      "info": {
+        "$type": "color",
+        "$value": "{color.blue.700}"
+      },
+      "info-subtle": {
+        "$type": "color",
+        "$value": "{color.blue.50}"
+      },
+      "positive": {
+        "$type": "color",
+        "$value": "{color.emerald.700}"
+      },
+      "positive-subtle": {
+        "$type": "color",
+        "$value": "{color.emerald.50}"
+      },
+      "caution": {
+        "$type": "color",
+        "$value": "{color.amber.700}"
+      },
+      "caution-subtle": {
+        "$type": "color",
+        "$value": "{color.amber.50}"
+      },
+      "attention": {
+        "$type": "color",
+        "$value": "{color.orange.700}"
+      },
+      "attention-subtle": {
+        "$type": "color",
+        "$value": "{color.orange.50}"
+      },
+      "negative": {
+        "$type": "color",
+        "$value": "{color.rose.700}"
+      },
+      "negative-subtle": {
+        "$type": "color",
+        "$value": "{color.rose.50}"
+      },
+      "neutral": {
+        "$type": "color",
+        "$value": "{color.slate.600}"
+      },
+      "neutral-subtle": {
+        "$type": "color",
+        "$value": "{color.paper.100}"
+      }
+    },
+    "studio": {
+      "$description": "The roles of the studio editor: selection, play mode, prefabs, agent sessions, change marks, axes, rule results, view overlays and grids.",
+      "selection": {
+        "$type": "color",
+        "$value": "{color.accent.brand}"
+      },
+      "selection-subtle": {
+        "$type": "color",
+        "$value": "{color.status.info-subtle}"
+      },
+      "play": {
+        "$type": "color",
+        "$value": "{color.status.attention}"
+      },
+      "prefab": {
+        "$type": "color",
+        "$value": "{color.cyan.700}"
+      },
+      "override-bar": {
+        "$type": "color",
+        "$value": "{color.cyan.700}"
+      },
+      "agent": {
+        "1": {
+          "$type": "color",
+          "$value": "{color.violet.600}"
+        },
+        "2": {
+          "$type": "color",
+          "$value": "{color.lime.800}"
+        },
+        "3": {
+          "$type": "color",
+          "$value": "{color.rose.700}"
+        },
+        "4": {
+          "$type": "color",
+          "$value": "{color.yellow.800}"
+        },
+        "5": {
+          "$type": "color",
+          "$value": "{color.slate.700}"
+        },
+        "6": {
+          "$type": "color",
+          "$value": "{color.fuchsia.700}"
+        }
+      },
+      "change": {
+        "added": {
+          "$type": "color",
+          "$value": "{color.status.positive}"
+        },
+        "changed": {
+          "$type": "color",
+          "$value": "{color.status.caution}"
+        },
+        "removed": {
+          "$type": "color",
+          "$value": "{color.status.negative}"
+        }
+      },
+      "axis": {
+        "x": {
+          "$type": "color",
+          "$value": "{color.red.700}"
+        },
+        "y": {
+          "$type": "color",
+          "$value": "{color.green.800}"
+        },
+        "z": {
+          "$type": "color",
+          "$value": "{color.blue.700}"
+        }
+      },
+      "rule": {
+        "ok": {
+          "$type": "color",
+          "$value": "{color.status.positive}"
+        },
+        "fail": {
+          "$type": "color",
+          "$value": "{color.status.negative}"
+        },
+        "known": {
+          "$type": "color",
+          "$value": "{color.status.caution}"
+        },
+        "na": {
+          "$type": "color",
+          "$value": "{color.status.neutral}"
+        }
+      },
+      "overlay": {
+        "surface": {
+          "$type": "color",
+          "$value": "{color.surface.overlay}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{color.border.strong}"
+        }
+      },
+      "grid": {
+        "minor": {
+          "$type": "color",
+          "$value": "{color.border.subtle}"
+        },
+        "major": {
+          "$type": "color",
+          "$value": "{color.border.strong}"
+        }
+      },
+      "helper": {
+        "$type": "color",
+        "$value": "{color.text.secondary}"
+      }
+    }
+  },
+  "radius": {
+    "control": {
+      "$type": "dimension",
+      "$value": "{radius.12}"
+    },
+    "card": {
+      "$type": "dimension",
+      "$value": "{radius.24}"
+    },
+    "pill": {
+      "$type": "dimension",
+      "$value": "{radius.full}"
+    },
+    "button": {
+      "$type": "dimension",
+      "$value": "{radius.full}"
+    }
+  },
+  "shadow": {
+    "raised": {
+      "$type": "shadow",
+      "$value": {
+        "color": "{color.slate-a8}",
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 1,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 2,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "overlay": {
+      "$type": "shadow",
+      "$value": {
+        "color": "{color.slate-a18}",
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 8,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 24,
+          "unit": "px"
+        },
+        "spread": {
+          "value": -4,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

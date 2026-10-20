@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M51H7YE3D39PW1114W8EPE5F",
+  "importer": "material",
+  "kind": "material",
+  "rights": "../../rights/scenity-cc0.yaml",
+  "settings": {},
+  "source": "physical.material.json",
+  "tags": [
+    "material-sample",
+    "material:physical"
+  ]
+}

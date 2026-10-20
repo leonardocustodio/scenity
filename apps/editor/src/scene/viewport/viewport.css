@@ -1,0 +1,511 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The viewport of the scene page in the edit mode: the viewport bar, the icons of the lights and the cameras, and the
+   camera preview. They go into the free canvas area of the layout (../editLayout.css). The bar is at its top left
+   corner, and the preview is at its bottom right corner. This is a developer page, so it has no design tokens. */
+#scene-viewport-bar {
+  position: absolute;
+  z-index: var(--scene-z-panel);
+  inset: var(--scene-panel-top) auto auto var(--scene-free-left);
+  box-sizing: border-box;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  max-width: calc(100% - var(--scene-free-left) - var(--scene-free-right));
+  height: var(--scene-bar-height);
+  overflow: auto hidden;
+  white-space: nowrap;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font:
+    12px system-ui,
+    sans-serif;
+  color: #ffffff;
+  background: rgb(0 0 0 / 60%);
+}
+
+#scene-viewport-bar > * {
+  flex: none;
+}
+
+#scene-viewport-bar select,
+#scene-viewport-bar button {
+  padding: 1px 4px;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 3px;
+  font: inherit;
+  color: inherit;
+  background: rgb(0 0 0 / 40%);
+}
+
+#scene-viewport-bar button {
+  cursor: pointer;
+}
+
+/* The icons: the layer lets the pointer through, and each icon gets it. The panels go over the icons. */
+#scene-view-icons {
+  position: fixed;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#scene-view-icons button {
+  position: absolute;
+  box-sizing: border-box;
+  width: 22px;
+  height: 22px;
+  padding: 2px;
+  border: 1px solid rgb(255 255 255 / 70%);
+  border-radius: 50%;
+  color: #ffd23f;
+  background: rgb(0 0 0 / 55%);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+#scene-view-icons button[data-kind="camera"] {
+  color: #d9a8ff;
+}
+
+#scene-view-icons button[aria-pressed="true"] {
+  border-color: #ffd23f;
+  box-shadow: 0 0 0 2px rgb(255 210 63 / 50%);
+}
+
+#scene-view-icons svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 2;
+}
+
+#scene-camera-preview {
+  position: absolute;
+  z-index: var(--scene-z-panel);
+  inset: auto var(--scene-free-right) var(--scene-panel-bottom) auto;
+  box-sizing: border-box;
+  width: min(240px, calc(100% - var(--scene-free-left) - var(--scene-free-right)));
+  margin: 0;
+  padding: 4px;
+  border-radius: 4px;
+  font:
+    11px system-ui,
+    sans-serif;
+  color: #ffffff;
+  background: rgb(0 0 0 / 60%);
+}
+
+#scene-camera-preview[hidden] {
+  display: none;
+}
+
+#scene-camera-preview canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #000000;
+}
+
+#scene-camera-preview figcaption {
+  padding-top: 3px;
+}
+
+/* The panel that adjusts the last action of the person, at the bottom left of the Scene view. */
+#scene-adjust {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 180px;
+  padding: 8px;
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: var(--sc-radius-4);
+  font:
+    12px system-ui,
+    sans-serif;
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-surface-overlay);
+}
+
+#scene-adjust[hidden] {
+  display: none;
+}
+
+#scene-adjust h2 {
+  margin: 0 20px 0 0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#scene-adjust [data-testid="scene-adjust-close"] {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+#scene-adjust label {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#scene-adjust input {
+  width: 80px;
+  font: inherit;
+}
+
+/* The pins of the changes of the agents that wait for review (changePins.ts). */
+#scene-change-pins {
+  position: fixed;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#scene-change-pins svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+}
+
+#scene-change-pins button {
+  position: absolute;
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 2px solid;
+  border-radius: 50%;
+  font: 700 12px/1 system-ui;
+  background: var(--sc-color-surface-overlay);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+#scene-change-pins button[data-change="removed"] {
+  border-style: dashed;
+}
+
+/* An entity that a turn of an agent changes while it runs. */
+#scene-change-pins button[data-change="working"] {
+  border-style: dotted;
+}
+
+#scene-change-pins polygon {
+  stroke-dasharray: none;
+  stroke-width: 2;
+}
+
+/* The overlays of the Scene view. The layer lets the pointer through, and each overlay gets it. An edge holds its
+   overlays in their order: the top and the bottom edges in a row, the left and the right edges in a column. */
+#scene-overlays {
+  position: absolute;
+  z-index: var(--scene-z-panel);
+  inset: 0;
+  pointer-events: none;
+}
+
+.scene-overlay-edge {
+  position: absolute;
+  display: flex;
+  gap: 6px;
+  pointer-events: none;
+}
+
+.scene-overlay-edge[data-edge="top"] {
+  inset: var(--scene-panel-top) var(--scene-free-right) auto var(--scene-free-left);
+  flex-flow: row wrap;
+  align-items: flex-start;
+}
+
+.scene-overlay-edge[data-edge="bottom"] {
+  inset: auto var(--scene-free-right) var(--scene-panel-bottom) var(--scene-free-left);
+  flex-flow: row wrap;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.scene-overlay-edge[data-edge="left"] {
+  inset: calc(var(--scene-layout-top) + 2 * (var(--scene-bar-height) + var(--scene-gap))) auto var(--scene-panel-bottom)
+    var(--scene-free-left);
+  flex-flow: column;
+}
+
+.scene-overlay-edge[data-edge="right"] {
+  inset: calc(var(--scene-panel-top) + var(--scene-overlay-height) + var(--scene-gap)) var(--scene-free-right)
+    var(--scene-panel-bottom) auto;
+  flex-flow: column;
+  align-items: flex-end;
+}
+
+.scene-overlay {
+  position: relative;
+  pointer-events: auto;
+  box-sizing: border-box;
+  max-width: 100%;
+  border-radius: 4px;
+  font:
+    12px system-ui,
+    sans-serif;
+  color: #ffffff;
+  background: rgb(0 0 0 / 60%);
+}
+
+.scene-overlay[hidden],
+.scene-overlay[data-idle] {
+  display: none;
+}
+
+.scene-overlay > header {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 4px;
+  cursor: grab;
+  border-bottom: 1px solid rgb(255 255 255 / 15%);
+}
+
+.scene-overlay[data-folded] > header {
+  border-bottom: none;
+}
+
+.scene-overlay[data-folded] > .scene-overlay-body {
+  display: none;
+}
+
+.scene-overlay > header button {
+  padding: 0 4px;
+  border: none;
+  font: inherit;
+  color: rgb(255 255 255 / 75%);
+  background: none;
+  cursor: pointer;
+}
+
+.scene-overlay > header .scene-overlay-title {
+  flex: 1;
+  text-align: left;
+  font-weight: 600;
+}
+
+.scene-overlay-body {
+  padding: 4px 6px;
+}
+
+.scene-overlay-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.scene-overlay-column {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: stretch;
+}
+
+.scene-overlay-body select,
+.scene-overlay-body button {
+  padding: 1px 4px;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 3px;
+  font: inherit;
+  color: inherit;
+  background: rgb(0 0 0 / 40%);
+  cursor: pointer;
+}
+
+.scene-overlay-body button[aria-pressed="true"] {
+  border-color: rgb(255 255 255 / 85%);
+  background: rgb(255 255 255 / 20%);
+}
+
+.scene-overlay-body p {
+  margin: 0;
+}
+
+/* The menus of the overlays go over each part of the view; the layer lets the pointer through. */
+#scene-overlay-menus {
+  position: absolute;
+  z-index: var(--scene-z-notice);
+  inset: 0;
+  pointer-events: none;
+}
+
+.scene-overlay-popup {
+  position: absolute;
+  top: var(--scene-panel-top);
+  left: var(--scene-free-left);
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  padding: 4px;
+  pointer-events: auto;
+  border-radius: 4px;
+  background: rgb(20 20 20 / 95%);
+}
+
+.scene-overlay-popup button {
+  padding: 3px 6px;
+  border: none;
+  text-align: left;
+  font:
+    12px system-ui,
+    sans-serif;
+  color: #ffffff;
+  background: none;
+  cursor: pointer;
+}
+
+.scene-overlay-popup button:hover,
+.scene-overlay-popup button:focus-visible {
+  background: rgb(255 255 255 / 15%);
+}
+
+.scene-overlay-popup button[role="menuitemcheckbox"]::before {
+  content: "☐ ";
+}
+
+.scene-overlay-popup button[aria-checked="true"]::before {
+  content: "☑ ";
+}
+
+.scene-orientation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.scene-orientation svg {
+  display: block;
+  width: 72px;
+  height: 72px;
+}
+
+.scene-orientation line {
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.scene-orientation .end {
+  cursor: pointer;
+}
+
+.scene-orientation .end.negative {
+  fill-opacity: 0.45;
+}
+
+.scene-orientation .end:focus-visible {
+  outline: 2px solid #ffffff;
+}
+
+.scene-orientation text {
+  font: 700 8px system-ui;
+  fill: #111111;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
+
+.scene-orientation .axis-x line {
+  stroke: var(--sc-color-studio-axis-x);
+}
+
+.scene-orientation .axis-y line {
+  stroke: var(--sc-color-studio-axis-y);
+}
+
+.scene-orientation .axis-z line {
+  stroke: var(--sc-color-studio-axis-z);
+}
+
+.scene-orientation .axis-x .end,
+.scene-orientation .end.axis-x {
+  fill: var(--sc-color-studio-axis-x);
+}
+
+.scene-orientation .axis-y .end,
+.scene-orientation .end.axis-y {
+  fill: var(--sc-color-studio-axis-y);
+}
+
+.scene-orientation .axis-z .end,
+.scene-orientation .end.axis-z {
+  fill: var(--sc-color-studio-axis-z);
+}
+
+/* The panes of the split view after the main view. Each pane gets the drag and the wheel of its camera. */
+#scene-panes {
+  position: fixed;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#scene-panes .scene-pane {
+  position: absolute;
+  box-sizing: border-box;
+  border-top: 1px solid var(--sc-color-border-strong);
+  border-left: 1px solid var(--sc-color-border-strong);
+  cursor: grab;
+  pointer-events: auto;
+}
+
+/* The bar is at the top right corner of the pane: the overlays of the view keep the top and the left edges. */
+#scene-panes .scene-pane-bar {
+  position: absolute;
+  top: var(--sc-space-1);
+  right: var(--sc-space-1);
+  display: flex;
+  gap: var(--sc-space-1);
+  padding: var(--sc-space-1);
+  border-radius: var(--sc-radius-4);
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-surface-overlay);
+  font: inherit;
+  cursor: default;
+}
+
+#scene-panes .scene-pane-bar select,
+#scene-panes .scene-pane-bar button {
+  font: inherit;
+}
+
+/* The pins of the notes over the main view. An open note is in the colour of the notes, and a done note is dim. */
+#scene-note-pins {
+  position: fixed;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#scene-note-pins button {
+  position: absolute;
+  box-sizing: border-box;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: 50% 50% 50% 0;
+  font: 12px/1 system-ui;
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-status-caution);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+#scene-note-pins button[data-status="done"] {
+  opacity: 0.45;
+}

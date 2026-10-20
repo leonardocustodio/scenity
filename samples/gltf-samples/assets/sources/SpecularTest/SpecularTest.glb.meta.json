@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M519A78QZMT768T8C5M7KF3B",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/khronos-cc-by.yaml",
+  "settings": {},
+  "source": "SpecularTest.glb",
+  "tags": [
+    "gltf-sample",
+    "khr_materials_specular"
+  ]
+}

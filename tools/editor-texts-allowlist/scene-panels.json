@@ -1,0 +1,35 @@
+{
+  "apps/editor/src/assetBrowser/rights/spdx.ts": {
+    "CC0 1.0 Universal (public domain dedication)": "data value: the SPDX name of a licence (it goes into the rights record)",
+    "Creative Commons Attribution 4.0 International": "data value: the SPDX name of a licence (it goes into the rights record)",
+    "Creative Commons Attribution Share Alike 4.0 International": "data value: the SPDX name of a licence (it goes into the rights record)",
+    "MIT License": "data value: the SPDX name of a licence (it goes into the rights record)",
+    "Apache License 2.0": "data value: the SPDX name of a licence (it goes into the rights record)",
+    "SIL Open Font License 1.1": "data value: the SPDX name of a licence (it goes into the rights record)"
+  },
+  "apps/editor/src/scene/performance/BenchPanel.vue": {
+    "not measured": "data value: a budget result of the report of scenity bench (the key of its style)",
+    "not judged": "data value: a budget result of the report of scenity bench (the key of its style)"
+  },
+  "apps/editor/src/scene/build/BuildPanel.vue": {
+    "no budget": "data value: an entry result of the report of scenity build (the key of its style)",
+    "{} KB": "data value: a size in KB (the unit symbol of the report)"
+  },
+  "apps/editor/src/studio/extensions/labFace.ts": {
+    "it starts data sources in the Vue app of the lab page; a studio face uses activate(ctx)": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "the scene page loads the runtime faces of the project itself": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "the commands run on the runner of the lab page; move each one to `commands`": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "the studio uses the document cameras of the scene": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "the Takes panel shows the takes; a play of a take in the view needs the lab page": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "the checks become rules, metrics of the dev face or `problemSources`": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "the Project window shows the assets; use `previews` and the asset sources of the host face": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "the studio selects entities only": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "the layout tools of the core, or `sceneTools` with `handles`": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "`problemSources` and the rules of the project": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "`overlays` and `sceneTools` of the studio face": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "the scene document of the window (`ctx.documents`)": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "the script API of the lab page; use `pageTools` or commands with `agents: true`": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "use `pageTools`, or the `tools` of the host face": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)",
+    "the scene page holds the document; the tune values become component values": "the reason of a kept part of a lab face for the author of a plugin (developer text, in the result of adaptLabFace)"
+  }
+}

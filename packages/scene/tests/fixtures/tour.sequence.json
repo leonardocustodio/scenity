@@ -1,0 +1,54 @@
+{
+  "duration": 20000,
+  "format": "scenity.sequence/1",
+  "id": "tour",
+  "markers": {
+    "door-open": 5650
+  },
+  "scene": "main",
+  "tracks": [
+    {
+      "entity": "front",
+      "keys": [
+        {
+          "t": 0,
+          "value": 45
+        },
+        {
+          "ease": "inOut",
+          "t": 8000,
+          "value": 30
+        }
+      ],
+      "kind": "property",
+      "path": "camera/fov"
+    },
+    {
+      "entity": "robot",
+      "keys": [
+        {
+          "action": "doors.open",
+          "args": {
+            "door": "front-door"
+          },
+          "t": 2500
+        }
+      ],
+      "kind": "action"
+    },
+    {
+      "entity": "box",
+      "keys": [
+        {
+          "t": 5000,
+          "to": "entity:robot#hand_r"
+        },
+        {
+          "t": 9000,
+          "to": null
+        }
+      ],
+      "kind": "attach"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The rules tab of the bottom dock: Tailwind 4 with no preflight, as the asset dock has it. The panel is inside the
+   dock, so it uses the base rules of the dock (assetDock.css). The panel and the graph are in core/rules. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "@scenity/ui/styles.css";
+@source "./";
+@source "../../core/rules/";
+
+@layer base {
+  .studio-panel-host select {
+    font: inherit;
+    color: inherit;
+  }
+}

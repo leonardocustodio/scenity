@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M519A86WJTT12GMFE7H385NZ",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/khronos-cc-by.yaml",
+  "settings": {},
+  "source": "Box.gltf",
+  "tags": [
+    "gltf-sample",
+    "khr_draco_mesh_compression"
+  ]
+}

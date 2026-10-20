@@ -1,0 +1,47 @@
+{
+  "name": "@scenity/labs-platform",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The platform capabilities of the Scenity editor and workbench: desktop app or browser, the workbench host, OPFS, IndexedDB, WebCodecs, WebP encode, WebGPU, native snapshot and windows, OffscreenCanvas. Browser code without a framework. Only apps/editor and apps/workbench use it.",
+  "type": "module",
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/labs-platform"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./frameKey": "./src/frameKey.ts",
+    "./contentHash": "./src/contentHash.ts",
+    "./contentParts": "./src/contentParts.ts",
+    "./sha256": "./src/sha256.ts",
+    "./indexStore": "./src/indexStore.ts",
+    "./indexRead": "./src/indexRead.ts",
+    "./indexSource": "./src/indexSource.ts",
+    "./projectIndex": "./src/projectIndex.ts",
+    "./idle": "./src/idle.ts",
+    "./envNames": "./src/envNames.ts",
+    "./labKey": "./src/labKey.ts",
+    "./storageKeys": "./src/storageKeys.ts",
+    "./sheetRaster": "./src/sheetRaster.ts",
+    "./rasterBun": "./src/rasterBun.ts",
+    "./webm": "./src/clip/webm.ts",
+    "./ebml": "./src/clip/ebml.ts",
+    "./warmPages": "./src/pool/warmPages.ts",
+    "./poolWire": "./src/pool/wire.ts",
+    "./testing/indexStore": "./src/testing/indexStoreSuite.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:"
+  }
+}
