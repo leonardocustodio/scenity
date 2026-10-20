@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M53P246F7816WAZMP2WERR8Q",
+  "importer": "material",
+  "kind": "material",
+  "rights": "../../rights/scenity-own-work.yaml",
+  "settings": {},
+  "source": "wait.material.json",
+  "tags": [
+    "lamp",
+    "lamp:wait"
+  ]
+}

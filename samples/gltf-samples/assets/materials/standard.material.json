@@ -1,0 +1,20 @@
+{
+  "colour": "#ffffff",
+  "format": "scenity.material/1",
+  "maps": {
+    "colour": {
+      "colorSpace": "srgb",
+      "repeat": [2, 1],
+      "texture": "asset:01M51H7Y1XMRMVK5YYEV7E6Z79"
+    },
+    "normal": {
+      "colorSpace": "linear",
+      "repeat": [2, 1],
+      "texture": "asset:01M51H7Y5WR34JDGZ6BAJ9SRFM"
+    }
+  },
+  "metalness": 0,
+  "name": "Checker standard",
+  "roughness": 0.45,
+  "type": "standard"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "@scenity/runtime-dev",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The dev tools of the runtime: the dev core over a scene core (panes, lab layers, pick, capture, sweep, shots, onion skin, ghosts, overlay, previews, scratch props, hide, timed places), the inspect report, the debug layers, the tune API and the lab methods of a renderer. Only the editor imports it. A player build never holds it.",
+  "type": "module",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/runtime-dev"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./worker": "./src/worker/extension.ts",
+    "./protocol": "./src/worker/protocol.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests"
+  },
+  "dependencies": {
+    "@scenity/character": "workspace:*",
+    "@scenity/render": "workspace:*",
+    "@scenity/rules": "workspace:*",
+    "@scenity/runtime": "workspace:*",
+    "three": "catalog:"
+  },
+  "devDependencies": {
+    "@scenity/scene": "workspace:*",
+    "@types/bun": "catalog:",
+    "@types/three": "catalog:"
+  }
+}

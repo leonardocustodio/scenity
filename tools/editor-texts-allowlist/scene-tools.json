@@ -1,0 +1,5 @@
+{
+  "apps/editor/src/scene/viewport/viewportBar.ts": {
+    "editor": "option value: the camera ID of the editor camera"
+  }
+}

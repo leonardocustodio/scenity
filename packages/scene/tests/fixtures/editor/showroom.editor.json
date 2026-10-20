@@ -1,0 +1,10 @@
+{
+  "camera": {
+    "flySpeed": 2
+  },
+  "format": "scenity.editor/1",
+  "snaps": {
+    "angleDegrees": 15,
+    "grid": 0.05
+  }
+}

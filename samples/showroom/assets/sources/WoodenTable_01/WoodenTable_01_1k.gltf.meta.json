@@ -1,0 +1,12 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M4ZPXYG50NAV41FPDE38QB7E",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/polyhaven.yaml",
+  "settings": {},
+  "source": "WoodenTable_01_1k.gltf",
+  "tags": [
+    "furniture"
+  ]
+}

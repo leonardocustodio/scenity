@@ -1,0 +1,332 @@
+{
+  "type": {
+    "$description": "Type roles. Each value that updates also uses tabular lining figures.",
+    "display": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{font.size.36}"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.650}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{font.line-height.120}"
+      },
+      "tracking": {
+        "$type": "number",
+        "$value": "{font.tracking.0}",
+        "$extensions": {
+          "org.scenity": {
+            "unit": "em"
+          }
+        }
+      }
+    },
+    "title": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{font.size.24}"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.600}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{font.line-height.125}"
+      },
+      "tracking": {
+        "$type": "number",
+        "$value": "{font.tracking.0}",
+        "$extensions": {
+          "org.scenity": {
+            "unit": "em"
+          }
+        }
+      }
+    },
+    "body": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{font.size.16}"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.400}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{font.line-height.150}"
+      },
+      "tracking": {
+        "$type": "number",
+        "$value": "{font.tracking.0}",
+        "$extensions": {
+          "org.scenity": {
+            "unit": "em"
+          }
+        }
+      }
+    },
+    "label": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{font.size.14}"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.500}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{font.line-height.125}"
+      },
+      "tracking": {
+        "$type": "number",
+        "$value": "{font.tracking.0}",
+        "$extensions": {
+          "org.scenity": {
+            "unit": "em"
+          }
+        }
+      }
+    },
+    "caption": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{font.size.14}"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.400}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{font.line-height.145}"
+      },
+      "tracking": {
+        "$type": "number",
+        "$value": "{font.tracking.0}",
+        "$extensions": {
+          "org.scenity": {
+            "unit": "em"
+          }
+        }
+      }
+    },
+    "subtitle": {
+      "size": {
+        "$type": "dimension",
+        "$value": "{font.size.18}"
+      },
+      "weight": {
+        "$type": "fontWeight",
+        "$value": "{font.weight.500}"
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": "{font.line-height.140}"
+      },
+      "tracking": {
+        "$type": "number",
+        "$value": "{font.tracking.0}",
+        "$extensions": {
+          "org.scenity": {
+            "unit": "em"
+          }
+        }
+      },
+      "size-max": {
+        "$type": "dimension",
+        "$value": "{font.size.28}",
+        "$description": "Largest caption size that the learner can select."
+      }
+    }
+  },
+  "duration": {
+    "instant": {
+      "$type": "duration",
+      "$value": "{duration.0}",
+      "$description": "Vitals, clock and alarm onset: no animation."
+    },
+    "fast": {
+      "$type": "duration",
+      "$value": "{duration.120}",
+      "$description": "Press, hover and toggle."
+    },
+    "base": {
+      "$type": "duration",
+      "$value": "{duration.200}",
+      "$description": "Cards, panels and order-state changes."
+    },
+    "slow": {
+      "$type": "duration",
+      "$value": "{duration.300}",
+      "$description": "Route transitions in the study theme. The maximum for UI motion."
+    },
+    "scene": {
+      "$type": "duration",
+      "$value": "{duration.600}",
+      "$description": "Entry into the room, once per session."
+    }
+  },
+  "ease": {
+    "standard": {
+      "$type": "cubicBezier",
+      "$value": "{cubic-bezier.standard}",
+      "$description": "Enter and move."
+    },
+    "exit": {
+      "$type": "cubicBezier",
+      "$value": "{cubic-bezier.exit}",
+      "$description": "Exit."
+    }
+  },
+  "opacity": {
+    "stale": {
+      "$type": "number",
+      "$value": 0.6,
+      "$description": "Opacity of a stale vital value. The tile also shows the age as text."
+    },
+    "disabled": {
+      "$type": "number",
+      "$value": 0.5,
+      "$description": "Opacity of a disabled control."
+    }
+  },
+  "size": {
+    "target": {
+      "min": {
+        "$type": "dimension",
+        "$value": "{space.6}",
+        "$description": "Smallest target size: 24 x 24 CSS px (WCAG 2.5.8)."
+      },
+      "touch": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2.75,
+          "unit": "rem"
+        },
+        "$description": "Primary touch target: 44 x 44 CSS px."
+      }
+    },
+    "icon": {
+      "sm": {
+        "$type": "dimension",
+        "$value": "{space.4}"
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "{space.5}"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "{space.6}"
+      }
+    }
+  },
+  "focus": {
+    "width": {
+      "$type": "dimension",
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      },
+      "$description": "Focus ring width (WCAG 2.4.13)."
+    },
+    "offset": {
+      "$type": "dimension",
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      },
+      "$description": "Gap between the element and the focus ring."
+    }
+  },
+  "border": {
+    "width": {
+      "thin": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        }
+      },
+      "thick": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        }
+      }
+    }
+  },
+  "bp": {
+    "sm": {
+      "$type": "dimension",
+      "$value": {
+        "value": 37.5,
+        "unit": "rem"
+      },
+      "$description": "600 px: large phone or small tablet."
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": {
+        "value": 56.25,
+        "unit": "rem"
+      },
+      "$description": "900 px: tablet in landscape, small laptop."
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": {
+        "value": 80,
+        "unit": "rem"
+      },
+      "$description": "1280 px: laptop."
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": {
+        "value": 100,
+        "unit": "rem"
+      },
+      "$description": "1600 px: large desktop."
+    },
+    "short": {
+      "$type": "dimension",
+      "$value": {
+        "value": 32.5,
+        "unit": "rem"
+      },
+      "$description": "520 px of height: phone in landscape."
+    }
+  },
+  "layout": {
+    "content-max": {
+      "$type": "dimension",
+      "$value": {
+        "value": 75,
+        "unit": "rem"
+      },
+      "$description": "Widest study content: 1200 px."
+    },
+    "reading-max": {
+      "$type": "dimension",
+      "$value": {
+        "value": 45,
+        "unit": "rem"
+      },
+      "$description": "Widest reading text: 720 px."
+    }
+  },
+  "radius": {
+    "button": {
+      "$type": "dimension",
+      "$value": "{radius.control}"
+    }
+  }
+}

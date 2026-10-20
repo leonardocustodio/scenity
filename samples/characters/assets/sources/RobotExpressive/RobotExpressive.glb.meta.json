@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M516A3N0NZMAT1HRKD41JEZ4",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/quaternius.yaml",
+  "settings": {},
+  "source": "RobotExpressive.glb",
+  "tags": [
+    "character",
+    "rigged"
+  ]
+}

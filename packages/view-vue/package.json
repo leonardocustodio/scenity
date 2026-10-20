@@ -1,0 +1,29 @@
+{
+  "name": "@scenity/view-vue",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "SceneView.vue: the renderer life cycle, the fallback ladder, adaptive quality, the poster, the pointer and the renderer factory of a scene.",
+  "type": "module",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/view-vue"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./SceneView.vue": "./src/SceneView.vue",
+    "./styles.css": "./src/styles.css"
+  },
+  "dependencies": {
+    "@scenity/runtime": "workspace:*",
+    "vue": "catalog:"
+  }
+}

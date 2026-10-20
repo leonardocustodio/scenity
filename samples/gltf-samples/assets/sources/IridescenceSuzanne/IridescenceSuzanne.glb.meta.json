@@ -1,0 +1,17 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M519A7M51GYC1FV28BJ70T5X",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/khronos-cc0.yaml",
+  "settings": {},
+  "source": "IridescenceSuzanne.glb",
+  "tags": [
+    "gltf-sample",
+    "khr_materials_iridescence",
+    "khr_materials_ior",
+    "khr_materials_transmission",
+    "khr_materials_volume",
+    "khr_lights_punctual"
+  ]
+}

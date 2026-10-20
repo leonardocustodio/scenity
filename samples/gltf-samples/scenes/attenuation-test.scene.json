@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "fill": {
+      "components": {
+        "light": {
+          "colour": "#e8eeff",
+          "groundColour": "#6b6258",
+          "intensity": 0.4,
+          "type": "hemisphere"
+        },
+        "transform": {
+          "position": [0, 24.283, 0]
+        }
+      },
+      "index": 2,
+      "name": "Fill light",
+      "parent": null
+    },
+    "front": {
+      "components": {
+        "camera": {
+          "far": 93.337,
+          "fov": 40,
+          "near": 0.362,
+          "target": [0, 0, 0]
+        },
+        "transform": {
+          "position": [11.961, 9.371, 32.863]
+        }
+      },
+      "index": 3,
+      "name": "Front camera",
+      "parent": null
+    },
+    "key": {
+      "components": {
+        "light": {
+          "colour": "#ffffff",
+          "intensity": 1.5,
+          "shadow": false,
+          "type": "directional"
+        },
+        "transform": {
+          "position": [15.364, 30.728, 25.607],
+          "rotation": [-0.375149, 0.245878, 0.10391, 0.887699]
+        }
+      },
+      "index": 1,
+      "name": "Key light",
+      "parent": null
+    },
+    "model": {
+      "components": {
+        "model": {
+          "asset": "asset:01M519A71GRQ4D2QFH30WV0CT5"
+        },
+        "transform": {
+          "position": [0, 0, 0]
+        }
+      },
+      "index": 0,
+      "name": "AttenuationTest",
+      "parent": null,
+      "tags": [
+        "gltf-sample"
+      ]
+    }
+  },
+  "environment": {
+    "background": "#808388",
+    "exposure": 1,
+    "map": "asset:01M519A8HDSBZAWBE8S9ZPFA7N",
+    "mapIntensity": 1,
+    "toneMapping": "aces"
+  },
+  "format": "scenity.scene/1",
+  "id": "attenuation-test",
+  "name": "Attenuation test (KHR_materials_volume)"
+}

@@ -1,0 +1,282 @@
+{
+  "entities": {
+    "fill": {
+      "components": {
+        "light": {
+          "colour": "#e8eeff",
+          "groundColour": "#6b6258",
+          "intensity": 0.6,
+          "type": "hemisphere"
+        },
+        "transform": {
+          "position": [0, 3, 0]
+        }
+      },
+      "index": 8,
+      "name": "Fill light",
+      "parent": null
+    },
+    "floor": {
+      "components": {
+        "shape": {
+          "colour": "#8a8f96",
+          "kind": "plane",
+          "roughness": 0.9,
+          "size": [6, 0, 4]
+        },
+        "transform": {
+          "position": [0, 0, -0.4]
+        }
+      },
+      "index": 0,
+      "name": "Floor",
+      "parent": null
+    },
+    "front": {
+      "components": {
+        "camera": {
+          "fov": 40,
+          "target": [0, 0.5, -0.5]
+        },
+        "transform": {
+          "position": [0, 1.6, 4.2]
+        }
+      },
+      "index": 9,
+      "name": "Front camera",
+      "parent": null
+    },
+    "key": {
+      "components": {
+        "light": {
+          "colour": "#ffffff",
+          "intensity": 2,
+          "shadow": false,
+          "target": [0, 0.3, 0],
+          "type": "directional"
+        },
+        "transform": {
+          "position": [2.5, 4.5, 3.5]
+        }
+      },
+      "index": 7,
+      "name": "Key light",
+      "parent": null
+    },
+    "lambert": {
+      "components": {
+        "camera": {
+          "fov": 28,
+          "target": [0, 0.4, 0]
+        },
+        "transform": {
+          "position": [0, 0.6, 1.3]
+        }
+      },
+      "index": 12,
+      "name": "Camera lambert",
+      "parent": null
+    },
+    "model": {
+      "components": {
+        "model": {
+          "asset": "asset:01M519A7ZRK5PTXKJ326T9J6GZ",
+          "materials": {
+            "Blue": {
+              "colour": "#3a8fe0"
+            },
+            "mesh:Orange_Object": {
+              "colour": "#e0603a",
+              "material": "asset:01M51H7YPA8877BCJGSJN1D0B2"
+            }
+          }
+        },
+        "transform": {
+          "position": [0, 0.95, -1.4],
+          "scale": [0.3, 0.3, 0.3]
+        }
+      },
+      "index": 6,
+      "name": "UnlitTest with overrides",
+      "parent": null,
+      "tags": [
+        "material-sample"
+      ]
+    },
+    "override": {
+      "components": {
+        "camera": {
+          "fov": 40,
+          "target": [0, 0.95, -1.4]
+        },
+        "transform": {
+          "position": [0, 1.3, -0.1]
+        }
+      },
+      "index": 15,
+      "name": "Camera override",
+      "parent": null
+    },
+    "phong": {
+      "components": {
+        "camera": {
+          "fov": 28,
+          "target": [0.9, 0.4, 0]
+        },
+        "transform": {
+          "position": [0.9, 0.6, 1.3]
+        }
+      },
+      "index": 13,
+      "name": "Camera phong",
+      "parent": null
+    },
+    "physical": {
+      "components": {
+        "camera": {
+          "fov": 28,
+          "target": [-0.9, 0.4, 0]
+        },
+        "transform": {
+          "position": [-0.9, 0.6, 1.3]
+        }
+      },
+      "index": 11,
+      "name": "Camera physical",
+      "parent": null
+    },
+    "sphere-lambert": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "sphere",
+          "material": "asset:01M51H7YJ6VDVTQVGZWP5HES1E",
+          "size": [0.7, 0.7, 0.7]
+        },
+        "transform": {
+          "position": [0, 0.4, 0]
+        }
+      },
+      "index": 3,
+      "name": "Sphere lambert",
+      "parent": null,
+      "tags": [
+        "material-sample"
+      ]
+    },
+    "sphere-phong": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "sphere",
+          "material": "asset:01M51H7YPA8877BCJGSJN1D0B2",
+          "size": [0.7, 0.7, 0.7]
+        },
+        "transform": {
+          "position": [0.9, 0.4, 0]
+        }
+      },
+      "index": 4,
+      "name": "Sphere phong",
+      "parent": null,
+      "tags": [
+        "material-sample"
+      ]
+    },
+    "sphere-physical": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "sphere",
+          "material": "asset:01M51H7YE3D39PW1114W8EPE5F",
+          "size": [0.7, 0.7, 0.7]
+        },
+        "transform": {
+          "position": [-0.9, 0.4, 0]
+        }
+      },
+      "index": 2,
+      "name": "Sphere physical",
+      "parent": null,
+      "tags": [
+        "material-sample"
+      ]
+    },
+    "sphere-standard": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "sphere",
+          "material": "asset:01M51H7Y9ZE026AZ1AQJ288Y3V",
+          "size": [0.7, 0.7, 0.7]
+        },
+        "transform": {
+          "position": [-1.8, 0.4, 0]
+        }
+      },
+      "index": 1,
+      "name": "Sphere standard",
+      "parent": null,
+      "tags": [
+        "material-sample"
+      ]
+    },
+    "sphere-unlit": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "kind": "sphere",
+          "material": "asset:01M51H7YTKS2S6GQGHRE05DYMT",
+          "size": [0.7, 0.7, 0.7]
+        },
+        "transform": {
+          "position": [1.8, 0.4, 0]
+        }
+      },
+      "index": 5,
+      "name": "Sphere unlit",
+      "parent": null,
+      "tags": [
+        "material-sample"
+      ]
+    },
+    "standard": {
+      "components": {
+        "camera": {
+          "fov": 28,
+          "target": [-1.8, 0.4, 0]
+        },
+        "transform": {
+          "position": [-1.8, 0.6, 1.3]
+        }
+      },
+      "index": 10,
+      "name": "Camera standard",
+      "parent": null
+    },
+    "unlit": {
+      "components": {
+        "camera": {
+          "fov": 28,
+          "target": [1.8, 0.4, 0]
+        },
+        "transform": {
+          "position": [1.8, 0.6, 1.3]
+        }
+      },
+      "index": 14,
+      "name": "Camera unlit",
+      "parent": null
+    }
+  },
+  "environment": {
+    "background": "#808388",
+    "exposure": 1,
+    "map": "asset:01M519A8HDSBZAWBE8S9ZPFA7N",
+    "mapIntensity": 1,
+    "toneMapping": "aces"
+  },
+  "format": "scenity.scene/1",
+  "id": "materials",
+  "name": "Materials (standard, physical, Lambert, Phong, unlit and overrides)"
+}

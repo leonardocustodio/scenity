@@ -1,0 +1,174 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/*
+ * Styles of the ui package. The app imports Tailwind first, then this file:
+ *
+ *   @import "tailwindcss";
+ *   @import "@scenity/ui/styles.css";
+ *
+ * This file adds the token variables (one block per theme), the Tailwind theme of the tokens, the theme of the
+ * shadcn-vue components (shadcn.css), the base styles and the accessibility rules: focus ring, forced colors and
+ * reduced motion.
+ */
+@import "@scenity/tokens/css";
+@import "@scenity/tokens/tailwind.css";
+@import "./fonts.css";
+@import "./shadcn.css";
+
+/* Tailwind scans the components of this package for class names. */
+@source "../";
+
+@layer base {
+  html {
+    background-color: var(--sc-color-surface-base);
+    color: var(--sc-color-text-primary);
+    font-family: var(--sc-font-family-sans);
+    /* Sticky bars never cover the focused element (WCAG 2.4.11). */
+    scroll-padding-block: var(--sc-space-16);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--sc-font-family-display);
+  }
+
+  /*
+   * Focus ring (WCAG 2.4.7, 2.4.13): a 2 px ring with a 2 px offset. The inner ring fills the offset, so the
+   * ring has contrast on every surface. High contrast makes the ring 3 px wide (token focus.width).
+   */
+  :focus-visible {
+    outline: var(--sc-focus-width) solid var(--sc-color-focus-ring);
+    outline-offset: var(--sc-focus-offset);
+    box-shadow: 0 0 0 var(--sc-focus-offset) var(--sc-color-focus-ring-inner);
+  }
+
+  /*
+   * Date and time fields: the browser gives the focus to one part of the field (hour, minute), so the field
+   * itself does not match :focus-visible. It shows the same ring while a part of it has the focus.
+   */
+  input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"]):focus-within {
+    outline: var(--sc-focus-width) solid var(--sc-color-focus-ring);
+    outline-offset: var(--sc-focus-offset);
+    box-shadow: 0 0 0 var(--sc-focus-offset) var(--sc-color-focus-ring-inner);
+  }
+
+  /* A field that holds its own text input (Combobox) shows the ring on the field, not on the bare input. */
+  .sc-field-focus:has(input:focus-visible) {
+    outline: var(--sc-focus-width) solid var(--sc-color-focus-ring);
+    outline-offset: var(--sc-focus-offset);
+    box-shadow: 0 0 0 var(--sc-focus-offset) var(--sc-color-focus-ring-inner);
+  }
+
+  /* Values that update use tabular lining figures. */
+  .sc-numeric {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+}
+
+@layer components {
+  /* Status shapes and icons draw with currentColor, so forced colors give them a system color. */
+  .sc-shape {
+    fill: none;
+    stroke: currentColor;
+  }
+}
+
+/*
+ * Reduced motion: from the operating system or from the in-app setting (data-motion="reduced"
+ * on the root element). UI transitions become instant and the elements of .sc-motion stop their animation.
+ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --sc-duration-fast: 0ms;
+    --sc-duration-base: 0ms;
+    --sc-duration-slow: 0ms;
+    --sc-duration-scene: 0ms;
+  }
+
+  .sc-motion {
+    animation: none;
+  }
+}
+
+[data-motion="reduced"] {
+  --sc-duration-fast: 0ms;
+  --sc-duration-base: 0ms;
+  --sc-duration-slow: 0ms;
+  --sc-duration-scene: 0ms;
+
+  & .sc-motion {
+    animation: none;
+  }
+}
+
+/*
+ * Forced colors (Windows high contrast): the browser replaces the colors with system colors.
+ * The focus ring uses Highlight. Filled status areas have a transparent border in normal mode; forced
+ * colors make it visible, so the shape of the area stays. Icons keep their shapes through currentColor.
+ */
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+    box-shadow: none;
+  }
+
+  .sc-shape {
+    forced-color-adjust: auto;
+  }
+
+  .sc-forced-border {
+    border-color: CanvasText;
+  }
+
+  .sc-field-focus:has(input:focus-visible),
+  input:is([type="date"], [type="time"], [type="datetime-local"], [type="month"], [type="week"]):focus-within {
+    outline-color: Highlight;
+    box-shadow: none;
+  }
+
+  /*
+   * Selected, current and checked states (WCAG 1.4.1, 1.4.11). Forced colors remove the fills and
+   * the colored borders that show these states, so each state gets a line or a system color.
+   */
+  [aria-current="page"],
+  [aria-current="step"],
+  [aria-current="true"],
+  [aria-pressed="true"],
+  [role="tab"][aria-selected="true"] {
+    text-decoration-line: underline;
+    text-decoration-thickness: var(--sc-focus-width);
+    text-underline-offset: 0.3em;
+  }
+
+  [role="tab"][aria-selected="true"] {
+    border-color: Highlight;
+  }
+
+  /* The thumb of a switch and the dot of a radio button are fills: draw them in system colors. */
+  .sc-switch-thumb,
+  .sc-radio-dot {
+    forced-color-adjust: none;
+    background-color: CanvasText;
+  }
+
+  [role="switch"][data-state="checked"] {
+    border-color: Highlight;
+  }
+
+  [data-state="checked"] > .sc-switch-thumb,
+  .sc-radio-dot {
+    background-color: Highlight;
+  }
+
+  /* The active item of a menu, a list box or a combobox list. */
+  [role="option"][data-highlighted],
+  [role="menuitem"][data-highlighted],
+  [role="menuitemradio"][data-highlighted],
+  [role="menuitemcheckbox"][data-highlighted],
+  [role="option"][aria-selected="true"] {
+    forced-color-adjust: none;
+    background-color: Highlight;
+    color: HighlightText;
+  }
+}

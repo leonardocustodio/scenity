@@ -1,0 +1,8 @@
+{
+  "colour": "#d8a530",
+  "format": "scenity.material/1",
+  "name": "Gold Phong",
+  "shininess": 60,
+  "specular": "#fff4d6",
+  "type": "phong"
+}

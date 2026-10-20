@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M519A838052SD9F3R1TJ3FAG",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/khronos-cc0.yaml",
+  "settings": {},
+  "source": "SimpleInstancing.glb",
+  "tags": [
+    "gltf-sample",
+    "ext_mesh_gpu_instancing"
+  ]
+}

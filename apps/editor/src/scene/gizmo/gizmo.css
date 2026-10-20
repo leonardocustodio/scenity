@@ -1,0 +1,80 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The transform gizmos of the scene page: the overlay canvas over the scene canvas and the gizmo bar.
+   Developer page: no design tokens. */
+#scene-gizmo {
+  position: fixed;
+  pointer-events: none;
+}
+
+/* The gizmo bar is at the end of the top row of the studio shell. A narrow window scrolls the region of the
+   bar: it stays one row. */
+#scene-gizmo-bar {
+  box-sizing: border-box;
+  display: flex;
+  /* The small gap and the narrow number fields let the bar fit in a window of 1280 pixels. */
+  gap: 4px;
+  align-items: center;
+  width: fit-content;
+  /* A narrow window scrolls the bar in its region; the bar stays one row. */
+  max-width: 100%;
+  height: 32px;
+  overflow: auto hidden;
+  white-space: nowrap;
+  padding: 0 4px;
+  font:
+    12px system-ui,
+    sans-serif;
+  /* A part of the toolbar of the editor window: the tokens of the theme. */
+  color: var(--sc-color-text-primary);
+  background: transparent;
+}
+
+#scene-gizmo-bar > * {
+  flex: none;
+}
+
+#scene-gizmo-bar button {
+  padding: 2px 6px;
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: var(--sc-radius-4);
+  font: inherit;
+  color: inherit;
+  background: var(--sc-color-surface-raised);
+  cursor: pointer;
+}
+
+#scene-gizmo-bar button[aria-pressed="true"] {
+  border-color: var(--sc-color-studio-selection);
+  background: var(--sc-color-studio-selection-subtle);
+}
+
+#scene-gizmo-bar :is(button, input):focus-visible {
+  outline: 2px solid var(--sc-color-focus-ring);
+  outline-offset: 1px;
+}
+
+#scene-gizmo-bar label {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+}
+
+#scene-gizmo-bar input[type="number"] {
+  width: 44px;
+  font: inherit;
+  color: inherit;
+  background: var(--sc-color-surface-sunken);
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: var(--sc-radius-4);
+}
+
+#scene-gizmo-bar output {
+  padding: 2px 6px;
+  border-radius: var(--sc-radius-4);
+  color: var(--sc-color-text-on-accent);
+  background: var(--sc-color-accent-brand);
+}
+
+#scene-gizmo-bar output[hidden] {
+  display: none;
+}

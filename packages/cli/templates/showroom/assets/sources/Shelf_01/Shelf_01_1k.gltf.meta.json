@@ -1,0 +1,12 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M4ZPXYG4RJ5N3H08MAHE8762",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/polyhaven.yaml",
+  "settings": {},
+  "source": "Shelf_01_1k.gltf",
+  "tags": [
+    "furniture"
+  ]
+}

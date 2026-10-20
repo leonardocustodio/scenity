@@ -1,0 +1,42 @@
+{
+  "assets": [
+    "assets"
+  ],
+  "format": "scenity.project/1",
+  "id": "showroom",
+  "name": "Showroom",
+  "plugins": [
+    "./plugins/doors"
+  ],
+  "quality": {
+    "budgets": {
+      "scene": {
+        "high": {
+          "bytes": 22000000,
+          "triangles": 400000
+        }
+      }
+    }
+  },
+  "rules": [
+    "rules/layout.rules.json"
+  ],
+  "scenes": [
+    "scenes/main.scene.json"
+  ],
+  "sequences": [
+    "sequences/tour.sequence.json"
+  ],
+  "workbench": {
+    "runs": {
+      "check": "scenity check"
+    },
+    "surfaces": [
+      {
+        "id": "editor",
+        "kind": "scene",
+        "label": "Editor"
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "@scenity/studio-host",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The host of Scenity Studio: a Bun program on 127.0.0.1 that needs no project. It keeps the registry of projects, the user state, the jobs (`scenity` commands) and the doctor. It signs the browser in. It runs one scene server of the editor (`@scenity/editor`) behind a proxy, so the Hub and each open project share one origin. The bin is `scenity-studio`, and `scenity studio` of `@scenity/cli` runs it.",
+  "type": "module",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/studio-host"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "scenity-studio": "./src/main.ts"
+  },
+  "exports": {
+    ".": "./src/main.ts",
+    "./mcp": "./src/mcp.ts",
+    "./package.json": "./package.json",
+    "./process": "./src/process.ts",
+    "./store": "./src/store.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "0.3.284",
+    "@modelcontextprotocol/sdk": "1.30.1",
+    "@scenity/agent-tools": "workspace:*",
+    "@scenity/bridge": "workspace:*",
+    "@scenity/cli": "workspace:*",
+    "@scenity/editor": "workspace:*",
+    "@scenity/editor-core": "workspace:*",
+    "@scenity/scene": "workspace:*",
+    "zod": "4.6.5"
+  },
+  "peerDependencies": {
+    "@playwright/test": "^1.63.0"
+  },
+  "peerDependenciesMeta": {
+    "@playwright/test": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:"
+  }
+}

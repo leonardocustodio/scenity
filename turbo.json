@@ -1,0 +1,77 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  // The tasks see every environment variable ("loose"): the tests, the GPU suites and the host read many of them
+  // (HOME, PLAYWRIGHT_*, SCENITY_*). The hash of a task holds only the variables below.
+  "envMode": "loose",
+  "globalEnv": ["SCENITY_*", "CODEBLUE_*", "CI"],
+  "globalDependencies": ["tsconfig.base.json", "bunfig.toml"],
+  "tasks": {
+    // No package has this script. The task carries the hashes of the sources of the workspace dependencies to the tasks
+    // that read those sources, because most packages ship TypeScript sources and have no build.
+    "transit": {
+      "dependsOn": ["^transit"]
+    },
+    "build": {
+      "dependsOn": ["^build", "transit"],
+      "outputs": ["dist/**"]
+    },
+    "typecheck": {
+      "dependsOn": ["^build", "transit"]
+    },
+    // The tests of many packages read the sample projects, so the samples are an input of each test task. An
+    // explicit glob does not follow .gitignore: the negative globs leave out the state folders and the builds.
+    "test": {
+      "dependsOn": ["^build", "transit"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "$TURBO_ROOT$/samples/**",
+        "!$TURBO_ROOT$/samples/**/.scenity/**",
+        "!$TURBO_ROOT$/samples/**/dist/**",
+        "!$TURBO_ROOT$/samples/**/node_modules/**"
+      ]
+    },
+    "test:components": {
+      "dependsOn": ["^build", "transit"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "$TURBO_ROOT$/samples/**",
+        "!$TURBO_ROOT$/samples/**/.scenity/**",
+        "!$TURBO_ROOT$/samples/**/dist/**",
+        "!$TURBO_ROOT$/samples/**/node_modules/**"
+      ]
+    },
+    // The host tests use the whole repository as their checkout (Git state, files of other packages): no cache.
+    "@scenity/workbench-host#test": {
+      "dependsOn": ["^build", "transit"],
+      "cache": false
+    },
+    // The GPU suites and the dev servers never come from the cache.
+    "e2e": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "test:gallery": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "dev": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    },
+    "dev:scene": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    },
+    // The tasks of the repository root read every package and plugin: no cache.
+    "//#typecheck:repo": {
+      "dependsOn": ["@scenity/tokens#build"],
+      "cache": false
+    },
+    "//#test:tools": {
+      "dependsOn": ["@scenity/tokens#build"],
+      "cache": false
+    }
+  }
+}

@@ -1,0 +1,185 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The scene switcher of the file bar and the project start screen of the scene page. The switcher is a part of the
+   toolbar of the editor window, thus it takes the tokens of the theme. */
+/* The scene tabs of the file bar: one tab for each open scene, + and ⋯. The tabs keep their width in a narrow toolbar
+   (the path gets smaller first). When the tabs are wider than the maximum width, the list scrolls. */
+#scene-bar > .scene-tabs {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+  max-width: 320px;
+}
+
+.scene-tab-list {
+  display: flex;
+  gap: 2px;
+  min-width: 0;
+  overflow: auto hidden;
+}
+
+.scene-tab {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 2px;
+  padding: 0 2px 0 6px;
+  border: 1px solid var(--sc-color-border-subtle);
+  border-radius: var(--sc-radius-4);
+  background: var(--sc-color-surface-sunken);
+}
+
+.scene-tab[data-active] {
+  border-color: var(--sc-color-border-strong);
+  background: var(--sc-color-surface-raised);
+}
+
+.scene-tab button,
+.scene-tabs > button,
+.scene-tabs-more > button {
+  padding: 1px 4px;
+  border: none;
+  font: inherit;
+  color: var(--sc-color-text-primary);
+  background: none;
+  cursor: pointer;
+}
+
+.scene-tab[data-active] [data-testid="scene-tab-name"] {
+  font-weight: 600;
+}
+
+.scene-tab-dirty {
+  color: var(--sc-color-text-secondary);
+}
+
+.scene-tab button:focus-visible,
+.scene-tabs > button:focus-visible,
+.scene-tabs-more button:focus-visible {
+  outline: 2px solid var(--sc-color-focus-ring);
+  outline-offset: -2px;
+}
+
+.scene-tabs-more {
+  position: relative;
+}
+
+.scene-tabs-menu {
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 160px;
+  padding: 4px;
+  border: 1px solid var(--sc-color-border-subtle);
+  border-radius: var(--sc-radius-4);
+  background: var(--sc-color-surface-overlay);
+}
+
+.scene-tabs-menu[hidden] {
+  display: none;
+}
+
+.scene-tabs-menu button {
+  padding: 4px 8px;
+  text-align: left;
+}
+
+#scene[hidden] {
+  display: none;
+}
+
+#scene-start {
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+  padding: 24px max(16px, calc(50% - 480px));
+  font:
+    13px system-ui,
+    sans-serif;
+  color: #ffffff;
+  background: #10151d;
+}
+
+#scene-start h1 {
+  margin: 0 0 4px;
+  font-size: 22px;
+}
+
+#scene-start h2 {
+  margin: 24px 0 8px;
+  font-size: 15px;
+}
+
+#scene-start ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#scene-start a {
+  color: #9cc7ff;
+}
+
+#scene-start [data-testid="start-scenes"] {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+#scene-start [data-testid="start-scene"] a {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #ffffff;
+  background: rgb(255 255 255 / 6%);
+}
+
+#scene-start [data-testid="start-scene"] a:hover,
+#scene-start [data-testid="start-scene"] a:focus-visible {
+  background: rgb(255 255 255 / 14%);
+}
+
+#scene-start .start-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 3px;
+  color: rgb(255 255 255 / 50%);
+  background: rgb(0 0 0 / 40%);
+}
+
+#scene-start .start-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#scene-start .start-path {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(255 255 255 / 60%);
+}
+
+#scene-start form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+#scene-start input {
+  flex: 0 1 320px;
+  min-width: 0;
+  padding: 4px 6px;
+  font: inherit;
+}

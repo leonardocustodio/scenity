@@ -1,0 +1,90 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The layout tools of the scene page: the overlay canvas over the scene canvas, the tool menu and the
+   readout. The menu and the readout go into the free canvas area of the layout (../editLayout.css,
+   `--scene-area-layout`): the menu under the viewport bar, the readout under the menu. Developer page: no design
+   tokens. */
+#scene-layout-overlay {
+  position: fixed;
+  pointer-events: none;
+}
+
+/* A page with no editor window: the menu and the readout over the view. In the editor window the tools are
+   in the Tools overlay and the readout is an overlay of the Scene view (viewport.css). */
+#scene-layout-tools,
+body > #scene-layout-readout {
+  position: absolute;
+  z-index: var(--scene-z-panel);
+  box-sizing: border-box;
+  max-width: calc(100% - var(--scene-free-left) - var(--scene-free-right));
+  border-radius: 4px;
+  font:
+    12px system-ui,
+    sans-serif;
+  color: #ffffff;
+  background: rgb(0 0 0 / 60%);
+}
+
+#scene-layout-tools {
+  inset: var(--scene-area-layout);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  height: var(--scene-bar-height);
+  overflow: auto hidden;
+  white-space: nowrap;
+  padding: 4px 8px;
+}
+
+#scene-layout-tools button {
+  flex: none;
+  padding: 2px 6px;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 3px;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.scene-layout-tools button[aria-pressed="true"] {
+  border-color: #ff3df0;
+  color: #ff3df0;
+}
+
+.scene-overlay-column.scene-layout-tools {
+  margin-top: 4px;
+  padding-top: 4px;
+  border-top: 1px solid var(--sc-color-border-subtle);
+}
+
+#scene-layout-readout {
+  width: min(320px, 40vw);
+  max-height: 40vh;
+  overflow: auto;
+}
+
+#scene-layout-readout h2 {
+  margin: 0 0 4px;
+  font-size: 12px;
+}
+
+#scene-layout-readout ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+#scene-layout-readout[data-state="none"] li {
+  color: #ffe14d;
+}
+
+/* "Save as a rule" under the lines of the readout. */
+.scene-layout-save-rule {
+  margin-top: 4px;
+  padding: 2px 6px;
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: 3px;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+}

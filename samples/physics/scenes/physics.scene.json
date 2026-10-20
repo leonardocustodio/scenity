@@ -1,0 +1,356 @@
+{
+  "entities": {
+    "ball": {
+      "components": {
+        "physics.collider": {
+          "friction": 0.6,
+          "restitution": 0.4
+        },
+        "physics.rigidBody": {
+          "angularDamping": 0.3,
+          "linearDamping": 0.3,
+          "mass": 0.5
+        },
+        "shape": {
+          "colour": "#d55a3a",
+          "kind": "sphere",
+          "roughness": 0.5,
+          "size": [0.36, 0.36, 0.36]
+        },
+        "transform": {
+          "position": [3, 1.15, -0.6]
+        }
+      },
+      "index": 3,
+      "name": "Ball",
+      "parent": null
+    },
+    "ball-marker": {
+      "components": {
+        "probe.drop": {
+          "source": "ball"
+        },
+        "shape": {
+          "castShadow": false,
+          "colour": "#2b2f36",
+          "kind": "cylinder",
+          "roughness": 1,
+          "size": [0.3, 0.01, 0.3]
+        },
+        "transform": {
+          "position": [3, 0, -0.6]
+        }
+      },
+      "index": 4,
+      "name": "Ball marker",
+      "parent": null
+    },
+    "crate-1": {
+      "components": {
+        "physics.collider": {
+          "friction": 0.6
+        },
+        "physics.rigidBody": {
+          "mass": 2
+        },
+        "shape": {
+          "colour": "#3a7bd5",
+          "kind": "box",
+          "roughness": 0.7,
+          "size": [0.4, 0.4, 0.4]
+        },
+        "transform": {
+          "position": [-1.6, 0.6, -0.4],
+          "rotation": [0, 0.087156, 0, 0.996195]
+        }
+      },
+      "index": 5,
+      "name": "Crate 1",
+      "parent": null
+    },
+    "crate-2": {
+      "components": {
+        "physics.collider": {
+          "friction": 0.6
+        },
+        "physics.rigidBody": {
+          "mass": 2
+        },
+        "shape": {
+          "colour": "#e0b33a",
+          "kind": "box",
+          "roughness": 0.7,
+          "size": [0.4, 0.4, 0.4]
+        },
+        "transform": {
+          "position": [-1.5, 1.2, -0.35],
+          "rotation": [0, -0.21644, 0, 0.976296]
+        }
+      },
+      "index": 6,
+      "name": "Crate 2",
+      "parent": null
+    },
+    "crate-3": {
+      "components": {
+        "physics.collider": {
+          "friction": 0.6
+        },
+        "physics.rigidBody": {
+          "mass": 2
+        },
+        "shape": {
+          "colour": "#5aa469",
+          "kind": "box",
+          "roughness": 0.7,
+          "size": [0.4, 0.4, 0.4]
+        },
+        "transform": {
+          "position": [-1.7, 1.8, -0.45],
+          "rotation": [0, 0.34202, 0, 0.939693]
+        }
+      },
+      "index": 7,
+      "name": "Crate 3",
+      "parent": null
+    },
+    "crate-4": {
+      "components": {
+        "physics.collider": {
+          "friction": 0.6
+        },
+        "physics.rigidBody": {
+          "angularVelocity": [0, 0, 90],
+          "mass": 2
+        },
+        "shape": {
+          "colour": "#9b59b6",
+          "kind": "box",
+          "roughness": 0.7,
+          "size": [0.4, 0.4, 0.4]
+        },
+        "transform": {
+          "position": [-1.55, 2.4, -0.3],
+          "rotation": [0, 0.043619, 0, 0.999048]
+        }
+      },
+      "index": 8,
+      "name": "Crate 4",
+      "parent": null
+    },
+    "fill": {
+      "components": {
+        "light": {
+          "colour": "#dfe8ff",
+          "groundColour": "#8a7a66",
+          "intensity": 0.8,
+          "type": "hemisphere"
+        },
+        "transform": {
+          "position": [0, 3, 0]
+        }
+      },
+      "index": 12,
+      "name": "Fill light",
+      "parent": null
+    },
+    "floor": {
+      "components": {
+        "physics.collider": {
+          "friction": 0.8
+        },
+        "shape": {
+          "colour": "#b9a98f",
+          "kind": "plane",
+          "roughness": 0.9,
+          "size": [8, 0, 6]
+        },
+        "transform": {
+          "position": [0, 0, 0]
+        }
+      },
+      "index": 0,
+      "name": "Floor",
+      "parent": null
+    },
+    "front": {
+      "components": {
+        "camera": {
+          "fov": 45,
+          "target": [0, 0.7, -0.4]
+        },
+        "transform": {
+          "position": [0, 2.4, 5.6]
+        }
+      },
+      "index": 13,
+      "name": "Front camera",
+      "parent": null
+    },
+    "hero": {
+      "components": {
+        "physics.character": {
+          "speed": 1.2
+        },
+        "transform": {
+          "position": [0.4, 0, 1.6]
+        }
+      },
+      "index": 10,
+      "name": "Hero",
+      "parent": null
+    },
+    "hero-body": {
+      "components": {
+        "shape": {
+          "colour": "#2f8f9d",
+          "kind": "cylinder",
+          "roughness": 0.7,
+          "size": [0.56, 1.1, 0.56]
+        },
+        "transform": {
+          "position": [0, 0.55, 0]
+        }
+      },
+      "index": 0,
+      "name": "Hero body",
+      "parent": "hero"
+    },
+    "hero-head": {
+      "components": {
+        "shape": {
+          "colour": "#f0d9b5",
+          "kind": "sphere",
+          "roughness": 0.7,
+          "size": [0.4, 0.4, 0.4]
+        },
+        "transform": {
+          "position": [0, 1.35, 0]
+        }
+      },
+      "index": 1,
+      "name": "Hero head",
+      "parent": "hero"
+    },
+    "hero-nose": {
+      "components": {
+        "shape": {
+          "colour": "#d55a3a",
+          "kind": "box",
+          "roughness": 0.7,
+          "size": [0.12, 0.08, 0.12]
+        },
+        "transform": {
+          "position": [0, 1.35, 0.22]
+        }
+      },
+      "index": 2,
+      "name": "Hero nose",
+      "parent": "hero"
+    },
+    "pusher": {
+      "components": {
+        "physics.collider": {},
+        "physics.rigidBody": {
+          "type": "kinematic"
+        },
+        "shape": {
+          "colour": "#4a4f57",
+          "kind": "box",
+          "roughness": 0.6,
+          "size": [0.3, 0.5, 1.2]
+        },
+        "transform": {
+          "position": [-3.4, 0.25, -0.4]
+        }
+      },
+      "index": 9,
+      "name": "Pusher",
+      "parent": null
+    },
+    "ramp": {
+      "components": {
+        "physics.collider": {
+          "friction": 0.4
+        },
+        "shape": {
+          "colour": "#7d8a99",
+          "kind": "box",
+          "roughness": 0.8,
+          "size": [2.4, 0.12, 1.2]
+        },
+        "transform": {
+          "position": [2.2, 0.45, -0.6],
+          "rotation": [0, 0, 0.173648, 0.984808]
+        }
+      },
+      "index": 2,
+      "name": "Ramp",
+      "parent": null
+    },
+    "side": {
+      "components": {
+        "camera": {
+          "fov": 45,
+          "target": [0.5, 0.6, -0.4]
+        },
+        "transform": {
+          "position": [5.5, 2.5, 3]
+        }
+      },
+      "index": 14,
+      "name": "Side camera",
+      "parent": null
+    },
+    "sun": {
+      "components": {
+        "light": {
+          "colour": "#fff4e5",
+          "intensity": 2.2,
+          "shadow": true,
+          "shadowCamera": {
+            "bottom": -5,
+            "far": 30,
+            "left": -5,
+            "near": 0.1,
+            "right": 5,
+            "top": 5
+          },
+          "type": "directional"
+        },
+        "transform": {
+          "position": [3, 5, 4],
+          "rotation": [-0.403058, 0.272532, -0.127084, 0.864361]
+        }
+      },
+      "index": 11,
+      "name": "Key light",
+      "parent": null
+    },
+    "wall-back": {
+      "components": {
+        "physics.collider": {},
+        "shape": {
+          "colour": "#e8e4dc",
+          "kind": "box",
+          "roughness": 0.95,
+          "size": [8, 3, 0.1]
+        },
+        "transform": {
+          "position": [0, 1.5, -3]
+        }
+      },
+      "index": 1,
+      "name": "Back wall",
+      "parent": null
+    }
+  },
+  "environment": {
+    "background": "#1a2433",
+    "exposure": 1,
+    "toneMapping": "aces"
+  },
+  "format": "scenity.scene/1",
+  "id": "physics",
+  "name": "Physics"
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  A plain HTML page that plays the road crossing sample with the web component of @scenity/player. The traffic plugin
+  (@scenity/traffic-runtime) simulates the cars, the walkers and the signal of the crossing on the sequence `rush`.
+  The `plugins` attribute names the plugin set of the project on this server. The page takes the input of the play
+  mode (`input`): the space bar or a click on the yellow button asks for the `walk` phase of the signal. The scene
+  dev server serves it at /player/sim-road.html.
+-->
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Road crossing player</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #000000;
+        overflow: hidden;
+      }
+      scenity-player {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <scenity-player
+      data-testid="player"
+      src="/projects/sim-road/scenity.project.json"
+      scene="scenes/road.scene.json"
+      sequence="sequences/rush.sequence.json"
+      camera="front"
+      plugins="sim-road"
+      input
+      autoplay
+      loop
+    ></scenity-player>
+    <script type="module" src="/src/player/element.ts"></script>
+  </body>
+</html>

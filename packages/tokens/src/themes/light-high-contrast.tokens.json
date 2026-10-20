@@ -1,0 +1,103 @@
+{
+  "$description": "High-contrast overrides of the light theme.",
+  "color": {
+    "surface": {
+      "device": {
+        "$type": "color",
+        "$value": "{color.black}"
+      },
+      "base": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "sunken": {
+        "$type": "color",
+        "$value": "{color.paper.75}"
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": "{color.black}"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{color.slate.800}"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{color.paper.500}"
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{color.blue.800}"
+      }
+    },
+    "border": {
+      "subtle": {
+        "$type": "color",
+        "$value": "{color.paper.500}"
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "{color.slate.700}"
+      }
+    },
+    "accent": {
+      "brand": {
+        "$type": "color",
+        "$value": "{color.blue.800}"
+      },
+      "brand-hover": {
+        "$type": "color",
+        "$value": "{color.blue.900}"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "{color.blue.800}"
+      }
+    },
+    "focus": {
+      "ring": {
+        "$type": "color",
+        "$value": "{color.blue.800}"
+      }
+    },
+    "status": {
+      "info": {
+        "$type": "color",
+        "$value": "{color.blue.800}"
+      },
+      "positive": {
+        "$type": "color",
+        "$value": "{color.emerald.800}"
+      },
+      "caution": {
+        "$type": "color",
+        "$value": "{color.amber.800}"
+      },
+      "attention": {
+        "$type": "color",
+        "$value": "{color.orange.800}"
+      },
+      "negative": {
+        "$type": "color",
+        "$value": "{color.rose.800}"
+      },
+      "neutral": {
+        "$type": "color",
+        "$value": "{color.slate.800}"
+      }
+    }
+  },
+  "focus": {
+    "width": {
+      "$type": "dimension",
+      "$value": {
+        "value": 3,
+        "unit": "px"
+      },
+      "$description": "Wider focus ring in high contrast."
+    }
+  }
+}

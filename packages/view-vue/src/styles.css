@@ -1,0 +1,4 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The Tailwind source of SceneView: a host app imports this file after "tailwindcss", so Tailwind finds the
+   classes of SceneView.vue in this package. */
+@source "./";

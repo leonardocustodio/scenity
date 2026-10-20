@@ -1,0 +1,9 @@
+{
+  "format": "scenity.keymap/1",
+  "keys": {
+    "entity.paste": [],
+    "view.frame": [
+      "G"
+    ]
+  }
+}

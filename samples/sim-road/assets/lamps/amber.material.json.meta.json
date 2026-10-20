@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M53P23Z85MGCQ7JBWBSN6NS3",
+  "importer": "material",
+  "kind": "material",
+  "rights": "../../rights/scenity-own-work.yaml",
+  "settings": {},
+  "source": "amber.material.json",
+  "tags": [
+    "lamp",
+    "lamp:amber"
+  ]
+}

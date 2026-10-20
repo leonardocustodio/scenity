@@ -1,0 +1,44 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The hierarchy panel of the scene page: Tailwind 4 with no preflight (the page keeps its own styles), the
+   tokens and the classes of the ui package, as the inspector panel has them. The panel has its own small base rules
+   instead of the preflight. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+@import "@scenity/ui/styles.css";
+@source "./";
+
+@layer base {
+  #scene-hierarchy,
+  #scene-hierarchy *,
+  #scene-hierarchy ::before,
+  #scene-hierarchy ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0 solid;
+  }
+
+  #scene-hierarchy button,
+  #scene-hierarchy input {
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+  }
+
+  #scene-hierarchy button {
+    cursor: pointer;
+  }
+
+  #scene-hierarchy ul {
+    list-style: none;
+  }
+}
+
+/* The Hierarchy panel of the dock of the studio shell; the panel fills it. */
+#scene-hierarchy {
+  height: 100%;
+  overflow: hidden;
+  padding: 8px;
+  font-family: system-ui, sans-serif;
+}

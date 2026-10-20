@@ -1,0 +1,12 @@
+{
+  "duration": 8000,
+  "format": "scenity.sequence/1",
+  "id": "spin",
+  "loop": true,
+  "markers": {
+    "half": 2000,
+    "quarter": 1000
+  },
+  "scene": "spin",
+  "tracks": []
+}

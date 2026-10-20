@@ -1,0 +1,64 @@
+{
+  "entities": {
+    "frame": {
+      "components": {
+        "model": {
+          "asset": "asset:door_frame"
+        },
+        "obstacle": {
+          "footprint": {
+            "kind": "rect",
+            "size": [1.1, 0.2]
+          },
+          "height": 2.1
+        }
+      },
+      "index": 0,
+      "name": "Frame",
+      "parent": null
+    },
+    "handle": {
+      "components": {
+        "pickable": {
+          "priority": 2
+        },
+        "socket": {
+          "points": {
+            "grip": {
+              "position": [0, 0, 0.02],
+              "rotation": [0, 0, 0.707107, 0.707107]
+            }
+          }
+        },
+        "transform": {
+          "position": [0.8, 1, 0.03]
+        }
+      },
+      "index": 0,
+      "parent": "leaf"
+    },
+    "leaf": {
+      "components": {
+        "model": {
+          "asset": "asset:door_leaf",
+          "materials": {
+            "paint": {
+              "colour": "#4a6fa5",
+              "roughness": 0.6
+            }
+          }
+        },
+        "transform": {
+          "position": [-0.45, 0, 0]
+        }
+      },
+      "index": 0,
+      "name": "Leaf",
+      "parent": "frame"
+    }
+  },
+  "format": "scenity.prefab/1",
+  "id": "door",
+  "name": "Door",
+  "root": "frame"
+}

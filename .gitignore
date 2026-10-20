@@ -1,0 +1,18 @@
+node_modules/
+dist/
+coverage/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.vite/
+__pycache__/
+*.pyc
+.DS_Store
+.idea/
+.env
+dist-scene/
+# The state folder of a Scenity project: the imports and the build cache.
+.scenity/
+
+# The cache and logs of Turborepo.
+.turbo/

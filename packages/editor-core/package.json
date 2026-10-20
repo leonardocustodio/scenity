@@ -1,0 +1,34 @@
+{
+  "name": "@scenity/editor-core",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The editor core of Scenity: the command kit, the runner, ops, history, selection, proposals and the clipboard. No Vue.",
+  "type": "module",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/editor-core"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests"
+  },
+  "dependencies": {
+    "@scenity/labs-platform": "workspace:*",
+    "@scenity/scene": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:",
+    "zod": "4.6.5"
+  }
+}

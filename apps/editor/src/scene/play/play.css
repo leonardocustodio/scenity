@@ -1,0 +1,214 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The play mode of the scene page: the play control in the file bar, the keep list and the tint of the page.
+   Developer page: no design tokens. */
+#scene-play {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+#scene-play button {
+  padding: 2px 6px;
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: var(--sc-radius-4);
+  font: inherit;
+  color: inherit;
+  background: var(--sc-color-surface-raised);
+  cursor: pointer;
+}
+
+#scene-play button[hidden],
+#scene-play [hidden] {
+  display: none;
+}
+
+/* The clock group of an open sequence (sequencer/clockBar.ts). Its time field takes the place of the time of the play
+   control. */
+#scene-clock {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  margin-left: 8px;
+}
+
+#scene-clock button,
+#scene-clock select,
+#scene-clock input {
+  padding: 2px 6px;
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: var(--sc-radius-4);
+  font: inherit;
+  color: inherit;
+  background: var(--sc-color-surface-raised);
+}
+
+#scene-clock button {
+  cursor: pointer;
+}
+
+#scene-clock button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+#scene-clock [data-testid="clock-time"] {
+  width: 6em;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+#scene-clock[data-looping] [data-testid="clock-loop"] {
+  color: var(--sc-color-accent-brand);
+}
+
+#scene-play [data-testid="play-time"][data-clock-bar] {
+  display: none;
+}
+
+/* The Stop button is the badge of the play mode. */
+#scene-play [data-testid="play-stop"] {
+  border-color: var(--sc-color-studio-play);
+  font-weight: 700;
+  color: var(--sc-color-surface-base);
+  background: var(--sc-color-studio-play);
+}
+
+/* The keep list is at the top of the free area, as the notices are. */
+#scene-play-keep {
+  position: absolute;
+  z-index: var(--scene-z-notice, 2);
+  inset: var(--scene-area-notice, 48px 8px auto 8px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: fit-content;
+  max-width: 480px;
+  max-height: 50vh;
+  margin-inline: auto;
+  overflow: auto;
+  padding: 8px;
+  border-radius: 4px;
+  font:
+    12px system-ui,
+    sans-serif;
+  color: #ffffff;
+  background: rgb(60 35 0 / 92%);
+}
+
+#scene-play-keep[hidden] {
+  display: none;
+}
+
+#scene-play-keep label {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+/* The hints of the play mode (the keys of the game) at the bottom left of the view. Only the close button takes
+   pointer events, so a click of the game goes to the canvas. */
+#scene-play-hints {
+  position: absolute;
+  z-index: var(--scene-z-notice, 2);
+  bottom: 12px;
+  left: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 8px;
+  max-width: 320px;
+  padding: 8px;
+  border-radius: var(--sc-radius-4);
+  font:
+    12px system-ui,
+    sans-serif;
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-surface-overlay);
+  pointer-events: none;
+}
+
+#scene-play-hints[hidden],
+#scene-play-recordings[hidden] {
+  display: none;
+}
+
+#scene-play-hints button {
+  pointer-events: auto;
+}
+
+#scene-play-hints ul {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: auto 1fr;
+  gap: 2px 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#scene-play-hints li {
+  display: contents;
+}
+
+#scene-play-hints [data-testid="play-hint-action"] {
+  font-family: var(--sc-font-mono, monospace);
+}
+
+/* The saved recordings, at the top right of the view. */
+#scene-play-recordings {
+  position: absolute;
+  z-index: var(--scene-z-notice, 2);
+  top: 48px;
+  right: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 360px;
+  max-height: 50vh;
+  overflow: auto;
+  padding: 8px;
+  border: 1px solid var(--sc-color-border-strong);
+  border-radius: var(--sc-radius-4);
+  font:
+    12px system-ui,
+    sans-serif;
+  color: var(--sc-color-text-primary);
+  background: var(--sc-color-surface-overlay);
+}
+
+#scene-play-recordings ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#scene-play-recordings li {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+#scene-play-recordings [data-testid="play-recording-name"] {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* The tint of the play mode: an orange frame round the page. It takes no pointer events, so the canvas and the
+   panels work normally. */
+body[data-play="1"]::after {
+  content: "";
+  position: fixed;
+  z-index: var(--scene-z-notice, 2);
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 3px #ff9f1a;
+}
+
+body[data-play="1"] #scene-bar {
+  background: rgb(110 60 0 / 80%);
+}

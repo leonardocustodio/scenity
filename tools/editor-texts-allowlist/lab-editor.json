@@ -1,0 +1,8 @@
+{
+  "apps/editor/src/core/editor/layoutFiles.ts": {
+    "bun run labs layout-save {} --tunes \"{}\"{}{}{}": "command line for a terminal (code, not interface text)"
+  },
+  "apps/editor/src/core/editor/usePanelPlace.ts": {
+    "translate({}px, {}px)": "CSS transform value"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "fill": {
+      "components": {
+        "light": {
+          "colour": "#e8eeff",
+          "groundColour": "#6b6258",
+          "intensity": 0.4,
+          "type": "hemisphere"
+        },
+        "transform": {
+          "position": [0, 13.657, 0]
+        }
+      },
+      "index": 2,
+      "name": "Fill light",
+      "parent": null
+    },
+    "front": {
+      "components": {
+        "camera": {
+          "far": 60.16,
+          "fov": 40,
+          "near": 0.216,
+          "target": [-0.001, -0.996, -0.001]
+        },
+        "transform": {
+          "position": [7.125, 4.587, 19.577]
+        }
+      },
+      "index": 3,
+      "name": "Front camera",
+      "parent": null
+    },
+    "key": {
+      "components": {
+        "light": {
+          "colour": "#ffffff",
+          "intensity": 1.5,
+          "shadow": false,
+          "type": "directional"
+        },
+        "transform": {
+          "position": [10.377, 19.761, 17.296],
+          "rotation": [-0.375149, 0.245878, 0.10391, 0.887699]
+        }
+      },
+      "index": 1,
+      "name": "Key light",
+      "parent": null
+    },
+    "model": {
+      "components": {
+        "model": {
+          "asset": "asset:01M519A7VWDXJJ1EWVA6T2A2Y2"
+        },
+        "transform": {
+          "position": [0, 0, 0]
+        }
+      },
+      "index": 0,
+      "name": "EmissiveStrengthTest",
+      "parent": null,
+      "tags": [
+        "gltf-sample"
+      ]
+    }
+  },
+  "environment": {
+    "background": "#808388",
+    "exposure": 1,
+    "map": "asset:01M519A8HDSBZAWBE8S9ZPFA7N",
+    "mapIntensity": 1,
+    "toneMapping": "aces"
+  },
+  "format": "scenity.scene/1",
+  "id": "emissive-strength-test",
+  "name": "Emissive strength test (KHR_materials_emissive_strength)"
+}

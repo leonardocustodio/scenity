@@ -1,0 +1,31 @@
+{
+  "name": "@scenity/traffic-runtime",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "private": true,
+  "version": "0.1.0",
+  "description": "The runtime face of the traffic plugin: a small simulation of a road with a pedestrian crossing and a push-button signal (defineSimulation), and the components traffic.signal, traffic.vehicle, traffic.pedestrian and traffic.button. It also holds a system that puts the cars, the walkers and the lamps of the signals in the scene, and the input map of the button in the play mode.",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/runtime.ts",
+    "./sim": "./src/simulation.ts",
+    "./dev": "./src/dev.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests"
+  },
+  "scenity": {
+    "runtime": "src/runtime.ts",
+    "dev": "src/dev.ts"
+  },
+  "dependencies": {
+    "@scenity/rules": "workspace:*",
+    "@scenity/runtime": "workspace:*",
+    "@scenity/scene": "workspace:*",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:"
+  }
+}

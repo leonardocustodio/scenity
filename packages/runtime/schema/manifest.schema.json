@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://scenity.snowpine.io/schemas/scenity.manifest-2.json",
+  "title": "Scenity asset manifest, version 2",
+  "description": "Manifest 2: the generic asset manifest of a build. The asset build of @scenity/assets writes it (build/manifest.ts). packages/scene/src/manifest.ts has the types, and parseAssetManifest of packages/runtime/src/manifest.ts checks the same rules at run time, with the budgets of the caller. The tests of the plugins validate the built manifests of the samples against this schema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "tiers", "records"],
+  "properties": {
+    "format": { "const": "scenity.manifest/2" },
+    "tiers": { "type": "array", "items": { "$ref": "#/$defs/tier" } },
+    "records": { "type": "array", "items": { "$ref": "#/$defs/record" } }
+  },
+  "$defs": {
+    "tier": { "type": "string", "pattern": "^[a-z][a-z0-9_-]{0,31}$" },
+    "name": { "type": "string", "pattern": "^[A-Za-z0-9_.:-]{1,64}$" },
+    "count": { "type": "integer", "minimum": 0 },
+    "file": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "bytes", "sha256"],
+      "properties": {
+        "file": {
+          "type": "string",
+          "pattern": "^[0-9A-Za-z_-]+(\\.[0-9A-Za-z_-]+)*\\.(glb|ktx2|hdr|webp|avif|png|json|wav|ogg|mp3)$",
+          "description": "A file name in the output folder of the build, with no path parts."
+        },
+        "bytes": { "$ref": "#/$defs/count" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "lod": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tier", "file", "triangles", "meshes", "maxTextureSize"],
+      "properties": {
+        "tier": { "$ref": "#/$defs/tier" },
+        "file": { "type": "string", "description": "The name of a file of the record." },
+        "triangles": { "$ref": "#/$defs/count" },
+        "meshes": { "type": "integer", "minimum": 0, "maximum": 1000 },
+        "maxTextureSize": { "type": "integer", "minimum": 0, "maximum": 16384 }
+      }
+    },
+    "stat": {
+      "oneOf": [
+        { "type": "number" },
+        { "type": "boolean" },
+        { "type": "string" },
+        { "type": "array", "items": { "$ref": "#/$defs/name" } }
+      ]
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "lods", "files", "bytes", "sha256", "stats", "tags"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Za-z0-9_.-]{1,128}$" },
+        "kind": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*(\\.[a-z][a-z0-9-]*)*$",
+          "description": "A built-in kind (model, skinned-model, animation, texture, environment, scene, …) or a plugin kind with a prefix."
+        },
+        "lods": { "type": "array", "items": { "$ref": "#/$defs/lod" } },
+        "files": { "type": "array", "items": { "$ref": "#/$defs/file" } },
+        "bytes": { "$ref": "#/$defs/count", "description": "The sum of the bytes of the files." },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "The SHA-256 of the file hashes, one per line: the version of the built asset."
+        },
+        "stats": { "type": "object", "additionalProperties": { "$ref": "#/$defs/stat" } },
+        "tags": { "type": "array", "items": { "$ref": "#/$defs/name" } },
+        "dependencies": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[A-Za-z0-9_.-]{1,128}$" },
+          "description": "The IDs of the assets that this asset needs, for example the textures of a material."
+        }
+      }
+    }
+  }
+}

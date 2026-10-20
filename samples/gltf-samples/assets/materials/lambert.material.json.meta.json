@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M51H7YJ6VDVTQVGZWP5HES1E",
+  "importer": "material",
+  "kind": "material",
+  "rights": "../../rights/scenity-cc0.yaml",
+  "settings": {},
+  "source": "lambert.material.json",
+  "tags": [
+    "material-sample",
+    "material:lambert"
+  ]
+}

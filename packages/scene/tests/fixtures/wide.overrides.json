@@ -1,0 +1,11 @@
+{
+  "format": "scenity.overrides/1",
+  "ops": [
+    {
+      "op": "set",
+      "path": "/entities/cart/components/transform/position/0",
+      "value": 0.9
+    }
+  ],
+  "scene": "main"
+}

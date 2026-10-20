@@ -1,0 +1,70 @@
+{
+  "name": "@scenity/cli",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The scenity command: the bin `scenity` with create, dev, build, check, shot, sheet, clip, bench, verify, pool, assets and the commands of the project plugins. It also holds the Vite plugin of the project plugins and the scene files of a project. `scenity check` runs the rules (only the entry ./check loads the runtime and its dev tools). `scenity build` makes the static build and applies the size budgets and the marker gate. `scenity bench` gives the frame numbers of the player in headless Chromium against the project budgets. `scenity shot` makes one picture of a scene in the player and compares it with a baseline in the tolerance of the gallery. Bun.",
+  "type": "module",
+  "files": [
+    "src",
+    "templates",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/cli"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "scenity": "./src/cli.ts"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./vite": "./src/vite/plugins.ts",
+    "./plugins": "./src/vite/resolve.ts",
+    "./folderTemplates": "./src/create/folder.ts",
+    "./frameIndex": "./src/frames/frameIndex.ts",
+    "./editor": "./src/vite/editor.ts",
+    "./sceneFile": "./src/sceneFile/files.ts",
+    "./sceneFileContract": "./src/sceneFile/contract.ts",
+    "./check": "./src/check/index.ts",
+    "./build": "./src/build/index.ts",
+    "./entryBudgets": "./src/build/entryBudgets.ts",
+    "./bench": "./src/bench/index.ts",
+    "./shot": "./src/shot/index.ts",
+    "./poolFiles": "./src/pool/files.ts",
+    "./templates": "./src/create/templates.ts"
+  },
+  "scripts": {
+    "test": "cd ../.. && bun test ./packages/cli"
+  },
+  "dependencies": {
+    "@scenity/assets": "workspace:*",
+    "@scenity/bridge": "workspace:*",
+    "@scenity/labs-platform": "workspace:*",
+    "@scenity/player": "workspace:*",
+    "@scenity/rules": "workspace:*",
+    "@scenity/runtime": "workspace:*",
+    "@scenity/runtime-dev": "workspace:*",
+    "@scenity/scene": "workspace:*",
+    "three": "catalog:"
+  },
+  "peerDependencies": {
+    "@playwright/test": "^1.63.0",
+    "vite": "^8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@playwright/test": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@playwright/test": "catalog:",
+    "@types/bun": "catalog:",
+    "@types/three": "catalog:",
+    "vite": "catalog:"
+  }
+}

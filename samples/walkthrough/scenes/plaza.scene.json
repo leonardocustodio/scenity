@@ -1,0 +1,895 @@
+{
+  "entities": {
+    "ada": {
+      "components": {
+        "animator": {
+          "controller": {
+            "layers": [
+              {
+                "name": "base",
+                "start": "idle",
+                "states": {
+                  "idle": {
+                    "motion": {
+                      "clip": "Idle",
+                      "kind": "clip"
+                    }
+                  },
+                  "walk": {
+                    "events": [
+                      {
+                        "at": 0.05,
+                        "name": "step.l"
+                      },
+                      {
+                        "at": 0.55,
+                        "name": "step.r"
+                      }
+                    ],
+                    "motion": {
+                      "kind": "blend1d",
+                      "parameter": "speed",
+                      "points": [
+                        {
+                          "at": 1,
+                          "clip": "Walking"
+                        },
+                        {
+                          "at": 2,
+                          "clip": "Running"
+                        }
+                      ]
+                    }
+                  },
+                  "wave": {
+                    "events": [
+                      {
+                        "at": 0.5,
+                        "name": "wave"
+                      }
+                    ],
+                    "loop": false,
+                    "motion": {
+                      "clip": "Wave",
+                      "kind": "clip"
+                    }
+                  },
+                  "yes": {
+                    "loop": false,
+                    "motion": {
+                      "clip": "Yes",
+                      "kind": "clip"
+                    }
+                  }
+                },
+                "transitions": [
+                  {
+                    "duration": 250,
+                    "from": "idle",
+                    "to": "walk",
+                    "when": [
+                      {
+                        "op": "gt",
+                        "parameter": "speed",
+                        "value": 0.1
+                      }
+                    ]
+                  },
+                  {
+                    "duration": 250,
+                    "from": "walk",
+                    "to": "idle",
+                    "when": [
+                      {
+                        "op": "le",
+                        "parameter": "speed",
+                        "value": 0.1
+                      }
+                    ]
+                  },
+                  {
+                    "duration": 200,
+                    "from": "idle",
+                    "to": "wave",
+                    "when": [
+                      {
+                        "op": "eq",
+                        "parameter": "wave",
+                        "value": true
+                      }
+                    ]
+                  },
+                  {
+                    "duration": 300,
+                    "exitTime": 1,
+                    "from": "wave",
+                    "to": "idle"
+                  },
+                  {
+                    "duration": 200,
+                    "from": "idle",
+                    "to": "yes",
+                    "when": [
+                      {
+                        "op": "eq",
+                        "parameter": "yes",
+                        "value": true
+                      }
+                    ]
+                  },
+                  {
+                    "duration": 300,
+                    "exitTime": 1,
+                    "from": "yes",
+                    "to": "idle"
+                  }
+                ]
+              }
+            ],
+            "parameters": {
+              "speed": {
+                "default": 0,
+                "type": "number"
+              },
+              "wave": {
+                "default": false,
+                "type": "bool"
+              },
+              "yes": {
+                "default": false,
+                "type": "bool"
+              }
+            }
+          },
+          "footLock": {
+            "legs": [
+              {
+                "end": "LowerLegL_end",
+                "follow": "FootL",
+                "lower": "LowerLegL",
+                "upper": "UpperLegL"
+              },
+              {
+                "end": "LowerLegR_end",
+                "follow": "FootR",
+                "lower": "LowerLegR",
+                "upper": "UpperLegR"
+              }
+            ]
+          }
+        },
+        "character": {
+          "bones": {
+            "chest": "Torso",
+            "head": "Head",
+            "hips": "Hips",
+            "leftHand": "Palm2.L",
+            "leftLowerArm": "LowerArm.L",
+            "leftUpperArm": "UpperArm.L",
+            "neck": "Neck",
+            "rightHand": "Palm2.R",
+            "rightLowerArm": "LowerArm.R",
+            "rightUpperArm": "UpperArm.R",
+            "spine": "Abdomen"
+          },
+          "ik": {},
+          "rig": "none"
+        },
+        "locomotion": {
+          "speed": 0.8,
+          "walks": [
+            {
+              "t": 500,
+              "to": "entity:meet-a"
+            }
+          ]
+        },
+        "model": {
+          "asset": "asset:01M516A3N0NZMAT1HRKD41JEZ4"
+        },
+        "transform": {
+          "position": [-4.9, 0, 1.8],
+          "rotation": [0, 0.707107, 0, 0.707107],
+          "scale": [0.3, 0.3, 0.3]
+        }
+      },
+      "index": 12,
+      "name": "Ada",
+      "parent": null,
+      "tags": [
+        "character"
+      ]
+    },
+    "back-wall": {
+      "components": {
+        "shape": {
+          "colour": "#c9c2b6",
+          "kind": "box",
+          "roughness": 0.9,
+          "size": [12, 3, 0.2]
+        },
+        "transform": {
+          "position": [0, 1.5, -4]
+        }
+      },
+      "index": 1,
+      "name": "Back wall",
+      "parent": null
+    },
+    "bench": {
+      "components": {
+        "obstacle": {},
+        "shape": {
+          "colour": "#6a7480",
+          "kind": "box",
+          "metalness": 0.2,
+          "roughness": 0.6,
+          "size": [1.8, 0.46, 0.5]
+        },
+        "transform": {
+          "position": [-0.2, 0.23, -2.1]
+        }
+      },
+      "index": 7,
+      "name": "Bench",
+      "parent": null,
+      "tags": [
+        "furniture"
+      ]
+    },
+    "bo": {
+      "components": {
+        "animator": {
+          "controller": {
+            "layers": [
+              {
+                "name": "base",
+                "start": "idle",
+                "states": {
+                  "idle": {
+                    "motion": {
+                      "clip": "Idle",
+                      "kind": "clip"
+                    }
+                  },
+                  "walk": {
+                    "events": [
+                      {
+                        "at": 0.05,
+                        "name": "step.l"
+                      },
+                      {
+                        "at": 0.55,
+                        "name": "step.r"
+                      }
+                    ],
+                    "motion": {
+                      "kind": "blend1d",
+                      "parameter": "speed",
+                      "points": [
+                        {
+                          "at": 1,
+                          "clip": "Walking"
+                        },
+                        {
+                          "at": 2,
+                          "clip": "Running"
+                        }
+                      ]
+                    }
+                  },
+                  "wave": {
+                    "events": [
+                      {
+                        "at": 0.5,
+                        "name": "wave"
+                      }
+                    ],
+                    "loop": false,
+                    "motion": {
+                      "clip": "Wave",
+                      "kind": "clip"
+                    }
+                  },
+                  "yes": {
+                    "loop": false,
+                    "motion": {
+                      "clip": "Yes",
+                      "kind": "clip"
+                    }
+                  }
+                },
+                "transitions": [
+                  {
+                    "duration": 250,
+                    "from": "idle",
+                    "to": "walk",
+                    "when": [
+                      {
+                        "op": "gt",
+                        "parameter": "speed",
+                        "value": 0.1
+                      }
+                    ]
+                  },
+                  {
+                    "duration": 250,
+                    "from": "walk",
+                    "to": "idle",
+                    "when": [
+                      {
+                        "op": "le",
+                        "parameter": "speed",
+                        "value": 0.1
+                      }
+                    ]
+                  },
+                  {
+                    "duration": 200,
+                    "from": "idle",
+                    "to": "wave",
+                    "when": [
+                      {
+                        "op": "eq",
+                        "parameter": "wave",
+                        "value": true
+                      }
+                    ]
+                  },
+                  {
+                    "duration": 300,
+                    "exitTime": 1,
+                    "from": "wave",
+                    "to": "idle"
+                  },
+                  {
+                    "duration": 200,
+                    "from": "idle",
+                    "to": "yes",
+                    "when": [
+                      {
+                        "op": "eq",
+                        "parameter": "yes",
+                        "value": true
+                      }
+                    ]
+                  },
+                  {
+                    "duration": 300,
+                    "exitTime": 1,
+                    "from": "yes",
+                    "to": "idle"
+                  }
+                ]
+              }
+            ],
+            "parameters": {
+              "speed": {
+                "default": 0,
+                "type": "number"
+              },
+              "wave": {
+                "default": false,
+                "type": "bool"
+              },
+              "yes": {
+                "default": false,
+                "type": "bool"
+              }
+            }
+          },
+          "footLock": {
+            "legs": [
+              {
+                "end": "LowerLegL_end",
+                "follow": "FootL",
+                "lower": "LowerLegL",
+                "upper": "UpperLegL"
+              },
+              {
+                "end": "LowerLegR_end",
+                "follow": "FootR",
+                "lower": "LowerLegR",
+                "upper": "UpperLegR"
+              }
+            ]
+          }
+        },
+        "character": {
+          "bones": {
+            "chest": "Torso",
+            "head": "Head",
+            "hips": "Hips",
+            "leftHand": "Palm2.L",
+            "leftLowerArm": "LowerArm.L",
+            "leftUpperArm": "UpperArm.L",
+            "neck": "Neck",
+            "rightHand": "Palm2.R",
+            "rightLowerArm": "LowerArm.R",
+            "rightUpperArm": "UpperArm.R",
+            "spine": "Abdomen"
+          },
+          "ik": {
+            "look": {
+              "target": "entity:parcel",
+              "weight": 0
+            },
+            "rightHand": {
+              "target": "entity:parcel#grip",
+              "weight": 0
+            }
+          },
+          "rig": "none"
+        },
+        "locomotion": {
+          "speed": 1,
+          "walks": [
+            {
+              "t": 500,
+              "to": "entity:table-spot"
+            },
+            {
+              "t": 6200,
+              "to": "entity:meet-b"
+            }
+          ]
+        },
+        "model": {
+          "asset": "asset:01M516A3N0NZMAT1HRKD41JEZ4",
+          "materials": {
+            "Main": {
+              "colour": "#2e6fb8"
+            }
+          }
+        },
+        "transform": {
+          "position": [4.6, 0, -1.2],
+          "rotation": [0, -0.707107, 0, 0.707107],
+          "scale": [0.32, 0.32, 0.32]
+        }
+      },
+      "index": 13,
+      "name": "Bo",
+      "parent": null,
+      "tags": [
+        "character"
+      ]
+    },
+    "carry": {
+      "components": {
+        "transform": {
+          "position": [2.65, 0.55, -2.65]
+        }
+      },
+      "index": 6,
+      "name": "Carry point",
+      "parent": null
+    },
+    "door": {
+      "components": {
+        "shape": {
+          "colour": "#5b4636",
+          "kind": "box",
+          "roughness": 0.7,
+          "size": [0.1, 2.2, 1.2]
+        },
+        "transform": {
+          "position": [-5.9, 1.1, 1.8]
+        }
+      },
+      "index": 2,
+      "name": "Door",
+      "parent": null
+    },
+    "fill": {
+      "components": {
+        "light": {
+          "colour": "#dfe8ff",
+          "groundColour": "#6a6460",
+          "intensity": 0.8,
+          "type": "hemisphere"
+        },
+        "transform": {
+          "position": [0, 3, 0]
+        }
+      },
+      "index": 16,
+      "name": "Fill light",
+      "parent": null
+    },
+    "floor": {
+      "components": {
+        "shape": {
+          "colour": "#a9a39a",
+          "kind": "plane",
+          "roughness": 0.9,
+          "size": [12, 0, 8]
+        },
+        "transform": {
+          "position": [0, 0, 0]
+        }
+      },
+      "index": 0,
+      "name": "Floor",
+      "parent": null
+    },
+    "front": {
+      "components": {
+        "camera": {
+          "fov": 45,
+          "target": [0, 0.5, -0.6]
+        },
+        "transform": {
+          "position": [0, 3.3, 6.6]
+        }
+      },
+      "index": 17,
+      "name": "Front",
+      "parent": null
+    },
+    "guide": {
+      "components": {
+        "animator": {
+          "controller": {
+            "layers": [
+              {
+                "name": "base",
+                "start": "idle",
+                "states": {
+                  "idle": {
+                    "motion": {
+                      "clip": "Idle",
+                      "kind": "clip"
+                    }
+                  }
+                },
+                "transitions": []
+              }
+            ],
+            "parameters": {}
+          }
+        },
+        "character": {
+          "ik": {
+            "look": {
+              "target": "entity:ada",
+              "weight": 0
+            }
+          },
+          "rig": "rigify"
+        },
+        "model": {
+          "asset": "asset:01M518N6P8VF0Z4WYHJHSRFZHB"
+        },
+        "obstacle": {
+          "footprint": {
+            "kind": "rect",
+            "size": [0.5, 0.4]
+          }
+        },
+        "transform": {
+          "position": [-3.4, 0, -2.6],
+          "rotation": [0, 0.389418, 0, 0.921061],
+          "scale": [0.85, 0.85, 0.85]
+        }
+      },
+      "index": 14,
+      "name": "Guide",
+      "parent": null,
+      "tags": [
+        "character"
+      ]
+    },
+    "meet-a": {
+      "components": {
+        "standPoint": {
+          "facing": -1.570796
+        },
+        "transform": {
+          "position": [-0.75, 0, 0.5]
+        }
+      },
+      "index": 9,
+      "name": "Meeting point A",
+      "parent": null
+    },
+    "meet-a-mark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#e0b84a",
+          "kind": "cylinder",
+          "size": [0.5, 0.008, 0.5]
+        },
+        "transform": {
+          "position": [0, 0.004, 0]
+        }
+      },
+      "index": 0,
+      "name": "Mark",
+      "parent": "meet-a"
+    },
+    "meet-b": {
+      "components": {
+        "standPoint": {
+          "facing": 1.570796
+        },
+        "transform": {
+          "position": [0.75, 0, 0.5]
+        }
+      },
+      "index": 10,
+      "name": "Meeting point B",
+      "parent": null
+    },
+    "meet-b-mark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#e0b84a",
+          "kind": "cylinder",
+          "size": [0.5, 0.008, 0.5]
+        },
+        "transform": {
+          "position": [0, 0.004, 0]
+        }
+      },
+      "index": 0,
+      "name": "Mark",
+      "parent": "meet-b"
+    },
+    "parcel": {
+      "components": {
+        "shape": {
+          "colour": "#d8a64a",
+          "kind": "box",
+          "roughness": 0.7,
+          "size": [0.22, 0.16, 0.18]
+        },
+        "socket": {
+          "points": {
+            "grip": [0, 0, 0.09]
+          }
+        },
+        "transform": {
+          "position": [2.65, 0.55, -2.74]
+        }
+      },
+      "index": 5,
+      "name": "Parcel",
+      "parent": null,
+      "tags": [
+        "prop"
+      ]
+    },
+    "planter": {
+      "components": {
+        "obstacle": {},
+        "shape": {
+          "colour": "#7a6a58",
+          "kind": "box",
+          "roughness": 0.8,
+          "size": [0.9, 0.7, 0.9]
+        },
+        "transform": {
+          "position": [-2.6, 0.35, 1.3]
+        }
+      },
+      "index": 3,
+      "name": "Planter",
+      "parent": null,
+      "tags": [
+        "furniture"
+      ]
+    },
+    "planter-plant": {
+      "components": {
+        "shape": {
+          "colour": "#4f7a3a",
+          "kind": "sphere",
+          "roughness": 0.9,
+          "size": [0.9, 0.8, 0.9]
+        },
+        "transform": {
+          "position": [0, 0.75, 0]
+        }
+      },
+      "index": 0,
+      "name": "Plant",
+      "parent": "planter"
+    },
+    "promenade": {
+      "components": {
+        "path": {
+          "points": [
+            [-5.6, 0, 1.8],
+            [-3.6, 0, 2.6],
+            [-1.2, 0, 2.6],
+            [1.2, 0, 1.4],
+            [3.6, 0, 0.4]
+          ],
+          "width": 0.9
+        },
+        "transform": {
+          "position": [0, 0, 0]
+        }
+      },
+      "index": 8,
+      "name": "Promenade",
+      "parent": null
+    },
+    "sun": {
+      "components": {
+        "light": {
+          "colour": "#fff4e5",
+          "intensity": 2.2,
+          "shadow": true,
+          "shadowCamera": {
+            "bottom": -8,
+            "far": 40,
+            "left": -8,
+            "near": 0.1,
+            "right": 8,
+            "top": 8
+          },
+          "type": "directional"
+        },
+        "transform": {
+          "position": [3, 6, 4],
+          "rotation": [-0.403058, 0.272532, -0.127084, 0.864361]
+        }
+      },
+      "index": 15,
+      "name": "Key light",
+      "parent": null
+    },
+    "table": {
+      "components": {
+        "obstacle": {},
+        "shape": {
+          "colour": "#8a6a4a",
+          "kind": "box",
+          "roughness": 0.7,
+          "size": [1.3, 0.47, 0.6]
+        },
+        "transform": {
+          "position": [2.6, 0.235, -2.95]
+        }
+      },
+      "index": 4,
+      "name": "Table",
+      "parent": null,
+      "tags": [
+        "furniture"
+      ]
+    },
+    "table-spot": {
+      "components": {
+        "standPoint": {
+          "facing": 0
+        },
+        "transform": {
+          "position": [2.45, 0, -2.15]
+        }
+      },
+      "index": 11,
+      "name": "Table spot",
+      "parent": null
+    },
+    "table-spot-mark": {
+      "components": {
+        "shape": {
+          "castShadow": false,
+          "colour": "#e0b84a",
+          "kind": "cylinder",
+          "size": [0.5, 0.008, 0.5]
+        },
+        "transform": {
+          "position": [0, 0.004, 0]
+        }
+      },
+      "index": 0,
+      "name": "Mark",
+      "parent": "table-spot"
+    },
+    "table-view": {
+      "components": {
+        "camera": {
+          "fov": 40,
+          "target": [2.5, 0.55, -2.5]
+        },
+        "transform": {
+          "position": [4.6, 1.5, -0.4]
+        }
+      },
+      "index": 18,
+      "name": "Table view",
+      "parent": null
+    },
+    "top": {
+      "components": {
+        "camera": {
+          "fov": 45,
+          "target": [0, 0, 0]
+        },
+        "transform": {
+          "position": [0, 11, 0.6]
+        }
+      },
+      "index": 19,
+      "name": "Top",
+      "parent": null
+    },
+    "tour": {
+      "components": {
+        "camera": {
+          "fov": 50,
+          "target": [0, 0.5, 0]
+        },
+        "transform": {
+          "position": [-6, 2.4, 6.5]
+        }
+      },
+      "index": 20,
+      "name": "Tour",
+      "parent": null
+    }
+  },
+  "environment": {
+    "background": "#202833",
+    "exposure": 1,
+    "toneMapping": "aces"
+  },
+  "format": "scenity.scene/1",
+  "id": "plaza",
+  "poster": "../posters/plaza.webp",
+  "rules": [
+    {
+      "args": {
+        "margin": 0.05,
+        "route": {
+          "walk": "ada"
+        },
+        "skipEnds": 0.3,
+        "solids": "obstacles"
+      },
+      "id": "walkthrough.adaRouteClear",
+      "level": "block",
+      "max": 0,
+      "metric": "routeClear",
+      "note": "The walk of Ada keeps 5 cm from each floor obstacle.",
+      "unit": "count"
+    },
+    {
+      "args": {
+        "margin": 0.05,
+        "route": {
+          "walk": "bo"
+        },
+        "skipEnds": 0.3,
+        "solids": "obstacles"
+      },
+      "id": "walkthrough.boRouteClear",
+      "level": "block",
+      "max": 0,
+      "metric": "routeClear",
+      "note": "The walks of Bo keep 5 cm from each floor obstacle (the table end is the stand place).",
+      "unit": "count"
+    },
+    {
+      "args": {
+        "margin": 0.3,
+        "route": {
+          "path": "promenade"
+        },
+        "solids": "obstacles"
+      },
+      "id": "walkthrough.promenadeClear",
+      "level": "warn",
+      "max": 0,
+      "metric": "routeClear",
+      "note": "No floor obstacle comes within 30 cm of the marked promenade.",
+      "unit": "count"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "colour": "#d9c8f0",
+  "format": "scenity.material/1",
+  "maps": {
+    "colour": {
+      "colorSpace": "srgb",
+      "repeat": [2, 1],
+      "texture": "asset:01M51H7Y1XMRMVK5YYEV7E6Z79"
+    }
+  },
+  "name": "Checker unlit",
+  "type": "unlit"
+}

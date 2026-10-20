@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "fill": {
+      "components": {
+        "light": {
+          "colour": "#e8eeff",
+          "groundColour": "#6b6258",
+          "intensity": 0.4,
+          "type": "hemisphere"
+        },
+        "transform": {
+          "position": [0, 1.061, 0]
+        }
+      },
+      "index": 2,
+      "name": "Fill light",
+      "parent": null
+    },
+    "front": {
+      "components": {
+        "camera": {
+          "far": 4.167,
+          "fov": 40,
+          "near": 0.014,
+          "target": [-0.188, 0, 0]
+        },
+        "transform": {
+          "position": [0.289, 0.373, 1.31]
+        }
+      },
+      "index": 3,
+      "name": "Front camera",
+      "parent": null
+    },
+    "key": {
+      "components": {
+        "light": {
+          "colour": "#ffffff",
+          "intensity": 1.5,
+          "shadow": false,
+          "type": "directional"
+        },
+        "transform": {
+          "position": [0.545, 1.465, 1.221],
+          "rotation": [-0.375149, 0.245878, 0.10391, 0.887699]
+        }
+      },
+      "index": 1,
+      "name": "Key light",
+      "parent": null
+    },
+    "model": {
+      "components": {
+        "model": {
+          "asset": "asset:01M519A78QZMT768T8C5M7KF3B"
+        },
+        "transform": {
+          "position": [0, 0, 0]
+        }
+      },
+      "index": 0,
+      "name": "SpecularTest",
+      "parent": null,
+      "tags": [
+        "gltf-sample"
+      ]
+    }
+  },
+  "environment": {
+    "background": "#808388",
+    "exposure": 1,
+    "map": "asset:01M519A8HDSBZAWBE8S9ZPFA7N",
+    "mapIntensity": 1,
+    "toneMapping": "aces"
+  },
+  "format": "scenity.scene/1",
+  "id": "specular-test",
+  "name": "Specular test (KHR_materials_specular)"
+}

@@ -1,0 +1,316 @@
+{
+  "$description": "Navy theme (always dark): dim navy surfaces, with royal blue for the main controls.",
+  "color": {
+    "surface": {
+      "device": {
+        "$type": "color",
+        "$value": "{color.navy.980}"
+      },
+      "base": {
+        "$type": "color",
+        "$value": "{color.navy.940}"
+      },
+      "raised": {
+        "$type": "color",
+        "$value": "{color.navy.920}"
+      },
+      "sunken": {
+        "$type": "color",
+        "$value": "{color.navy.960}"
+      },
+      "overlay": {
+        "$type": "color",
+        "$value": "{color.navy.900}"
+      },
+      "scrim": {
+        "$type": "color",
+        "$value": "{color.black-a60}"
+      }
+    },
+    "text": {
+      "primary": {
+        "$type": "color",
+        "$value": "{color.ink.100}"
+      },
+      "secondary": {
+        "$type": "color",
+        "$value": "{color.navy.400}"
+      },
+      "disabled": {
+        "$type": "color",
+        "$value": "{color.navy.600}"
+      },
+      "on-accent": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{color.blue.450}"
+      }
+    },
+    "border": {
+      "subtle": {
+        "$type": "color",
+        "$value": "{color.navy.850}"
+      },
+      "strong": {
+        "$type": "color",
+        "$value": "{color.navy.550}"
+      }
+    },
+    "accent": {
+      "brand": {
+        "$type": "color",
+        "$value": "{color.brand.royal-bright}"
+      },
+      "brand-hover": {
+        "$type": "color",
+        "$value": "{color.brand.royal-bright-hover}"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "{color.blue.450}"
+      }
+    },
+    "focus": {
+      "ring": {
+        "$type": "color",
+        "$value": "{color.yellow.200}"
+      },
+      "ring-inner": {
+        "$type": "color",
+        "$value": "{color.navy.980}"
+      }
+    },
+    "status": {
+      "info": {
+        "$type": "color",
+        "$value": "{color.blue.420}"
+      },
+      "info-subtle": {
+        "$type": "color",
+        "$value": "{color.navy.800}"
+      },
+      "positive": {
+        "$type": "color",
+        "$value": "{color.emerald.400}"
+      },
+      "positive-subtle": {
+        "$type": "color",
+        "$value": "{color.emerald.950}"
+      },
+      "caution": {
+        "$type": "color",
+        "$value": "{color.amber.400}"
+      },
+      "caution-subtle": {
+        "$type": "color",
+        "$value": "{color.amber.950}"
+      },
+      "attention": {
+        "$type": "color",
+        "$value": "{color.orange.400}"
+      },
+      "attention-subtle": {
+        "$type": "color",
+        "$value": "{color.orange.950}"
+      },
+      "negative": {
+        "$type": "color",
+        "$value": "{color.red.330}"
+      },
+      "negative-subtle": {
+        "$type": "color",
+        "$value": "{color.rose.950}"
+      },
+      "neutral": {
+        "$type": "color",
+        "$value": "{color.navy.400}"
+      },
+      "neutral-subtle": {
+        "$type": "color",
+        "$value": "{color.navy.900}"
+      }
+    },
+    "studio": {
+      "$description": "The roles of the studio editor: selection, play mode, prefabs, agent sessions, change marks, axes, rule results, view overlays and grids.",
+      "selection": {
+        "$type": "color",
+        "$value": "{color.accent.brand}"
+      },
+      "selection-subtle": {
+        "$type": "color",
+        "$value": "{color.status.info-subtle}"
+      },
+      "play": {
+        "$type": "color",
+        "$value": "{color.status.attention}"
+      },
+      "prefab": {
+        "$type": "color",
+        "$value": "{color.cyan.400}"
+      },
+      "override-bar": {
+        "$type": "color",
+        "$value": "{color.cyan.400}"
+      },
+      "agent": {
+        "1": {
+          "$type": "color",
+          "$value": "{color.violet.400}"
+        },
+        "2": {
+          "$type": "color",
+          "$value": "{color.lime.300}"
+        },
+        "3": {
+          "$type": "color",
+          "$value": "{color.rose.200}"
+        },
+        "4": {
+          "$type": "color",
+          "$value": "{color.orange.300}"
+        },
+        "5": {
+          "$type": "color",
+          "$value": "{color.paper.50}"
+        },
+        "6": {
+          "$type": "color",
+          "$value": "{color.fuchsia.400}"
+        }
+      },
+      "change": {
+        "added": {
+          "$type": "color",
+          "$value": "{color.status.positive}"
+        },
+        "changed": {
+          "$type": "color",
+          "$value": "{color.status.caution}"
+        },
+        "removed": {
+          "$type": "color",
+          "$value": "{color.status.negative}"
+        }
+      },
+      "axis": {
+        "x": {
+          "$type": "color",
+          "$value": "{color.red.400}"
+        },
+        "y": {
+          "$type": "color",
+          "$value": "{color.green.400}"
+        },
+        "z": {
+          "$type": "color",
+          "$value": "{color.blue.400}"
+        }
+      },
+      "rule": {
+        "ok": {
+          "$type": "color",
+          "$value": "{color.status.positive}"
+        },
+        "fail": {
+          "$type": "color",
+          "$value": "{color.status.negative}"
+        },
+        "known": {
+          "$type": "color",
+          "$value": "{color.status.caution}"
+        },
+        "na": {
+          "$type": "color",
+          "$value": "{color.status.neutral}"
+        }
+      },
+      "overlay": {
+        "surface": {
+          "$type": "color",
+          "$value": "{color.surface.overlay}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{color.border.strong}"
+        }
+      },
+      "grid": {
+        "minor": {
+          "$type": "color",
+          "$value": "{color.border.subtle}"
+        },
+        "major": {
+          "$type": "color",
+          "$value": "{color.border.strong}"
+        }
+      },
+      "helper": {
+        "$type": "color",
+        "$value": "{color.text.secondary}"
+      }
+    }
+  },
+  "radius": {
+    "control": {
+      "$type": "dimension",
+      "$value": "{radius.6}"
+    },
+    "card": {
+      "$type": "dimension",
+      "$value": "{radius.8}"
+    },
+    "pill": {
+      "$type": "dimension",
+      "$value": "{radius.full}"
+    }
+  },
+  "shadow": {
+    "raised": {
+      "$type": "shadow",
+      "$value": {
+        "color": "{color.transparent}",
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 0,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 0,
+          "unit": "px"
+        },
+        "spread": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "overlay": {
+      "$type": "shadow",
+      "$value": {
+        "color": "{color.black-a60}",
+        "offsetX": {
+          "value": 0,
+          "unit": "px"
+        },
+        "offsetY": {
+          "value": 8,
+          "unit": "px"
+        },
+        "blur": {
+          "value": 24,
+          "unit": "px"
+        },
+        "spread": {
+          "value": -4,
+          "unit": "px"
+        }
+      }
+    }
+  }
+}

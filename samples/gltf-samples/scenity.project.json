@@ -1,0 +1,44 @@
+{
+  "assets": [
+    "assets"
+  ],
+  "format": "scenity.project/1",
+  "id": "gltf-samples",
+  "name": "glTF samples",
+  "plugins": [],
+  "release": {
+    "licences": {
+      "allow": [
+        "CC-BY-4.0",
+        "CC0-1.0"
+      ]
+    }
+  },
+  "scenes": [
+    "scenes/anisotropy-strength-test.scene.json",
+    "scenes/attenuation-test.scene.json",
+    "scenes/box-draco.scene.json",
+    "scenes/clear-coat-test.scene.json",
+    "scenes/emissive-strength-test.scene.json",
+    "scenes/ior-test-grid.scene.json",
+    "scenes/iridescence-suzanne.scene.json",
+    "scenes/materials.scene.json",
+    "scenes/point-light-intensity-test.scene.json",
+    "scenes/sheen-test-grid.scene.json",
+    "scenes/simple-instancing.scene.json",
+    "scenes/specular-test.scene.json",
+    "scenes/texture-avif.scene.json",
+    "scenes/texture-webp.scene.json",
+    "scenes/transmission-roughness-test.scene.json",
+    "scenes/unlit-test.scene.json"
+  ],
+  "workbench": {
+    "surfaces": [
+      {
+        "id": "editor",
+        "kind": "scene",
+        "label": "Editor"
+      }
+    ]
+  }
+}

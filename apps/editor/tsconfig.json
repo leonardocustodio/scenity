@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["vite/client", "bun"],
+    // The plugin types of the editor core (src/plugins.ts): the shapes that the core reads.
+    "paths": {
+      "virtual:scenity/editor-types": ["./src/core/pluginTypes.ts"]
+    }
+  },
+  "include": [
+    "src",
+    "tests",
+    "scripts",
+    "vite.config.ts",
+    "vite.scene.config.ts",
+    "playwright.config.ts",
+    "playwright.gallery.config.ts",
+    "../../packages/assets/src/gltf-validator.d.ts",
+    "../../packages/runtime/src/plugins/virtual.d.ts"
+  ]
+}

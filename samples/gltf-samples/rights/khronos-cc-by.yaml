@@ -1,0 +1,60 @@
+# Rights record of the CC BY 4.0 models of the glTF samples. The files come from the Khronos glTF-Sample-Assets
+# repository. Each model folder there has a metadata.json with the licence and the owner. CC BY 4.0 asks for
+# attribution: the attribution text names each owner.
+name: khronos-cc-by
+source: "Khronos glTF-Sample-Assets, https://github.com/KhronosGroup/glTF-Sample-Assets (downloaded 2026-10-15 from the main branch)"
+author: "The authors of each model (see assets)"
+licence: "Creative Commons Attribution 4.0 International"
+spdx: CC-BY-4.0 # the release gate checks it against release.licences.allow of scenity.project.json
+licenceUrl: https://creativecommons.org/licenses/by/4.0/
+licenceDate: 2026-10-15
+allowedUse: [web, unreal, public]
+webDelivery: true
+attribution: "Models from the Khronos glTF-Sample-Assets (CC BY 4.0): Transmission Roughness Test, Attenuation Test, Specular Test, Clear Coat Test, Emissive Strength Test and Unlit Test by Ed Mackey, copyright Analytical Graphics, Inc.; Box by Cesium, copyright Cesium; Texture Coordinate Test by Ed Mackey, copyright Analytical Graphics, Inc. (WebP and AVIF variants made for Scenity)."
+assets:
+  - id: TransmissionRoughnessTest
+    name: "Transmission Roughness Test"
+    authors: ["Ed Mackey"]
+    copyright: "CC-BY-4.0, Ed Mackey, Analytical Graphics, Inc., 2021"
+    page: https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/TransmissionRoughnessTest
+  - id: AttenuationTest
+    name: "Attenuation Test"
+    authors: ["Ed Mackey"]
+    copyright: "CC-BY-4.0, Ed Mackey, Analytical Graphics, Inc., 2021"
+    page: https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/AttenuationTest
+  - id: SpecularTest
+    name: "Specular Test"
+    authors: ["Ed Mackey"]
+    copyright: "CC-BY-4.0, Ed Mackey, Analytical Graphics, Inc., 2021"
+    page: https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/SpecularTest
+  - id: ClearCoatTest
+    name: "Clear Coat Test"
+    authors: ["Ed Mackey"]
+    copyright: "CC-BY-4.0, Ed Mackey, Analytical Graphics, Inc., 2020"
+    page: https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/ClearCoatTest
+  - id: EmissiveStrengthTest
+    name: "Emissive Strength Test"
+    authors: ["Ed Mackey"]
+    copyright: "CC-BY-4.0, Ed Mackey, AGI, 2022"
+    page: https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/EmissiveStrengthTest
+  - id: UnlitTest
+    name: "Unlit Test"
+    authors: ["Ed Mackey"]
+    copyright: "CC-BY-4.0, Ed Mackey, Analytical Graphics, Inc., 2019"
+    page: https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/UnlitTest
+  - id: BoxDraco
+    name: "Box (glTF-Draco variant)"
+    authors: ["Cesium"]
+    copyright: "CC-BY-4.0, Cesium, Cesium, 2017"
+    page: https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Box
+  - id: TextureCoordinateTestWebP
+    name: "Texture Coordinate Test, WebP variant"
+    authors: ["Ed Mackey"]
+    copyright: "Copyright 2017-2018 Analytical Graphics, Inc., CC-BY 4.0 - Mesh and textures by Ed Mackey (the copyright text of the file; metadata.json of the repository says CC0-1.0, so this record uses the stricter licence)"
+    page: https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/TextureCoordinateTest
+  - id: TextureCoordinateTestAvif
+    name: "Texture Coordinate Test, AVIF variant"
+    authors: ["Ed Mackey"]
+    copyright: "Copyright 2017-2018 Analytical Graphics, Inc., CC-BY 4.0 - Mesh and textures by Ed Mackey (the copyright text of the file; metadata.json of the repository says CC0-1.0, so this record uses the stricter licence)"
+    page: https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/TextureCoordinateTest
+changes: "Box: the glTF-Draco variant (Box.gltf and Box.bin) as it is. TextureCoordinateTestWebP and TextureCoordinateTestAvif: made from TextureCoordinateTest.glb with glTF-Transform 4.5; the PNG texture is encoded as WebP (quality 90) and AVIF (quality 80) with jSquash, and EXT_texture_webp or EXT_texture_avif is required (no fallback image). The other files are the glTF-Binary files of the repository."

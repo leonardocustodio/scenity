@@ -1,0 +1,42 @@
+{
+  "background": "#202020",
+  "entities": [
+    {
+      "components": {
+        "model": {
+          "asset": "asset:table"
+        },
+        "transform": {
+          "position": [1, 0, 2],
+          "rotation": [0, 1.570796, 0]
+        }
+      },
+      "id": "table",
+      "name": "Table"
+    },
+    {
+      "components": {
+        "transform": {
+          "position": [0, 0.75, 0],
+          "rotation": [0, 0, 0]
+        }
+      },
+      "id": "vase",
+      "parent": "table"
+    },
+    {
+      "components": {
+        "light": {
+          "intensity": 3,
+          "type": "directional"
+        },
+        "transform": {
+          "position": [0, 3, 0]
+        }
+      },
+      "id": "key"
+    }
+  ],
+  "format": "scenity.scene/0",
+  "id": "legacy"
+}

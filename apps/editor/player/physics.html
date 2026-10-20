@@ -1,0 +1,38 @@
+<!doctype html>
+<!--
+  A plain HTML page that plays the physics sample with the web component of @scenity/player. The sample lists the
+  physics plugin (@scenity/physics-runtime: Rapier in fixed steps) and a probe plugin that casts rays in its world. The
+  page plays them in the player worker and on the main thread (`worker="false"`). The `plugins` attribute names the plugin set of the
+  project on this server. The scene dev server serves the page at /player/physics.html.
+-->
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Physics player</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #000000;
+        overflow: hidden;
+      }
+      scenity-player {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <scenity-player
+      data-testid="player"
+      src="/projects/physics/scenity.project.json"
+      scene="scenes/physics.scene.json"
+      camera="front"
+      plugins="physics"
+    ></scenity-player>
+    <script type="module" src="/src/player/element.ts"></script>
+  </body>
+</html>

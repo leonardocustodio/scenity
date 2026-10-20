@@ -1,0 +1,84 @@
+{
+  "duration": 8000,
+  "format": "scenity.sequence/1",
+  "id": "physics",
+  "loop": true,
+  "markers": {
+    "jump": 2400,
+    "kick": 6500,
+    "push": 5500,
+    "settle": 1500
+  },
+  "name": "Crates fall, the ball rolls, the hero walks",
+  "scene": "physics",
+  "tracks": [
+    {
+      "entity": "hero",
+      "keys": [
+        {
+          "action": "physics.walk",
+          "args": {
+            "direction": [0, -1]
+          },
+          "t": 600
+        },
+        {
+          "action": "physics.walk",
+          "args": {
+            "direction": [1, 0]
+          },
+          "t": 1800
+        },
+        {
+          "action": "physics.jump",
+          "t": 2400
+        },
+        {
+          "action": "physics.stop",
+          "t": 3000
+        },
+        {
+          "action": "physics.walk",
+          "args": {
+            "direction": [0, 1],
+            "speed": 0.8
+          },
+          "t": 3600
+        },
+        {
+          "action": "physics.stop",
+          "t": 4800
+        }
+      ],
+      "kind": "action"
+    },
+    {
+      "entity": "pusher",
+      "keys": [
+        {
+          "position": [-3.4, 0.25, -0.4],
+          "t": 4500
+        },
+        {
+          "ease": "inOut",
+          "position": [-1.6, 0.25, -0.4],
+          "t": 6000
+        }
+      ],
+      "kind": "transform"
+    },
+    {
+      "entity": "ball",
+      "keys": [
+        {
+          "action": "physics.impulse",
+          "args": {
+            "impulse": [0.6, 1.4, 0.3]
+          },
+          "t": 6500
+        }
+      ],
+      "kind": "action"
+    }
+  ]
+}

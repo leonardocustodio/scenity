@@ -1,0 +1,31 @@
+{
+  "name": "@scenity/bridge",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The postMessage contract of the workbench and the editor.",
+  "type": "module",
+  "files": [
+    "src",
+    "tests/cases.ts",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/bridge"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./cases": "./tests/cases.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:"
+  }
+}

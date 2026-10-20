@@ -1,0 +1,18 @@
+{
+  "apps/editor/src/scene/build/embedSnippet.ts": {
+    "<script type=\"module\" src=\"{}\"></script>": "code: a line of an embed snippet (HTML, a script or a Vue template that the person copies)",
+    "<scenity-player {} style=\"display:block;width:100%;aspect-ratio:16/9\"></scenity-player>": "code: a line of an embed snippet (HTML, a script or a Vue template that the person copies)",
+    "<script type=\"module\">": "code: a line of an embed snippet (HTML, a script or a Vue template that the person copies)",
+    "  await import({});": "code: a line of an embed snippet (HTML, a script or a Vue template that the person copies)",
+    "  const player = document.createElement(\"scenity-player\");": "code: a line of an embed snippet (HTML, a script or a Vue template that the person copies)",
+    "  player.style.cssText = \"display:block;width:100%;aspect-ratio:16/9\";": "code: a line of an embed snippet (HTML, a script or a Vue template that the person copies)",
+    "<script setup>": "code: a line of an embed snippet (HTML, a script or a Vue template that the person copies)",
+    "import { ScenityPlayer } from \"@scenity/player/vue\";": "code: a line of an embed snippet (HTML, a script or a Vue template that the person copies)",
+    "  <ScenityPlayer {} style=\"width:100%;aspect-ratio:16/9\" />": "code: a line of an embed snippet (HTML, a script or a Vue template that the person copies)",
+    "Scenity player": "code: the default title of the page of an embed (data of the snippet)",
+    "<!doctype html>": "code: a line of an embed snippet (HTML, a script or a Vue template that the person copies)",
+    "<html lang=\"en\">": "code: a line of an embed snippet (HTML, a script or a Vue template that the person copies)",
+    "<head><meta charset=\"UTF-8\" /><title>{}</title></head>": "code: a line of an embed snippet (HTML, a script or a Vue template that the person copies)",
+    "<body style=\"margin:0;background:#000\">": "code: a line of an embed snippet (HTML, a script or a Vue template that the person copies)"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M519A8DWYKAW1P0SFEVBAEBR",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/khronos-cc-by.yaml",
+  "settings": {},
+  "source": "TextureCoordinateTestAvif.glb",
+  "tags": [
+    "gltf-sample",
+    "ext_texture_avif"
+  ]
+}

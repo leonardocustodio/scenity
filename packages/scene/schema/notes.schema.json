@@ -1,0 +1,112 @@
+{
+  "$id": "https://scenity.dev/schema/notes.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "format": {
+      "const": "scenity.notes/1",
+      "type": "string"
+    },
+    "notes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "at": {
+            "anyOf": [
+              {
+                "pattern": "^entity:[A-Za-z0-9_-]{1,64}(#[A-Za-z0-9_.:-]{1,64})?$",
+                "type": "string"
+              },
+              {
+                "items": false,
+                "maxItems": 3,
+                "minItems": 3,
+                "prefixItems": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ],
+                "type": "array"
+              }
+            ]
+          },
+          "author": {
+            "maxLength": 80,
+            "minLength": 1,
+            "type": "string"
+          },
+          "id": {
+            "pattern": "^[A-Za-z0-9_-]{1,64}$",
+            "type": "string"
+          },
+          "replies": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "at": {
+                  "maxLength": 40,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "author": {
+                  "maxLength": 80,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "text": {
+                  "maxLength": 2000,
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text",
+                "at"
+              ],
+              "type": "object"
+            },
+            "maxItems": 500,
+            "type": "array"
+          },
+          "status": {
+            "enum": [
+              "open",
+              "done"
+            ],
+            "type": "string"
+          },
+          "text": {
+            "maxLength": 2000,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "text",
+          "at",
+          "status"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "scene": {
+      "pattern": "^[A-Za-z0-9_-]{1,64}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "format",
+    "scene",
+    "notes"
+  ],
+  "title": "scenity.notes/1",
+  "type": "object"
+}

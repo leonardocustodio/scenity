@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "fill": {
+      "components": {
+        "light": {
+          "colour": "#e8eeff",
+          "groundColour": "#6b6258",
+          "intensity": 0.4,
+          "type": "hemisphere"
+        },
+        "transform": {
+          "position": [0, 3.615, 0]
+        }
+      },
+      "index": 2,
+      "name": "Fill light",
+      "parent": null
+    },
+    "front": {
+      "components": {
+        "camera": {
+          "far": 16.123,
+          "fov": 40,
+          "near": 0.057,
+          "target": [0, 0, 0]
+        },
+        "transform": {
+          "position": [1.87, 1.465, 5.139]
+        }
+      },
+      "index": 3,
+      "name": "Front camera",
+      "parent": null
+    },
+    "key": {
+      "components": {
+        "light": {
+          "colour": "#ffffff",
+          "intensity": 1.5,
+          "shadow": false,
+          "type": "directional"
+        },
+        "transform": {
+          "position": [2.813, 5.627, 4.689],
+          "rotation": [-0.375149, 0.245878, 0.10391, 0.887699]
+        }
+      },
+      "index": 1,
+      "name": "Key light",
+      "parent": null
+    },
+    "model": {
+      "components": {
+        "model": {
+          "asset": "asset:01M519A7ZRK5PTXKJ326T9J6GZ"
+        },
+        "transform": {
+          "position": [0, 0, 0]
+        }
+      },
+      "index": 0,
+      "name": "UnlitTest",
+      "parent": null,
+      "tags": [
+        "gltf-sample"
+      ]
+    }
+  },
+  "environment": {
+    "background": "#808388",
+    "exposure": 1,
+    "map": "asset:01M519A8HDSBZAWBE8S9ZPFA7N",
+    "mapIntensity": 1,
+    "toneMapping": "aces"
+  },
+  "format": "scenity.scene/1",
+  "id": "unlit-test",
+  "name": "Unlit test (KHR_materials_unlit)"
+}

@@ -1,0 +1,58 @@
+{
+  "name": "@scenity/scene",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The documents of Scenity: the project, scene, prefab, override, sequence and material documents, their zod schemas, the canonical writer, the reader with migrations, the component registry, the scene ops, the override layers, the prefabs, the sequence evaluator and the pure math. Pure TypeScript: no three.js, no DOM, no Vue.",
+  "type": "module",
+  "files": [
+    "src",
+    "schema",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/scene"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./math": "./src/math.ts",
+    "./canonical": "./src/canonical.ts",
+    "./read": "./src/read.ts",
+    "./components": "./src/components/index.ts",
+    "./effects": "./src/effectCaps.ts",
+    "./ops": "./src/ops/index.ts",
+    "./sequence": "./src/sequence/index.ts",
+    "./input": "./src/sequence/input.ts",
+    "./hierarchy": "./src/hierarchy.ts",
+    "./layers": "./src/layers.ts",
+    "./paths": "./src/paths.ts",
+    "./prefabs": "./src/prefabs.ts",
+    "./project": "./src/project.ts",
+    "./refs": "./src/refs.ts",
+    "./world": "./src/world.ts",
+    "./schema/common": "./src/schema/common.ts",
+    "./schema/documents": "./src/schema/documents.ts",
+    "./schema/editor": "./src/schema/editor.ts",
+    "./schema/notes": "./src/schema/notes.ts",
+    "./schema/entity": "./src/schema/entity.ts",
+    "./schema/material": "./src/schema/material.ts",
+    "./tuning": "./src/tuning.ts",
+    "./manifest": "./src/manifest.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests",
+    "json-schema": "bun scripts/json-schema.ts"
+  },
+  "dependencies": {
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:"
+  }
+}

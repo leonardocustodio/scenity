@@ -1,0 +1,87 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The scoped style of SceneView.vue: the fog, the loading ring and the vignette over the scene. */
+/*
+ * The fog of the loading scene: a soft blur of the scene and a light haze in the color of the surface, with two
+ * slow clouds that drift (none with reduced motion). It fades out when the files are in.
+ */
+.scene-view__fog {
+  backdrop-filter: blur(1.1rem) saturate(0.7);
+  background:
+    radial-gradient(
+      ellipse 55% 45% at 30% 40%,
+      color-mix(in oklab, var(--sc-color-surface-base) 50%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 70% 65%,
+      color-mix(in oklab, var(--sc-color-surface-base) 42%, transparent),
+      transparent 70%
+    ),
+    color-mix(in oklab, var(--sc-color-surface-base) 48%, transparent);
+  background-size:
+    170% 170%,
+    170% 170%,
+    auto;
+  animation: scene-view-fog-drift calc(var(--sc-duration-1000) * 7) var(--sc-ease-standard) infinite alternate;
+}
+
+/* The ring of the loading message: a quarter of it turns. */
+.scene-view__spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: var(--sc-border-width-thick) solid color-mix(in oklab, var(--sc-color-text-primary) 25%, transparent);
+  border-top-color: var(--sc-color-accent-brand);
+  border-radius: var(--sc-radius-full);
+  animation: scene-view-spin var(--sc-duration-1000) linear infinite;
+}
+
+@keyframes scene-view-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes scene-view-fog-drift {
+  from {
+    background-position:
+      0% 0%,
+      100% 100%,
+      0 0;
+  }
+  to {
+    background-position:
+      100% 60%,
+      0% 40%,
+      0 0;
+  }
+}
+
+/* The lab sets a shorter fade with --scene-view-fog-duration (the `fog` URL parameter). */
+.scene-view-fog-leave-active {
+  transition: opacity var(--scene-view-fog-duration, var(--sc-duration-scene)) var(--sc-ease-exit);
+}
+
+.scene-view-fog-leave-to {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-view__fog,
+  .scene-view__spinner {
+    animation: none;
+  }
+
+  .scene-view-fog-leave-active {
+    transition: none;
+  }
+}
+
+/* A soft vignette centers the scene. */
+.scene-view__vignette {
+  background: radial-gradient(
+    ellipse 75% 70% at 45% 48%,
+    transparent 55%,
+    color-mix(in oklab, var(--sc-color-surface-base) 55%, transparent) 100%
+  );
+}

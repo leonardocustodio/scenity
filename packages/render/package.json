@@ -1,0 +1,45 @@
+{
+  "name": "@scenity/render",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The renderer backends of Scenity: WebGL and WebGPU, the glTF loader, KTX2, materials, lights and the GPU timer. three.js only.",
+  "type": "module",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/render"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/types.ts",
+    "./webgl": "./src/webgl.ts",
+    "./webgpu": "./src/webgpu.ts",
+    "./webgpuMaterials": "./src/webgpuMaterials.ts",
+    "./gpuTimer": "./src/gpuTimer.ts",
+    "./ktx2": "./src/ktx2.ts",
+    "./assets": "./src/assets.ts",
+    "./genericAssets": "./src/genericAssets.ts",
+    "./postTypes": "./src/postTypes.ts",
+    "./postWebgl": "./src/postWebgl.ts",
+    "./postWebgpu": "./src/postWebgpu.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests"
+  },
+  "dependencies": {
+    "three": "catalog:"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:",
+    "@types/three": "catalog:"
+  }
+}

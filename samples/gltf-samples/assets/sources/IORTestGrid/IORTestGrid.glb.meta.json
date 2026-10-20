@@ -1,0 +1,16 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M519A7518S5SMK32JEAE4799",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/khronos-cc0.yaml",
+  "settings": {},
+  "source": "IORTestGrid.glb",
+  "tags": [
+    "gltf-sample",
+    "khr_materials_ior",
+    "khr_materials_transmission",
+    "khr_materials_volume",
+    "khr_materials_specular"
+  ]
+}

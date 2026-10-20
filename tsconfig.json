@@ -1,0 +1,27 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["bun"]
+  },
+  "include": [
+    "packages/*/src",
+    "packages/*/tests",
+    "packages/*/scripts",
+    "tools",
+    "packages/*/config",
+    "packages/*/*.config.ts",
+    "plugins/*/*/src",
+    "plugins/*/*/tests",
+    "plugins/*/*/scripts",
+    "plugins/*/*/config",
+    "plugins/*/*/*.config.ts",
+    "plugins/*/*/*/src",
+    "plugins/*/*/*/tests",
+    "plugins/*/*/*/scripts",
+    "plugins/*/*/*/*.config.ts",
+    // The project plugins of the samples (samples/spin/plugins/demo).
+    "samples/*/plugins/*/src"
+  ],
+  // The editor face of a plugin imports the editor core (Vite types). Its own tsconfig checks it.
+  "exclude": ["plugins/*/editor"]
+}

@@ -1,0 +1,14 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The still page: one canvas over the full page. This is a developer page, so it has no design tokens. */
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#still {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

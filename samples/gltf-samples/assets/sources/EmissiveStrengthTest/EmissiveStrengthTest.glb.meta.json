@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M519A7VWDXJJ1EWVA6T2A2Y2",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/khronos-cc-by.yaml",
+  "settings": {},
+  "source": "EmissiveStrengthTest.glb",
+  "tags": [
+    "gltf-sample",
+    "khr_materials_emissive_strength"
+  ]
+}

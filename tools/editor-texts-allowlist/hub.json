@@ -1,0 +1,16 @@
+{
+  "apps/editor/src/hub/AskBox.vue": {
+    "title": "The part of the message ID of a tutorial title (tutorial-<id>-title): a key, not a text."
+  },
+  "apps/editor/src/hub/docsSearch.ts": {
+    "a an and are as at be by can could do does doing for from have how i if in into is it its me my of on or our ": "The English stop words of the docs search: the docs are in English, so the search ignores these words.",
+    "should so than that the their them then there these this to use using want was we what when where which who ": "The English stop words of the docs search: the docs are in English, so the search ignores these words.",
+    "why will with would you your one": "The English stop words of the docs search: the docs are in English, so the search ignores these words.",
+    "add change create find get make new open run see set show start work write": "The English verbs of many questions: the docs search gives them half the weight of the other words."
+  },
+  "apps/editor/src/hub/ExternalClients.vue": {
+    "Codex": "the default name of an MCP client in the form: the name of an app, not a text of the interface",
+    "claude mcp add --transport http scenity {} --header \"Authorization: Bearer {}\"": "a command line to copy into the terminal of an external agent (not a text of the interface)",
+    "Bearer {}": "the value of the Authorization header of the MCP config (not a text of the interface)"
+  }
+}

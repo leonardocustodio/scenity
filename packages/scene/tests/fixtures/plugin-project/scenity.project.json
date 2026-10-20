@@ -1,0 +1,95 @@
+{
+  "assets": [
+    "assets",
+    "../../art/shop"
+  ],
+  "format": "scenity.project/1",
+  "id": "shop",
+  "name": "Shop room",
+  "plugins": [
+    "@scenity/shop-room",
+    "./plugins/local"
+  ],
+  "quality": {
+    "budgets": {
+      "model": {
+        "high": {
+          "textureBytes": 4194304,
+          "triangles": 60000
+        }
+      },
+      "scene": {
+        "high": {
+          "bytes": 22000000,
+          "drawCalls": 300,
+          "triangles": 400000
+        },
+        "low": {
+          "bytes": 9000000,
+          "drawCalls": 120,
+          "triangles": 150000
+        }
+      }
+    },
+    "tiers": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  "rules": [
+    "rules/layout.rules.json"
+  ],
+  "scenes": [
+    "scenes/main.scene.json",
+    "scenes/workshop_b.scene.json"
+  ],
+  "sequences": [
+    "sequences/tool-tour.sequence.json"
+  ],
+  "units": {
+    "length": "m",
+    "up": "y"
+  },
+  "workbench": {
+    "contentRoots": [
+      "art/shop",
+      "apps/editor/src/core"
+    ],
+    "credentialFile": ".scenity/credentials.json",
+    "denylist": [
+      ".env",
+      "**/*.pem"
+    ],
+    "gate": "gate",
+    "runs": {
+      "check": "scenity check",
+      "gate": "bun run labs gate",
+      "shot": "bun run labs shot"
+    },
+    "setup": "bun install && bun run generate",
+    "surfaces": [
+      {
+        "id": "lab",
+        "kind": "scene",
+        "label": "Lab"
+      },
+      {
+        "id": "web",
+        "kind": "web",
+        "label": "Web"
+      },
+      {
+        "id": "console",
+        "kind": "console",
+        "label": "Console"
+      },
+      {
+        "id": "gallery",
+        "kind": "gallery",
+        "label": "Gallery"
+      }
+    ],
+    "theme": "navy"
+  }
+}

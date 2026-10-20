@@ -1,0 +1,9 @@
+{
+  "apps/editor/src/scene/hierarchy/listingTexts.ts": {
+    "No entity is solo.": "The English reason of @scenity/editor-core: a key of the map to its Fluent message.",
+    "The clipboard is empty.": "The English reason of @scenity/editor-core: a key of the map to its Fluent message."
+  },
+  "apps/editor/src/scene/tutorials/tutorials.ts": {
+    "Lamp": "The entity name that a check of the first tutorial reads: a data value; the texts of each locale ask for it."
+  }
+}

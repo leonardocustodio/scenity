@@ -1,0 +1,20 @@
+{
+  "$schema": "https://shadcn-vue.com/schema.json",
+  "style": "new-york",
+  "typescript": true,
+  "tailwind": {
+    "config": "",
+    "css": "src/styles/shadcn.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@scenity/ui/components",
+    "composables": "@scenity/ui/composables",
+    "utils": "@scenity/ui/lib/utils",
+    "ui": "@scenity/ui/components/ui",
+    "lib": "@scenity/ui/lib"
+  },
+  "iconLibrary": "lucide"
+}

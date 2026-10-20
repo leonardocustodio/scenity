@@ -1,0 +1,18 @@
+# Rights record of the own work of the road crossing sample. The scene has no third-party art: the road, the signals,
+# the cars, the walkers, the trees and the buildings are the simple shapes of the engine (the `shape` component). The
+# five lamp materials are data of this repository. The authors give them to the public domain.
+name: scenity-own-work
+source: "Scenity (this repository): the material documents of samples/sim-road/assets/lamps (2026-10-16)"
+author: "The Scenity authors"
+licence: "CC0 1.0 Universal (public domain dedication)"
+spdx: CC0-1.0 # the release gate checks it against release.licences.allow of scenity.project.json
+licenceUrl: https://creativecommons.org/publicdomain/zero/1.0/
+licenceDate: 2026-10-16
+allowedUse: [web, unreal, public]
+webDelivery: true
+attribution: null
+assets:
+  - id: lamps
+    name: "The unlit lamp materials red, amber, green, walk and wait"
+    authors: ["The Scenity authors"]
+changes: "None."

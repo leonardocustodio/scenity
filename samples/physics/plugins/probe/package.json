@@ -1,0 +1,20 @@
+{
+  "name": "@scenity/sample-physics-probe",
+  "private": true,
+  "version": "0.1.0",
+  "description": "The probe plugin of the physics sample: a component probe.drop and a system that casts a ray down from a source entity through the ray casts of the physics plugin. The system puts its entity on the hit point. The plugin proves that a system of another plugin can cast rays in the physics world.",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/runtime.ts"
+  },
+  "scenity": {
+    "runtime": "src/runtime.ts"
+  },
+  "dependencies": {
+    "@scenity/physics-runtime": "workspace:*",
+    "@scenity/runtime": "workspace:*",
+    "@scenity/scene": "workspace:*",
+    "zod": "4.6.5"
+  }
+}

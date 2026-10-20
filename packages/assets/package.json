@@ -1,0 +1,58 @@
+{
+  "name": "@scenity/assets",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The asset tools of Scenity: the asset database, the build, the Blender runs and importers, stills stamps and rights. Bun and Blender.",
+  "type": "module",
+  "files": [
+    "src",
+    "schema",
+    "blender/*.py",
+    "toolchain",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/assets"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./build": "./src/build/index.ts",
+    "./blender": "./src/blender/index.ts",
+    "./import": "./src/import/index.ts",
+    "./release": "./src/release/index.ts",
+    "./rights": "./src/rights/index.ts",
+    "./sources": "./src/sources/index.ts",
+    "./stills": "./src/stills/index.ts",
+    "./threeDiet": "./src/build/threeDiet.ts",
+    "./export": "./src/export/index.ts",
+    "./projectImport": "./src/projectImport.ts",
+    "./cli": "./src/cli.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests",
+    "json-schema": "bun scripts/json-schema.ts"
+  },
+  "dependencies": {
+    "@gltf-transform/core": "4.5.0",
+    "@gltf-transform/extensions": "4.5.0",
+    "@gltf-transform/functions": "4.5.0",
+    "@jsquash/avif": "2.1.1",
+    "@jsquash/webp": "1.5.0",
+    "@scenity/scene": "workspace:*",
+    "fast-png": "8.0.0",
+    "gltf-validator": "2.0.0-dev.3.10",
+    "jpeg-js": "0.4.4",
+    "ktx2-encoder": "0.6.0",
+    "meshoptimizer": "1.2.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:"
+  }
+}

@@ -1,0 +1,5 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The styles of the workbench page: Tailwind 4, the design tokens, and the classes of the ui package (its @source) and
+   of the workbench files (Tailwind finds them by itself). */
+@import "tailwindcss";
+@import "@scenity/ui/styles.css";

@@ -1,0 +1,15 @@
+{
+  "apps/editor/src/core/browser/DockStrip.vue": {
+    "repeat({}, minmax(calc(var(--strip-h, 3.75rem) * 4 / 3), 1fr))": "CSS grid template"
+  },
+  "apps/editor/src/core/edit/marks.ts": {
+    "No marks.": "words of the lab_marks tool result for Claude; the page does not show them",
+    "nothing under it": "words of the lab_marks tool result for Claude; the page does not show them",
+    "a circle round": "words of the lab_marks tool result for Claude; the page does not show them",
+    "an arrow that points at": "words of the lab_marks tool result for Claude; the page does not show them",
+    "Mark {}: {} {} % across, {} % down: {}.": "words of the lab_marks tool result for Claude; the page does not show them"
+  },
+  "apps/editor/src/core/edit/placement.ts": {
+    "bun run labs tune-apply \"{}\"{}": "shell command line of the lab CLI"
+  }
+}

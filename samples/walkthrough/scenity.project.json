@@ -1,0 +1,87 @@
+{
+  "assets": [
+    "assets"
+  ],
+  "build": {
+    "assets": {
+      "output": "build"
+    },
+    "budgets": {
+      "element": {
+        "gzipKB": 64,
+        "note": "60.6 KB on 2026-10-16, plus 5 %"
+      },
+      "lazy": {
+        "gzipKB": 636,
+        "note": "605.1 KB on 2026-10-16, plus 5 %"
+      },
+      "player": {
+        "gzipKB": 63,
+        "note": "59.2 KB on 2026-10-16, plus 5 %"
+      },
+      "plugins": {
+        "gzipKB": 1,
+        "note": "no plugin, 0.1 KB: the build fails when it has a plugin chunk"
+      },
+      "worker": {
+        "gzipKB": 276,
+        "note": "262.7 KB on 2026-10-16, plus 5 %"
+      }
+    }
+  },
+  "format": "scenity.project/1",
+  "id": "walkthrough",
+  "name": "Walkthrough",
+  "plugins": [],
+  "quality": {
+    "budgets": {
+      "scene": {
+        "high": {
+          "drawCalls": 110,
+          "gpuP95Ms": 10,
+          "triangles": 40000,
+          "workP95Ms": 6
+        }
+      }
+    }
+  },
+  "release": {
+    "licences": {
+      "allow": [
+        "CC0-1.0"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "args": {
+        "entity": "component:shape",
+        "floor": "floor"
+      },
+      "id": "walkthrough.onFloor",
+      "level": "block",
+      "max": 0.001,
+      "metric": "belowFloor",
+      "note": "No shape goes under the floor.",
+      "unit": "m"
+    }
+  ],
+  "scenes": [
+    "scenes/plaza.scene.json"
+  ],
+  "sequences": [
+    "sequences/meet.sequence.json"
+  ],
+  "workbench": {
+    "runs": {
+      "check": "scenity check"
+    },
+    "surfaces": [
+      {
+        "id": "editor",
+        "kind": "scene",
+        "label": "Editor"
+      }
+    ]
+  }
+}

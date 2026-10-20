@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M51H7YPA8877BCJGSJN1D0B2",
+  "importer": "material",
+  "kind": "material",
+  "rights": "../../rights/scenity-cc0.yaml",
+  "settings": {},
+  "source": "phong.material.json",
+  "tags": [
+    "material-sample",
+    "material:phong"
+  ]
+}

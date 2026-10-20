@@ -1,0 +1,66 @@
+{
+  "name": "@scenity/character",
+  "license": "Apache-2.0",
+  "author": "Leonardo Amoroso Custodio",
+  "version": "0.0.0",
+  "description": "The character parts of Scenity: rig profiles and the retarget, the IK body, the rig driver, the clip sampler, the clip layer, the path planner, the navigation over the scene obstacles, the walks of the locomotion component, the animator, the IK of any skeleton and the attach to a bone.",
+  "type": "module",
+  "files": [
+    "src",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardocustodio/scenity.git",
+    "directory": "packages/character"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": [
+    "./src/locomotion.ts",
+    "./src/poseBlend.ts"
+  ],
+  "//": "The two modules with side effects register tune values at module level (tunable of @scenity/scene/tuning). A lab build must keep them on each side that imports them. Every other module has no side effects.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./animator": "./src/animator/index.ts",
+    "./attach": "./src/attach.ts",
+    "./body": "./src/body.ts",
+    "./characterRig": "./src/characterRig.ts",
+    "./clipLayer": "./src/clipLayer.ts",
+    "./clipSampler": "./src/clipSampler.ts",
+    "./clipTime": "./src/clipTime.ts",
+    "./cycle": "./src/cycle.ts",
+    "./footLock": "./src/animator/footLock.ts",
+    "./handBlend": "./src/handBlend.ts",
+    "./ik": "./src/ik.ts",
+    "./locomotion": "./src/locomotion.ts",
+    "./math": "./src/math.ts",
+    "./navigation": "./src/navigation.ts",
+    "./path": "./src/path.ts",
+    "./place": "./src/place.ts",
+    "./poseBlend": "./src/poseBlend.ts",
+    "./poseMixer": "./src/animator/poseMixer.ts",
+    "./profiles": "./src/profiles/index.ts",
+    "./reach": "./src/reach.ts",
+    "./referenceRig": "./src/referenceRig.ts",
+    "./rest": "./src/rest.ts",
+    "./retarget": "./src/retarget.ts",
+    "./rig": "./src/rig.ts",
+    "./rigDriver": "./src/rigDriver.ts",
+    "./sceneWalks": "./src/sceneWalks.ts",
+    "./walkPlan": "./src/walkPlan.ts"
+  },
+  "scripts": {
+    "test": "bun test ./tests"
+  },
+  "dependencies": {
+    "@scenity/scene": "workspace:*",
+    "three": "catalog:"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:",
+    "@types/three": "catalog:"
+  }
+}

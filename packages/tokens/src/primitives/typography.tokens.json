@@ -1,0 +1,162 @@
+{
+  "font": {
+    "family": {
+      "sans": {
+        "$type": "fontFamily",
+        "$value": ["Funnel Sans", "system-ui", "-apple-system", "Segoe UI", "sans-serif"],
+        "$description": "Interface and reading face. Self-hosted WOFF2 subsets in the UI package."
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": ["JetBrains Mono", "IBM Plex Mono", "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+        "$description": "Logs, IDs and codes."
+      },
+      "display": {
+        "$type": "fontFamily",
+        "$value": ["Funnel Display", "Funnel Sans", "system-ui", "sans-serif"],
+        "$description": "Wordmark and page headings."
+      }
+    },
+    "weight": {
+      "400": {
+        "$type": "fontWeight",
+        "$value": 400
+      },
+      "500": {
+        "$type": "fontWeight",
+        "$value": 500
+      },
+      "600": {
+        "$type": "fontWeight",
+        "$value": 600
+      },
+      "650": {
+        "$type": "fontWeight",
+        "$value": 650
+      },
+      "700": {
+        "$type": "fontWeight",
+        "$value": 700
+      }
+    },
+    "size": {
+      "12": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0.75,
+          "unit": "rem"
+        }
+      },
+      "14": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0.875,
+          "unit": "rem"
+        }
+      },
+      "16": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "rem"
+        }
+      },
+      "18": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1.125,
+          "unit": "rem"
+        }
+      },
+      "20": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1.25,
+          "unit": "rem"
+        }
+      },
+      "24": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1.5,
+          "unit": "rem"
+        }
+      },
+      "28": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1.75,
+          "unit": "rem"
+        }
+      },
+      "36": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2.25,
+          "unit": "rem"
+        }
+      },
+      "40": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2.5,
+          "unit": "rem"
+        }
+      },
+      "72": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4.5,
+          "unit": "rem"
+        }
+      }
+    },
+    "line-height": {
+      "100": {
+        "$type": "number",
+        "$value": 1
+      },
+      "120": {
+        "$type": "number",
+        "$value": 1.2
+      },
+      "125": {
+        "$type": "number",
+        "$value": 1.25
+      },
+      "140": {
+        "$type": "number",
+        "$value": 1.4
+      },
+      "145": {
+        "$type": "number",
+        "$value": 1.45
+      },
+      "150": {
+        "$type": "number",
+        "$value": 1.5
+      }
+    },
+    "tracking": {
+      "0": {
+        "$type": "number",
+        "$value": 0,
+        "$extensions": {
+          "org.scenity": {
+            "unit": "em"
+          }
+        }
+      },
+      "6": {
+        "$type": "number",
+        "$value": 0.06,
+        "$description": "Letter spacing in em. DTCG 2025.10 dimensions allow px and rem only, so the unit is an extension.",
+        "$extensions": {
+          "org.scenity": {
+            "unit": "em"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "fill": {
+      "components": {
+        "light": {
+          "colour": "#e8eeff",
+          "groundColour": "#6b6258",
+          "intensity": 0.1,
+          "type": "hemisphere"
+        },
+        "transform": {
+          "position": [0, 5.167, 0]
+        }
+      },
+      "index": 2,
+      "name": "Fill light",
+      "parent": null
+    },
+    "front": {
+      "components": {
+        "camera": {
+          "far": 25.112,
+          "fov": 40,
+          "near": 0.086,
+          "target": [0, -1.408, 0.015]
+        },
+        "transform": {
+          "position": [2.857, 0.831, 7.865]
+        }
+      },
+      "index": 3,
+      "name": "Front camera",
+      "parent": null
+    },
+    "key": {
+      "components": {
+        "light": {
+          "colour": "#ffffff",
+          "intensity": 0.2,
+          "shadow": false,
+          "type": "directional"
+        },
+        "transform": {
+          "position": [4.428, 7.447, 7.394],
+          "rotation": [-0.375149, 0.245878, 0.10391, 0.887699]
+        }
+      },
+      "index": 1,
+      "name": "Key light",
+      "parent": null
+    },
+    "model": {
+      "components": {
+        "model": {
+          "asset": "asset:01M519A6TDANWND7RZRTTWR37V"
+        },
+        "transform": {
+          "position": [0, 0, 0]
+        }
+      },
+      "index": 0,
+      "name": "PointLightIntensityTest",
+      "parent": null,
+      "tags": [
+        "gltf-sample"
+      ]
+    }
+  },
+  "environment": {
+    "background": "#808388",
+    "exposure": 1,
+    "map": "asset:01M519A8HDSBZAWBE8S9ZPFA7N",
+    "mapIntensity": 0.15,
+    "toneMapping": "aces"
+  },
+  "format": "scenity.scene/1",
+  "id": "point-light-intensity-test",
+  "name": "Point light intensity test (KHR_lights_punctual)"
+}

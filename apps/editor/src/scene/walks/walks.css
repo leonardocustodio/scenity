@@ -1,0 +1,10 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+/* The overlay of the walk routes over the main view. A press goes to the canvas. */
+#scene-walks {
+  position: fixed;
+  font:
+    11px system-ui,
+    sans-serif;
+  color: var(--sc-color-accent-brand);
+  pointer-events: none;
+}

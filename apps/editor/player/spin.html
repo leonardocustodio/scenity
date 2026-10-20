@@ -1,0 +1,40 @@
+<!doctype html>
+<!--
+  A plain HTML page that plays the spin sample with the web component of @scenity/player. The sample lists a project
+  plugin (samples/spin/plugins/demo): its system turns the boxes and its presenter draws the hub ring. The page plays
+  them in the player worker and on the main thread (`worker="false"`). The `plugins` attribute names the plugin set of
+  the project on this server. The scene dev server serves the page at /player/spin.html. `input` enables the input of
+  the play mode: a click on a box starts or stops its turn, and the arrow keys on the canvas change the speed.
+-->
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Spin player</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #000000;
+        overflow: hidden;
+      }
+      scenity-player {
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <scenity-player
+      data-testid="player"
+      src="/projects/spin/scenity.project.json"
+      scene="scenes/spin.scene.json"
+      camera="front"
+      plugins="spin"
+      input
+    ></scenity-player>
+    <script type="module" src="/src/player/element.ts"></script>
+  </body>
+</html>

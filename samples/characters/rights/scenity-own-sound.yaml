@@ -1,0 +1,18 @@
+# Rights record of the own sound of the characters sample. A script made the chirp from nothing with the Python standard
+# library: samples/characters/tools/make_chirp.py (two sine tones). No third-party audio is in the file.
+name: scenity-own-sound
+source: "Own work: samples/characters/tools/make_chirp.py run with Python 3 (2026-10-16)"
+author: "Scenity contributors"
+licence: "CC0 1.0 Universal (public domain dedication)"
+spdx: CC0-1.0 # the release gate checks it against release.licences.allow of scenity.project.json
+licenceUrl: https://creativecommons.org/publicdomain/zero/1.0/
+licenceDate: 2026-10-16
+allowedUse: [web, unreal, public]
+webDelivery: true
+attribution: null
+assets:
+  - id: Chirp
+    name: "Robot chirp"
+    authors: ["Scenity contributors"]
+    page: samples/characters/tools/make_chirp.py
+changes: "None. The file is the output of the script (5,336 bytes; SHA-256 934d9c4c4c9f095b859d2c174558966d743a9834ae14612698b4f20de48df1ef). Each run writes the same bytes."

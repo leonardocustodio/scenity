@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M519A7ZRK5PTXKJ326T9J6GZ",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/khronos-cc-by.yaml",
+  "settings": {},
+  "source": "UnlitTest.glb",
+  "tags": [
+    "gltf-sample",
+    "khr_materials_unlit"
+  ]
+}

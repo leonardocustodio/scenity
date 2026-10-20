@@ -1,0 +1,70 @@
+{
+  "duration": {
+    "0": {
+      "$type": "duration",
+      "$value": {
+        "value": 0,
+        "unit": "ms"
+      }
+    },
+    "120": {
+      "$type": "duration",
+      "$value": {
+        "value": 120,
+        "unit": "ms"
+      }
+    },
+    "200": {
+      "$type": "duration",
+      "$value": {
+        "value": 200,
+        "unit": "ms"
+      }
+    },
+    "300": {
+      "$type": "duration",
+      "$value": {
+        "value": 300,
+        "unit": "ms"
+      }
+    },
+    "500": {
+      "$type": "duration",
+      "$value": {
+        "value": 500,
+        "unit": "ms"
+      }
+    },
+    "600": {
+      "$type": "duration",
+      "$value": {
+        "value": 600,
+        "unit": "ms"
+      }
+    },
+    "1000": {
+      "$type": "duration",
+      "$value": {
+        "value": 1000,
+        "unit": "ms"
+      }
+    },
+    "1667": {
+      "$type": "duration",
+      "$value": {
+        "value": 1667,
+        "unit": "ms"
+      }
+    }
+  },
+  "cubic-bezier": {
+    "standard": {
+      "$type": "cubicBezier",
+      "$value": [0.2, 0, 0, 1]
+    },
+    "exit": {
+      "$type": "cubicBezier",
+      "$value": [0.3, 0, 1, 1]
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$id": "https://scenity.dev/schema/approval.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "asset": {
+      "pattern": "^[0-9A-Za-z_-]{10,26}$",
+      "type": "string"
+    },
+    "date": {
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "type": "string"
+    },
+    "format": {
+      "const": "scenity.approval/1",
+      "type": "string"
+    },
+    "note": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "type": "string"
+    },
+    "reviewer": {
+      "maxLength": 200,
+      "minLength": 1,
+      "type": "string"
+    },
+    "role": {
+      "pattern": "^[A-Za-z0-9_.-]{1,64}$",
+      "type": "string"
+    },
+    "sourceHash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "verdict": {
+      "enum": [
+        "approved",
+        "changes",
+        "rejected"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "format",
+    "asset",
+    "role",
+    "reviewer",
+    "date",
+    "verdict",
+    "sourceHash"
+  ],
+  "title": "scenity.approval/1",
+  "type": "object"
+}

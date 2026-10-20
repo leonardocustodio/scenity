@@ -1,0 +1,100 @@
+{
+  "assets": [
+    "assets"
+  ],
+  "build": {
+    "assets": {
+      "output": "build"
+    },
+    "budgets": {
+      "element": {
+        "gzipKB": 64,
+        "note": "60.6 KB on 2026-10-16 (with the embedding API and the input of the play mode), plus 5 %"
+      },
+      "lazy": {
+        "gzipKB": 628,
+        "note": "597.7 KB on 2026-10-16, plus 5 %"
+      },
+      "player": {
+        "gzipKB": 63,
+        "note": "59.2 KB on 2026-10-16 (with the embedding API and the input of the play mode), plus 5 %"
+      },
+      "plugins": {
+        "gzipKB": 1,
+        "note": "no plugin, 0.1 KB: the build fails when it has a plugin chunk"
+      },
+      "worker": {
+        "gzipKB": 271,
+        "note": "257.4 KB on 2026-10-16, plus 5 %"
+      }
+    }
+  },
+  "format": "scenity.project/1",
+  "id": "showroom",
+  "name": "Showroom",
+  "plugins": [],
+  "quality": {
+    "budgets": {
+      "model": {
+        "high": {
+          "bytes": 1200000,
+          "maxTextureSize": 2048,
+          "triangles": 40000
+        },
+        "low": {
+          "bytes": 500000,
+          "maxTextureSize": 1024,
+          "triangles": 20000
+        }
+      },
+      "scene": {
+        "high": {
+          "bytes": 22000000,
+          "triangles": 400000
+        },
+        "medium": {
+          "drawCalls": 50,
+          "gpuP95Ms": 10,
+          "triangles": 600000,
+          "workP95Ms": 6
+        }
+      }
+    }
+  },
+  "release": {
+    "licences": {
+      "allow": [
+        "CC0-1.0"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "args": {
+        "entity": "component:model",
+        "floor": "floor"
+      },
+      "id": "showroom.onFloor",
+      "level": "block",
+      "max": 0.001,
+      "metric": "belowFloor",
+      "note": "No model goes under the floor.",
+      "unit": "m"
+    }
+  ],
+  "scenes": [
+    "scenes/main.scene.json"
+  ],
+  "workbench": {
+    "runs": {
+      "check": "scenity check"
+    },
+    "surfaces": [
+      {
+        "id": "editor",
+        "kind": "scene",
+        "label": "Editor"
+      }
+    ]
+  }
+}

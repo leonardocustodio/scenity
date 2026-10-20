@@ -1,0 +1,339 @@
+{
+  "duration": 13000,
+  "format": "scenity.sequence/1",
+  "id": "meet",
+  "markers": {
+    "arrive": 6300,
+    "carry": 5000,
+    "end": 12500,
+    "meet": 9700,
+    "nod": 11400,
+    "pickup": 4100,
+    "reach": 3900,
+    "start": 500,
+    "table": 3200,
+    "walk": 7800,
+    "wave": 10500
+  },
+  "name": "Two robots meet in the plaza",
+  "rules": [
+    {
+      "args": {
+        "entity": [
+          "ada",
+          "bo"
+        ],
+        "joints": [
+          "FootL",
+          "FootR"
+        ]
+      },
+      "id": "walkthrough.feetOnFloor",
+      "level": "block",
+      "max": 0.01,
+      "metric": "belowFloor",
+      "note": "The feet of the robots stay on the floor through the whole walk (node names: the robot rig has no leg profile).",
+      "scope": {
+        "from": 0,
+        "kind": "range",
+        "step": 250,
+        "to": 13000
+      },
+      "unit": "m"
+    },
+    {
+      "args": {
+        "a": "tag:character",
+        "margin": 0.02,
+        "mode": "floor"
+      },
+      "id": "walkthrough.apart",
+      "level": "block",
+      "max": 0,
+      "metric": "overlap",
+      "note": "No two characters overlap over the floor at any time.",
+      "scope": {
+        "from": 0,
+        "kind": "range",
+        "step": 250,
+        "to": 13000
+      },
+      "unit": "m"
+    },
+    {
+      "args": {
+        "entity": "bo",
+        "goal": "rightHand"
+      },
+      "id": "walkthrough.gripAtPickup",
+      "level": "block",
+      "max": 0.02,
+      "metric": "ikError",
+      "note": "The right hand of Bo is on the grip of the parcel when Bo picks it up.",
+      "provisional": true,
+      "scope": {
+        "kind": "marker",
+        "marker": "pickup"
+      },
+      "unit": "m"
+    },
+    {
+      "args": {
+        "from": "entity:ada",
+        "plane": "floor",
+        "to": "entity:bo"
+      },
+      "id": "walkthrough.meetDistance",
+      "level": "block",
+      "max": 1.8,
+      "metric": "distance",
+      "min": 1.2,
+      "note": "The robots meet at a talk distance: not nearer than 1.2 m, not farther than 1.8 m.",
+      "scope": {
+        "kind": "marker",
+        "marker": [
+          "meet",
+          "wave",
+          "nod"
+        ]
+      },
+      "unit": "m"
+    },
+    {
+      "args": {
+        "from": "entity:parcel",
+        "to": "entity:bo#rightHand"
+      },
+      "id": "walkthrough.parcelInHand",
+      "level": "warn",
+      "max": 0.15,
+      "metric": "distance",
+      "note": "The parcel stays in the right hand of Bo after the pickup.",
+      "scope": {
+        "kind": "marker",
+        "marker": [
+          "carry",
+          "walk",
+          "meet"
+        ]
+      },
+      "unit": "m"
+    }
+  ],
+  "scene": "plaza",
+  "tracks": [
+    {
+      "entity": "bo",
+      "keys": [
+        {
+          "t": 3300,
+          "value": 0
+        },
+        {
+          "ease": "inOut",
+          "t": 4000,
+          "value": 1
+        },
+        {
+          "t": 5400,
+          "value": 1
+        },
+        {
+          "ease": "inOut",
+          "t": 6100,
+          "value": 0
+        }
+      ],
+      "kind": "property",
+      "name": "Reach",
+      "path": "character/ik/rightHand/weight"
+    },
+    {
+      "entity": "bo",
+      "keys": [
+        {
+          "t": 0,
+          "value": "entity:parcel#grip"
+        },
+        {
+          "ease": "step",
+          "t": 4100,
+          "value": "entity:carry"
+        }
+      ],
+      "kind": "property",
+      "name": "Reach target",
+      "path": "character/ik/rightHand/target"
+    },
+    {
+      "entity": "bo",
+      "keys": [
+        {
+          "t": 3200,
+          "value": 0
+        },
+        {
+          "ease": "inOut",
+          "t": 3700,
+          "value": 0.7
+        },
+        {
+          "t": 4800,
+          "value": 0.7
+        },
+        {
+          "ease": "inOut",
+          "t": 5600,
+          "value": 0
+        }
+      ],
+      "kind": "property",
+      "name": "Look",
+      "path": "character/ik/look/weight"
+    },
+    {
+      "entity": "carry",
+      "keys": [
+        {
+          "position": [2.65, 0.55, -2.65],
+          "t": 4200
+        },
+        {
+          "ease": "inOut",
+          "position": [2.67, 0.68, -2.5],
+          "t": 5000
+        }
+      ],
+      "kind": "transform",
+      "name": "Lift"
+    },
+    {
+      "entity": "parcel",
+      "keys": [
+        {
+          "t": 4100,
+          "to": "entity:bo#rightHand"
+        }
+      ],
+      "kind": "attach",
+      "name": "Pick up"
+    },
+    {
+      "entity": "ada",
+      "keys": [
+        {
+          "t": 0,
+          "value": false
+        },
+        {
+          "t": 9800,
+          "value": true
+        },
+        {
+          "t": 10300,
+          "value": false
+        }
+      ],
+      "kind": "property",
+      "name": "Wave",
+      "path": "animator/parameters/wave"
+    },
+    {
+      "entity": "bo",
+      "keys": [
+        {
+          "t": 0,
+          "value": false
+        },
+        {
+          "t": 11000,
+          "value": true
+        },
+        {
+          "t": 11500,
+          "value": false
+        }
+      ],
+      "kind": "property",
+      "name": "Nod",
+      "path": "animator/parameters/yes"
+    },
+    {
+      "entity": "guide",
+      "keys": [
+        {
+          "t": 1000,
+          "value": 0
+        },
+        {
+          "ease": "inOut",
+          "t": 1800,
+          "value": 0.8
+        }
+      ],
+      "kind": "property",
+      "name": "Look",
+      "path": "character/ik/look/weight"
+    },
+    {
+      "entity": "guide",
+      "keys": [
+        {
+          "t": 0,
+          "value": "entity:ada"
+        },
+        {
+          "ease": "step",
+          "t": 3000,
+          "value": "entity:bo"
+        },
+        {
+          "ease": "step",
+          "t": 9800,
+          "value": "entity:ada"
+        }
+      ],
+      "kind": "property",
+      "name": "Look target",
+      "path": "character/ik/look/target"
+    },
+    {
+      "entity": "tour",
+      "keys": [
+        {
+          "position": [-6, 2.4, 6.5],
+          "t": 0
+        },
+        {
+          "ease": "inOut",
+          "position": [0, 3.2, 7.5],
+          "t": 6500
+        },
+        {
+          "ease": "inOut",
+          "position": [4.8, 2.2, 5.2],
+          "t": 13000
+        }
+      ],
+      "kind": "transform",
+      "name": "Tour"
+    },
+    {
+      "entity": "tour",
+      "keys": [
+        {
+          "t": 0,
+          "value": 50
+        },
+        {
+          "ease": "inOut",
+          "t": 13000,
+          "value": 40
+        }
+      ],
+      "kind": "property",
+      "name": "Zoom",
+      "path": "camera/fov"
+    }
+  ]
+}

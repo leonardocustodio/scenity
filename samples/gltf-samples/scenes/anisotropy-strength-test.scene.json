@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "fill": {
+      "components": {
+        "light": {
+          "colour": "#e8eeff",
+          "groundColour": "#6b6258",
+          "intensity": 0.4,
+          "type": "hemisphere"
+        },
+        "transform": {
+          "position": [0, 11.704, 0]
+        }
+      },
+      "index": 2,
+      "name": "Fill light",
+      "parent": null
+    },
+    "front": {
+      "components": {
+        "camera": {
+          "far": 34.084,
+          "fov": 40,
+          "near": 0.129,
+          "target": [-0.385, 2.706, 0]
+        },
+        "transform": {
+          "position": [3.866, 6.037, 11.681]
+        }
+      },
+      "index": 3,
+      "name": "Front camera",
+      "parent": null
+    },
+    "key": {
+      "components": {
+        "light": {
+          "colour": "#ffffff",
+          "intensity": 1.5,
+          "shadow": false,
+          "type": "directional"
+        },
+        "transform": {
+          "position": [5.32, 14.117, 9.509],
+          "rotation": [-0.375149, 0.245878, 0.10391, 0.887699]
+        }
+      },
+      "index": 1,
+      "name": "Key light",
+      "parent": null
+    },
+    "model": {
+      "components": {
+        "model": {
+          "asset": "asset:01M519A7QT6KZTVRVQSZBBRQ7F"
+        },
+        "transform": {
+          "position": [0, 0, 0]
+        }
+      },
+      "index": 0,
+      "name": "AnisotropyStrengthTest",
+      "parent": null,
+      "tags": [
+        "gltf-sample"
+      ]
+    }
+  },
+  "environment": {
+    "background": "#808388",
+    "exposure": 1,
+    "map": "asset:01M519A8HDSBZAWBE8S9ZPFA7N",
+    "mapIntensity": 1,
+    "toneMapping": "aces"
+  },
+  "format": "scenity.scene/1",
+  "id": "anisotropy-strength-test",
+  "name": "Anisotropy strength test (KHR_materials_anisotropy)"
+}

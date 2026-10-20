@@ -1,0 +1,13 @@
+{
+  "format": "scenity.asset/1",
+  "id": "01M519A7GB0W97V1JDXGJ0F599",
+  "importer": "gltf",
+  "kind": "model",
+  "rights": "../../../rights/khronos-cc0.yaml",
+  "settings": {},
+  "source": "SheenTestGrid.glb",
+  "tags": [
+    "gltf-sample",
+    "khr_materials_sheen"
+  ]
+}

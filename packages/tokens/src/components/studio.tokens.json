@@ -1,0 +1,122 @@
+{
+  "$description": "The sizes of the studio: the dense editor and the comfortable Hub and dialogs.",
+  "studio": {
+    "size": {
+      "dense": {
+        "row": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1.5,
+            "unit": "rem"
+          }
+        },
+        "control": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1.5,
+            "unit": "rem"
+          }
+        },
+        "control-small": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1.25,
+            "unit": "rem"
+          }
+        },
+        "panel-header": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1.75,
+            "unit": "rem"
+          }
+        },
+        "toolbar": {
+          "$type": "dimension",
+          "$value": {
+            "value": 2,
+            "unit": "rem"
+          }
+        },
+        "titlebar": {
+          "$type": "dimension",
+          "$value": {
+            "value": 2.25,
+            "unit": "rem"
+          }
+        },
+        "statusbar": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1.375,
+            "unit": "rem"
+          }
+        }
+      },
+      "comfortable": {
+        "row": {
+          "$type": "dimension",
+          "$value": {
+            "value": 2.25,
+            "unit": "rem"
+          }
+        },
+        "control": {
+          "$type": "dimension",
+          "$value": {
+            "value": 2.25,
+            "unit": "rem"
+          }
+        },
+        "control-small": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1.75,
+            "unit": "rem"
+          }
+        },
+        "titlebar": {
+          "$type": "dimension",
+          "$value": {
+            "value": 3,
+            "unit": "rem"
+          }
+        }
+      }
+    },
+    "font": {
+      "dense": {
+        "body": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0.75,
+            "unit": "rem"
+          }
+        },
+        "label": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0.6875,
+            "unit": "rem"
+          }
+        }
+      },
+      "comfortable": {
+        "body": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0.875,
+            "unit": "rem"
+          }
+        },
+        "label": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0.75,
+            "unit": "rem"
+          }
+        }
+      }
+    }
+  }
+}
