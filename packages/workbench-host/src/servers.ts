@@ -7,7 +7,6 @@
  */
 import { spawn, type ChildProcess } from "node:child_process";
 import { LAB_KEY_ENV, newLabKey } from "@scenity/labs-platform/labKey";
-import { withoutEnv } from "@scenity/labs-platform/envNames";
 import { existsSync } from "node:fs";
 import { join, resolve } from "node:path";
 import type { ServerStatus } from "./protocol";
@@ -63,10 +62,10 @@ export function childEnv(extra: Readonly<Record<string, string>> = {}): Record<s
   // SCENITY_LAB_TOOLS=1 disables the file watch and HMR (apps/editor/vite.config.ts). The workbench wants HMR.
   // The switches of the supervisor (supervisor.ts) stay with the host. A second host has its own.
   // The per-process secret of a lab server is its own. A child never inherits one.
-  // `withoutEnv` also removes the old names of these variables (CODEBLUE_*).
-  const kept = withoutEnv(process.env, [TOKEN_ENV, "SCENITY_LAB_TOOLS", WORKER_ENV, SUPERVISED_ENV, LAB_KEY_ENV]);
+  const removed = new Set([TOKEN_ENV, "SCENITY_LAB_TOOLS", WORKER_ENV, SUPERVISED_ENV, LAB_KEY_ENV]);
   const env: Record<string, string> = {};
-  for (const [key, value] of Object.entries(kept)) if (value !== undefined) env[key] = value;
+  for (const [key, value] of Object.entries(process.env))
+    if (value !== undefined && !removed.has(key)) env[key] = value;
   return { ...env, ...extra };
 }
 

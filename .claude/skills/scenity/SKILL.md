@@ -24,12 +24,8 @@ Each package has a README with its file map. The user docs are in `docs/` (`docs
 `quickstart.md`, `studio.md`, `architecture.md`, `formats.md`, `plugins.md`, `editor.md`, `cli.md`, `testing.md`);
 read the page of a topic before a change there, and update it when a change makes it wrong.
 
-**The room of CodeBlue is not here**: its plugin, its project, its bought art and its lab tools
-(`bun run labs` and its parity suite) are in the CodeBlue repository (`frontend/web`), which links the packages of
-this checkout (`bun link`). For work on the room, use the `resus` skill of CodeBlue (`.claude/skills/resus/SKILL.md` at
-the root of that repository). This checkout holds only free art:
-`bun run check:restricted-art` fails on a rights record of a licence that is not free (CC0 and CC BY are free) and on a
-plugin or sample folder named with a domain word.
+This checkout holds only free art: `bun run check:restricted-art` fails on a rights record of a licence that is not
+free (CC0 and CC BY are free).
 
 ## Projects and plugins
 
@@ -107,9 +103,7 @@ bun run typecheck              # the root program, the editor (with its plugin c
 bun run lint
 bun run format:check
 bun run check:boundaries
-bun run check:domain-words     # no domain word of the room of CodeBlue in apps/, packages/, tools/ (0 hits)
-bun run check:restricted-art   # only free art, no domain plugin folder
-bun run check:fixtures         # no fixture name of the room of CodeBlue in a source file
+bun run check:restricted-art   # only free art
 bun run check:licences         # the licences of the dependencies
 bun run check:shape            # 500 lines per file, 80 per function
 bun run test                   # the Bun tests of each package (the host with its preload) and of tools/
@@ -126,7 +120,7 @@ run test:gallery` (update the macOS baselines with `--update-snapshots`; a frame
 
 ## Rules
 
-- No engine package names the domain of a plugin (`bun run check:domain-words`), and no engine package imports a plugin
+- No engine package names the domain of a plugin, and no engine package imports a plugin
   or a sample (ESLint and `bun run check:boundaries`). The runtime packages never import the dev tools.
 - A frame is a function of its inputs and its time: no `Math.random`, `Date.now` or wall-clock time in a pose model,
   a system or a simulation (`bun run check:determinism`).
@@ -134,7 +128,6 @@ run test:gallery` (update the macOS baselines with `--update-snapshots`; a frame
   `apps/editor/src/i18n/en-US/<part>.ftl`; `bun tools/editor-texts.ts` finds text outside Fluent).
 - Each new source file starts with the licence header `SPDX-License-Identifier: Apache-2.0` (no copyright line:
   `NOTICE` names the holder). Code comments use ASD-STE100 Simplified Technical English.
-- **Names.** The environment variables start with `SCENITY_`; for a limited time, the code also reads the old name
-  with `CODEBLUE_`. The browser storage keys start with `scenity.`. The themes are `navy`, `light` and `dark`; the
+- **Names.** The environment variables start with `SCENITY_`. The browser storage keys start with `scenity.`. The themes are `navy`, `light` and `dark`; the
   token variables start with `--sc-` and the CSS classes of `ui` with `.sc-`.
 - Never stop processes that another run started; check the working folder of a dev server before you use it.

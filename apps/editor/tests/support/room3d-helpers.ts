@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: Apache-2.0
 /**
  * Helpers of the end-to-end and gallery tests of the editor: a pixel comparison of two frames and the check for an
- * empty canvas. This file is a copy of the 3D room helpers of the CodeBlue learner app. The screenshots of the room
- * are in the editor face of its plugin.
+ * empty canvas. The screenshots of the room are in
+ * the editor face of its plugin.
  */
 import type { BrowserContext } from "@playwright/test";
 

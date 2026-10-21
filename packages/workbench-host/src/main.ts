@@ -25,7 +25,6 @@ import { formatReadyLine } from "./protocol";
 import { supervise } from "./supervisor";
 import { SUPERVISED_ENV, WORKER_ENV } from "./supervisorEnv";
 import { remoteSetup } from "./remote";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 export interface CliArgs {
   readonly checkout: string;
@@ -86,7 +85,7 @@ async function runHost(args: CliArgs): Promise<void> {
   let host: Host | null = null;
   // Under the supervisor, `host.restart` stops the host and ends with RESTART_EXIT_CODE.
   const restart =
-    envValue(SUPERVISED_ENV) === "1"
+    process.env[SUPERVISED_ENV] === "1"
       ? () => {
           setTimeout(() => process.exit(RESTART_EXIT_CODE), 10_000).unref();
           void (host?.stop() ?? Promise.resolve()).finally(() => process.exit(RESTART_EXIT_CODE));
@@ -94,7 +93,7 @@ async function runHost(args: CliArgs): Promise<void> {
       : undefined;
   // The busy state for the desktop shell, only when the shell asks for it.
   const onBusy =
-    envValue(SIGNALS_ENV) === "1"
+    process.env[SIGNALS_ENV] === "1"
       ? (busy: boolean) => void process.stdout.write(`${formatSignal({ busy })}\n`)
       : undefined;
   // The shell re-encodes the saved JPEG pictures as WebP, only when it asks for it.
@@ -126,7 +125,7 @@ async function runHost(args: CliArgs): Promise<void> {
 /** The supervisor runs the host as a worker; the worker runs the host. */
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2));
-  if (envValue(WORKER_ENV) === "1") {
+  if (process.env[WORKER_ENV] === "1") {
     await runHost(args);
     return;
   }

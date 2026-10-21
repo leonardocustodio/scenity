@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 /**
- * Time budgets of the browser tests on a CI runner. This file is a copy of the CI timings of the CodeBlue learner
- * app.
+ * Time budgets of the browser tests on a CI runner.
  *
  * A latency or render target (for example 50 ms to a duck, 3 ms of render work per frame) holds locally and on the
  * reference devices. A CI runner shares a few CPUs between the browser, its audio thread and the mock engine, and it
@@ -14,10 +13,9 @@
  * CPUs) and SCENITY_CI_WAIT_FACTOR (default 1). A missing event fails at every budget.
  */
 import type { TestInfo } from "@playwright/test";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 function factor(name: string, fallback: number): number {
-  const value = Number(envValue(name));
+  const value = Number(process.env[name]);
   return Number.isFinite(value) && value >= 1 ? value : fallback;
 }
 
@@ -50,7 +48,7 @@ export function ciWaitMs(ms: number): number {
 
 /** The count of Playwright workers on a CI runner (SCENITY_CI_PLAYWRIGHT_WORKERS), or undefined for the default. */
 export function ciWorkers(): number | undefined {
-  const value = Number(envValue("SCENITY_CI_PLAYWRIGHT_WORKERS"));
+  const value = Number(process.env.SCENITY_CI_PLAYWRIGHT_WORKERS);
   return onCi() && Number.isInteger(value) && value >= 1 ? value : undefined;
 }
 

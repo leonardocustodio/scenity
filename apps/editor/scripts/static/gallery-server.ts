@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 /**
- * The static server of the gallery tests (playwright.gallery.config.ts). This file is a copy of the gallery server of
- * the CodeBlue learner app. Bun.serve gives the files of the gallery build, a 404 for a missing asset and index.html
+ * The static server of the gallery tests (playwright.gallery.config.ts). Bun.serve gives the files of the gallery build, a 404 for a missing asset and index.html
  * for each other path (the routes of the app, for example /dev/gallery), as `vite preview` does. It adds no security
  * headers, as `vite preview`.
  *

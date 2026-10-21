@@ -3,7 +3,7 @@
  * The entry budgets of a runtime build. A plugin gives the entries and their budgets in an entry spec (a module whose
  * default export is an `EntrySpec`). `measureBuild` gives the spec the import graph of the build and the shell of
  * `index.html`, and measures each entry. This part of tools/size-budget.ts is in this package, so a plugin outside the
- * checkout (the room plugin of CodeBlue) tests its spec with `@scenity/cli/entryBudgets`. The command is still
+ * checkout tests its spec with `@scenity/cli/entryBudgets`. The command is still
  * tools/size-budget.ts.
  */
 import { existsSync, readFileSync } from "node:fs";

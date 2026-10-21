@@ -55,8 +55,7 @@ The layer rules say what can import what. Three rules matter most:
 1. **No engine package imports a plugin or a sample.** The build gives a project its plugins.
 2. **No player code imports dev code.** The runtime, render, character, view-vue and player packages never import
    runtime-dev, editor-core, the editor, the bridge or the host. The marker gate of `scenity build` checks the output.
-3. **No engine package names a domain.** `bun run check:domain-words` counts domain words in `apps/`, `packages/` and
-   `tools/`; the count is 0.
+3. **No engine package names a domain.**
 
 `bun run check:boundaries` and ESLint check the rules. Each package README has its file map: "to change X, edit Y".
 
@@ -184,5 +183,5 @@ are in the studio ([workbench.md](workbench.md)). The tools server of the workbe
 ## Domain plugins
 
 A domain plugin, with its project and its bought art, lives in its own repository and links the packages of a Scenity
-checkout. Scenity holds only the engine, free samples and free art: `bun run check:restricted-art` fails if a
-restricted file comes back.
+checkout. Scenity holds only the engine, free samples and free art: `bun run check:restricted-art` fails on a rights
+record of a restricted licence.

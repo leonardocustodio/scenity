@@ -139,7 +139,7 @@ glTF loader (`UpperArm.L` finds `UpperArmL`; a bone renamed `Torso_1` after a me
 
 - The pose functions are pure: the same input, place and simulation time give the same result. No
   `Math.random`, no wall clock.
-- No module names the domain of a plugin (`bun run check:domain-words`).
+- No module names the domain of a plugin.
 
 ## Tests
 

@@ -11,7 +11,6 @@ import { mkdirSync, readdirSync, readFileSync, renameSync, rmSync, writeFileSync
 import { dirname, join } from "node:path";
 import { HOST_INDEX_LIMIT, IndexStore, type IndexBackend } from "@scenity/labs-platform/indexStore";
 import { checkoutRoot, hostStateDir } from "./pool/paths";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 const SAFE = /^[A-Za-z0-9._-]+(\/[A-Za-z0-9._-]+)*$/;
 
@@ -76,7 +75,7 @@ export const INDEX_STATE_ENV = "SCENITY_LABS_INDEX_STATE";
 
 /** The state folder of the index of this checkout: the variable, else the folder of the host. */
 export function indexStateDir(env: Readonly<Record<string, string | undefined>> = process.env): string {
-  const given = envValue(INDEX_STATE_ENV, env);
+  const given = env[INDEX_STATE_ENV];
   return given !== undefined && given !== "" ? given : hostStateDir(checkoutRoot());
 }
 

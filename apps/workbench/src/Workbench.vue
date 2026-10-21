@@ -54,7 +54,6 @@ import DetachCost from "./panels/DetachCost.vue";
 import { linkFromHost, linkToHost } from "./panels/hostLink";
 import { DOCK_TABS, kindOfTab } from "./panels/panelUrl";
 import { useWindowLayout } from "./panels/useWindowLayout";
-import { storageItem } from "@scenity/labs-platform/storageKeys";
 
 defineOptions({ name: "LabsWorkbench" });
 const props = defineProps<{
@@ -141,7 +140,7 @@ const appWindow = windowLabel() !== null;
 const CLAUDE_KEY = "scenity.workbench.claude";
 function readClaude(): boolean {
   try {
-    return storageItem(globalThis.localStorage, CLAUDE_KEY) !== "hidden";
+    return globalThis.localStorage.getItem(CLAUDE_KEY) !== "hidden";
   } catch {
     return true;
   }

@@ -7,7 +7,6 @@ import { spawn, type ChildProcess } from "node:child_process";
 import { createServer } from "node:net";
 import { fileURLToPath } from "node:url";
 import { LAB_KEY_ENV, LAB_KEY_HEADER, newLabKey } from "@scenity/labs-platform/labKey";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 /** The app folder (apps/editor) of this checkout. */
 export const APP = fileURLToPath(new URL("../..", import.meta.url));
@@ -77,7 +76,7 @@ export async function labServer(url: string | undefined): Promise<LabServer> {
   if (url !== undefined) {
     const given = url.replace(/\/$/, "");
     // A person started this server with a secret. The same secret here lets the pages pass the page key gate.
-    const key = envValue(LAB_KEY_ENV);
+    const key = process.env[LAB_KEY_ENV];
     if (key !== undefined && key !== "") LAB_KEYS.set(given, key);
     return { origin: given, stop: () => undefined };
   }

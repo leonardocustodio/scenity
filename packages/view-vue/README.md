@@ -5,7 +5,7 @@ ladder, the adaptive quality, the poster, the fog of the asset loads and the poi
 props and overlays.
 
 The package can import only `@scenity/scene`, `@scenity/runtime` and Vue. It has no word
-of a domain (the domain word lint).
+of a domain.
 
 | Entry point                       | What it holds                                                                                  |
 | --------------------------------- | ---------------------------------------------------------------------------------------------- |

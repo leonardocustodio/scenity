@@ -3,7 +3,7 @@
   "license": "Apache-2.0",
   "author": "Leonardo Amoroso Custodio",
   "version": "0.0.0",
-  "description": "UI text of Scenity (from CodeBlue): Fluent runtime, locale negotiation, pseudo-locale and formatting. The registry of the contract enums is in the plugin.",
+  "description": "UI text of Scenity: Fluent runtime, locale negotiation, pseudo-locale and formatting. The registry of the contract enums is in the plugin.",
   "type": "module",
   "files": [
     "src",

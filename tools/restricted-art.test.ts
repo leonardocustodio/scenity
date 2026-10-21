@@ -1,14 +1,10 @@
 // SPDX-License-Identifier: Apache-2.0
-// The check of the art of the repository: only free art, and no folder of a domain plugin.
+// The check of the art of the repository: only free art.
 import { afterAll, describe, expect, test } from "bun:test";
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { DOMAIN_WORDS } from "./domain-words";
 import { artProblems, field, recordProblem } from "./restricted-art";
-
-/** The name of the plugin that went to CodeBlue: the last word of the domain word list. */
-const MOVED = DOMAIN_WORDS[DOMAIN_WORDS.length - 1];
 
 const roots: string[] = [];
 afterAll(() => {
@@ -44,20 +40,14 @@ describe("the art check", () => {
     expect(recordProblem("f.yaml", "licence: null\n")).toContain("no licence");
   });
 
-  test("finds a restricted record anywhere, and the folders of a domain plugin", () => {
+  test("finds a restricted record anywhere", () => {
     const root = repo({
       "samples/park/rights/park.yaml": CC0,
       "art/packs/rights/pack.yaml": "name: pack\nlicence: The licence of the purchase\n",
-      [`plugins/${MOVED}/room/package.json`]: "{}",
-      [`samples/${MOVED}/scenity.project.json`]: "{}",
-      "art/room3d/assets.json": "{}",
       "node_modules/x/rights/x.yaml": "licence: Commercial\n",
       "docs/notes.yaml": "title: no record\n",
     });
     expect(artProblems(root)).toEqual([
-      `plugins/${MOVED}: the domain plugins, their projects and their art are in another repository`,
-      `samples/${MOVED}: the domain plugins, their projects and their art are in another repository`,
-      "art/room3d: the domain plugins, their projects and their art are in another repository",
       'art/packs/rights/pack.yaml: the licence "The licence of the purchase" is not free (give a free SPDX ID: CC0-1.0, CC-BY-3.0, CC-BY-4.0)',
     ]);
   });

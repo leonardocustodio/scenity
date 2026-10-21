@@ -227,8 +227,7 @@ export function resolvePluginEntries(entries: readonly string[], projectDir: str
 
 /**
  * The environment variable that points the editor app, the workbench host and the commands at a project
- * folder outside the checkout (for example the room project of CodeBlue). An absolute path, or a path from the
- * current folder.
+ * folder outside the checkout. An absolute path, or a path from the current folder.
  */
 export const PROJECT_ENV = "SCENITY_PROJECT";
 

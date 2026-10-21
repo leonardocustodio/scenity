@@ -22,8 +22,6 @@
  * tokens (roleProtocol.ts) limit each page.
  */
 
-import { envValue } from "@scenity/labs-platform/envNames";
-
 export const PUBLIC_ORIGIN_ENV = "SCENITY_WORKBENCH_PUBLIC_ORIGIN";
 export const LAB_PORT_ENV = "SCENITY_WORKBENCH_LAB_PORT";
 export const LAB_BASE_ENV = "SCENITY_WORKBENCH_LAB_BASE";
@@ -54,15 +52,15 @@ const BASE_PATTERN = /^\/[A-Za-z0-9_-]+(\/[A-Za-z0-9_-]+)*\/$/;
  * with a missing or bad port or base path is an error: the host does not start half remote.
  */
 export function remoteSetup(env: Readonly<Record<string, string | undefined>>): RemoteSetup | null {
-  const origin = envValue(PUBLIC_ORIGIN_ENV, env)?.trim().replace(/\/$/, "") ?? "";
+  const origin = env[PUBLIC_ORIGIN_ENV]?.trim().replace(/\/$/, "") ?? "";
   if (origin === "") return null;
   if (!ORIGIN_PATTERN.test(origin)) throw new Error(`${PUBLIC_ORIGIN_ENV} must be an origin such as https://host.`);
-  const port = Number(envValue(LAB_PORT_ENV, env));
+  const port = Number(env[LAB_PORT_ENV]);
   if (!Number.isInteger(port) || port < 1 || port > 65535)
     throw new Error(`${LAB_PORT_ENV} must be a port from 1 to 65535.`);
-  const base = envValue(LAB_BASE_ENV, env)?.trim() ?? "";
+  const base = env[LAB_BASE_ENV]?.trim() ?? "";
   if (!BASE_PATTERN.test(base)) throw new Error(`${LAB_BASE_ENV} must be a path with a slash at each end.`);
-  const page = envValue(PAGE_ORIGIN_ENV, env)?.trim().replace(/\/$/, "") ?? "";
+  const page = env[PAGE_ORIGIN_ENV]?.trim().replace(/\/$/, "") ?? "";
   if (page !== "" && !ORIGIN_PATTERN.test(page))
     throw new Error(`${PAGE_ORIGIN_ENV} must be an origin such as https://host.`);
   return { publicOrigin: origin, labPort: port, labBase: base, pageOrigin: page === "" ? null : page };

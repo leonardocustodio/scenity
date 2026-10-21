@@ -21,8 +21,6 @@ export interface ShellInternals {
 export interface ShellWindow {
   readonly __TAURI_INTERNALS__?: Partial<ShellInternals>;
   readonly __SCENITY_SHELL__?: { readonly features?: readonly string[] };
-  /** The old name of `__SCENITY_SHELL__`. An older shell sets this name. */
-  readonly __CODEBLUE_LABS_SHELL__?: { readonly features?: readonly string[] };
 }
 
 function win(): ShellWindow {
@@ -37,7 +35,7 @@ export function shellInternals(from: ShellWindow = win()): ShellInternals | null
 
 /** True when the shell of the labs app has the feature (and the page has the internals to use it). */
 export function shellFeature(name: string, from: ShellWindow = win()): boolean {
-  const features = (from.__SCENITY_SHELL__ ?? from.__CODEBLUE_LABS_SHELL__)?.features;
+  const features = from.__SCENITY_SHELL__?.features;
   return shellInternals(from) !== null && Array.isArray(features) && features.includes(name);
 }
 

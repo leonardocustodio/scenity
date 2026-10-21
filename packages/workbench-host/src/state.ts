@@ -6,16 +6,14 @@
  */
 import { APP_ID } from "@scenity/studio-host/store";
 import { createHash, randomBytes } from "node:crypto";
-import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
-import { dirname, join, sep } from "node:path";
+import { join } from "node:path";
 import { denyFolder } from "./denylist";
 import { isRecord, parseJson } from "./protocol";
 
 /** The identifier of the app. */
 export { APP_ID };
-/** The old identifier of the app. A host moves a state folder of this identifier to `APP_ID`. */
-export const OLD_APP_ID = "org.codeblue.labs";
 
 /** The first 16 hex characters of the SHA-256 of the checkout path. */
 export function checkoutHash(checkout: string): string {
@@ -37,23 +35,6 @@ export function defaultStateDir(
       ? join(home, "Library", "Application Support")
       : (env.XDG_STATE_HOME ?? join(home, ".local", "state"));
   return join(base, APP_ID, "host", checkoutHash(checkout));
-}
-
-/**
- * When `dir` is a default state folder that does not exist yet, move the folder of the old app identifier
- * to it. Thus the host keeps the window layouts and the sessions of the owner after the rename of the app.
- */
-export function moveOldStateDir(dir: string): void {
-  const marker = `${sep}${APP_ID}${sep}`;
-  if (!dir.includes(marker) || existsSync(dir)) return;
-  const old = dir.replace(marker, `${sep}${OLD_APP_ID}${sep}`);
-  if (!existsSync(old)) return;
-  try {
-    mkdirSync(dirname(dir), { recursive: true, mode: 0o700 });
-    renameSync(old, dir);
-  } catch {
-    // Another host moved the folder first, or the move failed: the host starts with a new folder.
-  }
 }
 
 /** Write a value as JSON: first into a temporary file of the same folder, then a rename over the file. */
@@ -105,7 +86,6 @@ export class HostState {
 
   constructor(dir: string) {
     this.dir = dir;
-    moveOldStateDir(dir);
     mkdirSync(dir, { recursive: true, mode: 0o700 });
     // The files of the state folder (the generated settings hold the launch token) are never shown.
     denyFolder(dir);

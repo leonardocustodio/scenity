@@ -6,7 +6,6 @@
  * grip returns the panel to its corner.
  */
 import { computed, ref, type ComputedRef, type Ref } from "vue";
-import { storageItem } from "@scenity/labs-platform/storageKeys";
 
 export interface PanelOffset {
   readonly x: number;
@@ -35,7 +34,7 @@ const KEEP = 96;
 
 function readOffset(key: string): PanelOffset {
   try {
-    const value = JSON.parse(storageItem(globalThis.localStorage, key) ?? "null") as Partial<PanelOffset> | null;
+    const value = JSON.parse(globalThis.localStorage.getItem(key) ?? "null") as Partial<PanelOffset> | null;
     if (typeof value?.x === "number" && typeof value.y === "number") return { x: value.x, y: value.y };
   } catch {
     // A browser without storage, or an incorrect value: the panel stays at its corner.

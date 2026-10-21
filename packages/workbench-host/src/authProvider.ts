@@ -13,7 +13,6 @@
  */
 import { isRole, type AuthProviderKind, type Role } from "./roleProtocol";
 import { sameToken } from "./token";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 export type { AuthProviderKind } from "./roleProtocol";
 
@@ -104,7 +103,7 @@ export type AuthSetup =
 
 /** The settings of the command line: `token` when `SCENITY_WORKBENCH_ROLES` has entries, else `none`. */
 export function authFromEnv(env: Readonly<Record<string, string | undefined>> = process.env): AuthSetup {
-  const tokens = parseRoleTokens(envValue(ROLES_ENV, env) ?? "");
+  const tokens = parseRoleTokens(env[ROLES_ENV] ?? "");
   return tokens.length === 0 ? { kind: "none" } : { kind: "token", tokens };
 }
 

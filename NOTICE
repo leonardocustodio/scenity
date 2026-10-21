@@ -83,10 +83,9 @@ lists Vite and its plugins as its dependencies for the dev server of `scenity de
 Art
 ---
 
-This repository holds only free art. The bought art of the resus room (the Reallusion, ActorCore and other packs) and
-its rights records are in the CodeBlue repository with the resus plugin. `bun run check:restricted-art`
-(tools/restricted-art.ts) fails on a rights record of a restricted licence. The samples under samples/ use free art
-(CC0 or CC BY). Each sample lists its sources in its rights records. samples/gltf-samples holds models of the Khronos
+This repository holds only free art. `bun run check:restricted-art` (tools/restricted-art.ts) fails on a rights
+record of a restricted licence. The samples under samples/ use free art (CC0 or CC BY). Each sample lists its
+sources in its rights records. samples/gltf-samples holds models of the Khronos
 glTF-Sample-Assets under CC0 1.0 and CC BY 4.0. samples/gltf-samples/rights/khronos-cc-by.yaml has the attribution
 text of the CC BY models. The showroom template of the CLI (packages/cli/templates/showroom) holds the documents of
 samples/showroom with its CC0 rights record. `scenity create --template showroom` downloads the CC0 source files from

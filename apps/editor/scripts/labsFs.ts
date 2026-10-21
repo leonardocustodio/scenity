@@ -20,7 +20,6 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { basename, dirname, isAbsolute, join, relative, resolve } from "node:path";
 import { defaultProjectDir, resolvePluginEntries } from "@scenity/cli/plugins";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 /** The variable that enables the remote mode of the host (packages/workbench-host `remote.ts`). */
 export const REMOTE_ORIGIN_ENV = "SCENITY_WORKBENCH_PUBLIC_ORIGIN";
@@ -57,7 +56,7 @@ type Env = Readonly<Record<string, string | undefined>>;
 
 /** True when the workbench host runs in the remote mode. */
 export function isRemote(env: Env): boolean {
-  return (envValue(REMOTE_ORIGIN_ENV, env)?.trim() ?? "") !== "";
+  return (env[REMOTE_ORIGIN_ENV]?.trim() ?? "") !== "";
 }
 
 interface PackageJson {

@@ -3,7 +3,7 @@
   "license": "Apache-2.0",
   "author": "Leonardo Amoroso Custodio",
   "version": "0.0.0",
-  "description": "Design-system components of Scenity (from CodeBlue): Reka UI primitives, the shadcn-vue components and the accessibility parts. The domain components are in the plugins.",
+  "description": "Design-system components of Scenity: Reka UI primitives, the shadcn-vue components and the accessibility parts. The domain components are in the plugins.",
   "type": "module",
   "files": [
     "src",

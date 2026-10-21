@@ -65,6 +65,4 @@ export interface PlatformEnv {
   /** The IPC object of Tauri 2: it is only in a page of the desktop app. */
   readonly __TAURI_INTERNALS__?: unknown;
   readonly __SCENITY_SHELL__?: ShellFeatures;
-  /** The old name of `__SCENITY_SHELL__`. An older shell from before the rename sets it. */
-  readonly __CODEBLUE_LABS_SHELL__?: ShellFeatures;
 }

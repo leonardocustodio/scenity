@@ -3,7 +3,7 @@ import { afterEach, describe, expect, test } from "bun:test";
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";
-import { checkBoundaries, engineClientProblems, findManifests, type Problem } from "./check-boundaries";
+import { checkBoundaries, findManifests, type Problem } from "./check-boundaries";
 
 let roots: string[] = [];
 
@@ -425,31 +425,5 @@ describe("the faces of a plugin (one rule set for each plugin)", () => {
       "packages/scene/package.json:no-plugin",
       "plugins/demo/room/package.json:labs-sdk",
     ]);
-  });
-});
-
-describe("the engine-client rule", () => {
-  const source = (root: string, path: string, text: string) => {
-    mkdirSync(dirname(join(root, path)), { recursive: true });
-    writeFileSync(join(root, path), text);
-  };
-
-  test("refuses an engine package that imports an engine client or names its session client", () => {
-    const root = workspace({
-      ...GOOD,
-      "plugins/demo/sdk/vue/package.json": { name: "@scenity/vue" },
-    });
-    source(root, "packages/scene/src/ok.ts", 'import { z } from "zod";\n');
-    source(root, "packages/scene/src/live.ts", 'import { createX } from "@scenity/vue";\n');
-    source(root, "packages/runtime/src/deep/session.vue", "<script>let s: RoomSession;</script>\n");
-    source(root, "plugins/demo/editor/src/engineSource.ts", 'import type { RoomSession } from "@scenity/vue";\n');
-    expect(rules(checkBoundaries(root))).toEqual([
-      "packages/runtime/src/deep/session.vue:engine-client",
-      "packages/scene/src/live.ts:engine-client",
-    ]);
-  });
-
-  test("the engine packages of this workspace hold no engine client", () => {
-    expect(engineClientProblems(join(import.meta.dir, ".."), ["@scenity/contracts", "@scenity/vue"])).toEqual([]);
   });
 });

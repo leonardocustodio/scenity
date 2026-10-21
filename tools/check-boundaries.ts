@@ -30,9 +30,6 @@
  *     bridge          only the two sides of the bridge depend on its contract (@scenity/bridge, packages/bridge):
  *                     the editor and the editor face of a plugin, the workbench page, the workbench host and the
  *                     host face of a plugin, and the CLI
- *     engine-client   no source file of an engine package (packages/<name>/src) imports the client of an external
- *                     engine (a package of plugins/<plugin>/sdk/, the CodeBlue SDK chain) or names its session
- *                     client (ENGINE_CLIENT_WORDS). The adapter of an engine is a plugin part: a live source
  *
  * The tool reads the dependency names and the "file:", "link:" and "workspace:" paths. ESLint (eslint.config.js)
  * checks the import statements of the source files.
@@ -73,8 +70,7 @@ export type Rule =
   | "labs-platform"
   | "bridge"
   | "engine-layer"
-  | "no-plugin"
-  | "engine-client";
+  | "no-plugin";
 
 /**
  * The layer rules of the engine packages (docs/architecture.md): the folder name under packages/ and the workspace
@@ -171,7 +167,7 @@ const LABS_PARTS: readonly LabsPart[] = [
     rule: "labs-platform",
     name: "@scenity/labs-platform",
     path: "packages/labs-platform",
-    // The editor core keeps the switch of the session with the storage keys. The CLI makes the sheets (`rasterBun`)
+    // The editor core hashes the scene files (`sha256`). The CLI makes the sheets (`rasterBun`)
     // and the WebM files (`webm`) of `scenity sheet` and `scenity clip`.
     users: ["@scenity/editor", "@scenity/editor-core", "@scenity/workbench", "@scenity/workbench-host", "@scenity/cli"],
     // The editor face of a plugin makes the frame key input of a labs command.
@@ -179,7 +175,7 @@ const LABS_PARTS: readonly LabsPart[] = [
     why: "Only apps/editor, apps/workbench, the workbench host and the editor face of a plugin use the platform capabilities of the labs.",
   },
   // The one contract of the bridge between the workbench page and a surface frame. The package itself is an
-  // engine package with no workspace dependency (ENGINE_LAYERS) and no domain word (tools/domain-words.ts).
+  // engine package with no workspace dependency (ENGINE_LAYERS).
   {
     rule: "bridge",
     name: "@scenity/bridge",
@@ -200,7 +196,7 @@ const LABS_PARTS: readonly LabsPart[] = [
 ];
 
 export interface Problem {
-  /** The package.json (the source file for `engine-client`), relative to the workspace root. */
+  /** The package.json, relative to the workspace root. */
   readonly path: string;
   readonly rule: Rule;
   readonly message: string;
@@ -342,40 +338,6 @@ function dependenciesOf(manifest: Manifest): [string, string][] {
   });
 }
 
-/** The names of the session client of the CodeBlue engine. No engine package names them. */
-export const ENGINE_CLIENT_WORDS = ["createRoomSession", "RoomSession", "sessionsCreate", "ticketFetcher"] as const;
-
-/** The source files (.ts, .vue) under a folder, relative to the root. */
-function sourceFiles(root: string, folder: string): string[] {
-  if (!existsSync(join(root, folder))) return [];
-  return readdirSync(join(root, folder), { withFileTypes: true }).flatMap((entry) => {
-    const path = join(folder, entry.name);
-    if (entry.isDirectory()) return entry.name === "node_modules" ? [] : sourceFiles(root, path);
-    return /\.(ts|vue)$/.test(entry.name) ? [path] : [];
-  });
-}
-
-/** The problems of the engine-client rule: an import of an engine client or a name of its session client. */
-export function engineClientProblems(root: string, clients: readonly string[]): Problem[] {
-  const problems: Problem[] = [];
-  const words = new RegExp(`\\b(${ENGINE_CLIENT_WORDS.join("|")})\\b`);
-  const packages = existsSync(join(root, "packages")) ? readdirSync(join(root, "packages")) : [];
-  for (const file of packages.flatMap((name) => sourceFiles(root, join("packages", name, "src")))) {
-    const text = readFileSync(join(root, file), "utf8");
-    const client = clients.find((name) => text.includes(`"${name}"`) || text.includes(`"${name}/`));
-    const word = words.exec(text)?.[1];
-    if (client === undefined && word === undefined) continue;
-    const what =
-      client === undefined ? `names the engine client word ${word ?? ""}` : `imports the engine client ${client}`;
-    problems.push({
-      path: file,
-      rule: "engine-client",
-      message: `${file} ${what}. The adapter of an engine is a plugin part (a live source).`,
-    });
-  }
-  return problems;
-}
-
 /** Check each package.json of the workspace against the labs boundaries. */
 export function checkBoundaries(root: string = WEB_ROOT): Problem[] {
   const problems: Problem[] = [];
@@ -384,14 +346,6 @@ export function checkBoundaries(root: string = WEB_ROOT): Problem[] {
     JSON.parse(readFileSync(join(root, path), "utf8")) as Manifest,
   ]);
   const plugins = pluginsOf(manifests);
-  // The generated contracts of the engine (in a plugin sdk folder) have a path alias and no package.json.
-  const clients = [
-    "@scenity/contracts",
-    ...manifests.flatMap(([path, manifest]) =>
-      /^plugins\/[^/]+\/sdk\/[^/]+\/package\.json$/.test(path) && manifest.name ? [manifest.name] : [],
-    ),
-  ];
-  problems.push(...engineClientProblems(root, clients));
   for (const [path, manifest] of manifests) {
     const owner = manifest.name ?? path;
     for (const [name, spec] of dependenciesOf(manifest)) {

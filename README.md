@@ -20,11 +20,11 @@ of that plugin, which links the packages of this checkout (`bun link`).
 | `apps/workbench`                                                                                                                  | The workbench page, which retires: use Scenity Studio                                                                                                                       |
 | `plugins/*`                                                                                                                       | Generic plugins (`physics`, `traffic`)                                                                                                                                      |
 | `samples/*`                                                                                                                       | Sample projects with free art (CC0 or CC BY, each with its rights records): `showroom`, `characters`, `gltf-samples`, `spin`, `physics`, `walkthrough`, `sim-road`          |
-| `tools/*.ts`                                                                                                                      | The size budgets, the lab markers, the module report, the package boundaries, the domain words and the art check                                                            |
+| `tools/*.ts`                                                                                                                      | The size budgets, the lab markers, the module report, the package boundaries and the art check                                                                              |
 | `.claude/skills/scenity`                                                                                                          | The Scenity skill for Claude Code                                                                                                                                           |
 
 Each package has a README with its file map. `bun run check:restricted-art` (tools/restricted-art.ts) fails on a rights
-record of a licence that is not free and on a domain plugin folder.
+record of a licence that is not free.
 
 ## A project outside the checkout
 
@@ -71,8 +71,6 @@ The end-to-end tests of the editor (Playwright) and the gallery of the samples:
 cd apps/editor && bunx --bun playwright test tests/e2e/scene-projects.spec.ts --project chromium
 cd apps/editor && bun run test:gallery
 ```
-
-`bun run check:fixtures` checks the fixture rule of the tests.
 
 ## The `scenity` command
 

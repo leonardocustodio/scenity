@@ -15,7 +15,6 @@
  * runner keeps its proposals and its switch in cells (`{ value }`). Thus an editor can give reactive cells. No Vue
  * import.
  */
-import { storageItem } from "@scenity/labs-platform/storageKeys";
 import { CommandError, type CommandHost, type CommandKind, type CommandListing } from "./command";
 import { PERSON, type Actor, type BaseOp, type Edit, type PendingRun } from "./ops";
 import type { CommandRegistry, RuleState } from "./registry";
@@ -137,7 +136,7 @@ export const PROPOSAL_MODE_KEY = "scenity.labs.proposalMode";
 /** The switch of the session from the session storage ("propose" without storage). */
 export function readProposalMode(): ProposalMode {
   try {
-    return storageItem(globalThis.sessionStorage, PROPOSAL_MODE_KEY) === "apply" ? "apply" : "propose";
+    return globalThis.sessionStorage.getItem(PROPOSAL_MODE_KEY) === "apply" ? "apply" : "propose";
   } catch {
     return "propose";
   }

@@ -13,7 +13,6 @@
 import type { TerminalExit, TerminalKind, TerminalOpened } from "@scenity/workbench-host/protocol";
 import { ref, shallowRef, type Ref } from "vue";
 import type { HostClient } from "../host/hostClient";
-import { storageItem } from "@scenity/labs-platform/storageKeys";
 
 /** The parts of an xterm.js `Terminal` that the panel uses. */
 export interface XtermLike {
@@ -97,7 +96,7 @@ function idStore(storage: IdStorage | null, key: string): { read(): string | nul
   return {
     read: () => {
       try {
-        return storage === null ? null : storageItem(storage, key);
+        return storage === null ? null : storage.getItem(key);
       } catch {
         return null;
       }

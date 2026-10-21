@@ -3,10 +3,10 @@
  * The Content-Security-Policy of the lab dev server. The workbench shows the lab page in a sandboxed frame
  * (apps/workbench `surfaces/frameSandbox.ts`). This header is the CSP of that frame and of the lab page alone.
  *
- * The policy of the learner app (scripts/static/web-security-headers.conf, read by nginxHeaders.ts) does not fit a
+ * The policy of the editor build (scripts/static/web-security-headers.conf, read by nginxHeaders.ts) does not fit a
  * dev server: it has `frame-ancestors 'none'` (the workbench frames the lab), Trusted Types (the Vite error overlay
  * writes HTML) and no inline styles (Vite and Vue add `<style>` elements in the dev server). This policy keeps the
- * other limits of the learner app:
+ * other limits of the editor build:
  *
  * - Scripts, workers, fonts and frames come only from the lab server. No inline script and no `eval`. WebAssembly
  *   (the Basis transcoder) needs `'wasm-unsafe-eval'`. Workers and pictures also take `blob:` URLs.
@@ -23,7 +23,6 @@
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { Plugin } from "vite";
 import { isRemote, REMOTE_ORIGIN_ENV } from "./labsFs.ts";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 export const CSP_HEADER = "Content-Security-Policy";
 
@@ -40,7 +39,7 @@ type Env = Readonly<Record<string, string | undefined>>;
 export function socketOrigins(host: string | undefined, env: Env): string[] {
   const origins: string[] = [];
   if (host !== undefined && HOST.test(host)) origins.push(`ws://${host}`, `wss://${host}`);
-  const remote = ORIGIN.exec(envValue(REMOTE_ORIGIN_ENV, env)?.trim() ?? "");
+  const remote = ORIGIN.exec(env[REMOTE_ORIGIN_ENV]?.trim() ?? "");
   if (remote?.[1] !== undefined) origins.push(`wss://${remote[1]}`);
   return [...new Set(origins)];
 }
@@ -51,7 +50,7 @@ export const PAGE_ORIGIN_ENV = "SCENITY_WORKBENCH_PAGE_ORIGIN";
 /** The origin that may frame the lab: the public workbench page of the remote mode, or null. */
 export function frameAncestor(env: Env): string | null {
   if (!isRemote(env)) return null;
-  const page = ORIGIN.exec(envValue(PAGE_ORIGIN_ENV, env)?.trim() ?? "");
+  const page = ORIGIN.exec(env[PAGE_ORIGIN_ENV]?.trim() ?? "");
   return page === null ? null : page[0].replace(/\/$/, "");
 }
 

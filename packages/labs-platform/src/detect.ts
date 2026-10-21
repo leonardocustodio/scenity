@@ -141,5 +141,5 @@ export function detectOffscreenCanvas(env: PlatformEnv): boolean {
 
 /** A feature of the desktop shell (`__SCENITY_SHELL__.features`): only in a page of the desktop app. */
 export function shellFeature(env: PlatformEnv, name: string): boolean {
-  return hasTauri(env) && ((env.__SCENITY_SHELL__ ?? env.__CODEBLUE_LABS_SHELL__)?.features ?? []).includes(name);
+  return hasTauri(env) && (env.__SCENITY_SHELL__?.features ?? []).includes(name);
 }

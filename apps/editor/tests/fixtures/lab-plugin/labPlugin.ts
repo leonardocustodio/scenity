@@ -3,7 +3,7 @@
  * The fake lab plugin of the tests of the lab core (docs/testing.md): a tiny editor face with neutral data. Two
  * robots, Ada and Bo, meet in a hall: the take `greet` (Ada walks to the door, Bo waves) and the take `parade` (both
  * walk to the stage). The plugin gives the take model only. The other faces are empty, so a test that needs one adds
- * it with a spread. The data names nothing of a plugin outside this checkout (tools/fixture-check.ts).
+ * it with a spread.
  */
 import type { EditorPlugin } from "../../../src/core/plugin";
 import type { LabEvent, LabState, PresetName } from "../../../src/core/sequence";

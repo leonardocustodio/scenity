@@ -3,7 +3,7 @@
   "license": "Apache-2.0",
   "author": "Leonardo Amoroso Custodio",
   "version": "0.0.0",
-  "description": "Design tokens of Scenity (from CodeBlue): DTCG sources, the neutral themes navy, light and dark with their high-contrast forms, and the Style Dictionary build. A plugin builds its own token set over these tokens with /build.",
+  "description": "Design tokens of Scenity: DTCG sources, the neutral themes navy, light and dark with their high-contrast forms, and the Style Dictionary build. A plugin builds its own token set over these tokens with /build.",
   "type": "module",
   "files": [
     "src",

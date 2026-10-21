@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 /**
- * Precompressed copies of the build files. This file is a copy of
- * the precompress plugin of the CodeBlue learner app. The static server of the editor tests (serve-static.ts) uses it.
+ * Precompressed copies of the build files. The static server of the editor tests (serve-static.ts) uses it.
  *
  * After the build, the plugin writes `<file>.br` (Brotli, quality 11) and `<file>.gz` (gzip, level 9) next to
  * each text file of the output folder. nginx sends a copy in place of the file when the browser accepts its

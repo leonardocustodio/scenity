@@ -87,7 +87,7 @@ describe("createScratchModels", () => {
       kb: null,
       rights: null,
     });
-    expect(scratchInfo(A, { ...RECORD, rights: { allowed: true, entry: "codeblue-own-work" } }).rights).toEqual({
+    expect(scratchInfo(A, { ...RECORD, rights: { allowed: true, entry: "scenity-own-work" } }).rights).toEqual({
       allowed: true,
       reason: null,
     });

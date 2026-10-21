@@ -18,7 +18,6 @@
 import { existsSync, readFileSync, realpathSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 /** The source folder of the host for a compiled host (the shell sets it). */
 export const HOST_SOURCE_ENV = "SCENITY_WORKBENCH_HOST_SRC";
@@ -35,7 +34,7 @@ export function isCompiled(main: string = Bun.main): boolean {
 /** The `bun` program for the children of the host. */
 export function bunPath(env: Readonly<Record<string, string | undefined>> = process.env): string {
   if (!isCompiled()) return process.execPath;
-  return envValue(BUN_ENV, env) ?? Bun.which("bun") ?? "bun";
+  return env[BUN_ENV] ?? Bun.which("bun") ?? "bun";
 }
 
 /**
@@ -44,7 +43,7 @@ export function bunPath(env: Readonly<Record<string, string | undefined>> = proc
  */
 export function hostSourceDir(env: Readonly<Record<string, string | undefined>> = process.env): string {
   if (!isCompiled()) return dirname(fileURLToPath(import.meta.url));
-  const dir = envValue(HOST_SOURCE_ENV, env);
+  const dir = env[HOST_SOURCE_ENV];
   if (dir !== undefined && dir !== "") return dir;
   throw new Error(`A compiled host needs ${HOST_SOURCE_ENV}: the folder of the source files of the host.`);
 }

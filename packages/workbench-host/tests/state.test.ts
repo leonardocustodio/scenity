@@ -1,16 +1,9 @@
 // SPDX-License-Identifier: Apache-2.0
 /** Tests of the state folder: the default folder and the JSON round trip. */
 import { afterAll, describe, expect, test } from "bun:test";
-import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import {
-  HostState,
-  checkoutHash,
-  defaultStateDir,
-  moveOldStateDir,
-  readJsonObject,
-  writeJsonAtomic,
-} from "../src/state";
+import { HostState, checkoutHash, defaultStateDir, readJsonObject, writeJsonAtomic } from "../src/state";
 import { cleanup, tempDir } from "./helpers";
 import { scaleTestTimeouts } from "./ciTiming";
 
@@ -34,22 +27,6 @@ describe("the state folder", () => {
       `/s/org.scenity.editor/host/${hash}`,
     );
     expect(checkoutHash("/other")).not.toBe(hash);
-  });
-
-  test("a host moves the state folder of the old app identifier to the new one", () => {
-    const old = join(dir, "move", "org.codeblue.labs", "host", "abc");
-    mkdirSync(old, { recursive: true });
-    writeFileSync(join(old, "checkouts.json"), '{"current":"/repo"}');
-    const moved = join(dir, "move", "org.scenity.editor", "host", "abc");
-    moveOldStateDir(moved);
-    expect(existsSync(old)).toBe(false);
-    expect(readJsonObject(join(moved, "checkouts.json"))).toEqual({ current: "/repo" });
-    // A folder that exists already stays as it is, and a folder of another name is not moved.
-    mkdirSync(old, { recursive: true });
-    moveOldStateDir(moved);
-    expect(existsSync(old)).toBe(true);
-    moveOldStateDir(join(dir, "move", "other", "host", "abc"));
-    expect(existsSync(join(dir, "move", "other"))).toBe(false);
   });
 
   test("an atomic write leaves no temporary file", () => {

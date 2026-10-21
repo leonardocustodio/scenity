@@ -12,8 +12,8 @@
  */
 import { isAbsolute, relative, resolve, sep } from "node:path";
 
-/** The names of the app folder of the state folders (state.ts `APP_ID`, and the old name `OLD_APP_ID`). */
-const STATE_FOLDERS = new Set(["org.scenity.editor", "org.codeblue.labs"]);
+/** The name of the app folder of the state folders (state.ts `APP_ID`). */
+const STATE_FOLDERS = new Set(["org.scenity.editor"]);
 
 /** The base names that the workbench never shows. */
 const DENIED_NAME = /^(\.env.*|.*\.(pem|key|p12|pfx)|id_(rsa|ed25519|ecdsa|dsa)(\..*)?)$/i;

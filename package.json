@@ -3,7 +3,7 @@
   "license": "Apache-2.0",
   "author": "Leonardo Amoroso Custodio",
   "private": true,
-  "description": "Scenity: the 3D scene engine, its editor, the workbench and its host (from CodeBlue frontend/web).",
+  "description": "Scenity: the 3D scene engine, its editor, the workbench and its host.",
   "type": "module",
   "packageManager": "bun@1.4.2",
   "engines": {
@@ -63,8 +63,6 @@
     "check:shots": "bun packages/cli/src/cli.ts shot --project samples/showroom --build --camera front,top --out 'test-results/shot-check/showroom--{camera}.png' --compare 'apps/editor/tests/gallery/__screenshots__/scene-{platform}/showroom--{camera}.png' && bun packages/cli/src/cli.ts shot --project samples/walkthrough --build --sequence sequences/meet.sequence.json --at 9700 --camera front --out test-results/shot-check/walkthrough--meet.png --compare 'apps/editor/tests/gallery/__screenshots__/scene-{platform}/walkthrough--meet.png' && bun packages/cli/src/cli.ts shot --project samples/sim-road --build --sequence sequences/rush.sequence.json --at 12000 --camera front --out test-results/shot-check/sim-road--queue.png --compare 'apps/editor/tests/gallery/__screenshots__/scene-{platform}/sim-road--queue.png'",
     "check:size": "bun tools/size-budget.ts",
     "check:boundaries": "bun tools/check-boundaries.ts",
-    "check:domain-words": "bun tools/domain-words.ts",
-    "check:fixtures": "bun tools/fixture-check.ts",
     "check:restricted-art": "bun tools/restricted-art.ts",
     "check:determinism": "bun tools/determinism.ts",
     "check:licences": "bun tools/licences.ts",

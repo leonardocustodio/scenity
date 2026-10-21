@@ -6,7 +6,6 @@
  * a reload of the page finds the host again.
  */
 import { isHostOrigin, isToken, type HostEndpoint } from "@scenity/workbench-host/protocol";
-import { storageItem } from "@scenity/labs-platform/storageKeys";
 
 /** The key of the endpoint in the session storage. */
 export const ENDPOINT_STORAGE_KEY = "scenity.workbench.endpoint";
@@ -55,9 +54,7 @@ function keep(win: EndpointWindow, endpoint: HostEndpoint): void {
 function kept(win: EndpointWindow, origin: string): HostEndpoint | null {
   try {
     const storage = storageOf(win);
-    const value = JSON.parse(
-      (storage === null ? null : storageItem(storage, ENDPOINT_STORAGE_KEY)) ?? "null",
-    ) as unknown;
+    const value = JSON.parse((storage === null ? null : storage.getItem(ENDPOINT_STORAGE_KEY)) ?? "null") as unknown;
     if (typeof value !== "object" || value === null) return null;
     const { origin: keptOrigin, token } = value as Record<string, unknown>;
     return keptOrigin === origin && isToken(token) ? { origin, token } : null;

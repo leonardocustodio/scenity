@@ -2,8 +2,7 @@
 /**
  * Read the security headers of the web app from the nginx snippet. The snippet is the single source of the header
  * list: nginx includes it, and the Bun test server applies the same lines.
- * This file is a copy of the header reader of the CodeBlue learner app. The snippet file
- * web-security-headers.conf in this folder is a copy of engine/infra/nginx/web/snippets of CodeBlue.
+ * The snippet file is web-security-headers.conf in this folder.
  *
  * A line has the form `add_header Name "value" always;` or `add_header Name $variable always;`.
  * Variables (`$name`) take their value from the map; an unknown variable is empty. As in nginx, the

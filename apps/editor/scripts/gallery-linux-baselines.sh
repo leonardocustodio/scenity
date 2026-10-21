@@ -5,8 +5,7 @@
 # The CI job "labs-gallery" (.github/workflows/ci.yml) runs in the official Playwright image. This script runs the
 # gallery tests of the editor in the same image, so the screenshots match CI. The image has the same Chromium, the same
 # fonts, the same software rasterizer (SwiftShader) and the same x86-64 code (linux/amd64). On Apple silicon Docker
-# runs the image through Rosetta or QEMU. The script is a copy of the script of the component gallery of CodeBlue, for
-# apps/editor. It copies the working tree into the container (the files that Git tracks and the new files that Git
+# runs the image through Rosetta or QEMU. It copies the working tree into the container (the files that Git tracks and the new files that Git
 # does not ignore), so the node_modules folders of the host stay as they are. In the container it installs Bun and the
 # locked packages, builds the tokens and the validators, and runs the gallery tests of the projects in
 # GALLERY_PROJECTS. The default is "scene" (the samples from their documents). The gallery of a plugin has its own
@@ -130,8 +129,7 @@ docker run --rm --init \
     bun --version
 
     # The working tree without ignored files (no node_modules, dist or test-results of the host). The Bun workspace
-    # is the repo root, with the plugins and their generated contracts. Not in this repository: engine/tools/wording
-    # of CodeBlue.
+    # is the repo root, with the plugins and their generated contracts.
     git config --global --add safe.directory "*"
     mkdir -p /work
     GIT_DIR="/git/$GIT_SUB" GIT_COMMON_DIR=/git GIT_WORK_TREE=/src git -C /src ls-files -z --cached --others --exclude-standard \

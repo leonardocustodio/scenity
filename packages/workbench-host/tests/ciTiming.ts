@@ -6,11 +6,10 @@
  * Mac the waits do not change.
  */
 import { setDefaultTimeout } from "bun:test";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 /** The factor of the waits on a CI runner (SCENITY_CI_WAIT_FACTOR, default 1; 3 in the CI workflow). */
 function waitFactor(): number {
-  const value = Number(envValue("SCENITY_CI_WAIT_FACTOR"));
+  const value = Number(process.env.SCENITY_CI_WAIT_FACTOR);
   return Number.isFinite(value) && value >= 1 ? value : 1;
 }
 

@@ -10,7 +10,6 @@
  * waits for it. A host without the shell (a browser) keeps the JPEG.
  */
 import { SIGNAL_PREFIX, SIGNALS_ENV } from "./busy";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 /** The environment switch of the shell: "1" when the shell re-encodes the JPEG pictures. */
 export const WEBP_ENV = "SCENITY_WORKBENCH_WEBP";
@@ -25,7 +24,7 @@ export function shellWebp(
   env: Readonly<Record<string, string | undefined>>,
   write: (line: string) => void = (line) => void process.stdout.write(line),
 ): ((file: string) => void) | undefined {
-  if (envValue(SIGNALS_ENV, env) !== "1" || envValue(WEBP_ENV, env) !== "1") return undefined;
+  if (env[SIGNALS_ENV] !== "1" || env[WEBP_ENV] !== "1") return undefined;
   return (file) => {
     write(`${webpSignal(file)}\n`);
   };

@@ -29,7 +29,6 @@ import { projectDefaultTake } from "./projectTake";
 import { startBuiltLabServer } from "./staticServer";
 import { sharedLock, WebKitPages } from "./webkit";
 import { POOL_WORKER_TOKEN_ENV } from "./webkitApi";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 /** The variable with the token of the API that the host gives. */
 export const POOL_TOKEN_ENV = "SCENITY_LABS_POOL_TOKEN";
@@ -75,7 +74,7 @@ export async function startPool(args: PoolArgs): Promise<{ origin: string; stop:
   }
   // An empty variable counts as none.
   const given = (name: string): string | null => {
-    const value = envValue(name);
+    const value = process.env[name];
     return value === undefined || value === "" ? null : value;
   };
   const key = given(LAB_KEY_ENV) ?? newLabKey();

@@ -16,7 +16,6 @@ import { realpathSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
 import { APP } from "../server";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 /** The variable with the pool folder of the tools (the host sets it for a state folder that is not the default). */
 export const POOL_DIR_ENV = "SCENITY_LABS_POOL_DIR";
@@ -54,7 +53,7 @@ export function hostStateDir(
 
 /** The pool folder: the variable, else `<state>/pool` of the checkout. */
 export function poolDir(env: Readonly<Record<string, string | undefined>> = process.env): string {
-  const given = envValue(POOL_DIR_ENV, env);
+  const given = env[POOL_DIR_ENV];
   return given !== undefined && given !== "" ? given : join(hostStateDir(checkoutRoot()), "pool");
 }
 

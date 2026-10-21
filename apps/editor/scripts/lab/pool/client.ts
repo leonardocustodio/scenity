@@ -12,7 +12,6 @@ import type { PageSpec } from "./pages";
 import { poolDir, POOL_USE_ENV, readPool, alive, type PoolInfo } from "./paths";
 import { PoolRefusal, type PoolEngine } from "./webkit";
 import { unpackPicture } from "@scenity/labs-platform/poolWire";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 /** The longest wait for the health answer of a pool (ms). */
 const HEALTH_MS = 1_000;
@@ -166,7 +165,7 @@ export class RemoteShooter implements LabShooter {
 export async function findPool(
   env: Readonly<Record<string, string | undefined>> = process.env,
 ): Promise<PoolClient | null> {
-  if (envValue(POOL_USE_ENV, env) === "0") return null;
+  if (env[POOL_USE_ENV] === "0") return null;
   const pool = readPool(poolDir(env));
   if (pool === null || pool.info.pages < 1 || !alive(pool.info.pid)) return null;
   try {

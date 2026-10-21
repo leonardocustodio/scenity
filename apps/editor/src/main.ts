@@ -17,6 +17,6 @@ markStart();
 const app = createApp(labRoot(globalThis.location.search));
 app.use(editorI18n().plugin);
 app.use(createAnnouncer());
-// The plugins start their data sources (for example, the mock engine source with the CodeBlue SDK).
+// The plugins start their data sources.
 installPlugins(app);
 app.mount("#app");

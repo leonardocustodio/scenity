@@ -2,8 +2,7 @@
 
 The dev tools of the runtime: the lab tools of a scene core. Only the editor, the dev part and the editor face of a
 plugin import this package; a player build never holds it. It can import only
-`@scenity/scene`, `@scenity/render`, `@scenity/character`, `@scenity/runtime` and three.js, and it names no domain (the
-domain word lint). The dev extension of a plugin (`plugins/<plugin>/dev`) binds it to the core of the plugin.
+`@scenity/scene`, `@scenity/render`, `@scenity/character`, `@scenity/runtime` and three.js, and it names no domain. The dev extension of a plugin (`plugins/<plugin>/dev`) binds it to the core of the plugin.
 
 ## The dev core
 

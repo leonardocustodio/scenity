@@ -5,7 +5,6 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
 import vue from "@vitejs/plugin-vue";
-import { envValue } from "@scenity/labs-platform/envNames";
 import { defineConfig } from "vite";
 import { threeDiet } from "../../packages/assets/src/build/threeDiet.ts";
 import { loadEditorProject, writeEditorFiles } from "../../packages/cli/src/vite/editor.ts";
@@ -28,7 +27,7 @@ const zstdStub = fileURLToPath(new URL("../../packages/render/src/vendor/zstdStu
  * content browser. The config writes the plugin list and the style list of the page (src/generated) from the project.
  * Thus the editor app names no plugin.
  *
- * `SCENITY_PROJECT` points the editor at a project outside the checkout (for example the room project of CodeBlue).
+ * `SCENITY_PROJECT` points the editor at a project outside the checkout.
  * The generated files of that project go to its state folder (`<project>/.scenity/editor`). Thus a run does not change
  * the files of the checkout. Two aliases give the generated files to the page. A checkout with no project opens an
  * empty project, and the lab page then has no editor plugin.
@@ -69,7 +68,7 @@ export default defineConfig({
     labsContentHash(editor.config.content),
     // The URLs of the pictures of the content browser in one module.
     labsStills(editor.config.stills),
-    // The three.js of the learner app, without environment maps and WebXR.
+    // The three.js of the editor build, without environment maps and WebXR.
     threeDiet(),
     // The plugins of the editor config faces of the project plugins.
     ...editor.config.plugins,
@@ -103,7 +102,7 @@ export default defineConfig({
     strictPort: true,
     // The tools of the lab (scripts/lab) start their own server with no file watch and no reload. Thus an edit during
     // a run does not reload the page under a measurement.
-    ...(envValue("SCENITY_LAB_TOOLS") === "1" ? { watch: null, hmr: false } : {}),
+    ...(process.env.SCENITY_LAB_TOOLS === "1" ? { watch: null, hmr: false } : {}),
     // The local mode serves the workspace. The remote mode of the workbench host serves only the folders that the lab
     // page loads. Both modes deny the secret files (scripts/labsFs.ts).
     fs: labFsOptions(process.env, workspaceRoot, editor.config.fsAllow, servedProject),
@@ -115,7 +114,7 @@ export default defineConfig({
     port: 4175,
     strictPort: true,
   },
-  // The render worker also gets the three.js of the learner app and the worker plugins of the editor config faces. The
+  // The render worker also gets the three.js of the editor build and the worker plugins of the editor config faces. The
   // workers stay IIFE files: they import the runtime face of the room statically. The ES format would make chunks of
   // their lazy imports.
   worker: { plugins: () => [threeDiet(), ...editor.config.workerPlugins()] },

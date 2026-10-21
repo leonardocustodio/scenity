@@ -41,8 +41,6 @@ describe("the denylist", () => {
       "home/.ssh/id_ed25519",
       "home/.ssh/id_rsa.pub",
       "/Users/x/Library/Application Support/org.scenity.editor/host/abc/claude/settings.json",
-      // The folder of the old app ID stays on the denylist.
-      "/Users/x/Library/Application Support/org.codeblue.labs/host/abc/claude/settings.json",
     ]) {
       expect([path, isDenied(path)]).toEqual([path, true]);
     }

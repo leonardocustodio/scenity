@@ -11,7 +11,6 @@
  */
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 /** The request of the clip: the take, the range (ms), the rate, the camera and the width (16:10). */
 export interface DesktopClipRequest {
@@ -40,8 +39,8 @@ export async function desktopMp4(
   request: DesktopClipRequest,
   env: Readonly<Record<string, string | undefined>> = process.env,
 ): Promise<DesktopClip | null> {
-  const origin = envValue("SCENITY_WORKBENCH_ORIGIN", env);
-  const token = envValue("SCENITY_WORKBENCH_TOKEN", env);
+  const origin = env.SCENITY_WORKBENCH_ORIGIN;
+  const token = env.SCENITY_WORKBENCH_TOKEN;
   if (origin === undefined || token === undefined || !/^http:\/\/127\.0\.0\.1:\d+$/.test(origin)) return null;
   const headers = { "content-type": "application/json", "x-workbench-token": token };
   const width = clipWidth(request.width);

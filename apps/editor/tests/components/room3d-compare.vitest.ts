@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // The compare view of the lab: the linked clock of both sides, and the wipe. The tests of the sides in the URL and of
-// the frames of a side need the editor plugin of a room. Thus they are in the editor face of the room plugin
-// (CodeBlue).
+// the frames of a side need the editor plugin of a room. Thus they are in the editor face of the room plugin.
 import { flushPromises, mount } from "@vue/test-utils";
 import { describe, expect, it } from "vitest";
 import CompareStage from "../../src/core/compare/CompareStage.vue";

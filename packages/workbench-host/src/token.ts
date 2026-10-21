@@ -5,11 +5,10 @@
  */
 import { createHash, randomBytes, timingSafeEqual } from "node:crypto";
 import { TOKEN_ENV, isToken } from "./protocol";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 /** Make the launch token: the value of the environment variable, or 32 new random bytes as hex. */
 export function makeToken(env: Readonly<Record<string, string | undefined>> = process.env): string {
-  const value = envValue(TOKEN_ENV, env);
+  const value = env[TOKEN_ENV];
   if (value === undefined || value === "") return randomBytes(32).toString("hex");
   if (!isToken(value)) throw new Error(`${TOKEN_ENV} must be 64 lowercase hex characters.`);
   return value;

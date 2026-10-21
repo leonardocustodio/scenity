@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 /**
- * The check of the art of this repository: the repository holds only free art. The bought art of the room of CodeBlue (the Reallusion, ActorCore and other packs) and its plugin are in
- * the CodeBlue repository.
+ * The check of the art of this repository: the repository holds only free art.
  *
  * Run from the repo root:
  *     bun tools/restricted-art.ts      # exit 1 on a problem (CI step "restricted art")
@@ -9,16 +8,13 @@
  * The check fails:
  * - on a rights record (a YAML file with a `licence` field) whose licence is not free: the SPDX ID is not one of
  *   FREE_SPDX, or a record with no SPDX ID has a licence text that is not CC0 or CC BY;
- * - on a rights record with no licence;
- * - on a plugin or a sample folder whose name has a domain word of the room of CodeBlue (tools/domain-words.ts; the
- *   plugin and its project are in the CodeBlue repository), or on the art folder of that room (`art/room3d`).
+ * - on a rights record with no licence.
  *
  * The check reads every YAML file of the repository, except the folders of GONE (third-party packages, builds, test
  * results and the local state of the tools).
  */
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
-import { countHits } from "./domain-words";
 
 /** The SPDX IDs of the free licences (the free art of the samples: CC0 1.0 and CC BY 3.0 or 4.0). */
 export const FREE_SPDX: readonly string[] = ["CC0-1.0", "CC-BY-3.0", "CC-BY-4.0"];
@@ -42,28 +38,6 @@ const GONE = new Set([
   "test-results",
   "playwright-report",
 ]);
-
-/** The art folder of the room of CodeBlue: it must not be in this repository. */
-export const MOVED_ART = "art/room3d";
-
-/** The folders of a parent folder, or none when it does not exist. */
-function folders(dir: string): string[] {
-  return existsSync(dir)
-    ? readdirSync(dir, { withFileTypes: true })
-        .filter((entry) => entry.isDirectory())
-        .map((entry) => entry.name)
-    : [];
-}
-
-/** The folders that must not be in this repository: the domain plugins and projects, and the art of the room. */
-export function movedFolders(root: string): string[] {
-  const named = ["plugins", "samples"].flatMap((parent) =>
-    folders(join(root, parent))
-      .filter((name) => countHits(name) > 0)
-      .map((name) => `${parent}/${name}`),
-  );
-  return [...named, ...(existsSync(join(root, MOVED_ART)) ? [MOVED_ART] : [])];
-}
 
 /** The value of a top-level field of a YAML text (one line, quotes and a line comment removed), or null. */
 export function field(text: string, name: string): string | null {
@@ -98,9 +72,7 @@ function yamlFiles(dir: string, out: string[] = []): string[] {
 
 /** The problems of the art of a repository at `root`. */
 export function artProblems(root: string): string[] {
-  const problems = movedFolders(root).map(
-    (folder) => `${folder}: the domain plugins, their projects and their art are in another repository`,
-  );
+  const problems: string[] = [];
   for (const file of yamlFiles(root)) {
     const text = readFileSync(file, "utf8");
     if (field(text, "licence") === null) continue;

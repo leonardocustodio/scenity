@@ -26,7 +26,6 @@ import type { HostApi } from "../host/useHost";
 import type { SurfaceRelay } from "../surfaces/relay";
 import { openPanel, placeWindow, trackRect, windowName, type OpenWay, type PanelWindowHost } from "./openPanel";
 import { DOCK_TABS, kindOfTab, newPanelKey, panelPageUrl } from "./panelUrl";
-import { storageItem } from "@scenity/labs-platform/storageKeys";
 
 /** The storage key of the PTY of a Claude tab (Terminal.vue): a detached Claude column opens the same terminals. */
 export function terminalKey(checkout: string, kind: "claude" | "shell"): string {
@@ -217,7 +216,7 @@ async function queryOf(
     const ids: Record<string, string> = {};
     for (const tab of ["claude", "shell"] as const) {
       const storage = storageOf(ctx.parts);
-      const id = checkout === undefined || storage === null ? null : storageItem(storage, terminalKey(checkout, tab));
+      const id = checkout === undefined || storage === null ? null : storage.getItem(terminalKey(checkout, tab));
       if (id !== null) ids[tab] = id;
     }
     return ids;

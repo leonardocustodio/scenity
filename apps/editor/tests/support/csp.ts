@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 /**
- * The CSP check of the end-to-end tests. This file is a part of the test fixtures of the CodeBlue learner
- * app: only `watchCsp`.
+ * The CSP check of the end-to-end tests: `watchCsp`.
  */
 import type { Page } from "@playwright/test";
 

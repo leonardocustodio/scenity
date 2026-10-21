@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 /**
- * The simulation clock of a render worker (it comes from the waveform worker of CodeBlue).
+ * The simulation clock of a render worker.
  *
  * The page clock extrapolates the time of its source. The host samples it a few times per second and sends anchors
  * to the worker; the worker extrapolates from the last anchor on each frame. Both clocks follow the same rules: no

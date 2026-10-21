@@ -104,8 +104,6 @@ export interface ChooseBackendOptions {
 export const BUILT_BACKENDS: readonly SceneBackend[] = ["webgl", "webgpu"];
 
 const LOSS_KEY = "scenity.room3d.webgpuLost";
-/** The key of the device loss memory before the rename of the project. The chooser also reads it. */
-const OLD_LOSS_KEY = "codeblue.room3d.webgpuLost";
 /** After a device loss, the chooser gives WebGL for 7 days. */
 export const DEVICE_LOSS_MS = 7 * 24 * 60 * 60 * 1000;
 const DEFAULT_TIMEOUT_MS = 1500;
@@ -131,11 +129,10 @@ export function rememberDeviceLoss(storage: StorageLike | null = pageStorage(), 
 /** True while a device loss of the last 7 days is in the storage. The function removes an expired entry. */
 export function deviceLossRemembered(storage: StorageLike | null = pageStorage(), now: number = Date.now()): boolean {
   try {
-    const at = Number(storage?.getItem(LOSS_KEY) ?? storage?.getItem(OLD_LOSS_KEY) ?? Number.NaN);
+    const at = Number(storage?.getItem(LOSS_KEY) ?? Number.NaN);
     if (!Number.isFinite(at)) return false;
     if (now - at < DEVICE_LOSS_MS && at <= now) return true;
     storage?.removeItem(LOSS_KEY);
-    storage?.removeItem(OLD_LOSS_KEY);
     return false;
   } catch {
     return false;

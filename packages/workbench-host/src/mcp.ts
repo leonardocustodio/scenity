@@ -15,7 +15,6 @@ import { CallToolRequestSchema, ListToolsRequestSchema, type CallToolResult } fr
 import { HOST_PATHS, isHostOrigin, isRecord, isToken, TOKEN_ENV, TOKEN_HEADER } from "./protocol";
 import { ORIGIN_ENV } from "./settings";
 import { toolListings, type ToolListing } from "./tools/index";
-import { envValue } from "@scenity/labs-platform/envNames";
 
 /** The longest wait for the host to run a tool (ms): a frame or a check can take a minute. */
 export const TOOL_CALL_TIMEOUT_MS = 180_000;
@@ -100,8 +99,8 @@ export function createMcpProxy(options: ProxyOptions): McpServer {
 
 /** Read the endpoint of the host from the environment, or throw an error that names the variable. */
 export function endpointFromEnv(env: Readonly<Record<string, string | undefined>>): { origin: string; token: string } {
-  const origin = envValue(ORIGIN_ENV, env);
-  const token = envValue(TOKEN_ENV, env);
+  const origin = env[ORIGIN_ENV];
+  const token = env[TOKEN_ENV];
   if (!isHostOrigin(origin)) throw new Error(`${ORIGIN_ENV} must be http://127.0.0.1:<port>.`);
   if (!isToken(token)) throw new Error(`${TOKEN_ENV} must be the launch token of the host (64 hex characters).`);
   return { origin, token };

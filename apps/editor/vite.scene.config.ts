@@ -5,7 +5,6 @@ import { fileURLToPath } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
 import vue from "@vitejs/plugin-vue";
 import { defineConfig } from "vite";
-import { envValue } from "@scenity/labs-platform/envNames";
 import { scenityAssetApi } from "./scripts/assetApiServer.ts";
 import { scenityApprovalsApi } from "./scripts/approvalsApi.ts";
 import { scenityAssetTools } from "./scripts/assetTools.ts";
@@ -60,10 +59,10 @@ const samples = inCheckout ? Object.fromEntries(SAMPLES.map((name) => [name, `${
 
 // More projects come from the environment (a test, and the project of `scenity dev`). The open projects of the studio
 // host come from the file that `SCENITY_SCENE_PROJECTS_FILE` names. The dev server watches this file.
-const projectsFile = envValue(PROJECTS_FILE_ENV);
+const projectsFile = process.env[PROJECTS_FILE_ENV];
 const projects: Record<string, string> = {
   ...samples,
-  ...projectsFromEnv(envValue(SCENE_PROJECTS_ENV)),
+  ...projectsFromEnv(process.env[SCENE_PROJECTS_ENV]),
   ...(projectsFile === undefined ? {} : readProjectsFile(projectsFile).projects),
 };
 
@@ -92,7 +91,7 @@ export default defineConfig({
   // (a workbench host runs both servers at the same time).
   // An installed studio host keeps the cache in its state folder (SCENITY_SCENE_CACHE_DIR), not in the
   // installed editor package.
-  cacheDir: envValue("SCENITY_SCENE_CACHE_DIR") ?? "node_modules/.vite-scene",
+  cacheDir: process.env.SCENITY_SCENE_CACHE_DIR ?? "node_modules/.vite-scene",
   // The scene server has no fallback page: a request for a file that is not there gets 404. With the SPA fallback, a
   // missing file gives the lab page (index.html), and Vite then makes the lab modules (`virtual:labs-content-hash`).
   appType: "mpa",
@@ -183,7 +182,7 @@ export default defineConfig({
     strictPort: false,
     // An e2e spec on a copy of a project disables the watch (SCENITY_SCENE_NO_WATCH=1). Then an edit of the
     // source by another tool does not reload the page in the middle of the test.
-    ...(envValue("SCENITY_SCENE_NO_WATCH") === "1" ? { hmr: false, watch: null } : {}),
+    ...(process.env.SCENITY_SCENE_NO_WATCH === "1" ? { hmr: false, watch: null } : {}),
   },
   build: {
     target: "es2023",

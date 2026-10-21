@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 /**
- * A small static server for the production build. This file is a copy of the static server of the CodeBlue learner
- * app, for the end-to-end tests of the editor. It applies the security headers of the nginx snippet and the
+ * A small static server for the production build, for the end-to-end tests of the editor. It applies the security headers of the nginx snippet and the
  * Cache-Control rules of snippets/web-app.conf. It uses index.html as the fallback, as nginx does. It can proxy /v1
  * and /health to an engine that the caller starts, for example the mock engine of the test kit of a plugin. As in
  * web-app.conf, /sitemap.xml and each source map (`*.map`) are a 404. A missing /robots.txt or /release-notes.json is
@@ -46,7 +45,7 @@ export interface StaticServerOptions {
   readonly variables?: Readonly<Record<string, string>>;
   /** A JSON text that replaces /config.json of the build. */
   readonly config?: string;
-  /** PEM texts of a server certificate and its key: serve HTTPS (scripts/test-certificate.ts of the CodeBlue learner app). */
+  /** PEM texts of a server certificate and its key: serve HTTPS. */
   readonly tls?: { readonly cert: string; readonly key: string };
   /** The precompressed copies to send, in order. Default: Brotli, then gzip. An empty list sends none. */
   readonly precompressed?: readonly Encoding[];

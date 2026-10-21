@@ -143,7 +143,7 @@ describe("the import facts and the promote of a scratch prop", () => {
   };
 
   it("reads the facts and finds the gaps of the rights", () => {
-    const info = readInfo({ ...facts, rights: { allowed: true, entry: "codeblue-own-work" }, point: [0, 0, 0] });
+    const info = readInfo({ ...facts, rights: { allowed: true, entry: "scenity-own-work" }, point: [0, 0, 0] });
     expect(info).toEqual(facts);
     expect(readInfo({ import: A, error: "no model" })).toBeNull();
     expect(readInfo({ import: "x" })).toBeNull();

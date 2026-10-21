@@ -136,7 +136,7 @@ describe("the base calls on the frame side", () => {
 });
 
 describe("the typed calls of the plugin on the frame side", () => {
-  // No plugin of this workspace has an editor face; the room plugin of CodeBlue runs its cases with a copy of
+  // No plugin of this workspace has an editor face. A plugin outside the checkout runs its cases with a copy of
   // this test.
   it("finds the cases of the plugins of the workspace", () => {
     expect(Array.isArray(PLUGIN_CASES)).toBe(true);

@@ -13,7 +13,6 @@ import type { IncomingMessage, ServerResponse } from "node:http";
 import type { Duplex } from "node:stream";
 import type { Plugin } from "vite";
 import { LAB_GATE_ENV, LAB_GATE_HEADER, sameText } from "@scenity/labs-platform/labKey";
-import { envValue } from "@scenity/labs-platform/envNames";
 import { isRemote } from "./labsFs.ts";
 
 type Env = Readonly<Record<string, string | undefined>>;
@@ -21,7 +20,7 @@ type Env = Readonly<Record<string, string | undefined>>;
 /** The gate key of the remote mode, or null in the local mode. A remote server without a key gets "". */
 export function gateKey(env: Env): string | null {
   if (!isRemote(env)) return null;
-  return envValue(LAB_GATE_ENV, env)?.trim() ?? "";
+  return env[LAB_GATE_ENV]?.trim() ?? "";
 }
 
 /** True when the request has the gate key (always true in the local mode). */
