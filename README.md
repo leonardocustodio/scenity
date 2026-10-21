@@ -132,12 +132,11 @@ origin `<public origin>/host`: open the page with `?host=<public origin>/host#to
 host request only with a token of the host (the host token or a role token). In the remote mode the host refuses a shell terminal and the chat mode "all",
 and the lab dev server serves only the folders of the lab page (the "remote mode" section of the host README).
 
-A new worktree of the workbench runs `bun run generate` after `bun install --frozen-lockfile`.
+A new workbench worktree runs `bun run generate` after `bun install --frozen-lockfile`.
 
 The skill of this repository for Claude Code (`.claude/skills/scenity/SKILL.md`) has the commands, the tools and the
 rules of the engine, the editor and the workbench.
 
 ## Licence
 
-Copyright 2026 Leonardo Amoroso Custodio. Scenity is licensed under the Apache License, Version 2.0: see `LICENSE`.
-The third-party parts keep their own licences: see `NOTICE`.
+Scenity is licensed under the Apache License, Version 2.0
