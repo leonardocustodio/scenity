@@ -1,6 +1,6 @@
 # @scenity/studio-host
 
-The host of Scenity Studio ([docs/studio.md](../../docs/studio.md)): a Bun program on 127.0.0.1 that
+The host of Scenity Studio: a Bun program on 127.0.0.1 that
 needs no project. It keeps the registry of projects, the user state, the jobs (`scenity` commands) and the doctor,
 signs the browser in, and runs one scene server of the editor behind a proxy, so the Hub and every open project share
 one origin.

@@ -1,6 +1,6 @@
 # @scenity/workbench
 
-> **This page retires**: use Scenity Studio (`scenity studio`, [docs/studio.md](../../docs/studio.md)). The page
+> **This page retires**: use Scenity Studio (`scenity studio`). The page
 > continues to work for a short time.
 
 The workbench page of Scenity: the surface frames of a checkout, the Claude panel, the before and after of a
@@ -147,7 +147,7 @@ bun tests/perf/run.ts [--out <file.json>] [--idle <seconds>]   # the performance
 
 - The component tests use fakes of the host (`tests/components/fakeHost.ts`, `fakeDock.ts`, `fakeChat.ts`) and of the
   WebSocket (`tests/unit/fakeSocket.ts`).
-- The specs that need the lab of a room are in the host face of the room plugin of CodeBlue
+- The specs that need the lab of a domain plugin are in the host face of that plugin
   (`bun run e2e:workbench` there, with the global setup of this folder and the project of that plugin):
   `bridge-shot.pw.ts` (a `lab_frame` capture through the host, the page and the bridge against `labs shot`),
   `edits.pw.ts`, `pick-ask.pw.ts`, `loop.pw.ts` (the recorded terminal session

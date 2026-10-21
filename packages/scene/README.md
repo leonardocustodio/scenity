@@ -1,6 +1,6 @@
 # @scenity/scene
 
-The documents of Scenity ([docs/formats.md](../../docs/formats.md) gives the formats). The package has the project,
+The documents of Scenity. The package has the project,
 scene, prefab, override, sequence, material and rules documents, their zod schemas and JSON Schema, and the canonical
 writer. It also has the reader with migrations, the component registry and the built-in components, the scene ops with
 inverses and transactions, and the override layers. It also has the prefabs, the references, the sequence evaluator

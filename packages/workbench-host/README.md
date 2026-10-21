@@ -3,7 +3,7 @@
 The host of the Scenity workbench: a Bun program on the developer machine. It serves the workbench page
 (`apps/workbench`) over a loopback WebSocket, runs the dev servers, the terminals, Git, the runs of the project and the Claude
 Code sessions of a checkout, and gives Claude the MCP tools and the hooks of the workbench. It is a developer tool. The
-learner release never builds it. The workbench retires: use Scenity Studio ([docs/workbench.md](../../docs/workbench.md)).
+learner release never builds it. The workbench retires: use Scenity Studio.
 
 The package is framework-free and may import `node:` and `bun:`. Only `apps/workbench` and the tests of this package
 import it, and the page imports only `@scenity/workbench-host/protocol` (no `node:` there). `bun run check:boundaries` and
@@ -73,7 +73,7 @@ with the file and the first problems. `host.hello` gives the project (`project`,
 | `theme`          | The page sets `data-theme` (`navy`, `light`, `dark`)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 The built-in manifest (`DEFAULT_WORKBENCH`) is the lab of the host plugin: the surfaces of the host plugin (the
-surface `lab` of the kind `scene`, label "Lab", ⌘1), the runs and the gate of the host plugin (for example the `labs` runs of the room plugin of CodeBlue, the gate `bun run labs motion`), the setup
+surface `lab` of the kind `scene`, label "Lab", ⌘1), the runs and the gate of the host plugin (for example a `labs` run as the gate), the setup
 `bun install --frozen-lockfile && bun run generate`, the content of the lab (`indexSource` of the host plugin: the frame
 index source of the editor plugin of the lab, the same hash as the lab page) and `.env`.
 
@@ -100,7 +100,7 @@ placement", the layout pairs of "Save layout as", the files of the promote) and 
 fields give project data that the core does not name: `toolNotes` (a tool name → a sentence of examples that the host
 adds to the description of that core tool) and `defaultSequence` (the start value of the sequence fields of the dock:
 the review pack, the picker and a background run; without it, the first sequence of the project document; `host.hello`
-gives it as `project.defaultSequence`). The host tests use the lab fixture `tests/fixtures/labProject`; the host face of the room plugin of CodeBlue is its `host` part.
+gives it as `project.defaultSequence`). The host tests use the lab fixture `tests/fixtures/labProject`.
 
 The host imports no plugin (ESLint and `tools/check-boundaries.ts`). `src/plugins.ts` loads the host face of each
 entry of the `plugins` field of the project (`resolvePluginEntries` of `@scenity/cli/plugins`: the `scenity.host` field
@@ -235,7 +235,7 @@ server that a person starts opens with no gate on the loopback.
 ## The MCP tools
 
 The MCP server `workbench` has the core tools in a project with no host plugin (`TOOLS` in `src/tools/index.ts`: the core tools of `CORE_TOOLS`, then the
-tools of the host plugin; "the host plugin" in the column "File" is the host face of the room plugin of CodeBlue). Only a session that the
+tools of the host plugin; "the host plugin" in the column "File" is the host face of the project plugin). Only a session that the
 workbench starts gets them: its Claude terminal, the chat and a background run.
 
 | Tool                                   | What it gives                                                                                                                                                                                                                | File                                                        |
@@ -451,6 +451,6 @@ WORKBENCH_IT=1 bun test ./packages/workbench-host     # adds labServer.it.test.t
 - `scripts/chat-check.ts` is the real check of the chat mode. It spends money on `ANTHROPIC_API_KEY`; run it only on
   request.
 
-In a project with the room plugin of CodeBlue, `bun run labs verify` runs these tests (for a change under the
+In a project with a host plugin, its verify run (for example `bun run labs verify`) runs these tests (for a change under the
 workbench paths) with the page checks, ESLint with the code shape (500 lines in a file, 80 in a function), Prettier and the
 boundaries.

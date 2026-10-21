@@ -85,8 +85,7 @@ gives the floor rectangle (x, z, world frame, in tree order) of each `obstacle` 
 rectangle around a `polygon`, or the `bounds` of a `shape`; the bounds of a model come from `options.bounds`, and an
 entity with a tag of `options.skipTags` gives none). `standPlaces(scene)` gives each `standPoint` with the yaw of an
 actor there (the `facing` 0 of a stand point faces -Z, so the actor yaw is the facing plus π). `scenePath` is
-`planPath` over the obstacles of a scene. The room plugin of CodeBlue gets the same rectangles and paths from its document
-(`tests/navigation-parity.test.ts` of its `room` part). The package has no navigation grid (nav mesh).
+`planPath` over the obstacles of a scene. The package has no navigation grid (nav mesh).
 
 `@scenity/character/walkPlan` plans the walks of a `locomotion` component: `planWalks(start, targets, obstacles, speed,
 turnSpeed)` gives legs with fixed times (the start, the arrival, the end of the turn to the stand point, in whole ms);
@@ -100,7 +99,7 @@ scene (`withWalkers`); `SceneTimeline` of `@scenity/runtime` uses it.
 
 `@scenity/character/profiles` has the rig profiles as data: each profile maps the canonical humanoid bones (the
 humanoid bone names of VRM 1.0) to candidate bone names of one skeleton family. `ue5` (the UE5 mannequin, and the
-short UE4 spine of the characters of the room plugin of CodeBlue), `rigify` (the DEF-_, ORG-_ or metarig bones of a Rigify rig of Blender),
+short UE4 spine), `rigify` (the DEF-_, ORG-_ or metarig bones of a Rigify rig of Blender),
 `vrm` (VRoid Studio names or the VRM names), `mixamo` (with or without `mixamorig:`; many motion capture files use the
 same names). The names compare in the form of the glTF loader of three.js (`DEF-spine.001` finds `DEF-spine001`).
 
@@ -125,7 +124,7 @@ The sample `samples/characters` has a Rigify mannequin (`assets/sources/RigifyMa
 `@scenity/character/ik` has the IK of any skeleton: `solveTwoBone` (the leg of the foot lock), `solveLimb` (an arm
 with a pole: the rule of the hands of `body.ts` on the nodes of any model; the elbow goes to the side of the pole) and
 `aimAt` (a head turns to a target within a limit). Each solver turns the nodes of a posed model in place and keeps no
-state. `body.ts` keeps its own copy of the arm IK, so the frames of the room plugin of CodeBlue do not change.
+state. `body.ts` keeps its own copy of the arm IK, so the frames of a plugin that uses it do not change.
 
 `@scenity/character/characterRig` gives the bone map of a `character` component: the profile of `rig` (or the profile
 from the bone names), then the node names of `bones` over it, so a skeleton with no profile (the robot of
@@ -134,8 +133,7 @@ glTF loader (`UpperArm.L` finds `UpperArmL`; a bone renamed `Torso_1` after a me
 `boneNode` finds the node of a canonical bone. `clipsFrom` retargets the clips of a clip source onto a model at load time (`retargetClip`).
 
 `@scenity/character/attach` parses the parent of an attach key (`attachTarget`) and moves an object under a node
-(`attachTo`). It has no profile tables and no schema: the room plugin of CodeBlue uses it in its render worker for the held
-props (`heldAttach` of `src/core/person.ts` of its `room` part).
+(`attachTo`). It has no profile tables and no schema: a plugin can use it in its render worker for the held props.
 
 ## Rules
 
@@ -153,5 +151,4 @@ canonical bone directions agree at each sample time.
 `tests/ik.test.ts` checks the arm IK with a pole, the aim of a head, the attach and the bone map of a character. `tests/navigation.test.ts` reads the table scene of `samples/characters`: the path of the robot has no point in the
 table and ends at the stand point, and the walk speed and the turn stay in their limits at each frame. The
 animator tests read the controller and the sequence of `samples/characters` (`tests/animatorKit.ts`): the states change at the
-expected times, the events come once, seek equals play; the pose mixer and foot lock tests load its robot glTF. The tests of the
-poses of the room plugin of CodeBlue (the tests of its `room` part) use these parts with the kits of the room.
+expected times, the events come once, seek equals play; the pose mixer and foot lock tests load its robot glTF.

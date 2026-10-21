@@ -24,7 +24,7 @@ The published `exports` (`publishConfig.exports`, which `tools/release.ts` write
 (the extension API of the studio, `src/studio/extensions/api.ts`), `./core/*`, `./vite.scene.config` and
 `./package.json`. The `exports` of the checkout also give the lab tools, the tests and the
 Playwright configs (`./scripts/*`, `./tests/*`, `./playwright.config`, `./playwright.gallery.config`,
-`./vite.config`) to a plugin workspace that links this checkout (CodeBlue). The lab page (`index.html`,
+`./vite.config`) to a plugin workspace that links this checkout. The lab page (`index.html`,
 `vite.config.ts`, `src/main.ts`), the still page, the player pages of the samples, the tests and the lab tools of
 `scripts/` stay in the checkout.
 

@@ -64,9 +64,6 @@ player.on("time", ({ t, playing }) => showClock(t));
   `points` and `time` as DOM events. The Vue component has the props `inputs`, `source`, `points`, `core` and
   `schemas`, emits `pick`, `points` and `time`, and exposes `send`.
 
-The room plugin of CodeBlue on the light player: the player view of its `view` part, the player page of its `editor`
-part and its e2e test (in CodeBlue).
-
 The plain pages `apps/editor/player/showroom.html` and `apps/editor/player/characters.html` use the web component (the
 scene dev server: `bun run --filter @scenity/editor dev:scene`, then `/player/showroom.html`).
 

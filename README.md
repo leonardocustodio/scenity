@@ -1,27 +1,23 @@
 # scenity
 
 Scenity is a 3D scene editor and engine: the documents, the runtime with the WebGPU and WebGL renderers, Scenity
-Studio (the Hub, the editor windows and the agents), the asset pipeline, the player and the `scenity` command. The code comes from the Bun
-workspace `frontend/web` of the CodeBlue repository; here that workspace is the repo root and the package scope is
-`@scenity/`. The room plugin of CodeBlue, its project and its bought art are in the CodeBlue repository; CodeBlue links
-the packages of this checkout (`bun link`).
-
-The documentation is in [docs/](docs/README.md): start with [the quickstart](docs/quickstart.md), then
-[the studio](docs/studio.md), the editor manual, the CLI, the document formats, the plugin guide and the architecture.
+Studio (the Hub, the editor windows and the agents), the asset pipeline, the player and the `scenity` command. The
+repository is a Bun workspace, and the package scope is `@scenity/`. A domain plugin and its art stay in the repository
+of that plugin, which links the packages of this checkout (`bun link`).
 
 ## What this repository holds
 
 | Path                                                                                                                              | What it is                                                                                                                                                                  |
 | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `packages/scene`                                                                                                                  | The documents of Scenity (`@scenity/scene`): schemas, the canonical writer, ops, overrides, prefabs                                                                         |
-| `packages/runtime`, `render`, `character`, `runtime-dev`, `view-vue`, `player`, `editor-core`, `bridge`, `assets`, `rules`, `cli` | The engine packages and their layers ([docs/architecture.md](docs/architecture.md))                                                                                         |
+| `packages/runtime`, `render`, `character`, `runtime-dev`, `view-vue`, `player`, `editor-core`, `bridge`, `assets`, `rules`, `cli` | The engine packages and their layers                                                                                                                                        |
 | `packages/labs-platform`                                                                                                          | The platform capabilities of the labs: the frame key, the content hash and the index store                                                                                  |
 | `packages/studio-host`                                                                                                            | The host of Scenity Studio (`scenity studio`): the Hub, the projects, the jobs, the agent sessions and the doctor                                                           |
 | `packages/agent-tools`                                                                                                            | The tools of the agents of the studio: the scene queries, the commands, the frames and the checks                                                                           |
 | `packages/workbench-host`                                                                                                         | The Bun host of the workbench page (retires; its `studioTools.ts` gives the agent tools to the studio)                                                                      |
 | `packages/i18n`, `tokens`, `ui`                                                                                                   | The design system with no domain parts: the Fluent runtime, the neutral themes `navy`, `light` and `dark`, the primitives and components                                    |
 | `apps/editor`                                                                                                                     | The editor (`@scenity/editor`): the scene page, the player pages and the lab page (`src/core`). It names no plugin: it loads the editor faces of the plugins of its project |
-| `apps/workbench`                                                                                                                  | The workbench page, which retires: use Scenity Studio ([docs/workbench.md](docs/workbench.md))                                                                              |
+| `apps/workbench`                                                                                                                  | The workbench page, which retires: use Scenity Studio                                                                                                                       |
 | `plugins/*`                                                                                                                       | Generic plugins (`physics`, `traffic`)                                                                                                                                      |
 | `samples/*`                                                                                                                       | Sample projects with free art (CC0 or CC BY, each with its rights records): `showroom`, `characters`, `gltf-samples`, `spin`, `physics`, `walkthrough`, `sim-road`          |
 | `tools/*.ts`                                                                                                                      | The size budgets, the lab markers, the module report, the package boundaries, the domain words and the art check                                                            |
@@ -36,7 +32,7 @@ The editor, the workbench host and the commands open the project of `--project`,
 `SCENITY_PROJECT` (an absolute folder), else the work folder, else the `scenity.project` field of the nearest
 package.json. This checkout has no default project: with none, the editor lab page has no editor plugin and the
 workbench shows the editor surface only. The editor writes the generated plugin files of a project outside the
-checkout into `<project>/.scenity/editor`. A workspace outside the checkout (CodeBlue) links the packages with
+checkout into `<project>/.scenity/editor`. A workspace outside the checkout links the packages with
 `bun link` in each package folder and `link:@scenity/<name>` dependencies. A project with the published packages
 (`@scenity/cli`, `scene`, `runtime` and `editor`) needs no checkout: `scenity create demo`, then `scenity dev`,
 `scenity build` and `scenity check` in `demo`.
@@ -76,8 +72,7 @@ cd apps/editor && bunx --bun playwright test tests/e2e/scene-projects.spec.ts --
 cd apps/editor && bun run test:gallery
 ```
 
-[docs/testing.md](docs/testing.md) gives the test strategy: the layers, where each kind of test lives, the fixture
-rule (`bun run check:fixtures`), the GPU lock and the Linux baselines.
+`bun run check:fixtures` checks the fixture rule of the tests.
 
 ## The `scenity` command
 
@@ -100,8 +95,7 @@ A project outside the checkout uses the links of Bun until the packages are publ
 demo --install` runs `bun link` in `packages/cli`, `packages/scene` and `packages/runtime` (once per machine), and
 `bun install` in `demo`; the project depends on `link:@scenity/<name>`, so `node_modules/.bin/scenity` and the
 packages point into the checkout. `scenity dev` and the `showroom` template use the editor app and the samples of the
-checkout. A plugin can add commands (the `scenity.cli` field of its package.json; the room plugin of CodeBlue gives
-`scenity labs`). `scenity pool` runs the scene pool: warm
+checkout. A plugin can add commands (the `scenity.cli` field of its package.json). `scenity pool` runs the scene pool: warm
 player pages that `shot`, `sheet` and `clip` use while it runs. The `packages/cli` README has the details.
 
 ## Work with the studio
@@ -112,13 +106,12 @@ bun run dev:lab             # the lab page of a plugin with an editor face, on p
 bun run build:assets        # the asset build of the samples; check:assets checks it
 ```
 
-`scenity studio --project <dir>` opens a project at once; [docs/studio.md](docs/studio.md) is the manual.
+`scenity studio --project <dir>` opens a project at once.
 
 The environment variables start with `SCENITY_` (for example `SCENITY_ENGINE_URL`, `SCENITY_LABS_PAGE_SECRET`,
-`SCENITY_LABS_POOL`, `SCENITY_WORKBENCH_TOKEN`). For a limited time, the code also reads the old name with `CODEBLUE_`
-and writes one warning for it.
+`SCENITY_LABS_POOL`, `SCENITY_WORKBENCH_TOKEN`).
 
-The lab page of the dev server opens with no gate on the loopback. It has no OIDC sign-in of CodeBlue; the page
+The lab page of the dev server opens with no gate on the loopback. It has no OIDC sign-in; the page
 key of the lab servers is in `@scenity/labs-platform/labKey`. The host has auth
 providers (`none`, `token` with the role tokens of `SCENITY_WORKBENCH_ROLES`, `oidc` from an embedder) and roles
 (`viewer`, `editor`, `admin`). `--project <dir>` starts the host on a project folder with
@@ -126,7 +119,7 @@ providers (`none`, `token` with the role tokens of `SCENITY_WORKBENCH_ROLES`, `o
 
 ### The workbench page (retires)
 
-The workbench page and its host keep working for a limited time ([docs/workbench.md](docs/workbench.md)); Scenity Studio has their parts.
+The workbench page and its host keep working for a limited time; Scenity Studio has their parts.
 
 ```sh
 bun run dev:workbench                                       # the workbench page

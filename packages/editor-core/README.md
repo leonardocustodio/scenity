@@ -18,6 +18,6 @@ proposals and the clipboard. No Vue: an editor page gives reactive cells (a Vue 
 | `sequence/`    | The sequence ops and channel, the record mode (an edit at the clock time becomes a key), commands          |
 
 The tests (`bun test ./packages/editor-core`) use a small generic scene (`tests/fixtures/garden.scene.json`). The
-editor app (`apps/editor`) specializes the kit for the lab page, and a plugin (the room plugin of CodeBlue) registers its commands and its op
+editor app (`apps/editor`) specializes the kit for the lab page, and a plugin registers its commands and its op
 kinds through it (`EditorPlugin.registerCommands`, `EditorPlugin.ops`). The package can import only `@scenity/scene` and
-`@scenity/labs-platform` (`docs/architecture.md`).
+`@scenity/labs-platform`.

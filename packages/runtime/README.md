@@ -9,8 +9,7 @@ ESLint guard `NO_ENGINE_BARREL`): a barrel pulls more code into the render worke
 
 ## The host and the worker
 
-A plugin binds the host client and the worker to its scene input and its core (the room plugin of CodeBlue:
-`src/host/client.ts` and `src/worker/handler.ts` of its `room` part).
+A plugin binds the host client and the worker to its scene input and its core.
 
 ```ts
 // The page: the worker client, or the main-thread core of the plugin (one chunk per backend).
@@ -33,7 +32,7 @@ attachSceneWorker(self, createWebGLBackend, { input: myInputSchema, createCore: 
   domain.
 - The "state" message carries the plugin input as an opaque value. The worker checks it with the input schema
   of the plugin (`SceneWorkerFactory.input`): an object with `safeParse`, as a zod schema has. A light check function
-  is sufficient, so a worker does not need zod (the room plugin of CodeBlue: `src/model/inputCheck.ts` of its `room` part). A value
+  is sufficient, so a worker does not need zod. A value
   that fails keeps the input before it, with one console warning. The main-thread core gets the typed value of the
   page.
 - `client.ts` (`/client`): `createSceneClient(canvas, options, loadCore)`. The runtime never imports a core: the plugin
@@ -74,7 +73,7 @@ attachSceneWorker(self, createWebGLBackend, { input: myInputSchema, createCore: 
 - Protocol 1 to protocol 2: "scene" is "state", "assets" is "load" with `assets`, "gpuTimer" is "flags" with
   `gpuTimer`, and a message of an extension is an "extension" envelope. `SceneLink.send` and `listen` add and remove
   the envelope, so an extension does not see it. A worker of another protocol version answers "init" with "error".
-- A core without the optional methods (the room plugin of CodeBlue) answers "load" with documents and "patch" with a refusal,
+- A core without the optional methods answers "load" with documents and "patch" with a refusal,
   "pick" with `null` and "camera" with `false`, and ignores "points". The client methods are `load`, `patch`,
   `pickEntity`, `setPoints` and `useCamera` (`pick` is a method of the labs). The editor camera is not a document camera: it stays out of the documents and of
   the "camera" message.
@@ -165,7 +164,7 @@ client.setPoints(["entity:table#top"]); // onAnchors gets its screen point when 
   moves one, from the camera of the frame, through the same "anchors" frames as the cards of a plugin core.
 
 - `worker/sceneWorker.ts` (`/sceneWorker`) is the generic scene worker: a separate entry, so the worker of a plugin
-  (the room plugin of CodeBlue) does not grow. The view camera is the "camera" message of the protocol;
+  does not grow. The view camera is the "camera" message of the protocol;
   `worker/documentMessages.ts` has the factory of the worker.
 - The scene page of the editor (`apps/editor/scene.html`) uses it; `worker=0` draws on the main thread. The gallery
   project `scene` checks that both paths draw the same pixels.
@@ -292,7 +291,7 @@ const { background, fog, toneMapping, exposure, map } = builder.environment();
   the environment map (it needs the renderer).
 - Lights: any number of lights of each kind. A directional or spot light points at its `target` (a world
   point or an entity), else along -Z of the entity. `applyLight` (`scene/lights.ts`, `@scenity/runtime/lights`) writes
-  the values; a plugin core with its own lights uses it too (the room plugin of CodeBlue). Each frame, `frameLighting`
+  the values; a plugin core with its own lights uses it too. Each frame, `frameLighting`
   (`scene/lighting.ts`) applies the tier: `Tiering.lights` directional, point and spot lights show and
   `Tiering.shadowLights` of them cast a shadow, in the order of the entities; the shadow map is the size of the tier
   (a spot light half, a point light a quarter). A `shadowCamera` value of the document stays; the runtime fits the
@@ -465,7 +464,7 @@ if (ctx.inputs?.held("demo.faster") === true) speed += 1;
   `@scenity/scene/input`); `t` is the simulation time of the page clock in whole ms.
 - The page turns the DOM events into input events with `PageInput` (`@scenity/runtime/pageInput`) and sends them with
   `inputsOf(link)` (`documentClient.ts`): the extension message "inputs" to the generic scene worker, or
-  `DocumentCore.setInputs(events, replace)` on the main thread. The workers of the room plugin of CodeBlue do not have it.
+  `DocumentCore.setInputs(events, replace)` on the main thread. A plugin worker can omit it.
 - The document core (`core/documentInputs.ts`) gives a system step at time `s` the events in (`s` - dt, `s`] as
   `ctx.inputs` (`StepInputs`: `events`, `pressed(action)`, `held(action)`). So an event applies at a step boundary,
   never at the wall time of its message. An event for a time that the steps passed makes the steps from that time

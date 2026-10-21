@@ -1,7 +1,6 @@
 # @scenity/cli
 
-The `scenity` command. It runs on Bun. [docs/cli.md](../../docs/cli.md) is the manual of the commands, and
-[docs/architecture.md](../../docs/architecture.md) gives the layers of the packages.
+The `scenity` command. It runs on Bun.
 
 ## The `scenity` bin
 
@@ -120,8 +119,7 @@ export is a `CliFace` (`import type { CliFace } from "@scenity/cli"`): `{ comman
 run(argv, { project }) }] }`; `run` gives the exit code (`src/plugins/commands.ts`). `scenity <name>` for a name that
 is not a command of the CLI runs the command of the first plugin of the project that has it (`--project` goes into the
 context, not into `argv`), and `scenity --help` lists the plugin commands. The face runs in the CLI process: a face
-that needs more starts its own process. The editor face of the room plugin of CodeBlue gives `scenity labs` (its
-`scripts/cliFace.ts`): the lab CLI of that plugin.
+that needs more starts its own process.
 
 ## The Vite plugin of the project plugins
 

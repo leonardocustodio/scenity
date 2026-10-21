@@ -2,7 +2,7 @@
 
 The asset tools of Scenity: the asset database, importers, the build, stills and rights. Bun and Blender. The package
 can import only `@scenity/scene` and `@scenity/labs-platform` from the workspace; `node:` and `bun:` are fine. It imports no plugin, and it names no domain:
-a project gives its asset list, budgets, paths and checks (the room plugin of CodeBlue: its `assets` part).
+a project gives its asset list, budgets, paths and checks.
 
 The package has these parts:
 
@@ -86,7 +86,7 @@ jpeg-js and the WASM decoders of jSquash, so each machine decodes the same pixel
 the same bytes. The asset database lists the files `<id>.*` of the output folder as the `outputs` of each entry.
 
 `runPipeline({ jobs, lods, exportFolder, builtFolder, listName, cache, extensions })` is the part under it, which a
-content set with no project file also calls (the room plugin of CodeBlue: its `assets` part, with `parseBuildSettings`). A
+content set with no project file also calls (with `parseBuildSettings`). A
 model job names its ID, its input (bytes, else `<exportFolder>/<id>.glb`), its budgets per tier, its levels and its
 optimize options (the socket names, the generator text, the codecs); a clip job names its byte budget. The pipeline
 optimizes each model for each level (KTX2 textures, the LOD, meshopt) through `ModelCache` (a folder that the caller
@@ -298,7 +298,7 @@ reviewer. The asset record lists it in `approvals`:
 
 The verdict is `approved`, `changes` or `rejected`. A change of the source after the review makes the approval stale,
 so the reviewer must look at the asset again. `rightsGate` and `approvalGate` are the parts under `releaseCheck`: a
-content set with no project file gives its own subjects and rules (the room plugin of CodeBlue: `src/release.ts` of its `assets` part).
+content set with no project file gives its own subjects and rules.
 The showroom gives `"release": { "licences": { "allow": ["CC0-1.0"] } }` and no approval role.
 
 ## The CLI

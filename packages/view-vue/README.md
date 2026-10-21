@@ -2,9 +2,9 @@
 
 `SceneView.vue`: the generic Vue view of a scene. It holds the renderer life cycle, the fallback
 ladder, the adaptive quality, the poster, the fog of the asset loads and the pointer. A plugin wraps it with its own
-props and overlays (the room plugin of CodeBlue: `Room3DView.vue` of its `view` part).
+props and overlays.
 
-The package can import only `@scenity/scene`, `@scenity/runtime` and Vue (`docs/architecture.md`). It has no word
+The package can import only `@scenity/scene`, `@scenity/runtime` and Vue. It has no word
 of a domain (the domain word lint).
 
 | Entry point                       | What it holds                                                                                  |
@@ -56,12 +56,10 @@ of a domain (the domain word lint).
   `usePrefersReducedMotion` of `@scenity/ui`); the view then draws still poses.
 
 The class names start with `scene-view` (the fog fade of the lab is the variable `--scene-view-fog-duration`). The
-test IDs (`room-3d-canvas`, `room-3d-poster`, `room-3d-fog`, `room-3d-loading`) keep the names of the room view of
-CodeBlue, so the tests and the lab find the same elements. The root has the test ID
+test IDs (`room-3d-canvas`, `room-3d-poster`, `room-3d-fog`, `room-3d-loading`) keep their first names, so the tests and the lab find the same elements. The root has the test ID
 `scene-view`; a wrapper can set another one through its attributes.
 
 ## Tests
 
-The lab page of the room plugin of CodeBlue renders through this view (`LabsRoomView.vue` → `Room3DView` →
-`SceneView`): the lab end-to-end tests, the gallery and the parity suite of that plugin (in CodeBlue) cover it. The adaptive rules have their tests in
+The lab page of a plugin renders through this view: the lab end-to-end tests and the gallery of that plugin cover it. The adaptive rules have their tests in
 `packages/runtime/tests/adapt.test.ts`.
