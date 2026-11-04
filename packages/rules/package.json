@@ -27,7 +27,7 @@
   "dependencies": {
     "@scenity/character": "workspace:*",
     "@scenity/scene": "workspace:*",
-    "zod": "4.6.5"
+    "zod": "4.6.6"
   },
   "devDependencies": {
     "@types/bun": "catalog:"
